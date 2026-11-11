@@ -528,7 +528,16 @@
   function flyToCountry(c) {
     const p = pads(true);
     takeOff();
-    map.flyToBounds(countryBounds(c), { paddingTopLeft: p.tl, paddingBottomRight: p.br, maxZoom: 10, duration: 1.7, easeLinearity: 0.16 });
+    // If the window is mid-resize (rotating a phone, opening a side panel), the padding can be larger than the
+    // map itself, which leaves Leaflet no room to fit the country. Then fall back to a plain fit, and never throw.
+    const size = map.getSize();
+    const room = size.x - p.tl[0] - p.br[0] > 40 && size.y - p.tl[1] - p.br[1] > 40;
+    try {
+      if (room) map.flyToBounds(countryBounds(c), { paddingTopLeft: p.tl, paddingBottomRight: p.br, maxZoom: 10, duration: 1.7, easeLinearity: 0.16 });
+      else map.fitBounds(countryBounds(c), { maxZoom: 10, animate: false });
+    } catch (e) {
+      try { map.invalidateSize(); map.fitBounds(countryBounds(c), { maxZoom: 10, animate: false }); } catch (e2) { /* leave the view as it is */ }
+    }
   }
 
   function flyToWorld(duration) {
