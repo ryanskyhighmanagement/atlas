@@ -5,6 +5,7 @@
      id            ISO 3166-1 numeric code as a string (matches the map boundaries)
      soundProfile  space | jungle | ocean | rainforest | city | metropolis | desert | mountains | temple
      hero          image for the country header (same format as place.image)
+     bounds        optional, [[south, west], [north, east]] to frame the country by hand
 
    Place: { name, lat, lng, category, tagline, description, bestTime, image, sound?, zoom? }
      category      City | Nature | Historical | Beach | Mountain | Culture
@@ -1396,7 +1397,7 @@ window.ATLAS_DATA = { countries: [
     ]
   },
   {
-    id: "643", name: "Russia", region: "Europe & Asia", soundProfile: "city",
+    id: "643", name: "Russia", region: "Europe & Asia", soundProfile: "city", bounds: [[42, 27], [72, 150]],
     summary: "The largest country on Earth: onion domes, imperial palaces, and a lake that holds a fifth of the world's fresh water.",
     hero: "wiki:Saint Basil's Cathedral",
     places: [

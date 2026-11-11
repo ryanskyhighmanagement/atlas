@@ -506,6 +506,7 @@
 
   function countryBounds(c) {
     if (c._bounds) return c._bounds;
+    if (c.bounds) { c._bounds = L.latLngBounds(c.bounds); return c._bounds; }      // set by hand for very wide countries
     const land = mainLand(c.id), best = land && land.box;
     const b = best ? L.latLngBounds(best) : L.latLngBounds(c.places.map((p) => [p.lat, p.lng]));
     if (best) {
@@ -533,10 +534,11 @@
     const size = map.getSize();
     const room = size.x - p.tl[0] - p.br[0] > 40 && size.y - p.tl[1] - p.br[1] > 40;
     try {
-      if (room) map.flyToBounds(countryBounds(c), { paddingTopLeft: p.tl, paddingBottomRight: p.br, maxZoom: 10, duration: 1.7, easeLinearity: 0.16 });
-      else map.fitBounds(countryBounds(c), { maxZoom: 10, animate: false });
+      // capped below the close-up level, so small countries keep their outline and stay free of street labels
+      if (room) map.flyToBounds(countryBounds(c), { paddingTopLeft: p.tl, paddingBottomRight: p.br, maxZoom: 8.25, duration: 1.7, easeLinearity: 0.16 });
+      else map.fitBounds(countryBounds(c), { maxZoom: 8.25, animate: false });
     } catch (e) {
-      try { map.invalidateSize(); map.fitBounds(countryBounds(c), { maxZoom: 10, animate: false }); } catch (e2) { /* leave the view as it is */ }
+      try { map.invalidateSize(); map.fitBounds(countryBounds(c), { maxZoom: 8.25, animate: false }); } catch (e2) { /* leave the view as it is */ }
     }
   }
 

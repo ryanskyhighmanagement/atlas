@@ -3,7 +3,7 @@
    instantly and from the home screen. Map tiles, photos and sound recordings always come from the
    network: they are large, and the app already shows placeholders when they cannot load.
    Change VERSION whenever the app's files change, so installed copies pick up the new ones. */
-const VERSION = 'atlas-12';
+const VERSION = 'atlas-13';
 const SHELL = [
   './', 'index.html', 'styles.css', 'app.js', 'data.js', 'sound.js', 'manifest.json',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png',
