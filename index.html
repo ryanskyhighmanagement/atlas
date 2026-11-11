@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07090c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Atlas">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <meta name="description" content="Atlas. Every place on Earth, one tap away.">
+  <title>Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Map -->
+  <div id="map" aria-label="World map"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Top bar: brand + search -->
+  <header class="topbar" id="topbar">
+    <button class="brand" id="brand" type="button" aria-label="Atlas, back to world view">Atlas</button>
+    <div class="search" id="search" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="searchResults">
+      <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      <input id="searchInput" type="search" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+             placeholder="Search countries and places" aria-label="Search countries and places" aria-controls="searchResults">
+      <button class="search__clear" id="searchClear" type="button" aria-label="Clear search" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="results" id="searchResults" role="listbox" hidden></div>
+    </div>
+    <button class="yoursbtn" id="btnYours" type="button" aria-label="Your atlas: saved places and countries explored">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg>
+    </button>
+  </header>
+
+  <!-- Map controls -->
+  <div class="controls" id="controls">
+    <button class="ctl ctl--world" id="btnWorld" type="button" aria-label="Back to world view" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.8 2.6 2.8 14.4 0 17M12 3.5c-2.8 2.6-2.8 14.4 0 17"/></svg>
+      <span>World</span>
+    </button>
+    <div class="ctl-group">
+      <button class="ctl" id="btnZoomIn" type="button" aria-label="Zoom in">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg>
+      </button>
+      <button class="ctl" id="btnZoomOut" type="button" aria-label="Zoom out">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 12h13"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hover label (desktop) -->
+  <div class="tip" id="tip" aria-hidden="true"></div>
+
+  <!-- Detail panel: side panel on desktop, bottom sheet on mobile -->
+  <aside class="panel" id="panel" aria-hidden="true" aria-label="Details">
+    <div class="panel__grab" id="panelGrab" role="button" tabindex="-1" aria-label="Drag to resize"><span></span></div>
+    <button class="panel__close" id="panelClose" type="button" aria-label="Close and return to world view">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="panel__scroll" id="panelScroll">
+      <div class="view" id="view"></div>
+    </div>
+  </aside>
+
+  <!-- Place: a full-screen photo experience that covers the map -->
+  <section class="stage" id="stage" aria-hidden="true" aria-label="Place">
+    <div class="stage__bar">
+      <button class="pill" id="stageBack" type="button" aria-label="Back to the map">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        <span id="stageBackLabel">Back</span>
+      </button>
+    </div>
+    <div class="stage__scroll" id="stageScroll"><div class="stage__body" id="stageBody"></div></div>
+  </section>
+
+  <!-- Photo viewer -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <div class="lightbox__frame" id="lbFrame"><img id="lbImg" alt=""></div>
+    <button class="round lightbox__close" id="lbClose" type="button" aria-label="Close photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="round lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="round lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <div class="lightbox__meta"><span id="lbCount"></span><a id="lbCredit" target="_blank" rel="noopener"></a></div>
+  </div>
+
+  <!-- Sound: mute, volume and the "now listening" line -->
+  <div class="sound" id="sound">
+    <button class="sound__mute" id="soundMute" type="button" aria-label="Mute" aria-pressed="false">
+      <svg class="sound__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11"/></svg>
+      <svg class="sound__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+    </button>
+    <button class="sound__label" id="soundLabel" type="button" aria-label="Now listening. Tap for volume">
+      <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="sound__name" id="soundName">Sound off</span>
+    </button>
+    <input class="sound__vol" id="soundVol" type="range" min="0" max="100" value="70" aria-label="Volume">
+  </div>
+
+  <!-- Messages -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="notice" id="notice" hidden></div>
+
+  <!-- Welcome -->
+  <section class="welcome" id="welcome" aria-label="Welcome">
+    <canvas class="welcome__stars" id="stars" aria-hidden="true"></canvas>
+    <div class="welcome__earth" aria-hidden="true"></div>
+    <div class="welcome__inner">
+      <p class="welcome__kicker">An interactive world atlas</p>
+      <h1 class="welcome__title">Atlas</h1>
+      <p class="welcome__tag">Every place on Earth, one tap away.</p>
+      <button class="welcome__btn" id="btnBegin" type="button">
+        <span>Begin exploring</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <p class="welcome__foot" id="welcomeFoot"></p>
+  </section>
+
+  <noscript><div class="notice notice--static"><h2>Atlas needs JavaScript</h2><p>Turn JavaScript on in your browser to explore the map.</p></div></noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script src="data.js"></script>
+  <script src="sound.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
