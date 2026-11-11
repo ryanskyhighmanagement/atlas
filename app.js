@@ -113,7 +113,7 @@
 
   const state = { country: null, place: null, begun: false, mapReady: false, hoverId: null, sheet: 'half' };
 
-  let map, geo, markers, pin, detail, cityLabels;
+  let map, geo, markers, pin, detail, cityLabels, borders;
   const WORLD = [[-85.0511, -180], [85.0511, 180]];
 
   function worldCanvas(className, pane) {
@@ -629,11 +629,13 @@
     }
 
     el.body.dataset.basemap = BASEMAPS[CONFIG.basemap] ? CONFIG.basemap : 'esri-dark';
+    // The border layer is drawn a full screen beyond every edge, so dragging does not run off its drawn area.
+    borders = L.svg({ padding: 1 });
     map = L.map('map', {
       zoomControl: false, attributionControl: false,
       minZoom: 1, maxZoom: 15, zoomSnap: 0.25, zoomDelta: 1, wheelPxPerZoomLevel: 90,
       maxBounds: [[-78, -230], [85, 230]], maxBoundsViscosity: 0.6,
-      renderer: L.svg({ padding: 0.3 }),
+      renderer: borders,
       inertiaDeceleration: 2400,
     });
     L.control.attribution({ position: 'bottomleft', prefix: false }).addTo(map);
@@ -667,6 +669,15 @@
     map.setMinZoom(Math.max(1, w.zoom - 0.75));
     map.setView(w.center, Math.max(1, w.zoom - 0.5), { animate: false });
     map.on('moveend zoomend', updateWorldButton);
+    // On a long drag, redraw the borders around the new position before the drawn area runs out,
+    // instead of waiting for the finger or mouse to let go.
+    map.on('move', () => {
+      if (!borders._center || map._animatingZoom || map.getContainer().classList.contains('is-flying')) return;
+      if (map.getZoom() !== borders._zoom) return;
+      const s = map.getSize();
+      const off = map.latLngToLayerPoint(borders._center).distanceTo(map.latLngToLayerPoint(map.getCenter()));
+      if (off > Math.min(s.x, s.y) * 0.6) borders._update();
+    });
     map.on('moveend', () => { clearTimeout(namesT); if (dots.size) namesT = setTimeout(placeNames, 250); });
     map.on('zoom zoomend', () => map.getContainer().classList.toggle('is-close', map.getZoom() >= 8.75));
     map.on('zoomend', () => {

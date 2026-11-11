@@ -115,9 +115,6 @@ body.has-country .leaflet-pane.leaflet-labels-pane { opacity: .6; }
 .cname.is-on { opacity: 1; }
 body.has-country .cname.is-on { opacity: .5; }
 
-/* The live border layer is scaled as a ready-made picture while zooming, instead of being redrawn every frame */
-.leaflet-overlay-pane svg { will-change: transform; }
-
 /* The stitched world picture gets the same tint as the tiles */
 body[data-basemap="esri-dark"] .atlas-under { filter: contrast(1.2) brightness(.85) sepia(.3) hue-rotate(178deg) saturate(1.4); }
 .atlas-under, .atlas-ghost { will-change: transform; }
