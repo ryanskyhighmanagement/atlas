@@ -691,12 +691,60 @@
     return true;
   }
 
+  // The boundary file draws countries that cross the date line (Russia, Fiji, Alaska's islands) as one
+  // shape running off one edge of the map and back in at the other. On a flat map that leaves a
+  // straight line across the whole world, so each of those shapes is cut in two at the date line.
+  function cutAtDateLine(f) {
+    const g = f.geometry;
+    if (!g || (g.type !== 'Polygon' && g.type !== 'MultiPolygon')) return;
+    const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+    const half = (ring, east) => {                       // the part of an unrolled ring on one side of 180
+      const out = [], inside = (p) => (east ? p[0] >= 180 : p[0] <= 180);
+      for (let i = 0; i < ring.length; i++) {
+        const a = ring[i], b = ring[(i + 1) % ring.length], ia = inside(a), ib = inside(b);
+        if (ia) out.push(a);
+        if (ia !== ib) out.push([180, a[1] + (b[1] - a[1]) * (180 - a[0]) / (b[0] - a[0])]);
+      }
+      if (out.length < 3) return null;
+      const r = out.map((p) => [east ? p[0] - 360 : p[0], p[1]]);
+      r.push(r[0].slice());
+      return r;
+    };
+    const out = [];
+    let changed = false;
+    polys.forEach((poly) => {
+      const ring = poly[0];
+      let jumps = 0;
+      for (let i = 1; i < ring.length; i++) if (Math.abs(ring[i][0] - ring[i - 1][0]) > 180) jumps++;
+      if (!jumps) { out.push(poly); return; }
+      changed = true;
+      if (jumps % 2) {                                   // wraps a pole (Antarctica): run down the map edge instead
+        const r = [];
+        const pole = ring.reduce((sum, p) => sum + p[1], 0) < 0 ? -89.9 : 89.9;
+        for (let i = 0; i < ring.length; i++) {
+          r.push(ring[i]);
+          const b = ring[i + 1];
+          if (b && Math.abs(b[0] - ring[i][0]) > 180) {
+            const from = ring[i][0] > 0 ? 180 : -180, lat = (ring[i][1] + b[1]) / 2;
+            r.push([from, lat], [from, pole], [-from, pole], [-from, lat]);
+          }
+        }
+        out.push([r].concat(poly.slice(1)));
+        return;
+      }
+      const open = ring.slice(0, -1).map((p) => [p[0] < 0 ? p[0] + 360 : p[0], p[1]]);
+      [false, true].forEach((east) => { const r = half(open, east); if (r) out.push([r]); });
+    });
+    if (changed) { g.type = 'MultiPolygon'; g.coordinates = out; }
+  }
+
   function loadBoundaries() {
     el.foot.textContent = 'Charting the world';
     return fetch(CONFIG.boundaries)
       .then((r) => { if (!r.ok) throw new Error('boundaries ' + r.status); return r.json(); })
       .then((topo) => {
         const fc = window.topojson.feature(topo, topo.objects.countries);
+        fc.features.forEach(cutAtDateLine);
         geo = L.geoJSON(fc, { style: styleOf, onEachFeature: bindCountry, smoothFactor: 1.2 }).addTo(map);
         borderPicture(fc.features);
         // Country names over the map are switched off. To bring them back: Names.build();
