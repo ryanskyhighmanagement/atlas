@@ -524,8 +524,10 @@
   // While the map is flying, the border layer is hidden: scaling 97,000 outline points every frame is what
   // made flights stutter. The basemap flies alone, and the outlines fade back in on arrival.
   let returnT, namesT;
+  let inFlight = false;
   function takeOff() {
     const box = map.getContainer();
+    map._stop();                       // ends a flight still in the air properly (see the _stop wrapper in init)
     box.classList.add('is-flying');
     map.once('moveend', () => box.classList.remove('is-flying'));
   }
@@ -539,7 +541,7 @@
     const room = size.x - p.tl[0] - p.br[0] > 40 && size.y - p.tl[1] - p.br[1] > 40;
     try {
       // capped below the close-up level, so small countries keep their outline and stay free of street labels
-      if (room) map.flyToBounds(countryBounds(c), { paddingTopLeft: p.tl, paddingBottomRight: p.br, maxZoom: 8.25, duration: 1.7, easeLinearity: 0.16 });
+      if (room) { map.flyToBounds(countryBounds(c), { paddingTopLeft: p.tl, paddingBottomRight: p.br, maxZoom: 8.25, duration: 1.7, easeLinearity: 0.16 }); inFlight = !!map._flyToFrame; }
       else map.fitBounds(countryBounds(c), { maxZoom: 8.25, animate: false });
     } catch (e) {
       try { map.invalidateSize(); map.fitBounds(countryBounds(c), { maxZoom: 8.25, animate: false }); } catch (e2) { /* leave the view as it is */ }
@@ -560,6 +562,7 @@
       returnT = setTimeout(land, 900);
     });
     map.flyTo(w.center, w.zoom, { duration: duration || 2.2, easeLinearity: 0.2 });
+    inFlight = !!map._flyToFrame;
   }
 
   function styleOf(f) {
@@ -675,6 +678,25 @@
     map.setMinZoom(Math.max(1, w.zoom - 0.75));
     map.setView(w.center, Math.max(1, w.zoom - 0.5), { animate: false });
     map.on('moveend zoomend', updateWorldButton);
+    // A touch on the map stops a flight in mid-air. Leaflet then just freezes: it never announces that the
+    // zoom changed, so the borders stay drawn for the zoom the flight started from (too big, in the wrong
+    // place) and the flight's own cleanup never runs. So a stopped flight is made to land like a finished one.
+    const stop0 = map._stop;
+    map._stop = function () {
+      const cut = inFlight;
+      inFlight = false;
+      stop0.call(this);
+      if (cut) this._moveEnd(true);
+    };
+    map.on('moveend', () => { inFlight = false; });
+    // Safety net: whenever the map comes to rest, the borders must be drawn for the zoom the map is at.
+    let drawnZoom = map.getZoom();
+    map.on('zoomend', () => { drawnZoom = map.getZoom(); });
+    map.on('moveend', () => {
+      if (drawnZoom === map.getZoom() || map._animatingZoom) return;
+      drawnZoom = map.getZoom();
+      borders._onZoomEnd(); borders._update();
+    });
     // On a long drag, redraw the borders around the new position before the drawn area runs out,
     // instead of waiting for the finger or mouse to let go.
     map.on('move', () => {
