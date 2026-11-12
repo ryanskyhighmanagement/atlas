@@ -111,6 +111,10 @@
   const exploredLine = () => `${Store.visitedCount()} / ${TOTAL_COUNTRIES} countries explored`;
   const TEAL = '#6fbfb2';
 
+  // Unpack a loaded photo in the background before it goes on screen. Without this the browser
+  // unpacks it in the middle of a frame, which shows as a stutter, worst with full-screen photos.
+  const decoded = (img) => (img.decode ? img.decode().catch(() => null) : Promise.resolve());
+
   const state = { country: null, place: null, begun: false, mapReady: false, hoverId: null, sheet: 'half' };
 
   let map, geo, markers, pin, detail, cityLabels, borders;
@@ -257,12 +261,12 @@
       const img = new Image();
       img.alt = box.dataset.alt || '';
       img.decoding = 'async';
-      img.onload = () => {
+      img.onload = () => decoded(img).then(() => {
         box.appendChild(img);
         box.classList.remove('is-loading');
         requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add('is-in')));
         if (box.dataset.credit !== undefined) credit(box, ref, info);
-      };
+      });
       img.onerror = fail;   // broken link: the gradient placeholder stays, never a broken-image icon
       img.src = url;
     }
@@ -631,8 +635,8 @@
     }
 
     el.body.dataset.basemap = BASEMAPS[CONFIG.basemap] ? CONFIG.basemap : 'esri-dark';
-    // The border layer is drawn a full screen beyond every edge, so dragging does not run off its drawn area.
-    borders = L.svg({ padding: 1 });
+    // The border layer is drawn half a screen beyond every edge and redrawn during long drags (see the 'move' handler).
+    borders = L.svg({ padding: 0.5 });
     map = L.map('map', {
       zoomControl: false, attributionControl: false,
       minZoom: 1, maxZoom: 15, zoomSnap: 0.25, zoomDelta: 1, wheelPxPerZoomLevel: 90,
@@ -678,7 +682,7 @@
       if (map.getZoom() !== borders._zoom) return;
       const s = map.getSize();
       const off = map.latLngToLayerPoint(borders._center).distanceTo(map.latLngToLayerPoint(map.getCenter()));
-      if (off > Math.min(s.x, s.y) * 0.6) borders._update();
+      if (off > Math.min(s.x, s.y) * 0.3) borders._update();
     });
     map.on('moveend', () => { clearTimeout(namesT); if (dots.size) namesT = setTimeout(placeNames, 250); });
     map.on('zoom zoomend', () => map.getContainer().classList.toggle('is-close', map.getZoom() >= 8.75));
@@ -687,6 +691,7 @@
       if (close && !map.hasLayer(cityLabels)) map.addLayer(cityLabels);
       else if (!close && map.hasLayer(cityLabels)) map.removeLayer(cityLabels);
     });
+    if (/[?&]perf\b/.test(location.search)) frameMeter();
     el.body.classList.add('is-ready');
     return true;
   }
@@ -736,6 +741,24 @@
       [false, true].forEach((east) => { const r = half(open, east); if (r) out.push([r]); });
     });
     if (changed) { g.type = 'MultiPolygon'; g.coordinates = out; }
+  }
+
+  // A small frame-rate readout for testing on a real device: add ?perf to the address.
+  // It shows the last second, and the slowest frame since the last tap on the readout.
+  function frameMeter() {
+    const box = document.createElement('div');
+    box.style.cssText = 'position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9999;padding:6px 12px;border-radius:99px;background:rgba(0,0,0,.8);color:#fff;font:600 12px/1.2 ui-monospace,Menlo,monospace;white-space:nowrap';
+    document.body.appendChild(box);
+    let last = performance.now(), frames = 0, since = last, worst = 0, slow = 0;
+    box.addEventListener('click', () => { worst = 0; slow = 0; });
+    const tick = (t) => {
+      const d = t - last; last = t; frames++;
+      if (d > worst) worst = d;
+      if (d > 34) slow++;
+      if (t - since >= 1000) { box.textContent = Math.round(frames * 1000 / (t - since)) + ' fps  |  slowest ' + Math.round(worst) + ' ms  |  slow frames ' + slow; frames = 0; since = t; }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   }
 
   function loadBoundaries() {
@@ -1173,14 +1196,15 @@
     const img = new Image();
     img.alt = '';
     img.className = 'shero__img';
-    img.onload = () => {
+    img.decoding = 'async';
+    img.onload = () => decoded(img).then(() => {
       if (token !== stage.token || !box.isConnected) return;
       const old = Array.prototype.slice.call(box.querySelectorAll('.shero__img'));
       box.appendChild(img);
       box.classList.remove('is-loading');
       requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add('is-on')));
       setTimeout(() => old.forEach((o) => o.remove()), 2400);
-    };
+    });
     img.onerror = () => { if (token === stage.token && !box.querySelector('.shero__img')) box.classList.add('is-empty'); };
     img.src = url;
   }
@@ -1259,7 +1283,7 @@
       const img = new Image();
       img.alt = p.name;
       img.decoding = 'async';
-      img.onload = () => { tile.appendChild(img); requestAnimationFrame(() => requestAnimationFrame(() => tile.classList.add('is-in'))); };
+      img.onload = () => decoded(img).then(() => { tile.appendChild(img); requestAnimationFrame(() => requestAnimationFrame(() => tile.classList.add('is-in'))); });
       img.onerror = () => { const row = tile.parentNode; tile.remove(); if (row && !row.children.length) row.remove(); };
       img.src = Gallery.sized(it, tile.getBoundingClientRect().width * dpr);
     };

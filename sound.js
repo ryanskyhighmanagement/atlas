@@ -98,22 +98,32 @@
   }
 
   // Turn a clip into a seamless loop: the tail is crossfaded into the head, and the level is normalised.
-  function prepare(src) {
+  // The work is done in short slices with a pause between them, so a map flight in progress keeps its frames.
+  const breath = () => new Promise((r) => setTimeout(r, 0));
+  async function prepare(src) {
+    const SLICE = 120000;
     const sr = src.sampleRate, skip = Math.floor(sr * 0.5);
     const n = src.length - skip, x = Math.min(Math.floor(sr * 3), Math.floor(n / 4)), len = n - x;
     const out = ctx.createBuffer(src.numberOfChannels, len, sr);
     let sum = 0, peak = 0;
     for (let c = 0; c < src.numberOfChannels; c++) {
       const a = src.getChannelData(c), o = out.getChannelData(c);
-      for (let i = 0; i < len; i++) {
-        let v = a[skip + i];
-        if (i < x) { const w = i / x; v = v * Math.sqrt(w) + a[skip + len + i] * Math.sqrt(1 - w); }
-        o[i] = v; sum += v * v; if (v > peak) peak = v; else if (-v > peak) peak = -v;
+      for (let from = 0; from < len; from += SLICE) {
+        const to = Math.min(len, from + SLICE);
+        for (let i = from; i < to; i++) {
+          let v = a[skip + i];
+          if (i < x) { const w = i / x; v = v * Math.sqrt(w) + a[skip + len + i] * Math.sqrt(1 - w); }
+          o[i] = v; sum += v * v; if (v > peak) peak = v; else if (-v > peak) peak = -v;
+        }
+        await breath();
       }
     }
     const rms = Math.sqrt(sum / (len * src.numberOfChannels)) || 1e-6;
     const gain = Math.min(TARGET / rms, 0.9 / (peak || 1), 12);
-    for (let c = 0; c < out.numberOfChannels; c++) { const o = out.getChannelData(c); for (let i = 0; i < len; i++) o[i] *= gain; }
+    for (let c = 0; c < out.numberOfChannels; c++) {
+      const o = out.getChannelData(c);
+      for (let from = 0; from < len; from += SLICE * 4) { const to = Math.min(len, from + SLICE * 4); for (let i = from; i < to; i++) o[i] *= gain; await breath(); }
+    }
     return out;
   }
 
@@ -125,8 +135,7 @@
     const job = fetch(url, { headers: { Range: 'bytes=0-999999' } })
       .then((r) => (r.ok ? r : Promise.reject(new Error('range'))))
       .catch(() => fetch(url).then((r) => (r.ok ? r : Promise.reject(new Error('fetch ' + r.status)))))
-      .then((r) => r.arrayBuffer()).then(decode).then((raw) => {
-        const b = prepare(raw);
+      .then((r) => r.arrayBuffer()).then(decode).then(prepare).then((b) => {
         buffers.set(key, b);
         while (buffers.size > 6) buffers.delete(buffers.keys().next().value);
         loading.delete(key);
