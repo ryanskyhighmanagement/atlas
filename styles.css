@@ -118,6 +118,10 @@ body.has-country .cname.is-on { opacity: .5; }
 /* The stitched world picture gets the same tint as the tiles */
 body[data-basemap="esri-dark"] .atlas-under { filter: contrast(1.2) brightness(.85) sepia(.3) hue-rotate(178deg) saturate(1.4); }
 .atlas-under, .atlas-ghost { will-change: transform; }
+/* The world picture sits UNDER the live map tiles and only shows where they have not loaded yet.
+   (Leaflet lifts every canvas in a pane to z-index 100, which put this stretched low-detail picture,
+   with its oversized blurry country names, on top of the sharp tiles.) */
+.leaflet-base-pane canvas.atlas-under { z-index: 1; }
 .leaflet-ghost-pane { pointer-events: none; }
 .atlas-ghost { opacity: 0; transition: opacity .5s var(--ease); }
 

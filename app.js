@@ -28,7 +28,7 @@
   const ESRI_CREDIT = 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a>, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
   const CARTO_CREDIT = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>';
   const BASEMAPS = {
-    'esri-dark': { dark: true, native: 16, retina: true, credit: ESRI_CREDIT, base: esri('Canvas/World_Dark_Gray_Base'), labels: esri('Canvas/World_Dark_Gray_Reference') },
+    'esri-dark': { dark: true, native: 16, retina: false, credit: ESRI_CREDIT, base: esri('Canvas/World_Dark_Gray_Base'), labels: esri('Canvas/World_Dark_Gray_Reference') },
     'esri-light': { dark: false, native: 16, retina: true, credit: ESRI_CREDIT, base: esri('Canvas/World_Light_Gray_Base'), labels: esri('Canvas/World_Light_Gray_Reference') },
     'carto-voyager': { dark: false, native: 20, credit: CARTO_CREDIT, base: carto('rastertiles/voyager_nolabels'), labels: carto('rastertiles/voyager_only_labels') },
     'carto-positron': { dark: false, native: 20, credit: CARTO_CREDIT, base: carto('light_nolabels'), labels: carto('light_only_labels') },
@@ -653,6 +653,8 @@
     map.createPane('labels').style.zIndex = 450;
     map.createPane('ghost').style.zIndex = 399;
     // On high-density screens the base layer loads tiles one zoom level deeper at half size, so coastlines stay sharp.
+    // Double-density tiles are off for the dark map: the country names are part of the map picture, and at
+    // double density they come out at a third of their designed size, too small to read.
     const sharp = !!BASE.retina && L.Browser.retina;
     document.documentElement.style.setProperty('--tile-base', (sharp ? 128.7 : 256.7) + 'px');
     // Tiles are only fetched once the map comes to rest. Fetching them mid-flight (hundreds per second
