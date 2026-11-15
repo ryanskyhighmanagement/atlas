@@ -975,6 +975,26 @@
     el.btnWorld.hidden = !away;
   }
 
+  // Surprise me: fly to a random country, then open one of its places once the map has landed.
+  // Recent picks are kept out of the draw so the same few places do not keep coming up.
+  const seen = []; let surpriseT;
+  function surprise() {
+    if (!map) return;
+    const open = DATA.filter((c) => c.places && c.places.length);
+    if (!open.length) return;
+    let pool = open.filter((c) => c !== state.country && !seen.includes(c.id));
+    if (!pool.length) { seen.length = 0; pool = open.filter((c) => c !== state.country); }
+    if (!pool.length) pool = open;
+    const c = pool[Math.floor(Math.random() * pool.length)], i = Math.floor(Math.random() * c.places.length);
+    seen.push(c.id); if (seen.length > Math.min(30, open.length - 1)) seen.shift();
+    selectCountry(c);
+    toast(`Next stop: <strong>${esc(c.places[i].name)}</strong> in ${esc(c.name)}`, 2400);
+    clearTimeout(surpriseT);
+    // only if nothing else was chosen in the meantime
+    surpriseT = setTimeout(() => { if (state.country === c && !state.place && !state.yours) openPlace(c, i); }, 2100);
+  }
+  $('btnSurprise').addEventListener('click', surprise);
+
   el.btnWorld.addEventListener('click', closeCountry);
   $('brand').addEventListener('click', closeCountry);
   $('btnYours').addEventListener('click', () => (state.yours && !state.country ? closeCountry() : showYours()));
@@ -1571,6 +1591,7 @@
     openPlace: (id, i) => { const c = byId.get(String(id)); if (c && c.places[i]) openPlace(c, i); },
     closePlace: () => closeTop(),
     world: closeCountry,
+    surprise,
     get map() { return map; },
   };
 })();

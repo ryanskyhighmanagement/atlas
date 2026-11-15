@@ -363,6 +363,11 @@ body.is-live .controls { opacity: 1; pointer-events: auto; }
   animation: sink .6s var(--ease-out) both;
 }
 
+/* Surprise me: always there on the map, so it does not replay the entrance animation the World button uses */
+.ctl--surprise { animation: none; }
+.ctl--surprise:active svg { transform: rotate(-20deg); }
+.ctl--surprise svg { transition: transform .3s var(--ease-out); }
+
 /* ---------- Hover label ---------- */
 
 .tip {
@@ -615,6 +620,7 @@ body.is-live .controls { opacity: 1; pointer-events: auto; }
   z-index: 40;
   left: 50%;
   bottom: calc(36px + var(--safe-b) + var(--lift));
+  width: max-content;
   max-width: min(440px, calc(100vw - 32px));
   padding: 12px 18px 13px;
   border-radius: 14px;
@@ -1051,6 +1057,9 @@ body.is-live .sound { opacity: 1; pointer-events: auto; }
   .yours { padding-top: 46px; }
   .controls { left: calc(12px + var(--safe-l)); bottom: calc(30px + var(--safe-b) + var(--lift)); }
   .ctl-group { display: none; } /* pinch to zoom on touch; keeps the thumb zone clear */
+  /* Surprise me and World sit side by side on a phone, and messages rise above them */
+  .controls { flex-direction: row; align-items: center; gap: 8px; }
+  .toast { bottom: calc(86px + var(--safe-b) + var(--lift)); }
 
   .panel {
     top: auto; left: 0; right: 0; bottom: 0;
