@@ -1012,14 +1012,14 @@
      Each photo keeps its author and licence, shown in the photo viewer. */
 
   const Gallery = (function () {
-    const KEY = 'atlas.gallery.v5';
+    const KEY = 'atlas.gallery.v6';
     const MAX = 40;
-    try { ['v1', 'v2', 'v3', 'v4'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
+    try { ['v1', 'v2', 'v3', 'v4', 'v5'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
     let cache = {};
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
 
-    const IMG = 'prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1280&iiextmetadatafilter=DateTimeOriginal%7CArtist%7CLicenseShortName';
+    const IMG = 'prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1280&iiextmetadatafilter=DateTimeOriginal%7CArtist%7CLicenseShortName%7CCategories';
     const WIKI = CONFIG.photoApi;
     const COMMONS = 'https://commons.wikimedia.org/w/api.php';
     const WIKIDATA = 'https://www.wikidata.org/w/api.php';
@@ -1041,7 +1041,8 @@
     }
     function item(p) {
       const i = p.imageinfo[0], m = i.extmetadata || {};
-      return { t: p.title, u: i.thumburl || i.url, w: i.width, h: i.height, a: clean(m.Artist && m.Artist.value), l: clean(m.LicenseShortName && m.LicenseShortName.value), p: i.descriptionurl || '' };
+      const cats = String((m.Categories && m.Categories.value) || '').split('|').map((c) => c.trim().toLowerCase()).filter(Boolean);
+      return { t: p.title, u: i.thumburl || i.url, w: i.width, h: i.height, a: clean(m.Artist && m.Artist.value), l: clean(m.LicenseShortName && m.LicenseShortName.value), p: i.descriptionurl || '', c: cats };
     }
     const pick = (pages, minWidth) => (pages || []).filter((p) => usable(p, minWidth)).map(item);
 
@@ -1061,7 +1062,60 @@
     const skyline = (cat, words) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&generator=search&gsrnamespace=6&gsrlimit=20&gsrsearch=${encodeURIComponent(`deepcat:"${cat}" filetype:bitmap haswbstatement:P6731 ${words}`)}&${IMG}`)
       .then((j) => pick(((j.query && j.query.pages) || []).sort((a, b) => a.index - b.index), 2000).filter((x) => x.w / x.h >= 1.3 && x.w / x.h <= 3.2)).catch(() => []);
     const skylines = (cat) => Promise.all([skyline(cat, 'skyline -night -dusk -twilight -nacht -noche'), skyline(cat, 'skyline night'), skyline(cat, 'skyline dusk')])
-      .then((r) => ({ day: r[0].slice(0, 4), night: r[1].concat(r[2]).filter((x, i, a) => a.findIndex((y) => y.t === x.t) === i).slice(0, 4) }));
+      .then((r) => ({ day: r[0].slice(0, 3), night: r[1].concat(r[2]).filter((x, i, a) => a.findIndex((y) => y.t === x.t) === i).slice(0, 3) }));
+
+    /* ---- Curation: what a gallery is for ----
+       A gallery shows what a place looks like and what it is known for, from different spots and angles.
+       So three rules, applied to every photo by the categories its photographer filed it under:
+       1. No people, sport, vehicles or museum objects. No animals or plants either, except in nature
+          places, where a few are part of the point.
+       2. No more than a handful of the same subject (one church, one tower, one square).
+       3. The same subject never twice in a row. */
+    const PEOPLE = /\b(footballers?|players?|athletes?|cyclists?|swimmers|boxers|wrestlers|coaches|referees|politicians?|actors?|actresses|singers|musicians|presidents?|prime ministers?|mayors|bishops|portraits?|people (of|in|from|by|with|at)|men (of|in|at|with)|women (of|in|at|with)|children (of|in|at)|births|deaths|alumni|matches|tournaments?|championships?|f\.?c\.?|football|soccer|basketball|ice hockey|rugby|cricket|tennis|olympi\w*|marathons?|grand prix|press conferences?|selfies|cosplay|weddings)\b/i;
+    const FAUNA = /\b(insects?|insecta|lepidoptera|coleoptera|diptera|hymenoptera|odonata|hemiptera|orthoptera|butterfl\w*|moths?|beetles?|dragonfl\w*|damselfl\w*|bees|wasps|ants|spiders?|araneae|arachnid\w*|birds?|aves|passeri\w*|mammals?|reptil\w*|lizards?|snakes?|amphibi\w*|frogs?|fish(es)?|animals?|fauna|flora|plants?|flowers?|fungi|mushrooms?|lichens?|species|specimens?|macro photograph\w*|close-ups?|botanical|herbari\w*|zoos?|aquariums?)\b/i;
+    const THINGS = /\b(museum (objects|exhibits|collections)|exhibits|artefacts|artifacts|manuscripts|documents|aircraft|airliners?|locomotives?|rolling stock|automobiles|motorcycles|trucks|registration plates?)\b/i;
+    const META = /^(quality images|featured pictures|valued images?|pictures? of the (day|year)|picture of the|taken with|photographs? (by|taken)|photos? by|files? (by|from|with)|images? (by|from|with)|cc-|self-published|uploaded|media |wiki loves|commons|pages |license|gfdl|panoramics?$|hdr|long exposure|black and white)/;
+    const plain = (x) => String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\([^)]*\)/g, ' ').replace(/,.*$/, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\b(the|a|an|city|old|town|downtown|centre|center|historic|district)\b/g, ' ').replace(/\s+/g, ' ').trim();
+    // "Interior of the Notre-Dame Basilica (Montreal)" and "Pulpit of Notre-Dame Basilica (Montreal)" are one subject
+    const subjectOf = (cat) => { const m = cat.match(/^.*\b(?:of|in|at|from|on|inside|near)\b\s+(.+)$/); return plain(m ? m[1] : cat); };
+    const stemOf = (title) => plain(String(title).replace(/^File:/i, '').replace(/\.[a-z]+$/i, '').replace(/\d+/g, ' ')).split(' ').filter((w) => w.length > 2).slice(0, 3).join(' ');
+
+    function curate(list, p, roots) {
+      const nature = /^(Nature|Mountain|Beach)$/.test(p.category);
+      const generic = new Set(roots.concat([p.name, 'fauna']).map(plain).filter(Boolean));
+      const about = (x) => (x.c || []).join(' | ') + ' | ' + x.t;
+      const ok = list.filter((x) => {
+        if (!x.c) return true;                                  // the place's own listed photos
+        const text = about(x);
+        if (PEOPLE.test(text) || THINGS.test(text)) return false;
+        return nature || !FAUNA.test(text);
+      });
+      const subjects = (x) => {
+        const set = new Set();
+        (x.c || []).forEach((c) => { if (META.test(c) || /\b(19|20)\d\d\b/.test(c)) return; const sub = subjectOf(c); if (sub && !generic.has(sub)) set.add(sub); });
+        if (nature && FAUNA.test(about(x))) set.add('~wildlife');      // wildlife in a nature place counts as one subject
+        return [...set];
+      };
+      const count = new Map(), stems = new Map(), out = [], left = [];
+      const take = (cap) => (x) => {
+        const subs = x._s || (x._s = subjects(x)), stem = stemOf(x.t);
+        if (subs.some((k) => (count.get(k) || 0) >= cap) || (stems.get(stem) || 0) >= Math.min(cap, 3)) { left.push(x); return; }
+        subs.forEach((k) => count.set(k, (count.get(k) || 0) + 1));
+        stems.set(stem, (stems.get(stem) || 0) + 1);
+        out.push(x);
+      };
+      ok.forEach(take(4));
+      if (out.length < 8) left.splice(0).forEach(take(5));       // thin galleries may go to five of a kind, never more
+      // spread: the next photo should not share a subject with the one before it
+      const spread = [], pool = out.slice();
+      while (pool.length) {
+        const prev = spread[spread.length - 1];
+        let i = prev ? pool.findIndex((x) => !x._s.some((k) => prev._s.indexOf(k) >= 0)) : 0;
+        if (i < 0) i = 0;
+        spread.push(pool.splice(i, 1)[0]);
+      }
+      return spread;
+    }
 
     const titlesOf = (p) => {
       const t = [];
@@ -1079,15 +1133,21 @@
       const cats = Promise.all(titles.map(category)).then((list) => list.filter((c, i) => c && list.indexOf(c) === i));
       const rated = cats.then((list) => Promise.all(list.map((c) => fromCommons(c, true))));
       const sky = p.category === 'City' ? cats.then((list) => (list[0] ? skylines(list[0]) : { day: [], night: [] })) : Promise.resolve({ day: [], night: [] });
-      return Promise.all([rated, Promise.all(titles.map(fromArticle)), sky]).then((res) => {
-        const seen = new Set(), out = own.slice();
-        const add = (x) => { if (x && !seen.has(x.t) && out.length < MAX) { seen.add(x.t); out.push(x); } };
-        const weave = (lists) => { const n = Math.max.apply(null, lists.map((l) => l.length).concat(0)); for (let i = 0; i < n; i++) lists.forEach((l) => add(l[i])); };
-        weave([res[2].day, res[2].night]);   // cities open with their skyline: day, night, day, night
-        weave(res[0]);      // reviewer-rated photos first
-        weave(res[1]);      // then the articles' own photos
-        if (out.length >= 10) return out;
-        return cats.then((list) => (list[0] ? fromCommons(list[0], false) : [])).then((extra) => { extra.slice(0, Math.max(0, 14 - out.length)).forEach(add); return out; });
+      return Promise.all([rated, Promise.all(titles.map(fromArticle)), sky, cats]).then((res) => {
+        const seen = new Set(), sky2 = [], rest = [];
+        const into = (arr) => (x) => { if (x && !seen.has(x.t)) { seen.add(x.t); arr.push(x); } };
+        const weave = (lists, arr) => { const n = Math.max.apply(null, lists.map((l) => l.length).concat(0)); for (let i = 0; i < n; i++) lists.forEach((l) => into(arr)(l[i])); };
+        weave([res[2].day, res[2].night], sky2);   // cities open with their skyline: day, night, day, night
+        weave(res[0], rest);                       // reviewer-rated photos first
+        weave(res[1], rest);                       // then the articles' own photos
+        const roots = titles.concat(res[3]);
+        const done = (extra) => {
+          const body = curate(own.concat(rest, extra || []), p, roots);
+          return sky2.concat(body).slice(0, MAX).map((x) => { const y = Object.assign({}, x); delete y.c; delete y._s; return y; });
+        };
+        const first = done();
+        if (first.length >= 6) return first;                 // quality over quantity: unrated photos only fill a nearly empty gallery
+        return (res[3][0] ? fromCommons(res[3][0], false) : Promise.resolve([])).then((extra) => done(extra.filter((x) => !seen.has(x.t)).slice(0, 14)));
       });
     }
 
@@ -1116,7 +1176,7 @@
       return it.u.replace(/\/\d+px-/, '/' + step + 'px-');
     }
 
-    return { load, sized, forget: (p) => { delete cache[keyOf(p)]; } };
+    return { load, sized, curate, forget: (p) => { delete cache[keyOf(p)]; } };
   })();
 
   /* ---------- Layers: stage and photo viewer close with the browser Back button too ---------- */
@@ -1592,6 +1652,7 @@
     closePlace: () => closeTop(),
     world: closeCountry,
     surprise,
+    gallery: Gallery,
     get map() { return map; },
   };
 })();
