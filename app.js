@@ -1048,8 +1048,10 @@
     }
     const pick = (pages, minWidth) => (pages || []).filter((p) => usable(p, minWidth)).map(item);
 
-    const fromArticle = (title) => json(`${WIKI}?action=query&format=json&formatversion=2&origin=*&redirects=1&generator=images&gimlimit=50&titles=${encodeURIComponent(title)}&${IMG}`)
-      .then((j) => pick(j.query && j.query.pages, 1600)).catch(() => []);
+    // The photos an article uses. The article only names them; their details (and what they depict) come from Commons.
+    const fromArticle = (title) => json(`${WIKI}?action=query&format=json&formatversion=2&origin=*&redirects=1&prop=images&imlimit=50&titles=${encodeURIComponent(title)}`)
+      .then((j) => { const pg = j.query && j.query.pages && j.query.pages[0]; const names = ((pg && pg.images) || []).map((i) => i.title).filter((t) => /\.jpe?g$/i.test(t) && !BAD.test(t) && !BAD.test(words(t))).slice(0, 40); if (!names.length) return []; return json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&titles=${names.map(encodeURIComponent).join('%7C')}&${IMG}`).then((c) => pick(c.query && c.query.pages, 1600)); })
+      .catch(() => []);
 
     const category = (title) => json(`${WIKI}?action=query&format=json&formatversion=2&origin=*&redirects=1&prop=pageprops&ppprop=wikibase_item&titles=${encodeURIComponent(title)}`)
       .then((j) => { const pg = j.query && j.query.pages && j.query.pages[0]; const q = pg && pg.pageprops && pg.pageprops.wikibase_item; if (!q) return null; return json(`${WIKIDATA}?action=wbgetclaims&format=json&origin=*&property=P373&entity=${q}`); })
@@ -1109,6 +1111,7 @@
     const NOBODY = /^(man|woman|men|women|human|person|people|child|children|girl|boy|baby|crowd|pedestrian|tourist|portrait|selfie|face|smile|police officer|soldier|worker)s?$/i;
     const VEHICLE = /^(car|automobile|bus|truck|lorry|van|taxi|motorcycle|scooter|bicycle|bike|aircraft|airplane|aeroplane|airliner|helicopter|locomotive|train|tram|wagon|tractor)s?$/i;
     const AREA = /\b(city|town|village|capital|country|sovereign state|state of|province|borough|municipality|commune|county|region|island|archipelago|neighbou?rhood|district|department|canton|prefecture|metropolis|settlement|human settlement|continent)\b/i;
+    const PROP = /^(an? |the )?(\S+ ){0,3}(painting|drawing|engraving|lithograph|watercolou?r|etching|woodcut|illustration|poster|film|album|novel|book|television|video game|automobile|car model|sports car|concept car|aircraft|airliner|locomotive|ship|vessel|session|election|protest|demonstration|tournament|conference|summit|company|brand)\b/i;
     const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape)\b/i;
 
     function curate(list, p, roots) {
@@ -1128,7 +1131,7 @@
           if (PERSON.test(k.d) || NOBODY.test(k.label)) return null;
           if (ANIMAL.test(k.d)) { if (!nature) return null; wild = true; continue; }
           if (PLANT.test(k.d)) { plant = true; continue; }
-          if (VEHICLE.test(k.label)) { vehicle = true; continue; }
+          if (VEHICLE.test(k.label) || PROP.test(k.d)) { vehicle = true; continue; }
           if (!/^[A-Z0-9]/.test(k.label)) continue;             // a common noun ("sky", "tower"): not a subject
           const key = plain(k.label);
           if (!key || generic.has(key) || AREA.test(k.d)) { area++; continue; }
@@ -1152,7 +1155,8 @@
         stems.set(stem, (stems.get(stem) || 0) + 1);
         out.push(x);
       };
-      ok.forEach(take(3, 1));
+      ok.forEach(take(3, 0));                                    // photos of named sights and plain views first
+      if (out.length < 12) left.splice(0).forEach(take(3, 1));   // then photos nobody has labelled
       if (out.length < 8) left.splice(0).forEach(take(4, 2));    // thin galleries may go to four of a kind and take weaker photos
       // spread: the next photo should not share a subject with the one before it
       const spread = [], pool = out.slice();
@@ -1188,7 +1192,7 @@
         weave([res[2].day, res[2].night], sky2);   // cities open with their skyline: day, night, day, night
         weave(res[0], rest);                       // reviewer-rated photos first
         weave(res[1], rest);                       // then the articles' own photos
-        const roots = titles.concat(res[3]);
+        const roots = [titles[0], res[3][0]].filter(Boolean);   // only the place itself is 'generic'; its listed sights are capped like any other subject
         const strip = (x) => { const y = Object.assign({}, x); delete y.c; delete y._s; delete y._r; delete y.d; delete y.id; return y; };
         const done = (extra) => describe(rest.concat(sky2, extra || [])).then(() => {
           // a skyline photo's subject is used up too, so the body does not repeat it
