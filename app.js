@@ -1023,7 +1023,7 @@
     const WIKI = CONFIG.photoApi;
     const COMMONS = 'https://commons.wikimedia.org/w/api.php';
     const WIKIDATA = 'https://www.wikidata.org/w/api.php';
-    const BAD = /\b(maps?|flag|logo|seal|icon|diagram|chart|portrait|retrato|signature|stamp|montage|collage|emblem|symbol|banner|scheme|satellite|landsat|sentinel|nasa|astronaut|nobg|bts|painting|engraving|lithograph|grabado|plaque|placa|poster|cover|ticket|coin|banknote)\b|locator|orthographic|coat of arms|escudo|bandera|mapa|karte|wappen|blason|\b(1[5-8]\d\d|19[0-6]\d)\b/i;
+    const BAD = /\b(maps?|flag|logo|seal|icon|diagram|chart|portrait|retrato|signature|stamp|montage|collage|emblem|symbol|banner|scheme|satellite|landsat|sentinel|nasa|astronaut|nobg|bts|capitulation|mapillary|painting|engraving|lithograph|grabado|plaque|placa|poster|cover|ticket|coin|banknote)\b|locator|orthographic|coat of arms|escudo|bandera|mapa|karte|wappen|blason|\b(1[5-8]\d\d|19[0-6]\d)\b/i;
     const NEG = ' -rugby -football -futbol -soccer -tournament -torneo -championship -archery -match -team -player -cup -copa -olympic -marathon -cycling -concert -protest -election -president -minister -portrait -person -people';
 
     const json = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error('gallery ' + r.status); return r.json(); });
@@ -1116,7 +1116,7 @@
     const DULL = /\b(airports?|aeropuerto|a[eé]roport|runways?|parking|car parks?|highways?|motorways?|interchange|shopping (mall|centre|center)|supermarkets?|office buildings?|hospitals?|metro stations?|subway stations?|bus (stations?|stops?)|platforms?|power (plants?|stations?)|factor(y|ies)|warehouses?|containers?|signs?|smog|pollution|garbage|trash|basura|construction sites?|demolition|protests?|marchas?|demonstrations?|mapillary)\b/i;
     const FOOD = /\b(food|dish(es)?|cuisine|gastronom\w+|platos?|comida|bandeja|breakfast|lunch|dinner|desserts?|drinks?|beers?|coffee|menu)\b/i;
     const km = (a, b) => { const R = 6371, r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r, h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
-    const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape)\b/i;
+    const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape|drone?|a[eé]rea|vista|panor[aá]mica|atardecer|amanecer|noche|nocturna|luftbild|blick|vue|from above|seen from)\b/i;
 
     function curate(list, p, roots) {
       const nature = /^(Nature|Mountain|Beach)$/.test(p.category);
@@ -1149,7 +1149,7 @@
         if (nature && wild) subs.add('~wildlife');              // wildlife in a nature place counts as one subject
         // 0 a plain view of the place, 1 a named sight, 2 nobody has said what it shows, 3 weak or dull.
         // Close-up details (a door, a ceiling, a plaque) drop one step: they come after the wider pictures.
-        let rank = SCENIC.test(text) ? 0 : named ? 1 : ((x.d || []).length && !area ? 3 : 2);
+        let rank = SCENIC.test(text) ? 0 : named ? 1 : 2;
         if (DULL.test(text)) rank = 3; else if (DETAIL.test(text)) rank = Math.min(3, rank + 1);
         return { subs: [...subs], rank };
       };
