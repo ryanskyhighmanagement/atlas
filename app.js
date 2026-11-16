@@ -1012,9 +1012,9 @@
      Each photo keeps its author and licence, shown in the photo viewer. */
 
   const Gallery = (function () {
-    const KEY = 'atlas.gallery.v7';
+    const KEY = 'atlas.gallery.v8';
     const MAX = 40;
-    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
+    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
     let cache = {};
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
@@ -1113,10 +1113,16 @@
     const AREA = /\b(city|town|village|capital|country|sovereign state|state of|province|borough|municipality|commune|county|region|island|archipelago|neighbou?rhood|district|department|canton|prefecture|metropolis|settlement|human settlement|continent)\b/i;
     const PROP = /^(an? |the )?(\S+ ){0,3}(painting|drawing|engraving|lithograph|watercolou?r|etching|woodcut|illustration|poster|film|album|novel|book|television|video game|automobile|car model|sports car|concept car|aircraft|airliner|locomotive|ship|vessel|session|election|protest|demonstration|tournament|conference|summit|company|brand)\b/i;
     const DETAIL = /\b(details?|reliefs?|plaques?|tablets?|inscriptions?|doors?|portals?|windows?|ceilings?|altars?|pulpits?|organs?|capitals|mosaics?|tiles|azulejos|interiors?|inside|nave|stairs|staircases?|lobby|rooms?|halls?|close-?up)\b/i;
-    const DULL = /\b(airports?|aeropuerto|a[eé]roport|runways?|parking|car parks?|highways?|motorways?|interchange|shopping (mall|centre|center)|supermarkets?|office buildings?|hospitals?|metro stations?|subway stations?|bus (stations?|stops?)|platforms?|power (plants?|stations?)|factor(y|ies)|warehouses?|containers?|signs?|smog|pollution|garbage|trash|basura|construction sites?|demolition|protests?|marchas?|demonstrations?|mapillary)\b/i;
+    const DULL = /\b(airports?|aeropuerto|a[eé]roport|runways?|parking|car parks?|highways?|motorways?|interchange|shopping (mall|centre|center)|supermarkets?|office buildings?|hospitals?|metro stations?|subway stations?|bus (stations?|stops?)|platforms?|power (plants?|stations?)|factor(y|ies)|warehouses?|containers?|signs?|smog|pollution|garbage|trash|basura|construction sites?|demolition|protests?|marchas?|demonstrations?|mapillary|stadiums?|estadios?|est[aá]dio|arenas?|manhole|drain covers?|sewer)\b/i;
     const FOOD = /\b(food|dish(es)?|cuisine|gastronom\w+|platos?|comida|bandeja|breakfast|lunch|dinner|desserts?|drinks?|beers?|coffee|menu)\b/i;
     const km = (a, b) => { const R = 6371, r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r, h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
     const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape|drone?|a[eé]rea|vista|panor[aá]mica|atardecer|amanecer|noche|nocturna|luftbild|blick|vue|from above|seen from)\b/i;
+
+    // A place's skip list holds short fingerprints of file names (or plain pieces of them): photos that were
+    // looked at and judged wrong for that place.
+    const fp = (t) => { let h = 2166136261; for (let i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0).toString(36); };
+    const skipped = (p, x) => !!(p.skip && p.skip.length) && (p.skip.indexOf(fp(x.t)) >= 0 || p.skip.some((bit) => bit.length > 8 && x.t.indexOf(bit) >= 0));
+    const farOff = (p, x, nature) => !!(x.g && isFinite(p.lat) && isFinite(p.lng) && km(x.g, [p.lat, p.lng]) > (nature ? 250 : p.category === 'City' ? 60 : 90));
 
     function curate(list, p, roots) {
       const nature = /^(Nature|Mountain|Beach)$/.test(p.category);
@@ -1126,9 +1132,9 @@
       const read = (x) => {
         if (!x.c) return { subs: [], rank: 0 };                 // the place's own listed photos
         const text = about(x);
-        if ((p.skip || []).some((bit) => x.t.indexOf(bit) >= 0)) return null;
+        if (skipped(p, x)) return null;
         // taken somewhere else entirely (a city's sculptor has works abroad, a car is named after the city)
-        if (x.g && isFinite(p.lat) && isFinite(p.lng) && km(x.g, [p.lat, p.lng]) > (nature ? 250 : p.category === 'City' ? 60 : 90)) return null;
+        if (farOff(p, x, nature)) return null;
         if (PEOPLE.test(text) || THINGS.test(text) || (p.category !== 'Culture' && FOOD.test(text))) return null;
         const textWild = FAUNA.test(text);
         if (textWild && !nature) return null;
@@ -1199,9 +1205,11 @@
         .then((c) => { const got = ((c.query && c.query.pages) || []).filter((pg) => pg.imageinfo && pg.imageinfo[0]).map(item); const norm = (t) => t.replace(/^File:/, '').replace(/_/g, ' '); return p.lead.map((t) => got.find((x) => norm(x.t) === norm(t))).filter(Boolean).map((x) => { delete x.c; delete x.id; return x; }); }).catch(() => []) : Promise.resolve([]);
       return Promise.all([rated, Promise.all(titles.map(fromArticle)), sky, cats, lead]).then((res) => {
         const seen = new Set(), sky2 = [], rest = [];
-        const skipped = (x) => (p.skip || []).some((bit) => x.t.indexOf(bit) >= 0);
+        const fine = (x) => !skipped(p, x) && !farOff(p, x, false);
         res[4].forEach((x) => { if (!seen.has(x.t)) { seen.add(x.t); sky2.push(x); } });
-        res[2].day = res[2].day.filter((x) => !skipped(x)); res[2].night = res[2].night.filter((x) => !skipped(x));
+        // with hand-picked openers in place, two skyline photos each for day and night are enough
+        const each = res[4].length ? 2 : 3;
+        res[2].day = res[2].day.filter(fine).slice(0, each); res[2].night = res[2].night.filter(fine).slice(0, each);
         const into = (arr) => (x) => { if (x && !seen.has(x.t)) { seen.add(x.t); arr.push(x); } };
         const weave = (lists, arr) => { const n = Math.max.apply(null, lists.map((l) => l.length).concat(0)); for (let i = 0; i < n; i++) lists.forEach((l) => into(arr)(l[i])); };
         weave([res[2].day, res[2].night], sky2);   // cities open with their skyline: day, night, day, night
@@ -1246,7 +1254,7 @@
       return it.u.replace(/\/\d+px-/, '/' + step + 'px-');
     }
 
-    return { load, sized, curate, describe, known, forget: (p) => { delete cache[keyOf(p)]; } };
+    return { load, sized, curate, describe, known, fp, forget: (p) => { delete cache[keyOf(p)]; } };
   })();
 
   /* ---------- Layers: stage and photo viewer close with the browser Back button too ---------- */
