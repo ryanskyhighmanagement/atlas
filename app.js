@@ -1019,7 +1019,7 @@
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
 
-    const IMG = 'prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1280&iiextmetadatafilter=DateTimeOriginal%7CArtist%7CLicenseShortName%7CCategories';
+    const IMG = 'prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1280&iiextmetadatafilter=DateTimeOriginal%7CArtist%7CLicenseShortName%7CCategories%7CGPSLatitude%7CGPSLongitude';
     const WIKI = CONFIG.photoApi;
     const COMMONS = 'https://commons.wikimedia.org/w/api.php';
     const WIKIDATA = 'https://www.wikidata.org/w/api.php';
@@ -1044,7 +1044,7 @@
     function item(p) {
       const i = p.imageinfo[0], m = i.extmetadata || {};
       const cats = String((m.Categories && m.Categories.value) || '').split('|').map((c) => c.trim().toLowerCase()).filter(Boolean);
-      return { t: p.title, u: i.thumburl || i.url, w: i.width, h: i.height, a: clean(m.Artist && m.Artist.value), l: clean(m.LicenseShortName && m.LicenseShortName.value), p: i.descriptionurl || '', c: cats, id: p.pageid };
+      return { t: p.title, u: i.thumburl || i.url, w: i.width, h: i.height, a: clean(m.Artist && m.Artist.value), l: clean(m.LicenseShortName && m.LicenseShortName.value), p: i.descriptionurl || '', c: cats, id: p.pageid, g: (m.GPSLatitude && m.GPSLongitude && isFinite(+m.GPSLatitude.value) && isFinite(+m.GPSLongitude.value)) ? [+m.GPSLatitude.value, +m.GPSLongitude.value] : null };
     }
     const pick = (pages, minWidth) => (pages || []).filter((p) => usable(p, minWidth)).map(item);
 
@@ -1112,6 +1112,10 @@
     const VEHICLE = /^(car|automobile|bus|truck|lorry|van|taxi|motorcycle|scooter|bicycle|bike|aircraft|airplane|aeroplane|airliner|helicopter|locomotive|train|tram|wagon|tractor)s?$/i;
     const AREA = /\b(city|town|village|capital|country|sovereign state|state of|province|borough|municipality|commune|county|region|island|archipelago|neighbou?rhood|district|department|canton|prefecture|metropolis|settlement|human settlement|continent)\b/i;
     const PROP = /^(an? |the )?(\S+ ){0,3}(painting|drawing|engraving|lithograph|watercolou?r|etching|woodcut|illustration|poster|film|album|novel|book|television|video game|automobile|car model|sports car|concept car|aircraft|airliner|locomotive|ship|vessel|session|election|protest|demonstration|tournament|conference|summit|company|brand)\b/i;
+    const DETAIL = /\b(details?|reliefs?|plaques?|tablets?|inscriptions?|doors?|portals?|windows?|ceilings?|altars?|pulpits?|organs?|capitals|mosaics?|tiles|azulejos|interiors?|inside|nave|stairs|staircases?|lobby|rooms?|halls?|close-?up)\b/i;
+    const DULL = /\b(airports?|aeropuerto|a[eé]roport|runways?|parking|car parks?|highways?|motorways?|interchange|shopping (mall|centre|center)|supermarkets?|office buildings?|hospitals?|metro stations?|subway stations?|bus (stations?|stops?)|platforms?|power (plants?|stations?)|factor(y|ies)|warehouses?|containers?|signs?|smog|pollution|garbage|trash|basura|construction sites?|demolition|protests?|marchas?|demonstrations?|mapillary)\b/i;
+    const FOOD = /\b(food|dish(es)?|cuisine|gastronom\w+|platos?|comida|bandeja|breakfast|lunch|dinner|desserts?|drinks?|beers?|coffee|menu)\b/i;
+    const km = (a, b) => { const R = 6371, r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r, h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
     const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape)\b/i;
 
     function curate(list, p, roots) {
@@ -1122,7 +1126,10 @@
       const read = (x) => {
         if (!x.c) return { subs: [], rank: 0 };                 // the place's own listed photos
         const text = about(x);
-        if (PEOPLE.test(text) || THINGS.test(text)) return null;
+        if ((p.skip || []).some((bit) => x.t.indexOf(bit) >= 0)) return null;
+        // taken somewhere else entirely (a city's sculptor has works abroad, a car is named after the city)
+        if (x.g && isFinite(p.lat) && isFinite(p.lng) && km(x.g, [p.lat, p.lng]) > (nature ? 250 : p.category === 'City' ? 60 : 90)) return null;
+        if (PEOPLE.test(text) || THINGS.test(text) || (p.category !== 'Culture' && FOOD.test(text))) return null;
         const textWild = FAUNA.test(text);
         if (textWild && !nature) return null;
         const subs = new Set(); let named = 0, area = 0, wild = textWild, plant = false, vehicle = false;
@@ -1140,8 +1147,10 @@
         if (!nature && (plant || vehicle) && !named) return null;
         (x.c || []).forEach((c) => { if (META.test(c)) return; const sub = subjectOf(c.replace(/^\s*(19|20)\d\d\s+/, '').replace(/\s+(in|during|from|by)\s+(19|20)\d\d\b.*$/, '').replace(/\s*\(?(19|20)\d\d\)?\s*$/, '')); if (sub && sub.length > 2 && !/^\d+$/.test(sub) && !generic.has(sub)) subs.add(sub); });
         if (nature && wild) subs.add('~wildlife');              // wildlife in a nature place counts as one subject
-        // strong: shows a named sight, or is plainly a view of the place. weak: nothing says what it shows.
-        const rank = (named || SCENIC.test(text)) ? 0 : ((x.d || []).length && !area ? 2 : 1);
+        // 0 a plain view of the place, 1 a named sight, 2 nobody has said what it shows, 3 weak or dull.
+        // Close-up details (a door, a ceiling, a plaque) drop one step: they come after the wider pictures.
+        let rank = SCENIC.test(text) ? 0 : named ? 1 : ((x.d || []).length && !area ? 3 : 2);
+        if (DULL.test(text)) rank = 3; else if (DETAIL.test(text)) rank = Math.min(3, rank + 1);
         return { subs: [...subs], rank };
       };
       const ok = [];
@@ -1155,9 +1164,9 @@
         stems.set(stem, (stems.get(stem) || 0) + 1);
         out.push(x);
       };
-      ok.forEach(take(3, 0));                                    // photos of named sights and plain views first
-      if (out.length < 12) left.splice(0).forEach(take(3, 1));   // then photos nobody has labelled
-      if (out.length < 8) left.splice(0).forEach(take(4, 2));    // thin galleries may go to four of a kind and take weaker photos
+      ok.forEach(take(3, 1));                                    // views of the place, then its named sights
+      if (out.length < 12) left.splice(0).forEach(take(3, 2));   // then photos nobody has labelled
+      if (out.length < 8) left.splice(0).forEach(take(4, 3));    // thin galleries may go to four of a kind and take weaker photos
       // spread: the next photo should not share a subject with the one before it
       const spread = [], pool = out.slice();
       while (pool.length) {
@@ -1176,7 +1185,7 @@
       (p.more || []).forEach((m) => { if (t.indexOf(m) < 0) t.push(m); });
       return t.slice(0, 5);
     };
-    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length;
+    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|');
 
     function build(p) {
       const own = (p.photos || []).map((u) => ({ t: u, u, w: 0, h: 0, a: '', l: '', p: u }));
@@ -1185,8 +1194,14 @@
       const cats = Promise.all(titles.map(category)).then((list) => list.filter((c, i) => c && list.indexOf(c) === i));
       const rated = cats.then((list) => Promise.all(list.map((c) => fromCommons(c, true))));
       const sky = p.category === 'City' ? cats.then((list) => (list[0] ? skylines(list[0]) : { day: [], night: [] })) : Promise.resolve({ day: [], night: [] });
-      return Promise.all([rated, Promise.all(titles.map(fromArticle)), sky, cats]).then((res) => {
+      // hand-picked opening photos, named in the data: the best views of a place that no reviewer has rated
+      const lead = (p.lead && p.lead.length) ? json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&titles=${p.lead.map((t) => encodeURIComponent('File:' + t.replace(/^File:/, ''))).join('%7C')}&${IMG}`)
+        .then((c) => { const got = ((c.query && c.query.pages) || []).filter((pg) => pg.imageinfo && pg.imageinfo[0]).map(item); const norm = (t) => t.replace(/^File:/, '').replace(/_/g, ' '); return p.lead.map((t) => got.find((x) => norm(x.t) === norm(t))).filter(Boolean).map((x) => { delete x.c; delete x.id; return x; }); }).catch(() => []) : Promise.resolve([]);
+      return Promise.all([rated, Promise.all(titles.map(fromArticle)), sky, cats, lead]).then((res) => {
         const seen = new Set(), sky2 = [], rest = [];
+        const skipped = (x) => (p.skip || []).some((bit) => x.t.indexOf(bit) >= 0);
+        res[4].forEach((x) => { if (!seen.has(x.t)) { seen.add(x.t); sky2.push(x); } });
+        res[2].day = res[2].day.filter((x) => !skipped(x)); res[2].night = res[2].night.filter((x) => !skipped(x));
         const into = (arr) => (x) => { if (x && !seen.has(x.t)) { seen.add(x.t); arr.push(x); } };
         const weave = (lists, arr) => { const n = Math.max.apply(null, lists.map((l) => l.length).concat(0)); for (let i = 0; i < n; i++) lists.forEach((l) => into(arr)(l[i])); };
         weave([res[2].day, res[2].night], sky2);   // cities open with their skyline: day, night, day, night
