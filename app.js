@@ -1061,8 +1061,12 @@
     // Skylines for cities, by day and by night. Reviewer-rated photos only, wide format, so nothing weak gets in.
     const skyline = (cat, words) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&generator=search&gsrnamespace=6&gsrlimit=20&gsrsearch=${encodeURIComponent(`deepcat:"${cat}" filetype:bitmap haswbstatement:P6731 ${words}`)}&${IMG}`)
       .then((j) => pick(((j.query && j.query.pages) || []).sort((a, b) => a.index - b.index), 2000).filter((x) => x.w / x.h >= 1.3 && x.w / x.h <= 3.2)).catch(() => []);
-    const skylines = (cat) => Promise.all([skyline(cat, 'skyline -night -dusk -twilight -nacht -noche'), skyline(cat, 'skyline night'), skyline(cat, 'skyline dusk')])
-      .then((r) => ({ day: r[0].slice(0, 3), night: r[1].concat(r[2]).filter((x, i, a) => a.findIndex((y) => y.t === x.t) === i).slice(0, 3) }));
+    // A city opens with its best wide views: skyline first, then rated cityscapes and panoramas (lookouts, miradores),
+    // by day and by night.
+    const DAY = ' -night -dusk -twilight -nacht -noche -nocturna';
+    const uniq = (list) => list.filter((x, i, a) => a.findIndex((y) => y.t === x.t) === i);
+    const skylines = (cat) => Promise.all([skyline(cat, 'skyline' + DAY), skyline(cat, 'skyline night'), skyline(cat, 'skyline dusk'), skyline(cat, 'cityscape' + DAY), skyline(cat, 'panorama' + DAY), skyline(cat, 'cityscape night')])
+      .then((r) => ({ day: uniq(r[0].slice(0, 2).concat(r[3].slice(0, 2), r[4].slice(0, 2), r[0], r[3], r[4])).slice(0, 4), night: uniq(r[1].concat(r[2], r[5])).slice(0, 3) }));
 
     /* ---- Curation: what a gallery is for ----
        A gallery shows what a place looks like and what it is known for, from different spots and angles.

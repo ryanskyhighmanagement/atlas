@@ -179,7 +179,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Medellín", lat: 6.2442, lng: -75.5812, category: "City", sound: "city",
         tagline: "The City of Eternal Spring",
         description: "Medellín fills a green Andean valley at about 1,500 metres, which keeps the air spring-warm all year. Ride the Metrocable gondolas up over the hillside barrios, walk the street-art-covered outdoor escalators of Comuna 13, and stand among the 23 rounded bronze sculptures that Fernando Botero gave to his home city in Plaza Botero. In August the Feria de las Flores covers the streets in flowers.",
-        bestTime: "Dec–Mar (driest months)", image: "wiki:Medellín" },
+        bestTime: "Dec–Mar (driest months)", image: "wiki:Medellín", more: ["El Poblado", "Cerro Nutibara", "Pueblito Paisa"] },
       { name: "Bogotá", lat: 4.7110, lng: -74.0721, category: "City", sound: "city",
         tagline: "A high Andean capital under Monserrate",
         description: "Bogotá sprawls across a plateau 2,640 metres up, with the green wall of the eastern hills behind it and cool, thin air all year. Wander the steep colonial streets of La Candelaria, where almost every wall is a mural, and see tens of thousands of pre-Columbian gold pieces glowing in the dark rooms of the Gold Museum. Ride the cable car up Monserrate at dusk and watch the city lights switch on to the horizon.",
