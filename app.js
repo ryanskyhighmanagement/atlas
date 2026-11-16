@@ -1012,9 +1012,9 @@
      Each photo keeps its author and licence, shown in the photo viewer. */
 
   const Gallery = (function () {
-    const KEY = 'atlas.gallery.v6';
+    const KEY = 'atlas.gallery.v7';
     const MAX = 40;
-    try { ['v1', 'v2', 'v3', 'v4', 'v5'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
+    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
     let cache = {};
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
@@ -1023,18 +1023,20 @@
     const WIKI = CONFIG.photoApi;
     const COMMONS = 'https://commons.wikimedia.org/w/api.php';
     const WIKIDATA = 'https://www.wikidata.org/w/api.php';
-    const BAD = /\b(maps?|flag|logo|seal|icon|diagram|chart|portrait|retrato|signature|stamp|montage|collage|emblem|symbol|banner|scheme|satellite|landsat|nasa|painting|engraving|lithograph|grabado|plaque|placa|poster|cover|ticket|coin|banknote)\b|locator|orthographic|coat of arms|escudo|bandera|mapa|karte|wappen|blason|\b(1[5-8]\d\d|19[0-6]\d)\b/i;
+    const BAD = /\b(maps?|flag|logo|seal|icon|diagram|chart|portrait|retrato|signature|stamp|montage|collage|emblem|symbol|banner|scheme|satellite|landsat|sentinel|nasa|astronaut|nobg|bts|painting|engraving|lithograph|grabado|plaque|placa|poster|cover|ticket|coin|banknote)\b|locator|orthographic|coat of arms|escudo|bandera|mapa|karte|wappen|blason|\b(1[5-8]\d\d|19[0-6]\d)\b/i;
     const NEG = ' -rugby -football -futbol -soccer -tournament -torneo -championship -archery -match -team -player -cup -copa -olympic -marathon -cycling -concert -protest -election -president -minister -portrait -person -people';
 
     const json = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error('gallery ' + r.status); return r.json(); });
     const clean = (html) => String(html || '').replace(/<[^>]*>/g, ' ').replace(/&amp;/g, '&').replace(/&[a-z#0-9]+;/gi, ' ').replace(/\s+/g, ' ').trim().slice(0, 70);
 
+    // "HistoricPlacesPlaque1844" hides its words from a word search; this spells them out
+    const words = (t) => String(t).replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([A-Za-z])(\d)/g, '$1 $2').replace(/(\d)([A-Za-z])/g, '$1 $2').replace(/[_-]+/g, ' ');
     function usable(p, minWidth) {
       const i = p.imageinfo && p.imageinfo[0];
       if (!i || i.mime !== 'image/jpeg' || i.width < minWidth || i.height < 900) return false;
       const r = i.width / i.height;
       if (r < 0.62 || r > 2.6) return false;
-      if (BAD.test(p.title)) return false;
+      if (BAD.test(p.title) || BAD.test(words(p.title))) return false;
       const d = i.extmetadata && i.extmetadata.DateTimeOriginal && i.extmetadata.DateTimeOriginal.value;
       const y = d && (String(d).match(/\b(1[5-9]\d\d|20\d\d)\b/) || [])[1];
       return !(y && +y < 2000);
@@ -1042,7 +1044,7 @@
     function item(p) {
       const i = p.imageinfo[0], m = i.extmetadata || {};
       const cats = String((m.Categories && m.Categories.value) || '').split('|').map((c) => c.trim().toLowerCase()).filter(Boolean);
-      return { t: p.title, u: i.thumburl || i.url, w: i.width, h: i.height, a: clean(m.Artist && m.Artist.value), l: clean(m.LicenseShortName && m.LicenseShortName.value), p: i.descriptionurl || '', c: cats };
+      return { t: p.title, u: i.thumburl || i.url, w: i.width, h: i.height, a: clean(m.Artist && m.Artist.value), l: clean(m.LicenseShortName && m.LicenseShortName.value), p: i.descriptionurl || '', c: cats, id: p.pageid };
     }
     const pick = (pages, minWidth) => (pages || []).filter((p) => usable(p, minWidth)).map(item);
 
@@ -1077,39 +1079,81 @@
        3. The same subject never twice in a row. */
     const PEOPLE = /\b(footballers?|players?|athletes?|cyclists?|swimmers|boxers|wrestlers|coaches|referees|politicians?|actors?|actresses|singers|musicians|presidents?|prime ministers?|mayors|bishops|portraits?|people (of|in|from|by|with|at)|men (of|in|at|with)|women (of|in|at|with)|children (of|in|at)|births|deaths|alumni|matches|tournaments?|championships?|f\.?c\.?|football|soccer|basketball|ice hockey|rugby|cricket|tennis|olympi\w*|marathons?|grand prix|press conferences?|selfies|cosplay|weddings)\b/i;
     const FAUNA = /\b(insects?|insecta|lepidoptera|coleoptera|diptera|hymenoptera|odonata|hemiptera|orthoptera|butterfl\w*|moths?|beetles?|dragonfl\w*|damselfl\w*|bees|wasps|ants|spiders?|araneae|arachnid\w*|birds?|aves|passeri\w*|mammals?|reptil\w*|lizards?|snakes?|amphibi\w*|frogs?|fish(es)?|animals?|fauna|flora|plants?|flowers?|fungi|mushrooms?|lichens?|species|specimens?|macro photograph\w*|close-ups?|botanical|herbari\w*|zoos?|aquariums?)\b/i;
-    const THINGS = /\b(museum (objects|exhibits|collections)|exhibits|artefacts|artifacts|manuscripts|documents|aircraft|airliners?|locomotives?|rolling stock|automobiles|motorcycles|trucks|registration plates?)\b/i;
+    const THINGS = /\b(museum (objects|exhibits|collections)|exhibits|artefacts|artifacts|manuscripts|documents|aircraft|airliners?|locomotives?|rolling stock|automobiles|motorcycles|trucks|registration plates?|buses|bus|bikes?|bicycles?|utility poles?|balloons|bulls?|cows?|cattle|road signs?|traffic signs?|signage|graffiti tags?|advertis\w+|billboards?|film(ing| shoots?)|training exercises?|police (officers|cars))\b/i;
     const META = /^(quality images|featured pictures|valued images?|pictures? of the (day|year)|picture of the|taken with|photographs? (by|taken)|photos? by|files? (by|from|with)|images? (by|from|with)|cc-|self-published|uploaded|media |wiki loves|commons|pages |license|gfdl|panoramics?$|hdr|long exposure|black and white)/;
     const plain = (x) => String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\([^)]*\)/g, ' ').replace(/,.*$/, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\b(the|a|an|city|old|town|downtown|centre|center|historic|district)\b/g, ' ').replace(/\s+/g, ' ').trim();
     // "Interior of the Notre-Dame Basilica (Montreal)" and "Pulpit of Notre-Dame Basilica (Montreal)" are one subject
     const subjectOf = (cat) => { const m = cat.match(/^.*\b(?:of|in|at|from|on|inside|near)\b\s+(.+)$/); return plain(m ? m[1] : cat); };
     const stemOf = (title) => plain(String(title).replace(/^File:/i, '').replace(/\.[a-z]+$/i, '').replace(/\d+/g, ' ')).split(' ').filter((w) => w.length > 2).slice(0, 3).join(' ');
 
+    /* What each photo shows, from Wikimedia's own "depicts" records: the photographer or a reviewer has tagged
+       the photo with the thing in it (a named bridge, a bird, a man, a car). Two quick lookups per gallery. */
+    const known = new Map();                                   // depicted thing -> { label, d }
+    function describe(items) {
+      const withId = items.filter((x) => x.id && !x.d);
+      if (!withId.length) return Promise.resolve();
+      const chunks = (arr, n) => { const out = []; for (let i = 0; i < arr.length; i += n) out.push(arr.slice(i, i + n)); return out; };
+      return Promise.all(chunks(withId.slice(0, 200), 50).map((part) => json(`${COMMONS}?action=wbgetentities&format=json&origin=*&props=claims&ids=${part.map((x) => 'M' + x.id).join('%7C')}`)
+        .then((r) => part.forEach((x) => { const e = r.entities && r.entities['M' + x.id]; x.d = ((e && e.statements && e.statements.P180) || []).map((st) => st.mainsnak && st.mainsnak.datavalue && st.mainsnak.datavalue.value.id).filter(Boolean); }))
+        .catch(() => null)))
+        .then(() => {
+          const need = []; withId.forEach((x) => (x.d || []).forEach((q) => { if (!known.has(q) && need.indexOf(q) < 0) need.push(q); }));
+          return Promise.all(chunks(need.slice(0, 250), 50).map((part) => json(`${WIKIDATA}?action=wbgetentities&format=json&origin=*&props=labels%7Cdescriptions&languages=en&ids=${part.join('%7C')}`)
+            .then((r) => part.forEach((q) => { const e = r.entities && r.entities[q]; known.set(q, { label: (e && e.labels && e.labels.en && e.labels.en.value) || '', d: (e && e.descriptions && e.descriptions.en && e.descriptions.en.value) || '' }); }))
+            .catch(() => null)));
+        }).catch(() => null);
+    }
+    const ANIMAL = /\b(species|subspecies|genus|family|order|class|breed|taxon) of\b(?!.*\b(plants?|trees?|shrubs?|palms?|grass(es)?|fung\w+|flowers?|algae|moss(es)?|ferns?|cact\w+|orchids?)\b)|\b(birds?|mammals?|insects?|reptiles?|amphibians?|animals?|vertebrates?|arthropods?|butterfl\w+|moths?|beetles?|spiders?|rodents?|primates?|domesticated)\b/i;
+    const PLANT = /\b(species|subspecies|genus|family|order|variety|cultivar) of\b|\b(plants?|flowers?|fung\w+|mushrooms?|fruits?|vegetables?)\b/i;
+    const PERSON = /\b(born \d{4}|\d{4}\s*[–-]\s*\d{4}|politician|actor|actress|singer|musician|footballer|player|athlete|painter|writer|poet|businessman|businesswoman|journalist|president of|prime minister|human being|adult (male|female)|male human|female human|young human)\b/i;
+    const NOBODY = /^(man|woman|men|women|human|person|people|child|children|girl|boy|baby|crowd|pedestrian|tourist|portrait|selfie|face|smile|police officer|soldier|worker)s?$/i;
+    const VEHICLE = /^(car|automobile|bus|truck|lorry|van|taxi|motorcycle|scooter|bicycle|bike|aircraft|airplane|aeroplane|airliner|helicopter|locomotive|train|tram|wagon|tractor)s?$/i;
+    const AREA = /\b(city|town|village|capital|country|sovereign state|state of|province|borough|municipality|commune|county|region|island|archipelago|neighbou?rhood|district|department|canton|prefecture|metropolis|settlement|human settlement|continent)\b/i;
+    const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape)\b/i;
+
     function curate(list, p, roots) {
       const nature = /^(Nature|Mountain|Beach)$/.test(p.category);
       const generic = new Set(roots.concat([p.name, 'fauna']).map(plain).filter(Boolean));
-      const about = (x) => (x.c || []).join(' | ') + ' | ' + x.t;
-      const ok = list.filter((x) => {
-        if (!x.c) return true;                                  // the place's own listed photos
+      const about = (x) => (x.c || []).join(' | ') + ' | ' + words(x.t);
+      // read each photo: 'no' drops it, otherwise it gets its subjects and a strength
+      const read = (x) => {
+        if (!x.c) return { subs: [], rank: 0 };                 // the place's own listed photos
         const text = about(x);
-        if (PEOPLE.test(text) || THINGS.test(text)) return false;
-        return nature || !FAUNA.test(text);
-      });
-      const subjects = (x) => {
-        const set = new Set();
-        (x.c || []).forEach((c) => { if (META.test(c) || /\b(19|20)\d\d\b/.test(c)) return; const sub = subjectOf(c); if (sub && !generic.has(sub)) set.add(sub); });
-        if (nature && FAUNA.test(about(x))) set.add('~wildlife');      // wildlife in a nature place counts as one subject
-        return [...set];
+        if (PEOPLE.test(text) || THINGS.test(text)) return null;
+        const textWild = FAUNA.test(text);
+        if (textWild && !nature) return null;
+        const subs = new Set(); let named = 0, area = 0, wild = textWild, plant = false, vehicle = false;
+        for (const q of (x.d || [])) {
+          const k = known.get(q); if (!k) continue;
+          if (PERSON.test(k.d) || NOBODY.test(k.label)) return null;
+          if (ANIMAL.test(k.d)) { if (!nature) return null; wild = true; continue; }
+          if (PLANT.test(k.d)) { plant = true; continue; }
+          if (VEHICLE.test(k.label)) { vehicle = true; continue; }
+          if (!/^[A-Z0-9]/.test(k.label)) continue;             // a common noun ("sky", "tower"): not a subject
+          const key = plain(k.label);
+          if (!key || generic.has(key) || AREA.test(k.d)) { area++; continue; }
+          named++; subs.add(key);
+        }
+        if (!nature && (plant || vehicle) && !named) return null;
+        (x.c || []).forEach((c) => { if (META.test(c)) return; const sub = subjectOf(c.replace(/^\s*(19|20)\d\d\s+/, '').replace(/\s+(in|during|from|by)\s+(19|20)\d\d\b.*$/, '').replace(/\s*\(?(19|20)\d\d\)?\s*$/, '')); if (sub && sub.length > 2 && !/^\d+$/.test(sub) && !generic.has(sub)) subs.add(sub); });
+        if (nature && wild) subs.add('~wildlife');              // wildlife in a nature place counts as one subject
+        // strong: shows a named sight, or is plainly a view of the place. weak: nothing says what it shows.
+        const rank = (named || SCENIC.test(text)) ? 0 : ((x.d || []).length && !area ? 2 : 1);
+        return { subs: [...subs], rank };
       };
+      const ok = [];
+      list.forEach((x) => { const r = read(x); if (r) { x._s = r.subs; x._r = r.rank; ok.push(x); } });
+      ok.sort((a, b) => a._r - b._r);                            // stable: keeps the search order within a rank
       const count = new Map(), stems = new Map(), out = [], left = [];
-      const take = (cap) => (x) => {
-        const subs = x._s || (x._s = subjects(x)), stem = stemOf(x.t);
-        if (subs.some((k) => (count.get(k) || 0) >= cap) || (stems.get(stem) || 0) >= Math.min(cap, 3)) { left.push(x); return; }
-        subs.forEach((k) => count.set(k, (count.get(k) || 0) + 1));
+      const take = (cap, maxRank) => (x) => {
+        const stem = stemOf(words(x.t));
+        if (x._r > maxRank || x._s.some((k) => (count.get(k) || 0) >= cap) || (stems.get(stem) || 0) >= Math.min(cap, 3)) { left.push(x); return; }
+        x._s.forEach((k) => count.set(k, (count.get(k) || 0) + 1));
         stems.set(stem, (stems.get(stem) || 0) + 1);
         out.push(x);
       };
-      ok.forEach(take(4));
-      if (out.length < 8) left.splice(0).forEach(take(5));       // thin galleries may go to five of a kind, never more
+      ok.forEach(take(3, 1));
+      if (out.length < 8) left.splice(0).forEach(take(4, 2));    // thin galleries may go to four of a kind and take weaker photos
       // spread: the next photo should not share a subject with the one before it
       const spread = [], pool = out.slice();
       while (pool.length) {
@@ -1145,13 +1189,16 @@
         weave(res[0], rest);                       // reviewer-rated photos first
         weave(res[1], rest);                       // then the articles' own photos
         const roots = titles.concat(res[3]);
-        const done = (extra) => {
+        const strip = (x) => { const y = Object.assign({}, x); delete y.c; delete y._s; delete y._r; delete y.d; delete y.id; return y; };
+        const done = (extra) => describe(rest.concat(sky2, extra || [])).then(() => {
+          // a skyline photo's subject is used up too, so the body does not repeat it
           const body = curate(own.concat(rest, extra || []), p, roots);
-          return sky2.concat(body).slice(0, MAX).map((x) => { const y = Object.assign({}, x); delete y.c; delete y._s; return y; });
-        };
-        const first = done();
-        if (first.length >= 6) return first;                 // quality over quantity: unrated photos only fill a nearly empty gallery
-        return (res[3][0] ? fromCommons(res[3][0], false) : Promise.resolve([])).then((extra) => done(extra.filter((x) => !seen.has(x.t)).slice(0, 14)));
+          return sky2.concat(body).slice(0, MAX).map(strip);
+        });
+        return done().then((first) => {
+          if (first.length >= 6) return first;                 // quality over quantity: unrated photos only fill a nearly empty gallery
+          return (res[3][0] ? fromCommons(res[3][0], false) : Promise.resolve([])).then((extra) => done(extra.filter((x) => !seen.has(x.t)).slice(0, 14)));
+        });
       });
     }
 
@@ -1180,7 +1227,7 @@
       return it.u.replace(/\/\d+px-/, '/' + step + 'px-');
     }
 
-    return { load, sized, curate, forget: (p) => { delete cache[keyOf(p)]; } };
+    return { load, sized, curate, describe, known, forget: (p) => { delete cache[keyOf(p)]; } };
   })();
 
   /* ---------- Layers: stage and photo viewer close with the browser Back button too ---------- */
