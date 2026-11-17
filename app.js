@@ -1012,9 +1012,9 @@
      Each photo keeps its author and licence, shown in the photo viewer. */
 
   const Gallery = (function () {
-    const KEY = 'atlas.gallery.v8';
-    const MAX = 40;
-    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
+    const KEY = 'atlas.gallery.v9';
+    const MAX = 20;                                             // a short gallery of strong photos beats a long one with filler
+    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
     let cache = {};
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
@@ -1112,8 +1112,8 @@
     const VEHICLE = /^(car|automobile|bus|truck|lorry|van|taxi|motorcycle|scooter|bicycle|bike|aircraft|airplane|aeroplane|airliner|helicopter|locomotive|train|tram|wagon|tractor)s?$/i;
     const AREA = /\b(city|town|village|capital|country|sovereign state|state of|province|borough|municipality|commune|county|region|island|archipelago|neighbou?rhood|district|department|canton|prefecture|metropolis|settlement|human settlement|continent)\b/i;
     const PROP = /^(an? |the )?(\S+ ){0,3}(painting|drawing|engraving|lithograph|watercolou?r|etching|woodcut|illustration|poster|film|album|novel|book|television|video game|automobile|car model|sports car|concept car|aircraft|airliner|locomotive|ship|vessel|session|election|protest|demonstration|tournament|conference|summit|company|brand)\b/i;
-    const DETAIL = /\b(details?|reliefs?|plaques?|tablets?|inscriptions?|doors?|portals?|windows?|ceilings?|altars?|pulpits?|organs?|capitals|mosaics?|tiles|azulejos|interiors?|inside|nave|stairs|staircases?|lobby|rooms?|halls?|close-?up)\b/i;
-    const DULL = /\b(airports?|aeropuerto|a[eé]roport|runways?|parking|car parks?|highways?|motorways?|interchange|shopping (mall|centre|center)|supermarkets?|office buildings?|hospitals?|metro stations?|subway stations?|bus (stations?|stops?)|platforms?|power (plants?|stations?)|factor(y|ies)|warehouses?|containers?|signs?|smog|pollution|garbage|trash|basura|construction sites?|demolition|protests?|marchas?|demonstrations?|mapillary|stadiums?|estadios?|est[aá]dio|arenas?|manhole|drain covers?|sewer)\b/i;
+    const DETAIL = /\b(details?|reliefs?|plaques?|tablets?|inscriptions?|doors?|portals?|windows?|ceilings?|altars?|pulpits?|organs?|capitals|mosaics?|tiles|azulejos|interiors?|inside|nave|stairs|staircases?|lobby|rooms?|halls?|close-?up|busts?|bustos?|estatuas?|monumento a|monument to|memorials?|museo|museum|mus[eé]e)\b/i;
+    const DULL = /\b(airports?|aeropuerto|a[eé]roport|runways?|parking|car parks?|highways?|motorways?|interchange|shopping (mall|centre|center)|supermarkets?|office buildings?|hospitals?|metro stations?|subway stations?|bus (stations?|stops?)|platforms?|power (plants?|stations?)|factor(y|ies)|warehouses?|containers?|signs?|smog|pollution|garbage|trash|basura|construction sites?|demolition|protests?|marchas?|demonstrations?|mapillary|stadiums?|estadios?|est[aá]dio|arenas?|manhole|drain covers?|sewer|hotels?|hostels?|skysat|light rail|lrv|trams?|tranv[ií]a|railcars?|corso|bike rides?|cycling|museum (interior|hall|room)|exhibition|exposici[oó]n|showroom)\b/i;
     const FOOD = /\b(food|dish(es)?|cuisine|gastronom\w+|platos?|comida|bandeja|breakfast|lunch|dinner|desserts?|drinks?|beers?|coffee|menu)\b/i;
     const km = (a, b) => { const R = 6371, r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r, h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
     const SCENIC = /\b(skyline|cityscape|panorama|panoramic|view|vista|aerial|mirador|lookout|belvedere|overlook|sunset|sunrise|night|dusk|street|avenue|plaza|square|harbou?r|port|waterfront|riverfront|beach|coast|bay|old town|historic cent(er|re)|rooftops?|landscape|drone?|a[eé]rea|vista|panor[aá]mica|atardecer|amanecer|noche|nocturna|luftbild|blick|vue|from above|seen from)\b/i;
@@ -1170,9 +1170,9 @@
         stems.set(stem, (stems.get(stem) || 0) + 1);
         out.push(x);
       };
-      ok.forEach(take(3, 1));                                    // views of the place, then its named sights
-      if (out.length < 12) left.splice(0).forEach(take(3, 2));   // then photos nobody has labelled
-      if (out.length < 8) left.splice(0).forEach(take(4, 3));    // thin galleries may go to four of a kind and take weaker photos
+      ok.forEach(take(2, 1));                                    // views of the place, then its named sights: two of each at most
+      if (out.length < 8) left.splice(0).forEach(take(2, 2));    // only a thin gallery takes photos nobody has labelled
+      if (out.length < 5) left.splice(0).forEach(take(3, 3));    // and only a nearly empty one takes weak ones
       // spread: the next photo should not share a subject with the one before it
       const spread = [], pool = out.slice();
       while (pool.length) {

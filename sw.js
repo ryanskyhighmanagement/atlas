@@ -3,7 +3,7 @@
    instantly and from the home screen. Map tiles, photos and sound recordings always come from the
    network: they are large, and the app already shows placeholders when they cannot load.
    Change VERSION whenever the app's files change, so installed copies pick up the new ones. */
-const VERSION = 'atlas-24';
+const VERSION = 'atlas-25';
 const SHELL = [
   './', 'index.html', 'styles.css', 'app.js', 'data.js', 'sound.js', 'manifest.json',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png',
@@ -14,12 +14,20 @@ const SHELL = [
 ];
 
 self.addEventListener('install', (e) => {
-  // one failed file must not block the install
-  e.waitUntil(caches.open(VERSION).then((c) => Promise.all(SHELL.map((u) => c.add(u).catch(() => null)))).then(() => self.skipWaiting()));
+  // one failed file must not block the install; 'reload' skips the browser's own cache so the copy is current
+  e.waitUntil(caches.open(VERSION).then((c) => Promise.all(SHELL.map((u) => c.add(new Request(u, { cache: 'reload' })).catch(() => null)))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then((keys) => {
+    const old = keys.filter((k) => k !== VERSION);
+    return Promise.all(old.map((k) => caches.delete(k))).then(() => self.clients.claim()).then(() => {
+      // An older copy of the app was installed: the page on screen was built from it. Reload it once,
+      // so nobody keeps looking at the previous version after an update.
+      if (!old.length) return null;
+      return self.clients.matchAll({ type: 'window' }).then((list) => Promise.all(list.map((c) => (c.navigate ? c.navigate(c.url).catch(() => null) : null))));
+    });
+  }));
 });
 
 self.addEventListener('fetch', (e) => {
@@ -30,9 +38,12 @@ self.addEventListener('fetch', (e) => {
   const lib = url.hostname === 'cdn.jsdelivr.net' || url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
   if (!own && !lib) return;                                   // tiles, photos, recordings: straight to the network
   e.respondWith(caches.open(VERSION).then((cache) => cache.match(req, { ignoreSearch: own }).then((hit) => {
-    const fresh = fetch(req).then((res) => { if (res && res.ok) cache.put(req, res.clone()); return res; });
-    if (lib) return hit || fresh;                             // libraries and fonts never change: cache first
-    if (hit) { fresh.catch(() => null); return hit; }         // the app's own files: answer from cache, refresh behind
-    return fresh;
+    if (lib) return hit || fetch(req).then((res) => { if (res && res.ok) cache.put(req, res.clone()); return res; });   // libraries and fonts never change
+    // The app's own files: the network's copy first, so an update shows the first time the app is opened.
+    // The saved copy is the fallback when offline, or when the network takes longer than three seconds.
+    const fresh = fetch(req, { cache: 'no-cache' }).then((res) => { if (res && res.ok) cache.put(req, res.clone()); return res; });
+    if (!hit) return fresh;
+    const slow = new Promise((done) => setTimeout(() => done(hit), 3000));
+    return Promise.race([fresh.then((res) => (res && res.ok ? res : hit)).catch(() => hit), slow]);
   })));
 });
