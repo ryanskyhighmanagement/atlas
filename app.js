@@ -1012,9 +1012,9 @@
      Each photo keeps its author and licence, shown in the photo viewer. */
 
   const Gallery = (function () {
-    const KEY = 'atlas.gallery.v9';
+    const KEY = 'atlas.gallery.v10';
     const MAX = 20;                                             // a short gallery of strong photos beats a long one with filler
-    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
+    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
     let cache = {};
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
@@ -1079,7 +1079,7 @@
           places, where a few are part of the point.
        2. No more than a handful of the same subject (one church, one tower, one square).
        3. The same subject never twice in a row. */
-    const PEOPLE = /\b(footballers?|players?|athletes?|cyclists?|swimmers|boxers|wrestlers|coaches|referees|politicians?|actors?|actresses|singers|musicians|presidents?|prime ministers?|mayors|bishops|portraits?|people (of|in|from|by|with|at)|men (of|in|at|with)|women (of|in|at|with)|children (of|in|at)|births|deaths|alumni|matches|tournaments?|championships?|f\.?c\.?|football|soccer|basketball|ice hockey|rugby|cricket|tennis|olympi\w*|marathons?|grand prix|press conferences?|selfies|cosplay|weddings)\b/i;
+    const PEOPLE = /\b(footballers?|players?|athletes?|cyclists?|swimmers|boxers|wrestlers|coaches|referees|politicians?|actors?|actresses|singers|musicians|presidents?|prime ministers?|mayors|bishops|portraits?|people (of|in|from|by|with|at)|men (of|in|at|with)|women (of|in|at|with)|children (of|in|at)|births|deaths|alumni|matches|tournaments?|championships?|f\.?c\.?|football|soccer|basketball|ice hockey|rugby|cricket|tennis|olympi\w*|marathons?|grand prix|press conferences?|selfies|cosplay|weddings|fencing|fencers?|[eé]p[eé]e|sabre|concerts?|on stage|performing|performance)\b/i;
     const FAUNA = /\b(insects?|insecta|lepidoptera|coleoptera|diptera|hymenoptera|odonata|hemiptera|orthoptera|butterfl\w*|moths?|beetles?|dragonfl\w*|damselfl\w*|bees|wasps|ants|spiders?|araneae|arachnid\w*|birds?|aves|passeri\w*|mammals?|reptil\w*|lizards?|snakes?|amphibi\w*|frogs?|fish(es)?|animals?|fauna|flora|plants?|flowers?|fungi|mushrooms?|lichens?|species|specimens?|macro photograph\w*|close-ups?|botanical|herbari\w*|zoos?|aquariums?)\b/i;
     const THINGS = /\b(museum (objects|exhibits|collections)|exhibits|artefacts|artifacts|manuscripts|documents|aircraft|airliners?|locomotives?|rolling stock|automobiles|motorcycles|trucks|registration plates?|buses|bus|bikes?|bicycles?|utility poles?|balloons|bulls?|cows?|cattle|road signs?|traffic signs?|signage|graffiti tags?|advertis\w+|billboards?|film(ing| shoots?)|training exercises?|police (officers|cars))\b/i;
     const META = /^(quality images|featured pictures|valued images?|pictures? of the (day|year)|picture of the|taken with|photographs? (by|taken)|photos? by|files? (by|from|with)|images? (by|from|with)|cc-|self-published|uploaded|media |wiki loves|commons|pages |license|gfdl|panoramics?$|hdr|long exposure|black and white)/;

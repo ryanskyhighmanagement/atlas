@@ -33,7 +33,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "Caribbean turquoise on the Yucatán coast",
         description: "A long ribbon of white sand separates the Caribbean from Nichupté Lagoon, and the water on the sea side is a blue so bright it looks retouched. Days are for snorkelling the Mesoamerican Reef, the second-largest barrier reef on Earth, or taking the 20-minute ferry to slow, sandy Isla Mujeres. After dark the Hotel Zone turns loud, warm and unapologetically festive.",
         bestTime: "Dec–Apr (dry season)", image: "wiki:Cancún", more: ["Isla Mujeres"] },
-      { name: "Mexico City", lead: ["Mexico City Reforma skyline.jpg", "Catedral ciudad de México. Junio 2017.jpg", "Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg", "Ciudad.de.Mexico.City.- Paseo.Reforma.Skyline CDMX 2018.jpg"], skip: ["1fc3uq5", "b7taek", "i2bzww", "1q1cf86"], lat: 19.4326, lng: -99.1332, category: "City", sound: "city",
+      { name: "Mexico City", lead: ["Mexico City Reforma skyline.jpg", "Catedral ciudad de México. Junio 2017.jpg", "Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg", "Ciudad.de.Mexico.City.- Paseo.Reforma.Skyline CDMX 2018.jpg"], skip: ["1fc3uq5", "b7taek", "i2bzww", "1q1cf86", "e33gz9", "1hrqdir", "187kbhz", "1qqi2tl", "1f8x4df"], lat: 19.4326, lng: -99.1332, category: "City", sound: "city",
         tagline: "A high-altitude capital built on an Aztec lake",
         description: "At 2,240 metres the air is thin and the light is sharp, and the ruins of the Aztec Templo Mayor sit a few steps from the cathedral on the vast Zócalo. Spend a morning in the National Museum of Anthropology, an afternoon drifting through the canals of Xochimilco on a painted trajinera, and every evening eating tacos al pastor shaved straight from the spit.",
         bestTime: "Mar–May (warm, before the rains)", image: "wiki:Palacio de Bellas Artes", wiki: "Mexico City", more: ["Historic center of Mexico City", "Xochimilco"] },
@@ -52,7 +52,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Canyon country, volcanic islands and the most restless city on the planet.",
     hero: "wiki:Monument Valley",
     places: [
-      { name: "New York City", lat: 40.7128, lng: -74.0060, category: "City", sound: "metropolis",
+      { name: "New York City", skip: ["1qj8axp"], lat: 40.7128, lng: -74.0060, category: "City", sound: "metropolis",
         tagline: "The city that walks fast and never switches off",
         description: "Steam rises from the street grates, taxis lean on their horns, and eight million people move at a pace that pulls you along with it. Walk the Brooklyn Bridge at sunset for the skyline, lose an afternoon in the Metropolitan Museum, then find the quiet in the 341 hectares of Central Park. The subway runs all night, and so does the city.",
         bestTime: "Apr–Jun, Sep–Nov", image: "wiki:Brooklyn Bridge", wiki: "New York City" },
@@ -72,7 +72,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "The world's first national park, still steaming",
         description: "Established in 1872, Yellowstone sits on top of a supervolcano, and the ground lets you know: Old Faithful erupts roughly every 90 minutes and Grand Prismatic Spring glows in rings of blue, green and rust. Drive the Lamar Valley at dawn to watch bison herds cross the road and, with luck, a wolf pack on the far ridge.",
         bestTime: "May–Sep", image: "wiki:Yellowstone National Park" },
-      { name: "San Francisco", lat: 37.7749, lng: -122.4194, category: "City", sound: "city",
+      { name: "San Francisco", skip: ["10ixwtm", "1i5ug07"], lat: 37.7749, lng: -122.4194, category: "City", sound: "city",
         tagline: "Hills, fog and a red bridge",
         description: "Fog pours through the Golden Gate in the afternoon and the bridge's towers, painted International Orange since 1937, float above it. Ride a clanging cable car over Nob Hill, take the ferry to the cold cellblocks of Alcatraz, and warm up afterwards with sourdough and clam chowder on the waterfront.",
         bestTime: "Sep–Oct (warmest, clearest)", image: "wiki:Golden Gate Bridge", wiki: "San Francisco" }
@@ -87,7 +87,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "Turquoise lakes in the Canadian Rockies",
         description: "Canada's first national park, created in 1885, is all sharp limestone peaks, cold pine air and lakes coloured an unreal turquoise by glacial rock flour. Paddle a canoe across Lake Louise, reach Moraine Lake for sunrise, then drive the Icefields Parkway north past hanging glaciers toward Jasper.",
         bestTime: "Jun–Sep (hiking), Dec–Mar (skiing)", image: "wiki:Banff National Park" },
-      { name: "Vancouver", lat: 49.2827, lng: -123.1207, category: "City", sound: "city",
+      { name: "Vancouver", skip: ["tydm4f", "o85jy4"], lat: 49.2827, lng: -123.1207, category: "City", sound: "city",
         tagline: "A glass city between the ocean and the mountains",
         description: "Snow-capped peaks sit right behind the downtown towers, and the Pacific wraps around three sides. Cycle the seawall around the cedars of Stanley Park, eat your way through the Granville Island market, and be on a ski slope within half an hour of leaving the beach.",
         bestTime: "Jun–Sep", image: "wiki:Vancouver" },
@@ -154,7 +154,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Faded colonial grandeur, tobacco valleys and music spilling out of every doorway.",
     hero: "wiki:Malecón, Havana",
     places: [
-      { name: "Havana", lat: 23.1136, lng: -82.3666, category: "City", sound: "city",
+      { name: "Havana", skip: ["1r0ssih", "sc22p9", "1hyjs5b", "3hr215", "69nwkl", "d0c19a"], lat: 23.1136, lng: -82.3666, category: "City", sound: "city",
         tagline: "A city of crumbling palaces and 1950s chrome",
         description: "Old Havana is a UNESCO-listed maze of arcades, peeling pastel facades and plazas where a son band is always playing somewhere. Ride in a 1950s American convertible, walk the eight-kilometre Malecón seawall at sunset when waves break over the road, and follow the sound of a trumpet into the nearest bar.",
         bestTime: "Nov–Apr (dry season)", image: "wiki:Plaza Vieja, Havana", wiki: "Havana" },
@@ -183,7 +183,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "The City of Eternal Spring",
         description: "Medellín fills a green Andean valley at about 1,500 metres, which keeps the air spring-warm all year. Ride the Metrocable gondolas up over the hillside barrios, walk the street-art-covered outdoor escalators of Comuna 13, and stand among the 23 rounded bronze sculptures that Fernando Botero gave to his home city in Plaza Botero. In August the Feria de las Flores covers the streets in flowers.",
         bestTime: "Dec–Mar (driest months)", image: "wiki:Medellín", more: ["El Poblado", "Cerro Nutibara", "Pueblito Paisa"] },
-      { name: "Bogotá", lat: 4.7110, lng: -74.0721, category: "City", sound: "city",
+      { name: "Bogotá", skip: ["ru1ui"], lat: 4.7110, lng: -74.0721, category: "City", sound: "city",
         tagline: "A high Andean capital under Monserrate",
         description: "Bogotá sprawls across a plateau 2,640 metres up, with the green wall of the eastern hills behind it and cool, thin air all year. Wander the steep colonial streets of La Candelaria, where almost every wall is a mural, and see tens of thousands of pre-Columbian gold pieces glowing in the dark rooms of the Gold Museum. Ride the cable car up Monserrate at dusk and watch the city lights switch on to the horizon.",
         bestTime: "Dec–Mar (driest months)", image: "wiki:Bogotá" },
@@ -214,7 +214,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "The Inca capital, 3,400 metres up",
         description: "Spanish churches and arcades stand directly on top of Inca walls of fitted stone, including the famous twelve-angled block on Hatun Rumiyoc street. The altitude makes the first day slow, so sip coca tea, wander the Plaza de Armas, and browse the fruit and bread stalls of San Pedro market before heading to the Qorikancha, once the empire's Temple of the Sun.",
         bestTime: "May–Sep (dry season)", image: "wiki:Cusco" },
-      { name: "Lima", lead: ["Miraflores Costa Verde Skyline (Lima, Peru).jpg", "Plaza Mayor de Lima (1).jpg", "La Costa Verde y Miraflores, desde Barranco (3545043786).jpg", "Palacio municipa Plaza Mayor, Lima Pérou en 2011.jpg"], lat: -12.0464, lng: -77.0428, category: "City", sound: "city",
+      { name: "Lima", lead: ["Miraflores Costa Verde Skyline (Lima, Peru).jpg", "Plaza Mayor de Lima (1).jpg", "La Costa Verde y Miraflores, desde Barranco (3545043786).jpg", "Palacio municipa Plaza Mayor, Lima Pérou en 2011.jpg"], skip: ["1v49q29", "1mhfrs7", "1y231lh", "1ubze9k", "vucsem"], lat: -12.0464, lng: -77.0428, category: "City", sound: "city",
         tagline: "A food capital on the Pacific cliffs",
         description: "Lima sits on tall cliffs above grey-green Pacific surf, with paragliders drifting past the parks of Miraflores. It is one of the world's great eating cities: order ceviche at lunch, when the fish is freshest. In the middle of the modern city, the adobe pyramid of Huaca Pucllana is about 1,500 years old.",
         bestTime: "Dec–Apr (sunny summer)", image: "wiki:Miraflores District, Lima", wiki: "Lima", more: ["Historic Centre of Lima", "Barranco District"] },
@@ -233,7 +233,7 @@ window.ATLAS_DATA = { countries: [
     summary: "The world's largest rainforest, its most spectacular waterfalls, and a city that lives on the beach.",
     hero: "wiki:Christ the Redeemer (statue)",
     places: [
-      { name: "Rio de Janeiro", lat: -22.9068, lng: -43.1729, category: "City", sound: "ocean",
+      { name: "Rio de Janeiro", skip: ["fzuqv2", "8x3v07"], lat: -22.9068, lng: -43.1729, category: "City", sound: "ocean",
         tagline: "Granite peaks, samba and the Atlantic",
         description: "Rio is squeezed between jungle-covered granite mountains and the sea, and life happens on the sand of Copacabana and Ipanema. Ride the cable car up Sugarloaf at sunset, stand under the 30-metre Christ the Redeemer on top of Corcovado, and in the evening follow the drums to a samba bar in Lapa.",
         bestTime: "Dec–Mar (summer and Carnival)", image: "wiki:Sugarloaf Mountain", wiki: "Rio de Janeiro", more: ["Christ the Redeemer (statue)", "Copacabana, Rio de Janeiro"] },
@@ -260,7 +260,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Tango and steak in the capital, vineyards under the Andes, and Patagonia's walls of ice.",
     hero: "wiki:El Chaltén",
     places: [
-      { name: "Buenos Aires", lead: ["Buenos Aires Puerto Madero 29.jpg", "ObeliscoBA2015.jpg", "El caminito7 - Buenos Aires - Argentina.jpg", "Buenos Aires Puerto Madero 18.jpg", "Caminito Farolito.jpg"], skip: ["1rf3obg", "ac8ohk", "11pnfwv"], lat: -34.6037, lng: -58.3816, category: "City", sound: "city",
+      { name: "Buenos Aires", lead: ["Buenos Aires Puerto Madero 29.jpg", "ObeliscoBA2015.jpg", "El caminito7 - Buenos Aires - Argentina.jpg", "Buenos Aires Puerto Madero 18.jpg", "Caminito Farolito.jpg"], skip: ["1rf3obg", "ac8ohk", "11pnfwv", "1tacoi4", "q3fkgn", "106xjgq", "1j0hclu", "7qzpfc"], lat: -34.6037, lng: -58.3816, category: "City", sound: "city",
         tagline: "Tango, late dinners and faded grandeur",
         description: "Wide avenues, Parisian facades and cafés where nobody hurries. Watch tango danced in the square in San Telmo, see the painted tin houses of Caminito in La Boca, and walk the marble alleys of Recoleta Cemetery to the tomb of Eva Perón. Dinner starts at ten and is usually a steak from a wood-fired parrilla.",
         bestTime: "Mar–May, Sep–Nov", image: "wiki:Caminito", wiki: "Buenos Aires" },
@@ -346,7 +346,7 @@ window.ATLAS_DATA = { countries: [
     summary: "The world's most visited country: a capital of light, châteaux on the river, and the blue of the Mediterranean.",
     hero: "wiki:Château de Chenonceau",
     places: [
-      { name: "Paris", lead: ["Eiffel tower from trocadero.jpg", "View of Pont d'Iéna from Trocadéro, Paris, 2008.jpg"], skip: ["wf5tv0", "19mb5s2"], lat: 48.8566, lng: 2.3522, category: "City", sound: "city",
+      { name: "Paris", lead: ["Eiffel tower from trocadero.jpg", "View of Pont d'Iéna from Trocadéro, Paris, 2008.jpg"], skip: ["wf5tv0", "19mb5s2", "121tlqp", "xcv12o", "16rpi4w"], lat: 48.8566, lng: 2.3522, category: "City", sound: "city",
         tagline: "The City of Light",
         description: "Zinc rooftops, the smell of warm bread from a corner boulangerie, and the Seine sliding under stone bridges. The Eiffel Tower, built for the 1889 World's Fair, sparkles for five minutes at the top of every hour after dark. Give the Louvre a morning, climb the steps of Montmartre, then do as Parisians do and sit on a café terrace watching the street.",
         bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Eiffel Tower", wiki: "Paris" },
@@ -396,7 +396,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Moorish palaces, Gaudí's wild architecture, and a country that eats dinner at ten.",
     hero: "wiki:Alcázar of Seville",
     places: [
-      { name: "Barcelona", lat: 41.3851, lng: 2.1734, category: "City", sound: "city",
+      { name: "Barcelona", skip: ["1dbyjqv"], lat: 41.3851, lng: 2.1734, category: "City", sound: "city",
         tagline: "Gaudí's city by the Mediterranean",
         description: "Antoni Gaudí's Sagrada Família has been under construction since 1882, and its interior feels like a forest of stone trees lit in stained-glass colour. Wander the dark lanes of the Gothic Quarter, snack your way through La Boqueria market, climb to the mosaics of Park Güell, and end the day with your feet in the sand at Barceloneta.",
         bestTime: "May–Jun, Sep–Oct", image: "wiki:Sagrada Família", wiki: "Barcelona" },
@@ -419,7 +419,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Tiled cities on steep hills, port wine cellars, and golden cliffs facing the Atlantic.",
     hero: "wiki:Douro",
     places: [
-      { name: "Lisbon", skip: ["t7nxw5", "1cwya2h"], lat: 38.7223, lng: -9.1393, category: "City", sound: "city",
+      { name: "Lisbon", skip: ["t7nxw5", "1cwya2h", "i77fmi", "1ytdkf"], lat: 38.7223, lng: -9.1393, category: "City", sound: "city",
         tagline: "Seven hills, yellow trams and Atlantic light",
         description: "Lisbon climbs steeply from the wide Tagus, and the rattling yellow Tram 28 will carry you up through the lanes of Alfama, where fado drifts out of small restaurants at night. Out at Belém, see the stone tower that watched the explorers' ships leave, then queue for a warm custard tart from the bakery that has made them since 1837.",
         bestTime: "Mar–Jun, Sep–Oct", image: "wiki:Belém Tower", wiki: "Lisbon" },
@@ -442,7 +442,7 @@ window.ATLAS_DATA = { countries: [
     summary: "A thousand years of history in one capital, and wild, empty Highlands a train ride north.",
     hero: "wiki:Palace of Westminster",
     places: [
-      { name: "London", lat: 51.5074, lng: -0.1278, category: "City", sound: "metropolis",
+      { name: "London", skip: ["1p36crx"], lat: 51.5074, lng: -0.1278, category: "City", sound: "metropolis",
         tagline: "A world city on the Thames",
         description: "Red buses, black cabs, and a crowd that always knows where it is going. The Tower of London has guarded the river for nearly a thousand years, the big museums are free, and the Underground has been running since 1863. Walk the South Bank from Westminster to Tower Bridge, then eat your way around Borough Market.",
         bestTime: "May–Sep", image: "wiki:Tower Bridge", wiki: "London" },
@@ -530,7 +530,7 @@ window.ATLAS_DATA = { countries: [
     summary: "A capital that reinvents itself, fairy-tale castles in the Alps, and beer gardens under chestnut trees.",
     hero: "wiki:Cologne Cathedral",
     places: [
-      { name: "Berlin", skip: ["s8mgz5", "15sdftn"], lat: 52.5200, lng: 13.4050, category: "City", sound: "city",
+      { name: "Berlin", skip: ["s8mgz5", "15sdftn", "79jljf"], lat: 52.5200, lng: 13.4050, category: "City", sound: "city",
         tagline: "A capital shaped by its own history",
         description: "Berlin wears the twentieth century openly. Walk through the Brandenburg Gate, along the 1.3-kilometre painted stretch of the Wall at the East Side Gallery, and up the glass dome of the Reichstag. Then spend the rest of the day on Museum Island or in a canal-side bar, because this is also one of Europe's most relaxed and creative cities.",
         bestTime: "May–Sep", image: "wiki:Brandenburg Gate", wiki: "Berlin" },
@@ -549,7 +549,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Canals, bicycles, Golden Age paintings and tulip fields below sea level.",
     hero: "wiki:Zaanse Schans",
     places: [
-      { name: "Amsterdam", skip: ["1t9u9vb"], lat: 52.3676, lng: 4.9041, category: "City", sound: "city",
+      { name: "Amsterdam", skip: ["1t9u9vb", "1djj1ur", "8wx701", "13r71qv"], lat: 52.3676, lng: 4.9041, category: "City", sound: "city",
         tagline: "A seventeenth-century city of canals",
         description: "Rings of canals lined with tall, narrow merchant houses, many of them leaning slightly, and more bicycles than people. See Rembrandt's Night Watch in the Rijksmuseum and the sunflowers in the Van Gogh Museum, visit the Anne Frank House, then rent a bike or a small boat and see the city the way it was designed to be seen.",
         bestTime: "Apr–May (tulips), Jun–Sep", image: "wiki:Keizersgracht", wiki: "Amsterdam" },
@@ -587,7 +587,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Imperial palaces, coffee houses and concert halls, with the Alps filling the rest of the map.",
     hero: "wiki:Hohensalzburg Fortress",
     places: [
-      { name: "Vienna", lat: 48.2082, lng: 16.3738, category: "City", sound: "city",
+      { name: "Vienna", skip: ["3sbs5x", "1jhlxdw", "pb1f5z", "a4fbaz", "m2tcua"], lat: 48.2082, lng: 16.3738, category: "City", sound: "city",
         tagline: "The imperial capital of music and coffee",
         description: "For centuries the seat of the Habsburgs, Vienna is a city of palaces, opera and unhurried coffee houses where you can sit for hours over one cup and a slice of Sachertorte. Tour the 1,441-room Schönbrunn Palace and its gardens, stand under the patterned tile roof of St Stephen's Cathedral, and get a standing ticket for the State Opera.",
         bestTime: "Apr–Jun, Sep–Oct, Dec (Christmas markets)", image: "wiki:Schönbrunn Palace", wiki: "Vienna" },
@@ -625,7 +625,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Grand cafés, thermal baths and a capital split in two by the Danube.",
     hero: "wiki:Széchenyi Chain Bridge",
     places: [
-      { name: "Budapest", skip: ["dbqz0"], lat: 47.4979, lng: 19.0402, category: "City", sound: "city",
+      { name: "Budapest", skip: ["dbqz0", "1yjg3zu"], lat: 47.4979, lng: 19.0402, category: "City", sound: "city",
         tagline: "The Pearl of the Danube",
         description: "Hilly Buda and flat Pest face each other across the river, joined by the Chain Bridge and watched over by the neo-Gothic Parliament. The city sits on thermal springs: soak in the steaming outdoor pools of the Széchenyi Baths, where regulars play chess in the water even in winter. After dark, head to the ruin bars built in abandoned courtyards of the old Jewish Quarter.",
         bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Hungarian Parliament Building", wiki: "Budapest" },
@@ -682,7 +682,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Where two continents meet: imperial mosques, cave towns and ruins from every age.",
     hero: "wiki:Blue Mosque, Istanbul",
     places: [
-      { name: "Istanbul", lat: 41.0082, lng: 28.9784, category: "City", sound: "city",
+      { name: "Istanbul", skip: ["1gnf036", "7ftc2n", "pt00gt", "pjn390"], lat: 41.0082, lng: 28.9784, category: "City", sound: "city",
         tagline: "One city on two continents",
         description: "The call to prayer echoes between minarets, ferries criss-cross the Bosphorus, and seagulls follow them from Europe to Asia and back. Stand under the vast dome of Hagia Sophia, completed in 537, lose your bearings among the roughly 4,000 shops of the Grand Bazaar, and drink tea from a tulip-shaped glass on the water at dusk.",
         bestTime: "Apr–May, Sep–Oct", image: "wiki:Hagia Sophia", wiki: "Istanbul" },
@@ -854,7 +854,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Record-breaking skylines on the Gulf, with the empty desert an hour away.",
     hero: "wiki:Burj Al Arab",
     places: [
-      { name: "Dubai", lead: ["Dubai Skyline mit Burj Khalifa (cropped).jpg", "Burj Khalifa Night View 01.jpg"], skip: ["1mw4as0", "1i57ft0"], lat: 25.1972, lng: 55.2744, category: "City", sound: "city",
+      { name: "Dubai", lead: ["Dubai Skyline mit Burj Khalifa (cropped).jpg", "Burj Khalifa Night View 01.jpg"], skip: ["1mw4as0", "1i57ft0", "hljyvp"], lat: 25.1972, lng: 55.2744, category: "City", sound: "city",
         tagline: "A skyline that rose out of the sand",
         description: "The Burj Khalifa, 828 metres high, is the tallest building in the world, and from its observation deck the desert and the Gulf look like a map. For the older city, cross Dubai Creek on a wooden abra for one dirham and walk the gold and spice souks, where the air smells of saffron and frankincense.",
         bestTime: "Nov–Mar", image: "wiki:Burj Khalifa", wiki: "Dubai" },
@@ -879,7 +879,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "The largest city on Earth",
         description: "At Shibuya Crossing, thousands of people flood the intersection every time the lights change, under walls of video screens. Yet a few minutes away the forest path to Meiji Shrine is hushed. Visit the incense and lanterns of Sensō-ji in Asakusa, eat sushi for breakfast near the old Tsukiji market, and see Shinjuku's neon alleys after dark.",
         bestTime: "Mar–Apr (cherry blossom), Oct–Nov", image: "wiki:Shibuya Crossing", wiki: "Tokyo" },
-      { name: "Kyoto", lat: 35.0116, lng: 135.7681, category: "Culture", sound: "temple",
+      { name: "Kyoto", skip: ["1makpi6", "dsudvf"], lat: 35.0116, lng: 135.7681, category: "Culture", sound: "temple",
         tagline: "A thousand years as the imperial capital",
         description: "Kyoto was Japan's capital for more than a millennium and still has around 1,600 temples. Walk through the thousands of vermilion torii gates that tunnel up the hillside at Fushimi Inari, see the Golden Pavilion reflected in its pond, and stand in the green light of the Arashiyama bamboo grove. In Gion at dusk you may glimpse a geiko on her way to an appointment.",
         bestTime: "Late Mar–Apr, Nov (autumn leaves)", image: "wiki:Fushimi Inari-taisha", wiki: "Kyoto" },
@@ -914,7 +914,7 @@ window.ATLAS_DATA = { countries: [
         tagline: "A forest of stone pillars in the mist",
         description: "Thousands of narrow sandstone columns, some more than 200 metres tall and topped with pine trees, rise out of a subtropical forest. When mist fills the valleys they appear to float, which is why they helped inspire the floating mountains in the film Avatar. Glass walkways and a cliffside elevator test your head for heights.",
         bestTime: "Apr–May, Sep–Oct", image: "wiki:Zhangjiajie National Forest Park" },
-      { name: "Shanghai", lat: 31.2304, lng: 121.4737, category: "City", sound: "metropolis",
+      { name: "Shanghai", skip: ["4blotr", "532cly", "14qoj84"], lat: 31.2304, lng: 121.4737, category: "City", sound: "metropolis",
         tagline: "China's city of the future",
         description: "On one bank of the Huangpu River stands the Bund, a sweep of grand 1920s banks and hotels. On the other is Pudong, a skyline of glass towers led by the twisting 632-metre Shanghai Tower, all of it built in a single generation. Between them: plane-tree-lined lanes, the old Yu Garden, and baskets of soup dumplings.",
         bestTime: "Mar–May, Sep–Nov", image: "wiki:The Bund", wiki: "Shanghai" }
@@ -925,7 +925,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Royal palaces between skyscrapers, a volcanic island, and food worth the flight.",
     hero: "wiki:Bukchon Hanok Village",
     places: [
-      { name: "Seoul", lat: 37.5665, lng: 126.9780, category: "City", sound: "city",
+      { name: "Seoul", skip: ["i0v2oe"], lat: 37.5665, lng: 126.9780, category: "City", sound: "city",
         tagline: "Palaces, neon and all-night markets",
         description: "The 14th-century palace of Gyeongbokgung sits with mountains behind it and office towers in front, and the royal guard still changes at the gate in bright robes. Wander the tiled-roof houses of Bukchon, then head to Gwangjang Market for mung bean pancakes sizzling on huge griddles. The city barely slows down at night.",
         bestTime: "Apr–May, Sep–Nov", image: "wiki:Gyeongbokgung", wiki: "Seoul" },
@@ -948,7 +948,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Golden temples, street food on every corner, and limestone islands in warm green water.",
     hero: "wiki:Wat Phra Kaew",
     places: [
-      { name: "Bangkok", lat: 13.7563, lng: 100.5018, category: "City", sound: "city",
+      { name: "Bangkok", skip: ["1mibzs5", "oft497", "jymgrl", "1qrzz0u"], lat: 13.7563, lng: 100.5018, category: "City", sound: "city",
         tagline: "A city of temples, canals and street food",
         description: "Heat, traffic, incense and the smell of grilling pork: Bangkok is a lot, in the best way. See the glittering Grand Palace and the 46-metre reclining Buddha at Wat Pho, then take a river boat to Wat Arun as its porcelain-covered spire catches the sunset. At night, eat your way down the neon-lit main street of Chinatown.",
         bestTime: "Nov–Feb (cool season)", image: "wiki:Wat Arun", wiki: "Bangkok" },
@@ -1187,7 +1187,7 @@ window.ATLAS_DATA = { countries: [
     summary: "A harbour city, the planet's largest coral reef, and a red rock in the middle of nowhere.",
     hero: "wiki:Sydney Harbour Bridge",
     places: [
-      { name: "Sydney", lat: -33.8568, lng: 151.2153, category: "City", sound: "city",
+      { name: "Sydney", skip: ["v97cql", "1qk534k"], lat: -33.8568, lng: 151.2153, category: "City", sound: "city",
         tagline: "The harbour city",
         description: "The white sails of the Opera House, opened in 1973, sit on a point in one of the world's great natural harbours, next to the steel arch of the Harbour Bridge. Take a ferry across to Manly for the best view of both, then walk the clifftop path from Bondi to Coogee, stopping to swim at the ocean pools along the way.",
         bestTime: "Sep–Nov, Mar–May", image: "wiki:Sydney Opera House", wiki: "Sydney" },
