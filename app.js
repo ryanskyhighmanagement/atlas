@@ -1258,7 +1258,7 @@
       (p.more || []).forEach((m) => { if (t.indexOf(m) < 0) t.push(m); });
       return t.slice(0, 5);
     };
-    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|') + '|' + (p.add || []).join('|') + '|' + (p.pics || []).join('|');
+    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|') + '|' + (p.add || []).join('|') + (p.pics && p.pics.length ? '|' + p.pics.join('|') : '');
 
     function build(p, review) {
       const own = (p.photos || []).map((u) => ({ t: u, u, w: 0, h: 0, a: '', l: '', p: u }));
