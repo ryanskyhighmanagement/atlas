@@ -936,6 +936,21 @@
     const show = () => { if (state.country !== c) return; openPanel(); swapView(countryHTML(c), !wasOpen); };
     if (wasOpen) show(); else panelT = setTimeout(show, 110);
     updateWorldButton();
+    warmGalleries(c);
+  }
+
+  // While someone looks at a country's places, their galleries are put together in the background, one at a
+  // time, so a tapped place usually opens with its photos ready. The same photos, only fetched earlier.
+  let warmRun = 0;
+  function warmGalleries(c) {
+    const run = ++warmRun;
+    const list = (c.places || []).slice();
+    if (navigator.connection && navigator.connection.saveData) return;   // the visitor asked to spare their data
+    const next = () => {
+      if (run !== warmRun || state.country !== c || !list.length) return;
+      Gallery.load(list.shift()).catch(() => null).then(() => setTimeout(next, 250));
+    };
+    setTimeout(next, 1800);                                  // after the flight, so it never competes with it
   }
 
   // Opening a place leaves the map: the stage (full-screen photos) takes over.
