@@ -1012,9 +1012,9 @@
      Each photo keeps its author and licence, shown in the photo viewer. */
 
   const Gallery = (function () {
-    const KEY = 'atlas.gallery.v10';
+    const KEY = 'atlas.gallery.v11';
     const MAX = 20;                                             // a short gallery of strong photos beats a long one with filler
-    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
+    try { ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10'].forEach((v) => localStorage.removeItem('atlas.gallery.' + v)); } catch (e) { /* ignore */ }
     let cache = {};
     try { cache = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { cache = {}; }
     const inflight = new Map();
@@ -1184,6 +1184,56 @@
       return spread;
     }
 
+    /* ---- More variety: extra photo sources, and hand-approved additions ----
+       A place's gallery above is left exactly as it is. On top of it, a place can list 'add': photos found in
+       the extra sources below and approved by eye (short fingerprints of their file names). Only those are
+       added; nothing from the extra sources gets in unseen. */
+    const EXTRA_WORDS = {
+      City: ['aerial', 'night', 'street', 'panorama'],
+      Historical: ['view', 'aerial', 'sunset', 'panorama'],
+      Culture: ['view', 'aerial', 'night', 'panorama'],
+      Nature: ['landscape', 'aerial', 'sunset', 'panorama'],
+      Mountain: ['landscape', 'aerial', 'sunset', 'panorama'],
+      Beach: ['beach', 'aerial', 'sunset', 'panorama'],
+    };
+    const wideOnly = (list) => list.filter((x) => x.w / x.h >= 1.25 && x.w / x.h <= 2.6);
+    const extraSearch = (title, word) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&generator=search&gsrnamespace=6&gsrlimit=30&gsrsearch=${encodeURIComponent(`"${title}" ${word} filetype:bitmap${NEG}`)}&${IMG}`)
+      .then((j) => wideOnly(pick(((j.query && j.query.pages) || []).sort((a, b) => a.index - b.index), 2400))).catch(() => []);
+    const ratedMore = (cat) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&generator=search&gsrnamespace=6&gsrlimit=50&gsroffset=50&gsrsearch=${encodeURIComponent(`deepcat:"${cat}" filetype:bitmap haswbstatement:P6731${NEG}`)}&${IMG}`)
+      .then((j) => pick(((j.query && j.query.pages) || []).sort((a, b) => a.index - b.index), 1600)).catch(() => []);
+    function extras(p, titles, catList) {
+      const t = String(titles[0] || p.name).replace(/\s*\(.*?\)\s*/g, ' ').trim();
+      const words = EXTRA_WORDS[p.category] || EXTRA_WORDS.City;
+      return Promise.all(words.map((w) => extraSearch(t, w)).concat(catList[0] ? [ratedMore(catList[0])] : [])).then((lists) => {
+        const seen = new Set(), out = [];
+        const n = Math.max.apply(null, lists.map((l) => l.length).concat(0));
+        for (let i = 0; i < n; i++) lists.forEach((l) => { const x = l[i]; if (x && !seen.has(x.t)) { seen.add(x.t); out.push(x); } });
+        return out;
+      });
+    }
+    // the same checks as the gallery's own, minus the limits: what is left is worth a look
+    function screen(p, x) {
+      const nature = /^(Nature|Mountain|Beach)$/.test(p.category);
+      const text = (x.c || []).join(' | ') + ' | ' + words(x.t);
+      if (skipped(p, x) || farOff(p, x, nature)) return false;
+      if (PEOPLE.test(text) || THINGS.test(text) || (p.category !== 'Culture' && FOOD.test(text))) return false;
+      if (!nature && FAUNA.test(text)) return false;
+      if (DULL.test(text)) return false;
+      for (const q of (x.d || [])) {
+        const k = known.get(q); if (!k) continue;
+        if (PERSON.test(k.d) || NOBODY.test(k.label)) return false;
+        if (ANIMAL.test(k.d) && !nature) return false;
+        if (VEHICLE.test(k.label) || PROP.test(k.d)) return false;
+      }
+      return true;
+    }
+    // base gallery first; after its sixth photo, base and added photos take turns
+    function blend(base, added) {
+      const out = base.slice(0, 6), b = base.slice(6), a = added.slice();
+      while (b.length || a.length) { if (b.length) out.push(b.shift()); if (a.length) out.push(a.shift()); }
+      return out.slice(0, MAX + 12);
+    }
+
     const titlesOf = (p) => {
       const t = [];
       if (p.wiki) t.push(p.wiki);
@@ -1191,9 +1241,9 @@
       (p.more || []).forEach((m) => { if (t.indexOf(m) < 0) t.push(m); });
       return t.slice(0, 5);
     };
-    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|');
+    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|') + '|' + (p.add || []).join('|');
 
-    function build(p) {
+    function build(p, review) {
       const own = (p.photos || []).map((u) => ({ t: u, u, w: 0, h: 0, a: '', l: '', p: u }));
       const titles = titlesOf(p);
       if (!titles.length) return Promise.resolve(own);
@@ -1222,9 +1272,19 @@
           const body = curate(own.concat(rest, extra || []), p, roots);
           return sky2.concat(body).slice(0, MAX).map(strip);
         });
-        return done().then((first) => {
+        const based = done().then((first) => {
           if (first.length >= 6) return first;                 // quality over quantity: unrated photos only fill a nearly empty gallery
           return (res[3][0] ? fromCommons(res[3][0], false) : Promise.resolve([])).then((extra) => done(extra.filter((x) => !seen.has(x.t)).slice(0, 14)));
+        });
+        if (!review && !(p.add && p.add.length)) return based;
+        return Promise.all([based, extras(p, titles, res[3])]).then(([base, more]) => {
+          const inBase = new Set(base.map((x) => x.t));
+          // everything fetched for this place that is not in the gallery: the extra sources, then what the limits left out
+          const pool = []; const seen2 = new Set();
+          more.concat(rest, sky2).forEach((x) => { if (!inBase.has(x.t) && !seen2.has(x.t)) { seen2.add(x.t); pool.push(x); } });
+          if (review) return describe(pool).then(() => ({ base, cands: pool.filter((x) => screen(p, x)).slice(0, 28).map(strip) }));
+          const added = p.add.map((code) => pool.find((x) => fp(x.t) === code)).filter(Boolean).map(strip);
+          return blend(base, added);
         });
       });
     }
@@ -1254,7 +1314,7 @@
       return it.u.replace(/\/\d+px-/, '/' + step + 'px-');
     }
 
-    return { load, sized, curate, describe, known, fp, forget: (p) => { delete cache[keyOf(p)]; } };
+    return { load, sized, curate, describe, known, fp, review: (p) => build(p, true), forget: (p) => { delete cache[keyOf(p)]; } };
   })();
 
   /* ---------- Layers: stage and photo viewer close with the browser Back button too ---------- */
