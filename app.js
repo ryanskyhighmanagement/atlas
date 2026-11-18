@@ -89,6 +89,8 @@
 
   const DATA = (window.ATLAS_DATA && window.ATLAS_DATA.countries) || [];
   const byId = new Map(DATA.map((c) => [c.id, c]));
+  // each place's address in galleries.json (country id and position), kept out of sight of loops and JSON
+  DATA.forEach((c) => c.places.forEach((p, i) => Object.defineProperty(p, '_key', { value: c.id + '.' + i })));
   const placeCount = DATA.reduce((n, c) => n + c.places.length, 0);
 
   /* ---------- Saved places and visited countries (kept in this browser) ---------- */
@@ -1304,11 +1306,38 @@
       });
     }
 
+    /* ---- Ready-made galleries ----
+       galleries.json holds every place's finished gallery (the result of build() above, worked out ahead of time)
+       as a list of Commons page ids. Opening a place then takes one lookup for the photos' sizes and credits,
+       instead of the 20 to 40 that build() makes. Same photos, same order, same quality. A place whose data
+       changed after the file was made (its fingerprint no longer matches) goes back to build(). */
+    let ready = null;
+    const readyFile = () => ready || (ready = fetch('galleries.json').then((r) => (r.ok ? r.json() : {})).then((j) => j.places || {}).catch(() => ({})));
+    function fromReady(p) {
+      if (!p._key) return Promise.resolve(null);
+      return readyFile().then((all) => {
+        const line = all[p._key];
+        if (!line) return null;
+        const parts = line.split('|');
+        if (parts[0] !== fp(keyOf(p))) return null;             // the place changed since the file was made
+        const ids = parts[1] ? parts[1].split(',').map((x) => parseInt(x, 36)).filter((n) => n > 0) : [];
+        if (!ids.length) return null;
+        const chunks = []; for (let i = 0; i < ids.length; i += 50) chunks.push(ids.slice(i, i + 50));
+        return Promise.all(chunks.map((part) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&pageids=${part.join('%7C')}&${IMG}`).then((c) => (c.query && c.query.pages) || [])))
+          .then((lists) => {
+            const byId = new Map();
+            lists.forEach((l) => l.forEach((pg) => { if (pg.imageinfo && pg.imageinfo[0]) byId.set(pg.pageid, pg); }));
+            const items = ids.map((id) => byId.get(id)).filter(Boolean).map(item).map((x) => { delete x.c; delete x.id; delete x.g; return x; });
+            return items.length >= Math.min(4, ids.length) ? items : null;   // most of it missing: build it fresh instead
+          });
+      }).catch(() => null);
+    }
+
     function load(p) {
       const k = keyOf(p);
       if (cache[k] && cache[k].length) return Promise.resolve(cache[k]);
       if (inflight.has(k)) return inflight.get(k);
-      const job = build(p).catch(() => []).then((items) => {
+      const job = fromReady(p).then((got) => got || build(p)).catch(() => []).then((items) => {
         inflight.delete(k);
         if (items.length) {
           cache[k] = items;
@@ -1329,7 +1358,7 @@
       return it.u.replace(/\/\d+px-/, '/' + step + 'px-');
     }
 
-    return { load, sized, curate, describe, known, fp, review: (p) => build(p, true), forget: (p) => { delete cache[keyOf(p)]; } };
+    return { load, sized, curate, describe, known, fp, keyOf, review: (p) => build(p, true), build, forget: (p) => { delete cache[keyOf(p)]; } };
   })();
 
   /* ---------- Layers: stage and photo viewer close with the browser Back button too ---------- */

@@ -3,9 +3,9 @@
    instantly and from the home screen. Map tiles, photos and sound recordings always come from the
    network: they are large, and the app already shows placeholders when they cannot load.
    Change VERSION whenever the app's files change, so installed copies pick up the new ones. */
-const VERSION = 'atlas-28';
+const VERSION = 'atlas-29';
 const SHELL = [
-  './', 'index.html', 'styles.css', 'app.js', 'data.js', 'sound.js', 'manifest.json',
+  './', 'index.html', 'styles.css', 'app.js', 'data.js', 'galleries.json', 'sound.js', 'manifest.json',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png',
   'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css',
   'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js',
@@ -41,7 +41,7 @@ self.addEventListener('fetch', (e) => {
     if (lib) return hit || fetch(req).then((res) => { if (res && res.ok) cache.put(req, res.clone()); return res; });   // libraries and fonts never change
     // The app's own files: the network's copy first, so an update shows the first time the app is opened.
     // The saved copy is the fallback when offline, or when the network takes longer than three seconds.
-    const fresh = fetch(req, { cache: 'no-cache' }).then((res) => { if (res && res.ok) cache.put(req, res.clone()); return res; });
+    const fresh = fetch(req.mode === 'navigate' ? new Request(req.url, { cache: 'no-cache', credentials: 'same-origin' }) : new Request(req, { cache: 'no-cache' })).then((res) => { if (res && res.ok) cache.put(req, res.clone()); return res; });
     if (!hit) return fresh;
     const slow = new Promise((done) => setTimeout(() => done(hit), 3000));
     return Promise.race([fresh.then((res) => (res && res.ok ? res : hit)).catch(() => hit), slow]);
