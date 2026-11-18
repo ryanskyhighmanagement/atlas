@@ -1258,7 +1258,7 @@
       (p.more || []).forEach((m) => { if (t.indexOf(m) < 0) t.push(m); });
       return t.slice(0, 5);
     };
-    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|') + '|' + (p.add || []).join('|');
+    const keyOf = (p) => p.name + '|' + titlesOf(p).join('|') + '|' + (p.photos || []).length + '|' + (p.lead || []).join('|') + '|' + (p.skip || []).join('|') + '|' + (p.add || []).join('|') + '|' + (p.pics || []).join('|');
 
     function build(p, review) {
       const own = (p.photos || []).map((u) => ({ t: u, u, w: 0, h: 0, a: '', l: '', p: u }));
@@ -1293,7 +1293,10 @@
           if (first.length >= 6) return first;                 // quality over quantity: unrated photos only fill a nearly empty gallery
           return (res[3][0] ? fromCommons(res[3][0], false) : Promise.resolve([])).then((extra) => done(extra.filter((x) => !seen.has(x.t)).slice(0, 14)));
         });
-        if (!review && !(p.add && p.add.length)) return based;
+        // 'pics': photos picked by eye from wider searches (markets, streets, wildlife...), named by Commons page id
+        const picked = (p.pics && p.pics.length) ? byPageIds(p.pics.map((x) => parseInt(x, 36))).catch(() => []) : Promise.resolve([]);
+        const withPics = (gal) => picked.then((more) => { const have = new Set(gal.map((x) => x.t)); return blend(gal, more.filter((x) => !have.has(x.t))); });
+        if (!review && !(p.add && p.add.length)) return based.then(withPics);
         return Promise.all([based, extras(p, titles, res[3])]).then(([base, more]) => {
           const inBase = new Set(base.map((x) => x.t));
           // everything fetched for this place that is not in the gallery: the extra sources, then what the limits left out
@@ -1301,7 +1304,7 @@
           more.concat(rest, sky2).forEach((x) => { if (!inBase.has(x.t) && !seen2.has(x.t)) { seen2.add(x.t); pool.push(x); } });
           if (review) return describe(pool).then(() => ({ base, cands: pool.filter((x) => screen(p, x)).slice(0, 28).map(strip) }));
           const added = p.add.map((code) => pool.find((x) => fp(x.t) === code)).filter(Boolean).map(strip);
-          return blend(base, added);
+          return withPics(blend(base, added));
         });
       });
     }
@@ -1311,6 +1314,15 @@
        as a list of Commons page ids. Opening a place then takes one lookup for the photos' sizes and credits,
        instead of the 20 to 40 that build() makes. Same photos, same order, same quality. A place whose data
        changed after the file was made (its fingerprint no longer matches) goes back to build(). */
+    const byPageIds = (ids) => {
+      const chunks = []; for (let i = 0; i < ids.length; i += 50) chunks.push(ids.slice(i, i + 50));
+      return Promise.all(chunks.map((part) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&pageids=${part.join('%7C')}&${IMG}`).then((c) => (c.query && c.query.pages) || [])))
+        .then((lists) => {
+          const byId = new Map();
+          lists.forEach((l) => l.forEach((pg) => { if (pg.imageinfo && pg.imageinfo[0]) byId.set(pg.pageid, pg); }));
+          return ids.map((id) => byId.get(id)).filter(Boolean).map(item).map((x) => { delete x.c; delete x.id; delete x.g; return x; });
+        });
+    };
     let ready = null;
     const readyFile = () => ready || (ready = fetch('galleries.json').then((r) => (r.ok ? r.json() : {})).then((j) => j.places || {}).catch(() => ({})));
     function fromReady(p) {
@@ -1322,14 +1334,7 @@
         if (parts[0] !== fp(keyOf(p))) return null;             // the place changed since the file was made
         const ids = parts[1] ? parts[1].split(',').map((x) => parseInt(x, 36)).filter((n) => n > 0) : [];
         if (!ids.length) return null;
-        const chunks = []; for (let i = 0; i < ids.length; i += 50) chunks.push(ids.slice(i, i + 50));
-        return Promise.all(chunks.map((part) => json(`${COMMONS}?action=query&format=json&formatversion=2&origin=*&pageids=${part.join('%7C')}&${IMG}`).then((c) => (c.query && c.query.pages) || [])))
-          .then((lists) => {
-            const byId = new Map();
-            lists.forEach((l) => l.forEach((pg) => { if (pg.imageinfo && pg.imageinfo[0]) byId.set(pg.pageid, pg); }));
-            const items = ids.map((id) => byId.get(id)).filter(Boolean).map(item).map((x) => { delete x.c; delete x.id; delete x.g; return x; });
-            return items.length >= Math.min(4, ids.length) ? items : null;   // most of it missing: build it fresh instead
-          });
+        return byPageIds(ids).then((items) => (items.length >= Math.min(4, ids.length) ? items : null));   // most of it missing: build it fresh instead
       }).catch(() => null);
     }
 
