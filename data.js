@@ -412,7 +412,19 @@ window.ATLAS_DATA = { countries: [
       { name: "Granada", add: ["1sb7gq5", "cmmp8q", "1r0q0cg", "roy1vv", "qv0qb4", "ew3qjk"], skip: ["aw6ozt"], aka: ["Alhambra"], lat: 37.1760, lng: -3.5881, category: "Historical", sound: "temple",
         tagline: "The Alhambra, last palace of Moorish Spain",
         description: "The Alhambra sits on a red hill with the snow of the Sierra Nevada behind it. Inside, the Nasrid Palaces are rooms of lace-like stucco, cedar ceilings and courtyards where water runs quietly through marble channels. Watch it turn gold at sunset from the San Nicolás viewpoint in the old Albaicín quarter across the valley.",
-        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Alhambra", wiki: "Granada" }
+        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Alhambra", wiki: "Granada" },
+      { name: "Mallorca", aka: ["Majorca", "Palma"], lat: 39.6167, lng: 2.9833, category: "Beach", sound: "ocean",
+        tagline: "Turquoise coves under a mountain range",
+        description: "Palma's Gothic cathedral rises straight out of the old sea walls, and the old town behind it is a maze of courtyards and tapas bars. Beyond the city, the Serra de Tramuntana mountains run along the northwest coast: drive the hairpin road down to Sa Calobra, wander the stone villages of Valldemossa and Deià, and swim in clear coves you reach on foot.",
+        bestTime: "May–Jun, Sep–Oct", image: "wiki:Palma Cathedral", wiki: "Mallorca", more: ["Palma de Mallorca", "Serra de Tramuntana", "Sa Calobra", "Cap de Formentor", "Valldemossa"] },
+      { name: "Ibiza", aka: ["Eivissa"], lat: 38.9800, lng: 1.4300, category: "Beach", sound: "ocean",
+        tagline: "White walls, hidden coves and famous sunsets",
+        description: "Ibiza is far more than its clubs. The old walled town of Dalt Vila climbs a hill above the harbour, and the island's west coast is a string of pine-backed coves with water so clear the boats seem to float. Watch the sun go down behind the rock of Es Vedrà from Cala d'Hort, then head back to Sant Antoni or Ibiza Town for the night.",
+        bestTime: "Jun, Sep", image: "wiki:Es Vedrà", wiki: "Ibiza", more: ["Ibiza (city)", "Dalt Vila", "Es Vedrà", "Cala d'Hort", "Sant Antoni de Portmany"] },
+      { name: "Cádiz", aka: ["Cadiz"], lat: 36.5297, lng: -6.2925, category: "Historical", sound: "ocean",
+        tagline: "One of Europe's oldest cities, wrapped in sea",
+        description: "Cádiz sits on a narrow spit almost surrounded by the Atlantic and has been lived in for about 3,000 years. The golden dome of its cathedral looks out over the sea wall, the lanes of the old town are cool and narrow, and the little beach of La Caleta sits between two old forts. Climb the Torre Tavira for the view, then eat fried fish from a paper cone.",
+        bestTime: "May–Jun, Sep–Oct", image: "wiki:Cádiz Cathedral", wiki: "Cádiz", more: ["Cádiz Cathedral", "Castle of San Sebastián (Cádiz)", "La Caleta"] }
     ]
   },
   {
