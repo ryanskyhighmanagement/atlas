@@ -2440,29 +2440,6 @@ window.ATLAS_DATA = { countries: [
   },
   /* ---------- Middle East, Caucasus & Central Asia ---------- */
   {
-    id: "376", name: "Israel", region: "Middle East", soundProfile: "city",
-    summary: "Holy sites of three faiths, a beach city of white Bauhaus buildings, and a desert fortress above the lowest land on Earth.",
-    hero: "wiki:Masada",
-    places: [
-      { name: "Jerusalem Old City", pics: ["1h9sfn", "hwff7", "alz96"], add: ["1xnllky", "n8e2jv", "xgjvge"], lat: 31.7767, lng: 35.2342, category: "Historical", sound: "temple", zoom: 15,
-        tagline: "Sacred to three faiths",
-        description: "The walled Old City, less than one square kilometre, holds sites sacred to Judaism, Christianity and Islam: the Western Wall, the Church of the Holy Sepulchre, and the golden Dome of the Rock. Its four quarters are a maze of stone lanes and markets. The Old City lies in East Jerusalem, whose status is disputed between Israelis and Palestinians and internationally.",
-        bestTime: "Mar–May", image: "wiki:Old City of Jerusalem", more: ["Western Wall", "Dome of the Rock"] },
-      { name: "Tel Aviv", pics: ["vbwml", "1ds9gu", "jg8iu"], add: ["188sejd", "12dub3t", "4nwfib"], skip: ["1ac4tj4", "16m3eep", "17k8uiy", "13skyyz"], lat: 32.0800, lng: 34.7800, category: "City", sound: "city",
-        tagline: "The White City by the sea",
-        description: "Tel Aviv's White City has thousands of Bauhaus-style buildings from the 1930s and is a UNESCO World Heritage Site. A long promenade runs beside the city beaches, and at its southern end the old port of Jaffa climbs a hill of stone lanes above the sea.",
-        bestTime: "Apr–Jun", image: "wiki:Tel Aviv", more: ["Jaffa"] },
-      { name: "Masada & the Dead Sea", pics: ["e7laa", "nbo1o", "vcv8n"], add: ["qo8qvt", "18esamf", "1wmh488"], skip: ["rpixda", "1u94sl3", "5vs3xy"], lat: 31.3156, lng: 35.3539, category: "Historical", sound: "desert", zoom: 12,
-        tagline: "A desert fortress above the lowest shore on Earth",
-        description: "King Herod built a fortress palace on this flat-topped rock 400 metres above the Dead Sea, and in the first century AD it was the last stand of Jewish rebels against Rome. Many climb the Snake Path before dawn for sunrise over the Dead Sea, whose shore, more than 430 metres below sea level, is the lowest land on Earth. Its water is so salty that you float.",
-        bestTime: "Nov–Apr", image: "wiki:Masada", more: ["Dead Sea", "Ein Gedi"] },
-      { name: "Sea of Galilee", pics: ["m6rgj", "hwc32", "1zgym8", "284xux"], add: ["l5aqj2", "1jwqbjl", "w0nlvi", "1i1qefe"], skip: ["1vxycyg", "1jqqiy9", "2ssr71", "c7oqt4", "bn9w5n"], lat: 32.8189, lng: 35.5900, category: "Nature", sound: "ocean", zoom: 11,
-        tagline: "The lowest freshwater lake on Earth",
-        description: "More than 200 metres below sea level, the Sea of Galilee is the lowest freshwater lake on Earth, ringed by hills and by places linked to the life of Jesus, such as Capernaum. The town of Tiberias sits on its western shore, and hot springs bubble nearby.",
-        bestTime: "Mar–May", image: "wiki:Sea of Galilee" }
-    ]
-  },
-  {
     id: "275", name: "Palestine", region: "Middle East", soundProfile: "temple", aka: ["West Bank", "Palestinian territories"],
     summary: "The town of the Nativity, and one of the oldest cities on Earth in the Jordan Valley.",
     hero: "wiki:Church of the Nativity",

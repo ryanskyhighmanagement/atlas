@@ -793,6 +793,15 @@
       .then((r) => { if (!r.ok) throw new Error('boundaries ' + r.status); return r.json(); })
       .then((topo) => {
         const fc = window.topojson.feature(topo, topo.objects.countries);
+        // Israel (376) is drawn as part of Palestine (275): one shape, no border between them.
+        const geoms = topo.objects.countries.geometries;
+        const isr = geoms.find((g) => g.id === '376'), pal = geoms.find((g) => g.id === '275');
+        if (isr && pal) {
+          const merged = window.topojson.merge(topo, [isr, pal]);
+          fc.features = fc.features.filter((f) => f.id !== '376');
+          const pf = fc.features.find((f) => f.id === '275');
+          if (pf) pf.geometry = merged;
+        }
         fc.features.forEach(cutAtDateLine);
         fc.features.forEach((f) => { if (!f.id && f.properties && f.properties.name === 'Kosovo') f.id = 'XK'; });   // no ISO number in the map data
         geo = L.geoJSON(fc, { style: styleOf, onEachFeature: bindCountry, smoothFactor: 1.2 }).addTo(map);
