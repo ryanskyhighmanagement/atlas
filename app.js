@@ -794,6 +794,7 @@
       .then((topo) => {
         const fc = window.topojson.feature(topo, topo.objects.countries);
         fc.features.forEach(cutAtDateLine);
+        fc.features.forEach((f) => { if (!f.id && f.properties && f.properties.name === 'Kosovo') f.id = 'XK'; });   // no ISO number in the map data
         geo = L.geoJSON(fc, { style: styleOf, onEachFeature: bindCountry, smoothFactor: 1.2 }).addTo(map);
         borderPicture(fc.features);
         // Country names over the map are switched off. To bring them back: Names.build();

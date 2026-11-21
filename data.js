@@ -1804,5 +1804,270 @@ window.ATLAS_DATA = { countries: [
         description: "The Rub' al Khali covers about 650,000 square kilometres, most of it in Saudi Arabia: an unbroken sea of dunes, some more than 250 metres high, with almost no rain and no permanent settlements. The sand turns from pale gold to red as the light changes. The explorer Wilfred Thesiger crossed it by camel with Bedouin companions in the 1940s.",
         bestTime: "Nov–Feb", image: "wiki:Rub' al Khali" }
     ]
+  },
+  /* ---------- Europe: the rest ---------- */
+  {
+    id: "208", name: "Denmark", region: "Europe", soundProfile: "city",
+    summary: "A capital of canals and bicycles, Hamlet's castle, and the sandbar where two seas meet.",
+    hero: "wiki:Nyhavn",
+    places: [
+      { name: "Copenhagen", add: ["1jjdrgi", "17desku", "1ma6g2d", "1tubtb9", "rxrewp"], skip: ["g41vj3", "1lqo0en"], lat: 55.6761, lng: 12.5689, category: "City", sound: "city",
+        tagline: "Canals, bicycles and painted harbour houses",
+        description: "Copenhagen's 17th-century Nyhavn canal is lined with brightly painted townhouses and old wooden ships. Cycling is the normal way to get around, on wide lanes of its own, and harbour baths let people swim in clean water right in the city. Tivoli Gardens, opened in 1843, is one of the oldest amusement parks in the world.",
+        bestTime: "May–Sep", image: "wiki:Nyhavn", wiki: "Copenhagen", more: ["Tivoli Gardens", "Christiansborg Palace"] },
+      { name: "Kronborg Castle", add: ["pludtr", "r0jx4y", "s778ls", "1o4tfcy"], skip: ["1fa50yq", "ywvhkk", "12uj1ph", "1pt7amp", "14catzd"], lat: 56.0386, lng: 12.6219, category: "Historical", sound: "ocean",
+        tagline: "Hamlet's Elsinore, on the edge of the sound",
+        description: "This Renaissance castle at Helsingør stands on the narrowest point of the Øresund, and it is the Elsinore of Shakespeare's Hamlet. For more than four centuries Denmark charged a toll on every ship passing through the strait here, and Sweden is only about 4 kilometres away across the water. It is a UNESCO World Heritage Site.",
+        bestTime: "May–Sep", image: "wiki:Kronborg" },
+      { name: "Skagen", add: ["1drob7s", "ptis0c", "1x51s0c", "1w25h71"], skip: ["1gib2o5", "vu4ao9", "1v7m5de", "1wtwuyr"], lat: 57.7209, lng: 10.5839, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "Where two seas meet",
+        description: "At Denmark's northern tip, the long sandbar of Grenen points into the sea, and you can stand where the Skagerrak and the Kattegat meet, with waves rolling in from both sides. The town of yellow houses and red roofs drew a colony of painters in the late 1800s, who came for the light. Nearby, the Råbjerg Mile is a sand dune that still migrates across the land.",
+        bestTime: "Jun–Aug", image: "wiki:Grenen", wiki: "Skagen", more: ["Råbjerg Mile"] },
+      { name: "Møns Klint", add: ["1ttxmqi", "qx2u97", "10eijhi", "gj42za", "e6gruc"], lat: 54.9642, lng: 12.5522, category: "Nature", sound: "ocean", zoom: 11,
+        tagline: "White chalk cliffs on the Baltic",
+        description: "On the island of Møn, about two hours' drive south of Copenhagen, white chalk cliffs run for 6 kilometres and drop up to 120 metres into the Baltic. Long wooden stairways lead down through beech forest to the shore, where people look for fossils in the chalk. The cliffs became a UNESCO World Heritage Site in 2025.",
+        bestTime: "May–Sep", image: "wiki:Møns Klint" }
+    ]
+  },
+  {
+    id: "056", name: "Belgium", region: "Europe", soundProfile: "city",
+    summary: "Medieval guild towns on canals, a gilded grand square, and a citadel above the Meuse.",
+    hero: "wiki:Grand-Place",
+    places: [
+      { name: "Brussels", add: ["p9d2rt", "1sxpnqy", "t9y5gy"], skip: ["wtqfr7", "17cmbpd", "wmb1zk", "i8pi0j", "1ex8l60", "1adkwvd", "128qtzd", "5gwpfe"], lat: 50.8467, lng: 4.3525, category: "City", sound: "city",
+        tagline: "Guildhalls of gold and a giant atom",
+        description: "The Grand-Place, ringed by gilded Baroque guildhalls and a Gothic town hall, is one of the most beautiful squares in Europe, and every other August its cobbles disappear under a huge carpet of flowers. In the north of the city, the Atomium, built for the 1958 World's Fair, is a steel model of an iron crystal enlarged 165 billion times.",
+        bestTime: "Apr–Sep", image: "wiki:Grand-Place", wiki: "Brussels", more: ["Atomium"] },
+      { name: "Bruges", pics: ["kgl6e", "20nxjf", "h8ttp", "ufqpq", "2i0wtb"], add: ["7mmut6", "afq54h", "ycyst1", "1t32nj"], skip: ["rnv8z8", "1vuvqyc", "7fzndi", "hq2x44", "1dktcq9", "5ba2v3", "fbh4d1", "1a1krrs", "krayiy", "pat9rh", "1aq9xgr", "16qoz8v"], lat: 51.2089, lng: 3.2242, category: "Historical", sound: "city",
+        tagline: "A medieval city frozen in time",
+        description: "Bruges grew rich on the cloth trade in the Middle Ages, then went quiet when its route to the sea silted up, which is a big reason its old centre survived. Canals wind between step-gabled houses, and the 83-metre belfry rises over the market square. The whole historic centre is a UNESCO World Heritage Site.",
+        bestTime: "Apr–Sep", image: "wiki:Bruges", more: ["Belfry of Bruges"] },
+      { name: "Ghent", add: ["590leb", "1p9kjmn", "icysvm", "r6mi98"], skip: ["14yq7tg", "12pfn7g", "i7arq9", "1e6d0xr", "1bky4tv", "1kbqv4p", "3nlqvk"], lat: 51.0536, lng: 3.7253, category: "City", sound: "city",
+        tagline: "Guild houses, towers and a moated castle",
+        description: "Ghent's medieval waterfront along the Graslei and Korenlei is lined with guild houses that glow at night. Gravensteen, a 12th-century castle of the Counts of Flanders, still stands with its moat in the middle of the city. Three tall towers, of St Bavo's Cathedral, the belfry and St Nicholas' Church, line up along the skyline.",
+        bestTime: "Apr–Sep", image: "wiki:Ghent", more: ["Gravensteen", "Graslei"] },
+      { name: "Dinant", add: ["1lvi586", "1mbqn8t", "1t1nirw", "1lnrs5i", "1b1duf5"], skip: ["vwnnbr", "1dtywok"], lat: 50.2564, lng: 4.9136, category: "Historical", sound: "mountains",
+        tagline: "A river town under a cliff",
+        description: "Dinant is squeezed between the River Meuse and a sheer limestone cliff, with a citadel on top and the bulb-spired Collegiate Church of Notre-Dame at its foot. It is the hometown of Adolphe Sax, who invented the saxophone, and giant painted saxophones line its bridge. Kayaks drift down the nearby Lesse through the wooded Ardennes.",
+        bestTime: "May–Sep", image: "wiki:Dinant" }
+    ]
+  },
+  {
+    id: "442", name: "Luxembourg", region: "Europe", soundProfile: "city",
+    summary: "A fortress capital on cliffs above green gorges, and a storybook castle in the Ardennes.",
+    hero: "wiki:Luxembourg City",
+    places: [
+      { name: "Luxembourg City", add: ["1jmrpx", "pwa8ri", "vayjso", "1cgselc"], skip: ["at1i1b"], lat: 49.6114, lng: 6.1300, category: "City", sound: "city",
+        tagline: "A capital built on cliffs",
+        description: "Luxembourg City sits on cliffs above the deep valleys of the Alzette and Pétrusse rivers. Its old quarters and fortifications are a UNESCO World Heritage Site, and tunnels cut into the rock, the casemates, run beneath the ramparts. From the Chemin de la Corniche, often called the most beautiful balcony in Europe, you look down on the Grund quarter by the river.",
+        bestTime: "May–Sep", image: "wiki:Luxembourg City", more: ["Bock (Luxembourg)"] },
+      { name: "Vianden", add: ["aivzby", "1b9upbh", "vgwge", "1ewdyks"], skip: ["1yb40y7", "ttbyv2", "1m5q463"], lat: 49.9350, lng: 6.2028, category: "Historical", sound: "mountains",
+        tagline: "A castle above the River Our",
+        description: "Vianden Castle is one of the largest fortified castles west of the Rhine, rebuilt from ruins in the late 20th century. It stands on a hill above a small town on the River Our, in the Ardennes near the German border. A chairlift climbs the opposite slope for the classic view across the valley to the castle.",
+        bestTime: "May–Sep", image: "wiki:Vianden Castle", wiki: "Vianden" }
+    ]
+  },
+  {
+    id: "470", name: "Malta", region: "Europe", soundProfile: "ocean",
+    summary: "Honey-coloured fortress cities, temples older than the pyramids, and clear blue Mediterranean water.",
+    hero: "wiki:Valletta",
+    places: [
+      { name: "Valletta", add: ["1a20ugt", "mxoob", "21lj4r", "1hvy2kk", "f04y2n"], skip: ["1ctqcia"], lat: 35.8978, lng: 14.5125, category: "Historical", sound: "city",
+        tagline: "The knights' fortress capital",
+        description: "Built by the Knights of St John after the Great Siege of 1565, Valletta is a grid of steep limestone streets with enclosed wooden balconies painted in bright colours. At 0.61 square kilometres it is the smallest capital in the European Union. From the Upper Barrakka Gardens you look across the Grand Harbour to the fortified Three Cities.",
+        bestTime: "Apr–Jun", image: "wiki:Valletta", more: ["Upper Barrakka Gardens"] },
+      { name: "Mdina", add: ["8nkzes", "w7evna", "t2q0px", "1khb643"], skip: ["rod2ev", "zk2bcb", "1utwge5", "b9ayy1"], lat: 35.8858, lng: 14.4031, category: "Historical", sound: "temple",
+        tagline: "The Silent City",
+        description: "Malta's ancient capital sits on a hilltop inside its walls and has never spread beyond them. Fewer than 300 people live there, and with few cars allowed, its narrow golden streets are famously quiet, which gave it the name the Silent City. From its bastions you can see across most of the island.",
+        bestTime: "Apr–Jun", image: "wiki:Mdina" },
+      { name: "Gozo", add: ["ff1v03", "x2qn3e", "1cfez1e", "efmsy7", "jjq5dm"], skip: ["1buwv2r", "1f1u30d"], lat: 36.0450, lng: 14.2589, category: "Nature", sound: "ocean", zoom: 11,
+        tagline: "Malta's greener, slower island",
+        description: "A short ferry ride from Malta, Gozo is quieter and greener. The Ġgantija temples here are more than 5,000 years old, older than the pyramids of Giza. Red-sand Ramla Bay, sea cliffs on the west coast and the hilltop Citadel in Victoria make it easy to fill a few days.",
+        bestTime: "May–Oct", image: "wiki:Cittadella (Gozo)", wiki: "Gozo", more: ["Ramla Bay", "Ġgantija"] },
+      { name: "Comino", add: ["7x0dg0", "1wcbqow", "s685kh", "17xxtl8"], lat: 36.0114, lng: 14.3367, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "The Blue Lagoon",
+        description: "A tiny island between Malta and Gozo with only a handful of residents, Comino is known for its Blue Lagoon, a channel of startlingly clear turquoise water over white sand. Day boats crowd it in summer, so come early or stay late. The rest of the island is wild, scrubby coast you can walk around in a couple of hours.",
+        bestTime: "Jun–Sep", image: "wiki:Comino" }
+    ]
+  },
+  {
+    id: "196", name: "Cyprus", region: "Europe", soundProfile: "ocean",
+    summary: "Ancient tombs and Aphrodite's rock, pine-covered mountains, and sea caves on turquoise water.",
+    hero: "wiki:Cape Greco",
+    places: [
+      { name: "Paphos", add: ["ftdp36", "m6b54s", "114ps0m"], skip: ["p73uvg", "15kb62w"], lat: 34.7761, lng: 32.4265, category: "Historical", sound: "ocean",
+        tagline: "Aphrodite's coast",
+        description: "Paphos is a seaside town built over an ancient capital, and the whole of it is a UNESCO World Heritage Site. By the harbour are the ruins of Nea Paphos, with Roman floor mosaics still in place, and nearby the Tombs of the Kings are carved out of solid rock. Along the coast to the east is Petra tou Romiou, the rock where, in myth, Aphrodite rose from the waves.",
+        bestTime: "Apr–Jun", image: "wiki:Paphos", more: ["Tombs of the Kings (Paphos)", "Petra tou Romiou"] },
+      { name: "Troodos Mountains", add: ["130br8l", "1ivbwd4", "krvmrg", "lkn2le", "13csx22"], lat: 34.9167, lng: 32.8333, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "Pine forest, stone villages and painted churches",
+        description: "The Troodos range covers about a third of the island and rises to 1,952 metres at Mount Olympus, where there is snow and even skiing in winter. Its valleys hide ten painted Byzantine churches listed by UNESCO, and stone villages such as Kakopetria and Omodos, with vineyards on the slopes around them.",
+        bestTime: "Apr–Oct", image: "wiki:Troodos Mountains", more: ["Kakopetria", "Omodos"] },
+      { name: "Cape Greco & Ayia Napa", add: ["1ccpneh", "1boepjs", "u8q44i", "1sufy1n", "ive13b"], lat: 34.9630, lng: 34.0780, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Sea caves and white sand",
+        description: "At the southeastern tip of Cyprus, the cliffs of Cape Greco drop into exceptionally clear water, with sea caves and rock arches to swim and snorkel around. The nearby resort of Ayia Napa has some of the island's best white-sand beaches, such as Nissi Beach.",
+        bestTime: "May–Oct", image: "wiki:Cape Greco", more: ["Ayia Napa", "Nissi Beach"] }
+    ]
+  },
+  {
+    id: "112", name: "Belarus", region: "Europe", soundProfile: "city",
+    summary: "Castles reflected in quiet ponds, the last primeval forest of the European plain, and a grand rebuilt capital.",
+    hero: "wiki:Mir Castle Complex",
+    places: [
+      { name: "Minsk", pics: ["1cekny", "1ct201", "2ivmh7", "1cin77", "1g2ikc", "1ct25g", "v4rx9"], add: ["zk98fr", "1gl4vn1"], skip: ["eo8uxi", "ctbh2c", "1f98xvu", "2xwi33", "c9ivs3", "6m5pg1", "l362do", "kwh2tw", "1ru2l0w", "76z1y7", "1kcawjn", "1bq89qe", "1e4p5rp", "f3lyuq"], lat: 53.9022, lng: 27.5618, category: "City", sound: "city",
+        tagline: "A capital rebuilt on a grand scale",
+        description: "Minsk was almost entirely destroyed in the Second World War and rebuilt as a showcase of Stalinist architecture, with Independence Avenue running for kilometres between monumental facades. By the Svislach River, the rebuilt Trinity Suburb keeps a small cluster of older-style streets. The city is spacious, very clean and full of parks.",
+        bestTime: "May–Sep", image: "wiki:Minsk", more: ["Trinity Suburb"] },
+      { name: "Mir & Nesvizh Castles", add: ["8vy8u1", "ijp250", "x74nal", "1fz7d7y", "ofso3b"], lat: 53.4513, lng: 26.4729, category: "Historical", sound: "temple",
+        tagline: "Two castles of the Radziwiłł princes",
+        description: "Mir Castle, a red-brick fortress with five towers reflected in a pond, was begun in the early 16th century and mixes Gothic, Renaissance and Baroque. Twenty-nine kilometres away, Nesvizh Castle was the grand palace of the Radziwiłł family, set among lakes and parkland. Both are UNESCO World Heritage Sites.",
+        bestTime: "May–Sep", image: "wiki:Mir Castle Complex", more: ["Nesvizh Castle"] },
+      { name: "Belovezhskaya Pushcha", add: ["1mparab", "1rv5pvt", "ie4jhn", "1d1tnjl"], skip: ["nf49s3", "l8flne"], lat: 52.5700, lng: 23.8300, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "Europe's last primeval forest",
+        description: "On the border with Poland lies the largest surviving piece of the ancient forest that once covered the European plain, with oaks that are centuries old. It is one of the last homes of the European bison, Europe's heaviest land animal, which was brought back here after dying out in the wild. The whole forest is a UNESCO World Heritage Site.",
+        bestTime: "May–Sep", image: "wiki:Belovezhskaya Pushcha National Park", more: ["Białowieża Forest"] }
+    ]
+  },
+  {
+    id: "498", name: "Moldova", region: "Europe", soundProfile: "temple",
+    summary: "A cave monastery above a river bend, green boulevards, and some of the largest wine cellars on Earth.",
+    hero: "wiki:Old Orhei",
+    places: [
+      { name: "Chișinău", pics: ["2ijcv1", "cc8kb", "4igg0", "2ijcuc", "2ki13r", "15e95i"], add: ["1ulp0yh", "1nxwc6l", "1grd5hx"], skip: ["1jay939", "f5t2u7", "1brrbkw", "14k3xxa", "1aghl5", "1ghasnp", "u8lasz", "txx7zv", "dbdmn6", "6wak17", "1ru7u01", "cqo0wg", "1etmz4o", "xela7v", "1chree6"], lat: 47.0228, lng: 28.8353, category: "City", sound: "city",
+        tagline: "A green capital in wine country",
+        description: "Moldova's capital is a city of wide, tree-lined boulevards and big parks, such as Ștefan cel Mare Park in the centre. Its Central Market spills over several blocks with produce from the countryside. The country is famous for its wine, and the vast cellars of Cricova and Mileștii Mici, with many kilometres of underground streets, are close to the city.",
+        bestTime: "May–Oct", image: "wiki:Chișinău" },
+      { name: "Old Orhei", add: ["gxjeq", "lh1vq5", "fdby0z", "1a8xtt3"], skip: ["8nej67", "ezrvv0"], lat: 47.3014, lng: 28.9725, category: "Historical", sound: "temple", zoom: 13,
+        tagline: "A monastery in a limestone cliff",
+        description: "About an hour north of Chișinău, the Răut River loops through a limestone gorge. Orthodox monks carved a cave monastery into the cliff face centuries ago, and a white church with a bell tower stands on the ridge above it. The village of Butuceni below has old village houses and family guesthouses.",
+        bestTime: "May–Oct", image: "wiki:Old Orhei" }
+    ]
+  },
+  {
+    id: "807", name: "North Macedonia", region: "Europe", soundProfile: "temple",
+    summary: "A lakeside town of Byzantine churches, a canyon of monasteries, and an Ottoman bazaar on the Vardar.",
+    hero: "wiki:Ohrid",
+    places: [
+      { name: "Ohrid", add: ["190owsa", "1gfooag", "1wxn4pz", "1ywl6mz"], skip: ["15sfz1t"], lat: 41.1169, lng: 20.8019, category: "Historical", sound: "temple",
+        tagline: "The Jerusalem of the Balkans",
+        description: "Ohrid climbs a hill above Lake Ohrid, one of the oldest lakes in Europe and famous for its clear water. The town once had so many churches it was called the Jerusalem of the Balkans; the little Church of St John at Kaneo, on a rocky point above the lake, is the classic view. The lake and town are a UNESCO World Heritage Site.",
+        bestTime: "May–Sep", image: "wiki:Ohrid", more: ["Lake Ohrid", "Church of St. John at Kaneo"] },
+      { name: "Matka Canyon", pics: ["2atabk", "qx9kx", "qwwaq", "qwwbo"], skip: ["zz7dig", "y1hq9l"], lat: 41.9400, lng: 21.3000, category: "Nature", sound: "mountains", zoom: 12,
+        tagline: "An emerald gorge near the capital",
+        description: "Just west of Skopje, the River Treska runs through a steep, narrow gorge with medieval monasteries clinging to its walls. Boats and kayaks go up the green reservoir to Vrelo Cave, and trails follow the cliffs above. It is the most popular escape from the capital.",
+        bestTime: "Apr–Oct", image: "wiki:Matka Canyon" },
+      { name: "Skopje", add: ["1bt9f90", "3ps76f", "151vu6m"], skip: ["1pzvtcu", "15ccoq6"], lat: 41.9961, lng: 21.4317, category: "City", sound: "city",
+        tagline: "An Ottoman bazaar and a stone bridge",
+        description: "Skopje's Old Bazaar is one of the largest surviving Ottoman bazaars in the Balkans, a maze of shops, mosques and old inns. The Stone Bridge crosses the Vardar to the new centre, rebuilt in a grand classical style in the 2010s. The Millennium Cross on Mount Vodno looks down over the city.",
+        bestTime: "Apr–Oct", image: "wiki:Skopje", more: ["Old Bazaar, Skopje", "Stone Bridge (Skopje)"] }
+    ]
+  },
+  {
+    id: "XK", name: "Kosovo", region: "Europe", soundProfile: "mountains",
+    summary: "An Ottoman river town beneath a fortress, and deep gorges in the Albanian Alps.",
+    hero: "wiki:Prizren",
+    places: [
+      { name: "Prizren", add: ["ueoymw", "16gpohx", "nk1a8r", "zq0ptk", "soaa2u"], lat: 42.2128, lng: 20.7392, category: "Historical", sound: "temple",
+        tagline: "Minarets, a stone bridge and a hilltop fortress",
+        description: "Prizren is Kosovo's most beautiful town, with an old stone bridge over its river, the domed Sinan Pasha Mosque, and minarets and church towers rising over the historic centre. A steep path climbs to the fortress for the view over the red roofs. Every August the town hosts Dokufest, a well-known documentary film festival.",
+        bestTime: "May–Sep", image: "wiki:Prizren", more: ["Sinan Pasha Mosque", "Prizren Fortress"] },
+      { name: "Rugova Canyon", pics: ["2yzfz0", "12skri", "2yzfye", "2663fp", "12skic", "236wuy"], add: ["jyskm0"], skip: ["jlljrq", "3gl7eg"], lat: 42.6922, lng: 20.1686, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "A gorge into the Albanian Alps",
+        description: "West of the city of Peja, the road into the mountains follows the Rugova Gorge between towering limestone walls. There is a via ferrata, caves to explore, and trails up to high pastures near the border with Montenegro. At the mouth of the gorge stands the Patriarchate of Peć, a medieval Serbian Orthodox monastery listed by UNESCO.",
+        bestTime: "Jun–Sep", image: "wiki:Rugova Canyon", more: ["Patriarchate of Peć"] }
+    ]
+  },
+  {
+    id: "492", name: "Monaco", region: "Europe", soundProfile: "ocean",
+    summary: "A glittering Riviera city-state of yachts, cliffs and a famous casino.",
+    hero: "wiki:Monte Carlo",
+    places: [
+      { name: "Monaco", add: ["1v7gb0d", "1n8zg5i", "142z0cy", "1u72j2s"], skip: ["1li5ait", "1stqjbc", "gh8mv3"], lat: 43.7384, lng: 7.4246, category: "City", sound: "ocean", zoom: 14,
+        tagline: "Two square kilometres of Riviera glamour",
+        description: "The second-smallest country in the world fits about 38,000 people into two square kilometres between the mountains and the sea. Superyachts fill Port Hercules below the Monte Carlo Casino, and the old town of Monaco-Ville sits on a rock with the Prince's Palace. Each spring the streets become the track of the Monaco Grand Prix.",
+        bestTime: "Apr–Oct", image: "wiki:Monte Carlo", wiki: "Monaco", more: ["Monaco-Ville", "Port Hercules"] }
+    ]
+  },
+  {
+    id: "674", name: "San Marino", region: "Europe", soundProfile: "mountains",
+    summary: "One of the world's oldest republics, on a mountaintop crowned with medieval towers.",
+    hero: "wiki:Guaita",
+    places: [
+      { name: "San Marino", add: ["1xb09x5", "1or655j", "1c86clr", "174myaq"], lat: 43.9346, lng: 12.4473, category: "Historical", sound: "mountains", zoom: 13,
+        tagline: "Three towers on Monte Titano",
+        description: "San Marino claims to be the oldest surviving republic in the world, founded by tradition in 301 AD. Its capital sits on the cliffs of Monte Titano, crowned by three medieval towers, and on clear days the view reaches the Adriatic. The whole country covers about 61 square kilometres.",
+        bestTime: "Apr–Oct", image: "wiki:Guaita", wiki: "City of San Marino", more: ["Monte Titano"] }
+    ]
+  },
+  {
+    id: "438", name: "Liechtenstein", region: "Europe", soundProfile: "mountains",
+    summary: "An Alpine principality of vineyards, a prince's castle and mountain trails.",
+    hero: "wiki:Vaduz Castle",
+    places: [
+      { name: "Vaduz", pics: ["252x3r", "3670a4", "23nw1t", "366ybd"], add: ["4k1arr"], skip: ["4q6mfn", "17zs3j4", "808wj0", "1qy0902", "6hnpb", "fepny9", "1egnuyd"], lat: 47.1406, lng: 9.5222, category: "City", sound: "mountains", zoom: 12,
+        tagline: "A tiny capital under the Alps",
+        description: "The capital of this small principality, home to about 5,700 people, lies on the Rhine beneath steep mountains. Vaduz Castle, still the home of the prince, watches from a ledge above town, with vineyards on the slope below. Trails climb into the Alps, and the whole country can be crossed by car in about half an hour.",
+        bestTime: "Jun–Sep", image: "wiki:Vaduz Castle", wiki: "Vaduz" }
+    ]
+  },
+  {
+    id: "020", name: "Andorra", region: "Europe", soundProfile: "mountains",
+    summary: "A mountain country in the Pyrenees of stone villages, wild valleys and ski slopes.",
+    hero: "wiki:Madriu-Perafita-Claror Valley",
+    places: [
+      { name: "Madriu-Perafita-Claror Valley", pics: ["o2hau", "23c7jy", "o2han", "236h00", "o2he2"], lat: 42.4921, lng: 1.5944, category: "Nature", sound: "mountains", zoom: 12,
+        tagline: "A wild valley with no roads",
+        description: "This glacial valley covers almost a tenth of Andorra, with stone shepherds' huts, high lakes and no roads into it. It is a UNESCO World Heritage Site, reached on foot from just outside the capital. In winter, the ski areas of Grandvalira nearby make Andorra one of the busiest ski destinations in the Pyrenees.",
+        bestTime: "Jun–Sep", image: "wiki:Madriu-Perafita-Claror Valley" },
+      { name: "Andorra la Vella", pics: ["gxv7b", "8rt3h"], add: ["139du6g", "18p37v4", "15ik5bt", "1asj03j"], skip: ["k7hw33"], lat: 42.5072, lng: 1.5222, category: "City", sound: "mountains", zoom: 13,
+        tagline: "Europe's highest capital",
+        description: "At about 1,023 metres, Andorra la Vella is the highest capital in Europe, filling a narrow valley between Pyrenean peaks. Its old quarter keeps the stone Casa de la Vall, seat of the parliament since 1702, while the rest of town is lined with duty-free shops. The glass spire of Caldea, a large thermal spa, rises at the edge of town.",
+        bestTime: "Jun–Sep", image: "wiki:Andorra la Vella", more: ["Casa de la Vall", "Caldea"] }
+    ]
+  },
+  {
+    id: "336", name: "Vatican City", region: "Europe", soundProfile: "temple", aka: ["Vatican", "Holy See"],
+    summary: "The smallest country on Earth: St Peter's dome and its colonnaded square.",
+    hero: "wiki:St. Peter's Square",
+    places: [
+      { name: "St Peter's Square & Basilica", add: ["1gl5fyd", "t60dgx", "b1h144", "17xxb6y"], skip: ["saw0jq", "159aj1l", "n4ug4m", "q49xnb", "n84nxj"], lat: 41.9022, lng: 12.4572, category: "Historical", sound: "temple", zoom: 15,
+        tagline: "Bernini's square, Michelangelo's dome",
+        description: "The world's smallest country covers less than half a square kilometre inside Rome. Bernini's colonnades curve around St Peter's Square like two open arms, and Michelangelo's dome rises above the basilica; you can climb to the top for a view over the whole city. Behind the walls, the Vatican Gardens cover about half the territory.",
+        bestTime: "Apr–Jun", image: "wiki:St. Peter's Square", more: ["St. Peter's Basilica", "Gardens of Vatican City"] }
+    ]
+  },
+  {
+    id: "234", name: "Faroe Islands", region: "Europe", soundProfile: "ocean", aka: ["Faroes", "Faeroe Islands"],
+    summary: "Green cliffs, grass-roofed villages and waterfalls dropping into the North Atlantic.",
+    hero: "wiki:Gásadalur",
+    places: [
+      { name: "Gásadalur", pics: ["11wiu8", "1e4b3r", "2zge7i", "10uohc"], add: ["s3p0lu", "uldjbg"], skip: ["1l6f9e9"], lat: 62.1122, lng: -7.4347, category: "Nature", sound: "ocean", zoom: 12,
+        tagline: "A waterfall into the ocean",
+        description: "On the island of Vágar, a waterfall drops off the cliff straight into the sea below the tiny village of Gásadalur, with the island of Mykines across the water. Until a tunnel opened in 2004, the village could only be reached by a path over the mountain.",
+        bestTime: "Jun–Aug", image: "wiki:Gásadalur" },
+      { name: "Sørvágsvatn", pics: ["10rp61", "1d50qo"], skip: ["jn0ky4"], lat: 62.0500, lng: -7.2333, category: "Nature", sound: "ocean", zoom: 12,
+        tagline: "The lake above the ocean",
+        description: "The largest lake in the Faroes ends at a cliff edge, and from the right angle it seems to hang high above the Atlantic. A walk of about an hour from Miðvágur leads to the cliffs for the famous view, and to the waterfall where the lake spills straight into the sea.",
+        bestTime: "Jun–Aug", image: "wiki:Sørvágsvatn" },
+      { name: "Tórshavn", add: ["13tamk8", "15070t5", "1qbmnpg", "1sdxi8x", "4qt71j"], lat: 62.0098, lng: -6.7713, category: "City", sound: "ocean",
+        tagline: "A tiny capital of turf roofs",
+        description: "One of the world's smallest capitals, Tórshavn has a little old quarter on the Tinganes peninsula, where red-painted wooden buildings with grass roofs house the government, on the site where an assembly met in Viking times. Colourful houses circle the harbour, and the medieval village of Kirkjubøur is a short drive away.",
+        bestTime: "Jun–Aug", image: "wiki:Tórshavn", more: ["Tinganes", "Kirkjubøur"] }
+    ]
+  },
+  {
+    id: "304", name: "Greenland", region: "North America", soundProfile: "ocean",
+    summary: "Icebergs the size of towns, the vast ice sheet, and colourful houses on Arctic rock.",
+    hero: "wiki:Ilulissat Icefjord",
+    places: [
+      { name: "Ilulissat Icefjord", add: ["jw8gio", "ldhr25", "1dte0ux", "13mkuqd"], lat: 69.2197, lng: -51.0986, category: "Nature", sound: "ocean", zoom: 9,
+        tagline: "A fjord full of icebergs",
+        description: "Icebergs calved from Sermeq Kujalleq, one of the fastest-moving glaciers in the world, drift down this 40-kilometre fjord and run aground at its mouth beside the town of Ilulissat, 250 kilometres north of the Arctic Circle. Boardwalks lead to viewpoints over the ice, and in midsummer the sun never sets. It is a UNESCO World Heritage Site.",
+        bestTime: "Jun–Aug", image: "wiki:Ilulissat Icefjord", more: ["Ilulissat"] },
+      { name: "Nuuk", add: ["1xr73z7", "1xlgdgx", "r2s6oz", "1nvf1za"], skip: ["1wa81bb"], lat: 64.1750, lng: -51.7333, category: "City", sound: "ocean",
+        tagline: "An Arctic capital on the fjords",
+        description: "Greenland's capital, home to about a third of the island's people, mixes colourful wooden houses and modern buildings on a rocky peninsula. Behind it rises the peak of Sermitsiaq, and the fjords around it run far inland, with humpback whales often seen in summer.",
+        bestTime: "Jun–Sep", image: "wiki:Nuuk", more: ["Sermitsiaq"] }
+    ]
   }
 ] };
