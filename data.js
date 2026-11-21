@@ -2437,5 +2437,328 @@ window.ATLAS_DATA = { countries: [
         description: "At Maho Beach, planes landing at Princess Juliana International Airport pass only a few dozen metres above the sand, and crowds gather to watch the big jets come in. The island is shared by the Netherlands and France, and the capital, Philipsburg, sits on a wide bay with a busy beachfront boardwalk.",
         bestTime: "Dec–Apr", image: "wiki:Maho Beach", more: ["Philipsburg, Sint Maarten"] }
     ]
+  },
+  /* ---------- Middle East, Caucasus & Central Asia ---------- */
+  {
+    id: "376", name: "Israel", region: "Middle East", soundProfile: "city",
+    summary: "Holy sites of three faiths, a beach city of white Bauhaus buildings, and a desert fortress above the lowest land on Earth.",
+    hero: "wiki:Masada",
+    places: [
+      { name: "Jerusalem Old City", pics: ["1h9sfn", "hwff7", "alz96"], add: ["1xnllky", "n8e2jv", "xgjvge"], lat: 31.7767, lng: 35.2342, category: "Historical", sound: "temple", zoom: 15,
+        tagline: "Sacred to three faiths",
+        description: "The walled Old City, less than one square kilometre, holds sites sacred to Judaism, Christianity and Islam: the Western Wall, the Church of the Holy Sepulchre, and the golden Dome of the Rock. Its four quarters are a maze of stone lanes and markets. The Old City lies in East Jerusalem, whose status is disputed between Israelis and Palestinians and internationally.",
+        bestTime: "Mar–May", image: "wiki:Old City of Jerusalem", more: ["Western Wall", "Dome of the Rock"] },
+      { name: "Tel Aviv", pics: ["vbwml", "1ds9gu", "jg8iu"], add: ["188sejd", "12dub3t", "4nwfib"], skip: ["1ac4tj4", "16m3eep", "17k8uiy", "13skyyz"], lat: 32.0800, lng: 34.7800, category: "City", sound: "city",
+        tagline: "The White City by the sea",
+        description: "Tel Aviv's White City has thousands of Bauhaus-style buildings from the 1930s and is a UNESCO World Heritage Site. A long promenade runs beside the city beaches, and at its southern end the old port of Jaffa climbs a hill of stone lanes above the sea.",
+        bestTime: "Apr–Jun", image: "wiki:Tel Aviv", more: ["Jaffa"] },
+      { name: "Masada & the Dead Sea", pics: ["e7laa", "nbo1o", "vcv8n"], add: ["qo8qvt", "18esamf", "1wmh488"], skip: ["rpixda", "1u94sl3", "5vs3xy"], lat: 31.3156, lng: 35.3539, category: "Historical", sound: "desert", zoom: 12,
+        tagline: "A desert fortress above the lowest shore on Earth",
+        description: "King Herod built a fortress palace on this flat-topped rock 400 metres above the Dead Sea, and in the first century AD it was the last stand of Jewish rebels against Rome. Many climb the Snake Path before dawn for sunrise over the Dead Sea, whose shore, more than 430 metres below sea level, is the lowest land on Earth. Its water is so salty that you float.",
+        bestTime: "Nov–Apr", image: "wiki:Masada", more: ["Dead Sea", "Ein Gedi"] },
+      { name: "Sea of Galilee", pics: ["m6rgj", "hwc32", "1zgym8", "284xux"], add: ["l5aqj2", "1jwqbjl", "w0nlvi", "1i1qefe"], skip: ["1vxycyg", "1jqqiy9", "2ssr71", "c7oqt4", "bn9w5n"], lat: 32.8189, lng: 35.5900, category: "Nature", sound: "ocean", zoom: 11,
+        tagline: "The lowest freshwater lake on Earth",
+        description: "More than 200 metres below sea level, the Sea of Galilee is the lowest freshwater lake on Earth, ringed by hills and by places linked to the life of Jesus, such as Capernaum. The town of Tiberias sits on its western shore, and hot springs bubble nearby.",
+        bestTime: "Mar–May", image: "wiki:Sea of Galilee" }
+    ]
+  },
+  {
+    id: "275", name: "Palestine", region: "Middle East", soundProfile: "temple", aka: ["West Bank", "Palestinian territories"],
+    summary: "The town of the Nativity, and one of the oldest cities on Earth in the Jordan Valley.",
+    hero: "wiki:Church of the Nativity",
+    places: [
+      { name: "Bethlehem", pics: ["1gve1v", "1iz052", "wfa8g", "soqx0", "1cj222"], add: ["1dni9lb", "u6l0j3"], skip: ["1hqkx1f", "1v4e3q4", "1h8ojq1", "3sfoct", "zxpqj8", "1j954jr", "m2pt9a", "q711pb", "18kzum4"], lat: 31.7044, lng: 35.2061, category: "Historical", sound: "temple", zoom: 14,
+        tagline: "The Church of the Nativity",
+        description: "About ten kilometres south of Jerusalem, Bethlehem is built around the Church of the Nativity, revered as the birthplace of Jesus and one of the oldest major churches in the Holy Land; it is a UNESCO World Heritage Site. Manger Square fills with pilgrims at Christmas, and the old town climbs the hillside above it.",
+        bestTime: "Mar–May", image: "wiki:Bethlehem", more: ["Church of the Nativity"] },
+      { name: "Jericho", pics: ["dplxe", "26mlt"], add: ["qul3ba", "1ht6rij"], lat: 31.8561, lng: 35.4631, category: "Historical", sound: "desert", zoom: 13,
+        tagline: "One of the oldest cities in the world",
+        description: "In the Jordan Valley below sea level, Jericho is among the oldest cities in the world, with excavations at Tell es-Sultan reaching back more than 10,000 years. A cable car climbs to the Monastery of the Temptation, clinging to a cliff above the palm-filled oasis.",
+        bestTime: "Nov–Apr", image: "wiki:Jericho" }
+    ]
+  },
+  {
+    id: "760", name: "Syria", region: "Middle East", soundProfile: "desert",
+    summary: "One of the oldest cities on Earth, a Crusader castle, and the ruins of a desert caravan city.",
+    hero: "wiki:Krak des Chevaliers",
+    places: [
+      { name: "Damascus", pics: ["64jhm", "1q33yu", "1nctoa"], add: ["1m3etwm"], skip: ["45h813", "buosi1"], lat: 33.5131, lng: 36.2919, category: "Historical", sound: "city",
+        tagline: "The oldest capital",
+        description: "Often called the oldest continuously inhabited capital in the world, Damascus has an old walled city of covered souks, courtyard houses and the Umayyad Mosque, one of the oldest and largest mosques anywhere. The Souq al-Hamidiyah, under a high iron roof, leads straight to its doors.",
+        bestTime: "Mar–May", image: "wiki:Damascus", more: ["Umayyad Mosque"] },
+      { name: "Palmyra", pics: ["6280a", "6rohf", "77bnc"], add: ["1cnt6bj", "1pigzkc", "lmehye"], skip: ["aihar9", "2aidy4"], lat: 34.5504, lng: 38.2698, category: "Historical", sound: "desert", zoom: 13,
+        tagline: "A caravan city in the desert",
+        description: "An oasis city that grew rich on caravan trade in Roman times, Palmyra left long colonnaded streets, temples and tower tombs in the desert. Islamic State fighters deliberately destroyed several of its monuments in 2015, including the Temple of Bel and the Arch of Triumph, but much of the site still stands.",
+        bestTime: "Mar–May", image: "wiki:Palmyra" },
+      { name: "Krak des Chevaliers", pics: ["a3f7s", "6h8ji"], add: ["1w3s5b8", "1sb4pkb", "1lkoz2j", "4e5u3x"], skip: ["oikovt", "d2hyri", "9ngy7u"], lat: 34.7569, lng: 36.2947, category: "Historical", sound: "mountains", zoom: 14,
+        tagline: "The great Crusader castle",
+        description: "Held by the Knights Hospitaller in the 12th and 13th centuries, Krak des Chevaliers is one of the best-preserved medieval castles in the world, with two rings of walls on a hilltop above the Homs Gap. It was damaged during the civil war and has been partly restored. It is a UNESCO World Heritage Site.",
+        bestTime: "Mar–May", image: "wiki:Krak des Chevaliers" }
+    ]
+  },
+  {
+    id: "368", name: "Iraq", region: "Middle East", soundProfile: "desert",
+    summary: "The ruins of Babylon, a citadel lived on for thousands of years, and the reed marshes of the south.",
+    hero: "wiki:Babylon",
+    places: [
+      { name: "Babylon", pics: ["1xatxk", "175ygu", "175yh8", "sxlck"], add: ["1egsfn4"], skip: ["1cz8f0h", "t2119w", "1ibzn0f", "1u8qgdi", "sbx9aw"], lat: 32.5425, lng: 44.4211, category: "Historical", sound: "desert", zoom: 13,
+        tagline: "The city of Hammurabi and Nebuchadnezzar",
+        description: "About 85 kilometres south of Baghdad, on the Euphrates, lie the ruins of Babylon, capital of Hammurabi and of Nebuchadnezzar II. Mud-brick walls, a replica of the blue Ishtar Gate and a palace partly rebuilt in the 1980s stand on the site. It became a UNESCO World Heritage Site in 2019.",
+        bestTime: "Nov–Mar", image: "wiki:Babylon" },
+      { name: "Erbil Citadel", pics: ["15civt", "203a17", "13ifmm"], add: ["3cwkkn", "1rpo5qm", "zs17wf"], lat: 36.1910, lng: 44.0090, category: "Historical", sound: "city", zoom: 15,
+        tagline: "A hilltop lived on for millennia",
+        description: "In the Kurdistan Region, the Citadel of Erbil sits on a high mound in the middle of the city, and people have lived on it for at least 6,000 years, making it one of the oldest continuously inhabited places in the world. Its ring of houses forms a wall above the bazaar below. It is a UNESCO World Heritage Site.",
+        bestTime: "Mar–May", image: "wiki:Citadel of Erbil", more: ["Erbil"] },
+      { name: "Mesopotamian Marshes", pics: ["2lx52h", "2lx52a", "1kpsil", "3be1pp", "2lx50o"], add: ["ufgk8g"], skip: ["13ym6vx", "yavvyd", "1eyhpma"], lat: 31.0000, lng: 47.0000, category: "Nature", sound: "ocean", zoom: 9,
+        tagline: "Reed houses and narrow boats",
+        description: "Between the Tigris and Euphrates in the south, these vast wetlands of reeds and channels are home to the Marsh Arabs, who build arched houses entirely of reeds and travel by narrow boats. Drained in the 1990s, they were partly reflooded after 2003 and are now a UNESCO World Heritage Site, though drought threatens them again.",
+        bestTime: "Nov–Mar", image: "wiki:Mesopotamian Marshes", more: ["Ahwar of Southern Iraq"] }
+    ]
+  },
+  {
+    id: "364", name: "Iran", region: "Middle East", soundProfile: "temple",
+    summary: "Blue-tiled mosques, the ruins of Persepolis, and desert cities of wind towers.",
+    hero: "wiki:Naqsh-e Jahan Square",
+    places: [
+      { name: "Isfahan", pics: ["9lcib", "ftbj", "4c05z", "1ketcs"], add: ["12jo3th", "2xp0bi", "1df4004", "7ax6uv"], lat: 32.6525, lng: 51.6747, category: "Historical", sound: "temple",
+        tagline: "Half the world",
+        description: "Isfahan's Naqsh-e Jahan Square, laid out around 1600 by Shah Abbas I, is one of the largest city squares in the world, framed by the blue-tiled Shah Mosque, the Sheikh Lotfollah Mosque and the Ali Qapu palace. Old arched bridges such as Si-o-se-pol cross the Zayandeh River, where people gather in the evenings.",
+        bestTime: "Mar–May", image: "wiki:Naqsh-e Jahan Square", wiki: "Isfahan", more: ["Si-o-se-pol", "Sheikh Lotfollah Mosque"] },
+      { name: "Persepolis", pics: ["2mgbdf", "2mgbdp"], add: ["4ps3og", "1x3hkwc", "wnvbkd"], skip: ["bz1cl2"], lat: 29.9350, lng: 52.8900, category: "Historical", sound: "desert", zoom: 14,
+        tagline: "The ceremonial capital of Persia",
+        description: "Founded by Darius the Great around 518 BC, Persepolis was the ceremonial capital of the Achaemenid Persian Empire. Its terrace still holds great columns, gateways guarded by winged bulls, and staircases carved with processions of delegations bringing gifts from across the empire. Alexander the Great burned it in 330 BC.",
+        bestTime: "Mar–May", image: "wiki:Persepolis" },
+      { name: "Shiraz", pics: ["1cza5n", "1d4c30", "v06uj", "1i8s9z"], add: ["1deo106", "b4dqbe", "pbl7rn", "1idn374"], lat: 29.6103, lng: 52.5311, category: "City", sound: "city",
+        tagline: "City of poets and gardens",
+        description: "Shiraz is the city of the poets Hafez and Saadi, whose tombs in garden settings are visited by Iranians who come to read their verses. In the morning, sunlight streams through the stained-glass windows of the Nasir al-Mulk Mosque and scatters colour across its carpets. Persepolis is about an hour's drive away.",
+        bestTime: "Mar–May", image: "wiki:Shiraz", more: ["Nasir-ol-Molk Mosque", "Tomb of Hafez"] },
+      { name: "Yazd", pics: ["13zrvu", "v09yl", "xfvbw"], add: ["ibuab7", "yaymk5", "1tvr382", "1e03vq0"], lat: 31.8972, lng: 54.3675, category: "Historical", sound: "desert",
+        tagline: "A desert city of wind towers",
+        description: "Yazd is a desert city of mud-brick lanes and badgirs, wind towers that funnel cool air down into houses. Its historic centre is a UNESCO World Heritage Site, and it is a centre of the Zoroastrian faith, with a fire temple in town and the Towers of Silence on hills outside it.",
+        bestTime: "Mar–May", image: "wiki:Yazd" }
+    ]
+  },
+  {
+    id: "414", name: "Kuwait", region: "Middle East", soundProfile: "city",
+    summary: "A Gulf capital of striking water towers, an old souq and a long seafront.",
+    hero: "wiki:Kuwait Towers",
+    places: [
+      { name: "Kuwait City", pics: ["2gd45t", "2ga3ka", "1ehdqk", "2ga3k8"], add: ["ivfv5p", "1vwzq41", "lffpo", "l5m3c6"], skip: ["zv2ux5"], lat: 29.3750, lng: 47.9800, category: "City", sound: "city",
+        tagline: "The Kuwait Towers",
+        description: "Kuwait City's skyline is marked by the Kuwait Towers, three slender towers on a point in the Gulf, opened in 1979, two of them carrying spheres covered in blue-green discs. The seafront corniche runs for kilometres past beaches, and Souq Al-Mubarakiya is one of the oldest markets in the country.",
+        bestTime: "Nov–Mar", image: "wiki:Kuwait Towers", wiki: "Kuwait City" }
+    ]
+  },
+  {
+    id: "634", name: "Qatar", region: "Middle East", soundProfile: "desert",
+    summary: "A futuristic skyline on a crescent bay, an old market of spices and falcons, and dunes that meet the sea.",
+    hero: "wiki:Doha",
+    places: [
+      { name: "Doha", pics: ["iestu", "hi56k", "2g0405", "hgvvp", "2ro5uu"], add: ["pwajwh", "xl7w2k", "9tpwwn", "1qaz98r"], lat: 25.2861, lng: 51.5294, category: "City", sound: "city",
+        tagline: "Glass towers and an old souq",
+        description: "Doha's skyline of glass towers rises around a crescent bay, with the seven-kilometre Corniche promenade curving along the water. Souq Waqif, rebuilt in traditional style, sells spices, textiles and falcons, and there is even a hospital just for falcons nearby.",
+        bestTime: "Nov–Mar", image: "wiki:Doha", more: ["Souq Waqif"] },
+      { name: "Khor Al Adaid", pics: ["1fyu7a", "invih", "1e5kn8", "j5w7v", "1e5kn9"], lat: 24.6300, lng: 51.2960, category: "Nature", sound: "desert", zoom: 11,
+        tagline: "Where the desert meets the sea",
+        description: "In the far southeast, on the border with Saudi Arabia, tall sand dunes roll down to a tidal inlet of the Gulf known as the Inland Sea, one of the few places in the world where the sea reaches deep into a sand desert. It is reached by 4x4 across the dunes.",
+        bestTime: "Nov–Mar", image: "wiki:Khor Al Adaid" }
+    ]
+  },
+  {
+    id: "048", name: "Bahrain", region: "Middle East", soundProfile: "ocean",
+    summary: "An island kingdom of ancient forts, pearl-diving heritage and a modern skyline.",
+    hero: "wiki:Qal'at al-Bahrain",
+    places: [
+      { name: "Manama", pics: ["n9r8n", "vp1ww", "25vd90"], add: ["1ab33to", "j79akz", "jjoe81"], lat: 26.2167, lng: 50.5833, category: "City", sound: "city",
+        tagline: "Dilmun's fort and a pearling past",
+        description: "On the edge of Manama, Qal'at al-Bahrain sits on a mound built up by settlements from about 2300 BC onward; it was once the capital of the ancient Dilmun civilisation and is a UNESCO World Heritage Site. Bahrain's pearl-diving heritage is listed too, and the capital mixes a modern skyline with its old souq around Bab Al Bahrain.",
+        bestTime: "Nov–Mar", image: "wiki:Qal'at al-Bahrain", wiki: "Manama" }
+    ]
+  },
+  {
+    id: "887", name: "Yemen", region: "Middle East", soundProfile: "desert",
+    summary: "An island of strange trees, mud-brick skyscrapers in the desert, and one of the oldest cities in Arabia.",
+    hero: "wiki:Socotra",
+    places: [
+      { name: "Socotra", pics: ["myy4r", "2et4qc", "36f8z2", "3awn1r", "myy5p"], add: ["56qkxl", "10wdkvg", "xbz41z", "8mmuxw"], skip: ["1lgd6xj"], lat: 12.5100, lng: 53.9200, category: "Nature", sound: "ocean", zoom: 9,
+        tagline: "The island of dragon's blood trees",
+        description: "Isolated in the Arabian Sea, Socotra has so many unique plants, about a third of its species found nowhere else, that it is often called the most alien-looking place on Earth. Umbrella-shaped dragon's blood trees grow on the Diksam Plateau, and white sand dunes meet turquoise lagoons along the coast. It is a UNESCO World Heritage Site.",
+        bestTime: "Oct–Apr", image: "wiki:Socotra", more: ["Dracaena cinnabari"] },
+      { name: "Old City of Sana'a", pics: ["ymi5i", "ymi58", "ymi5f", "p2s4j"], lat: 15.3539, lng: 44.2144, category: "Historical", sound: "temple", zoom: 14,
+        tagline: "Tower houses trimmed in white",
+        description: "Inhabited for more than 2,500 years, the Old City of Sana'a is a dense cluster of tower houses of rammed earth and brick, their facades decorated with white gypsum patterns around the windows. It is a UNESCO World Heritage Site, listed as in danger since 2015 because of the war.",
+        bestTime: "Oct–Apr", image: "wiki:Old City of Sanaa" },
+      { name: "Shibam", pics: ["v2xa", "379jch", "ymi71", "1twn0v"], add: ["vn181z", "iea4oe"], lat: 15.9269, lng: 48.6267, category: "Historical", sound: "desert", zoom: 14,
+        tagline: "The Manhattan of the desert",
+        description: "In the Hadramaut valley, Shibam's walled town of mud-brick tower houses, some up to eleven storeys high, rises straight out of the desert floor, earning it the name the Manhattan of the desert. Most of the buildings date from the 16th century. It is a UNESCO World Heritage Site.",
+        bestTime: "Oct–Apr", image: "wiki:Shibam" }
+    ]
+  },
+  {
+    id: "268", name: "Georgia", region: "Asia", soundProfile: "mountains",
+    summary: "A capital of carved balconies and sulphur baths, and churches against Caucasus peaks.",
+    hero: "wiki:Gergeti Trinity Church",
+    places: [
+      { name: "Tbilisi", pics: ["v4d2j", "1m8802", "1uvdy0", "tewuj"], add: ["vkhypc", "1uloz8q", "ggk7v0"], skip: ["1yfbxie"], lat: 41.7225, lng: 44.7925, category: "City", sound: "city",
+        tagline: "Balconies, baths and a hilltop fortress",
+        description: "Tbilisi climbs the hills on both banks of the Kura River, with old houses wrapped in carved wooden balconies, domed sulphur baths in the Abanotubani quarter, and the Narikala fortress on the ridge above. A cable car swings up to the fortress for the view over the old town.",
+        bestTime: "May–Oct", image: "wiki:Tbilisi", more: ["Narikala"] },
+      { name: "Kazbegi", pics: ["1xnh65", "2jg17b", "1bktgm", "2jg18m", "uk9yd"], add: ["ywr9ql", "10nwir8", "gnawd7"], lat: 42.6624, lng: 44.6205, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "A church beneath a glacier peak",
+        description: "About three hours north of Tbilisi on the Georgian Military Road, the 14th-century Gergeti Trinity Church stands alone on a ridge at 2,170 metres beneath the glaciers of Mount Kazbek, which rises to more than 5,000 metres. The village of Stepantsminda below is the base for hikes into the valleys.",
+        bestTime: "Jun–Sep", image: "wiki:Gergeti Trinity Church", wiki: "Stepantsminda", more: ["Mount Kazbek"] },
+      { name: "Svaneti", pics: ["11g21b", "e2zld", "18zcma", "11g21c", "bblhs"], add: ["1nqcf4o", "13b2kj9", "6enrg", "4dijh1"], skip: ["1cfyap3"], lat: 42.9178, lng: 43.0157, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "Medieval towers in the high Caucasus",
+        description: "High in the Caucasus, Svaneti's villages are guarded by medieval stone towers built by families for defence. Ushguli, at about 2,100 metres one of the highest permanently inhabited settlements in Europe, sits beneath Shkhara, Georgia's highest peak. Mestia is the main town and the start of multi-day hikes between villages.",
+        bestTime: "Jun–Sep", image: "wiki:Ushguli", wiki: "Svaneti", more: ["Mestia"] }
+    ]
+  },
+  {
+    id: "051", name: "Armenia", region: "Asia", soundProfile: "temple",
+    summary: "Ancient monasteries on cliff edges, a classical temple, and Mount Ararat filling the sky.",
+    hero: "wiki:Tatev Monastery",
+    places: [
+      { name: "Yerevan", pics: ["jclx4", "36p8n3", "2cm399", "v8yy0"], add: ["l105qx", "1fzqxg5"], skip: ["1g5hl66", "1qg4owl", "muxvfb", "1tg7g4h", "17a3wxt", "uabwm1", "qjjzcg", "1fm4u55", "14hrkma", "gv9kxj"], lat: 40.1814, lng: 44.5144, category: "City", sound: "city",
+        tagline: "A pink-stone city facing Ararat",
+        description: "Yerevan, one of the oldest continuously inhabited cities in the world, is built largely of pink volcanic tuff. From the top of the Cascade, a giant stairway of terraces, Mount Ararat fills the horizon on clear days, across the border in Turkey. Republic Square comes alive in the evenings around its fountains.",
+        bestTime: "May–Oct", image: "wiki:Yerevan", more: ["Yerevan Cascade", "Mount Ararat"] },
+      { name: "Tatev Monastery", pics: ["1cr2ft", "q9ejl", "186jvh"], add: ["1sb3tlm", "1abf0o7", "4be69w", "8e3pno"], lat: 39.3794, lng: 46.2500, category: "Historical", sound: "temple", zoom: 13,
+        tagline: "A monastery on the edge of a gorge",
+        description: "This 9th-century monastery stands on the edge of the deep gorge of the Vorotan River in southern Armenia. It is reached by the Wings of Tatev, one of the longest cable cars in the world, which floats across the gorge for about 5.7 kilometres.",
+        bestTime: "May–Oct", image: "wiki:Tatev Monastery", more: ["Wings of Tatev"] },
+      { name: "Garni & Geghard", pics: ["v8bpz", "2ay1bh", "6zeru"], add: ["1eak48x", "4833gg"], skip: ["1hx4c10"], lat: 40.1405, lng: 44.8186, category: "Historical", sound: "temple", zoom: 12,
+        tagline: "A classical temple and a monastery cut into rock",
+        description: "Half an hour from Yerevan, the Garni Temple is a Greco-Roman colonnaded temple perched above a gorge whose walls are lined with hexagonal basalt columns. Further up the valley, the monastery of Geghard is partly carved straight into the mountain, with chapels cut from solid rock. Geghard is a UNESCO World Heritage Site.",
+        bestTime: "May–Oct", image: "wiki:Garni Temple", more: ["Geghard"] }
+    ]
+  },
+  {
+    id: "031", name: "Azerbaijan", region: "Asia", soundProfile: "city",
+    summary: "A walled old city beneath glass flame towers, bubbling mud volcanoes, and a silk-road town in the Caucasus foothills.",
+    hero: "wiki:Flame Towers",
+    places: [
+      { name: "Baku", pics: ["16iikc", "loa3p", "2hy871", "3cnnld"], add: ["ls9dhx", "1bzl9n1", "b5evt3", "7015a"], lat: 40.3667, lng: 49.8352, category: "City", sound: "city",
+        tagline: "An old city under flame towers",
+        description: "Baku is the lowest-lying capital in the world, 28 metres below sea level on the Caspian. Its walled Old City, with the Maiden Tower and the Palace of the Shirvanshahs, is a UNESCO World Heritage Site, and above it rise the three Flame Towers, whose facades light up as moving flames at night. A long seaside boulevard follows the bay.",
+        bestTime: "Apr–Jun", image: "wiki:Baku", more: ["Old City (Baku)", "Flame Towers"] },
+      { name: "Gobustan", pics: ["2ome0w", "2ome0x", "xeg7d", "szuxv"], add: ["ldmkgu", "12r580u", "jrpbhe"], skip: ["6g95c"], lat: 40.1056, lng: 49.3889, category: "Historical", sound: "desert", zoom: 12,
+        tagline: "Rock carvings and mud volcanoes",
+        description: "About 70 kilometres southwest of Baku, Gobustan has more than 6,000 rock carvings of people, animals and boats, the oldest tens of thousands of years old, and is a UNESCO World Heritage Site. Nearby, small mud volcanoes bubble and spit grey mud; Azerbaijan has one of the highest concentrations of mud volcanoes in the world.",
+        bestTime: "Apr–Jun", image: "wiki:Gobustan State Historical and Cultural Reserve" },
+      { name: "Sheki", pics: ["283erd", "1b9czv"], add: ["1xhalsz", "185il1o", "7mjfvz"], lat: 41.1919, lng: 47.1706, category: "Historical", sound: "mountains", zoom: 13,
+        tagline: "A silk-road town in the foothills",
+        description: "In the green foothills of the Greater Caucasus, Sheki was a stop on the Silk Road. The 18th-century Palace of the Sheki Khans is covered in painted walls and windows of tiny stained-glass pieces fitted without nails or glue, and an old caravanserai still takes guests. The historic centre is a UNESCO World Heritage Site.",
+        bestTime: "May–Oct", image: "wiki:Shaki, Azerbaijan" }
+    ]
+  },
+  {
+    id: "398", name: "Kazakhstan", region: "Asia", soundProfile: "mountains",
+    summary: "A green city under snowy peaks, a red-rock canyon, and a futuristic capital on the steppe.",
+    hero: "wiki:Charyn Canyon",
+    places: [
+      { name: "Almaty", pics: ["gopxb", "1rfdj", "2iwyf", "1zcm23"], add: ["v12tst", "b8iqpe", "1tttsv3", "gv57q9"], skip: ["11v69b4", "1vejzju", "nu8l43", "uli30y", "p2bhm1", "1k5kt6v", "9f3doh", "lp04gy", "qjzdk4"], lat: 43.2400, lng: 76.9150, category: "City", sound: "mountains",
+        tagline: "A city at the foot of the Tian Shan",
+        description: "Kazakhstan's largest city lies at the foot of the snow-capped Trans-Ili Alatau, with leafy avenues and mountain views at the end of every street. A cable car rises to Kok-Tobe hill, and within an hour you can be at the Medeu ice rink, the Shymbulak ski area or turquoise Big Almaty Lake at 2,500 metres.",
+        bestTime: "May–Sep", image: "wiki:Almaty", more: ["Big Almaty Lake", "Medeu"] },
+      { name: "Charyn Canyon", pics: ["280jn7", "1z73x8", "1na85l", "1na84n"], add: ["hyhhvf", "adqmp0", "jj4mrd", "1jf3rcs", "1558mfq"], lat: 43.3619, lng: 79.0906, category: "Nature", sound: "desert", zoom: 11,
+        tagline: "The Valley of Castles",
+        description: "About 200 kilometres east of Almaty, near the Chinese border, the Charyn River has carved a canyon of red and orange rock towers. Its most famous stretch, the Valley of Castles, is a walkable gorge between sculpted cliffs, often compared to a smaller Grand Canyon.",
+        bestTime: "May–Sep", image: "wiki:Charyn Canyon" },
+      { name: "Astana", pics: ["37j1o8", "2ifd6h"], add: ["bgypj8", "18pb1fe", "6w83mo"], skip: ["1fdnokr", "weon2n", "i0t5sm", "13u49vf", "lkgm1r", "c5y4na", "grkoix", "fx8xaf", "vnxqls", "1btqlz2", "1a7zht"], lat: 51.1333, lng: 71.4333, category: "City", sound: "city",
+        tagline: "A futuristic capital on the steppe",
+        description: "Kazakhstan's capital since 1997, Astana was built up on the northern steppe with bold modern architecture: the Bayterek tower topped by a golden sphere, the giant tent-shaped Khan Shatyr, and a glass pyramid, the Palace of Peace and Reconciliation, designed by Norman Foster.",
+        bestTime: "Jun–Sep", image: "wiki:Astana", more: ["Baiterek (monument)", "Khan Shatyr Entertainment Center"] }
+    ]
+  },
+  {
+    id: "417", name: "Kyrgyzstan", region: "Asia", soundProfile: "mountains",
+    summary: "Mountain lakes, nomad yurts on summer pastures, and the peaks of the Tian Shan.",
+    hero: "wiki:Song-Köl",
+    places: [
+      { name: "Issyk-Kul", pics: ["2d6htl", "2gz2j7", "2gpce3", "187su5", "187suh"], add: ["wgd4j8", "zx61vj", "pgkqcu", "1r4hvfp"], skip: ["1cfyap3"], lat: 42.4167, lng: 77.2500, category: "Nature", sound: "mountains", zoom: 9,
+        tagline: "The lake that never freezes",
+        description: "Ringed by the snowy Tian Shan, Issyk-Kul is one of the largest mountain lakes in the world, at 1,607 metres, and so deep and slightly salty that it never freezes, which gave it its name, 'warm lake'. Beaches line the north shore, and the town of Karakol in the east is the base for treks into the mountains.",
+        bestTime: "Jun–Sep", image: "wiki:Issyk-Kul", more: ["Karakol"] },
+      { name: "Song-Köl", pics: ["1a7m8f", "2snlg", "187st3", "2ueqed", "1lz9y2"], skip: ["66juka"], lat: 41.8500, lng: 75.1500, category: "Nature", sound: "mountains", zoom: 10,
+        tagline: "Yurts on a high lake",
+        description: "At 3,016 metres, Song-Köl is a broad alpine lake surrounded by summer pastures, where herders bring their horses and sheep from June to September and live in yurts. Visitors stay in yurt camps and ride across the grassland.",
+        bestTime: "Jun–Sep", image: "wiki:Song-Köl" },
+      { name: "Ala Archa", pics: ["2g9ntj", "3gu3v", "1dpebb", "1dya1v"], add: ["sy25m0", "feyf0s", "1ol3lyx"], lat: 42.5475, lng: 74.4846, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "Glaciers half an hour from the capital",
+        description: "Just 35 kilometres south of Bishkek, Ala Archa is an alpine national park of juniper forest, waterfalls and glaciers beneath peaks over 4,000 metres. A day hike climbs the gorge to the Ak-Sai waterfall, and longer routes reach the glacier.",
+        bestTime: "Jun–Sep", image: "wiki:Ala-Archa Nature Park" }
+    ]
+  },
+  {
+    id: "762", name: "Tajikistan", region: "Asia", soundProfile: "mountains",
+    summary: "One of the highest roads on Earth, turquoise mountain lakes and the Fann Mountains.",
+    hero: "wiki:Iskanderkul",
+    places: [
+      { name: "Pamir Highway", pics: ["1h5rca", "2rh9cw", "zwyww", "2jwqe", "1h5mwe"], skip: ["5xpzut", "1wv3a1e", "180vk96"], lat: 38.1700, lng: 73.9600, category: "Mountain", sound: "mountains", zoom: 8,
+        tagline: "The roof of the world",
+        description: "The Pamir Highway is one of the highest roads in the world, crossing the 4,655-metre Ak-Baital Pass over a moonscape plateau of high deserts and lakes. Along the way it follows the Panj River on the Afghan border, where Afghan villages are visible across the water.",
+        bestTime: "Jun–Sep", image: "wiki:M41 highway" },
+      { name: "Iskanderkul", pics: ["q5plu", "pr7v1", "2rvbzc", "q5plp"], add: ["xhal8j", "twgyyn", "881f01", "x6to56", "djh9w1"], skip: ["1cfyap3"], lat: 39.0744, lng: 68.3683, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "Alexander's lake",
+        description: "A triangular glacial lake at 2,195 metres in the Fann Mountains, Iskanderkul is named after Alexander the Great, who, legend says, passed this way. Its turquoise water is ringed by bare peaks, and a waterfall plunges into a canyon nearby. The Fann Mountains around it are famous for trekking past chains of lakes.",
+        bestTime: "Jun–Sep", image: "wiki:Iskanderkul", more: ["Fann Mountains"] }
+    ]
+  },
+  {
+    id: "795", name: "Turkmenistan", region: "Asia", soundProfile: "desert",
+    summary: "A crater of fire in the desert, a white-marble capital, and the ruins of an ancient Silk Road oasis.",
+    hero: "wiki:Darvaza gas crater",
+    places: [
+      { name: "Darvaza Gas Crater", pics: ["1pz596", "auahk", "6r8ho", "1az04k"], skip: ["1bwy6s"], lat: 40.2526, lng: 58.4394, category: "Nature", sound: "desert", zoom: 12,
+        tagline: "The Door to Hell",
+        description: "In the middle of the Karakum Desert, a collapsed crater about 70 metres wide has been burning for decades, by most accounts since 1971, fed by natural gas. At night the glowing pit, nicknamed the Door to Hell, can be seen from far across the dunes, and visitors camp beside it. The government has said it wants to put it out, and the fire has weakened in recent years.",
+        bestTime: "Mar–May", image: "wiki:Darvaza gas crater" },
+      { name: "Ashgabat", pics: ["powqx", "1qk7v4"], add: ["1l9u8pu", "19sy68u"], skip: ["1i56atd"], lat: 37.9500, lng: 58.3833, category: "City", sound: "city",
+        tagline: "A city of white marble",
+        description: "Turkmenistan's capital was rebuilt as a city of white marble, holding the record for the highest density of white-marble buildings in the world. Wide, quiet avenues lead past gold-domed monuments and fountains, with the Kopet Dag mountains behind.",
+        bestTime: "Mar–May", image: "wiki:Ashgabat", more: ["Independence Monument (Turkmenistan)"] },
+      { name: "Merv", pics: ["2jqacn", "a1o9d", "1hn5g9", "2e43dw"], add: ["bdtu7t"], skip: ["1cfyap3"], lat: 37.6628, lng: 62.1925, category: "Historical", sound: "desert", zoom: 12,
+        tagline: "A great Silk Road city",
+        description: "Near the town of Mary, the ruins of Merv span more than 4,000 years, from Bronze Age settlements to the medieval Seljuk capital, once among the largest cities in the world, until the Mongols destroyed it in 1221. The domed mausoleum of Sultan Sanjar still stands among the old walls. It is a UNESCO World Heritage Site.",
+        bestTime: "Mar–May", image: "wiki:Merv" }
+    ]
+  },
+  {
+    id: "004", name: "Afghanistan", region: "Asia", soundProfile: "mountains",
+    summary: "Lakes of deep blue in the Hindu Kush, and the cliffs of Bamiyan.",
+    hero: "wiki:Band-e Amir National Park",
+    places: [
+      { name: "Band-e Amir", pics: ["bih95", "hqci9", "d8iwm", "d8isa"], add: ["e36n7", "bmoq79", "ridufr", "k7gekl"], lat: 34.8397, lng: 67.2308, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "Six blue lakes in the Hindu Kush",
+        description: "High in the Hindu Kush, Band-e Amir is a chain of six deep-blue lakes held back by natural walls of travertine rock. It became Afghanistan's first national park in 2009.",
+        bestTime: "Jun–Sep", image: "wiki:Band-e Amir National Park" },
+      { name: "Bamiyan Valley", pics: ["1tzak0", "1uyocb", "mn4sc", "1tzakj"], add: ["c4avtb", "icp54l", "zfaq2r"], skip: ["1vem4hl"], lat: 34.8167, lng: 67.8167, category: "Historical", sound: "mountains", zoom: 12,
+        tagline: "The empty niches of the Buddhas",
+        description: "The Bamiyan Valley is lined with sandstone cliffs that once held two giant Buddha statues carved in the 6th century, which the Taliban destroyed in 2001. The empty niches, the monks' caves around them and the green valley below are a UNESCO World Heritage Site.",
+        bestTime: "Jun–Sep", image: "wiki:Buddhas of Bamiyan", wiki: "Bamyan" }
+    ]
+  },
+  {
+    id: "586", name: "Pakistan", region: "Asia", soundProfile: "mountains",
+    summary: "Some of the highest mountains on Earth, Mughal monuments in Lahore, and a 4,500-year-old city on the Indus.",
+    hero: "wiki:Hunza Valley",
+    places: [
+      { name: "Hunza Valley", pics: ["17c5mr", "nuezk", "11ejjb"], add: ["4z1fqy", "kvvzb5", "1ffbbti", "z1y2as", "1vqofe6", "1ufu35w"], skip: ["rqzy9p"], lat: 36.3167, lng: 74.6500, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "Apricot blossom under 7,000-metre peaks",
+        description: "In Gilgit-Baltistan, the Hunza Valley is ringed by peaks over 7,000 metres, such as Rakaposhi and Ultar Sar. The old Baltit and Altit forts look down on terraced orchards that turn pink with apricot blossom in spring, and the Karakoram Highway continues north past turquoise Attabad Lake, formed by a landslide in 2010.",
+        bestTime: "Apr–Oct", image: "wiki:Hunza Valley", more: ["Baltit Fort", "Attabad Lake"] },
+      { name: "Lahore", pics: ["30dqlg", "1ilin8", "1fiu0a"], add: ["d89xgk", "1tcrxf1", "1fc5lfb"], skip: ["1omo7n0", "paf6pi", "huxt3u", "1z1ub8", "b5rcpg"], lat: 31.5497, lng: 74.3436, category: "City", sound: "city",
+        tagline: "The Mughal capital",
+        description: "Lahore was a capital of the Mughal emperors, and its walled city holds the Lahore Fort and the Badshahi Mosque, built by Aurangzeb in the 1670s and one of the largest mosques in the world. The Wazir Khan Mosque is covered in brilliant tile mosaics, and the old bazaars and food streets are packed in the evenings.",
+        bestTime: "Oct–Mar", image: "wiki:Badshahi Mosque", wiki: "Lahore", more: ["Lahore Fort", "Wazir Khan Mosque"] },
+      { name: "Fairy Meadows", pics: ["t8xz7", "2sdbs", "nv91z", "159o9s"], add: ["1n44yn2", "19une4h", "1gq2ku4", "rdyc33"], lat: 35.3869, lng: 74.5783, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "A meadow facing Nanga Parbat",
+        description: "Reached by a jeep track and a hike, Fairy Meadows is a high pasture at about 3,300 metres with a full view of Nanga Parbat, at 8,126 metres the ninth-highest mountain in the world. Pine forest and log cabins surround the meadow, and trails lead on to the mountain's base camp.",
+        bestTime: "Jun–Sep", image: "wiki:Fairy Meadows", more: ["Nanga Parbat"] },
+      { name: "Mohenjo-daro", pics: ["irkrq", "irkrl", "um7p4", "um7oo"], add: ["u48bdd", "a1shq1"], skip: ["9w7xez", "35ovxw"], lat: 27.3292, lng: 68.1389, category: "Historical", sound: "desert", zoom: 14,
+        tagline: "A city of the Indus Valley",
+        description: "Built around 2500 BC, Mohenjo-daro was one of the largest cities of the Indus Valley Civilisation, with a grid of streets, brick houses, covered drains and a great public bath. It was abandoned around 1700 BC and rediscovered in the 1920s. It is a UNESCO World Heritage Site.",
+        bestTime: "Nov–Feb", image: "wiki:Mohenjo-daro" }
+    ]
   }
 ] };
