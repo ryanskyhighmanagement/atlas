@@ -2069,5 +2069,373 @@ window.ATLAS_DATA = { countries: [
         description: "Greenland's capital, home to about a third of the island's people, mixes colourful wooden houses and modern buildings on a rocky peninsula. Behind it rises the peak of Sermitsiaq, and the fjords around it run far inland, with humpback whales often seen in summer.",
         bestTime: "Jun–Sep", image: "wiki:Nuuk", more: ["Sermitsiaq"] }
     ]
+  },
+  /* ---------- Caribbean & Central America: the rest ---------- */
+  {
+    id: "388", name: "Jamaica", region: "Caribbean", soundProfile: "ocean",
+    summary: "Miles of beach, waterfalls you can climb, and coffee-growing mountains above the sea.",
+    hero: "wiki:Dunn's River Falls",
+    places: [
+      { name: "Negril", pics: ["1zwwp1", "evn1a", "2gifg5", "yehd7", "59f96", "pyon3"], add: ["1yufh9j"], lat: 18.2731, lng: -78.3458, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "Seven miles of sand and the West End cliffs",
+        description: "At Jamaica's western tip, Negril's beach runs for about seven miles of pale sand and calm water. South of town, the West End is a coast of limestone cliffs and sea caves, where people jump into deep, clear water and gather to watch the sunset.",
+        bestTime: "Dec–Apr", image: "wiki:Negril" },
+      { name: "Dunn's River Falls", pics: ["7ioar", "2njxk", "1gzahp", "evvqz", "evw0j"], skip: ["72k1am"], lat: 18.4158, lng: -77.1381, category: "Nature", sound: "jungle", zoom: 13,
+        tagline: "A waterfall you climb",
+        description: "Near Ocho Rios, Dunn's River Falls tumbles down a long staircase of natural limestone terraces straight onto a beach. Visitors climb the falls in a human chain, hand in hand, guided up through the cascades. It is one of the best-known sights in Jamaica.",
+        bestTime: "Dec–Apr", image: "wiki:Dunn's River Falls", more: ["Ocho Rios"] },
+      { name: "Blue Mountains", pics: ["a6xvn", "2qbc6b", "1vjeon"], skip: ["iiv2t6"], lat: 18.1000, lng: -76.6667, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "Misty peaks and famous coffee",
+        description: "The longest range in Jamaica rises to 2,256 metres at Blue Mountain Peak, where hikers set off before dawn to see both the north and south coasts at sunrise. The cool, misty slopes grow Blue Mountain coffee, one of the most prized coffees in the world.",
+        bestTime: "Dec–Apr", image: "wiki:Blue Mountains (Jamaica)" },
+      { name: "Port Antonio", pics: ["xr9sk", "2ig37e", "8t00o", "2ig49n", "xwzu2"], skip: ["853xhq", "1u2w5xx"], lat: 18.1762, lng: -76.4483, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "Jamaica's lush, quiet corner",
+        description: "On the green northeast coast, Port Antonio is the quiet side of Jamaica, with rainforest running down to the sea. Nearby are the Blue Lagoon, a deep pool where cold springs meet the sea, the sheltered beach of Frenchman's Cove, and bamboo rafts drifting down the Rio Grande.",
+        bestTime: "Dec–Apr", image: "wiki:Port Antonio", more: ["Frenchman's Cove", "Rio Grande (Jamaica)"] }
+    ]
+  },
+  {
+    id: "214", name: "Dominican Republic", region: "Caribbean", soundProfile: "ocean",
+    summary: "The oldest colonial city in the Americas, palm-lined beaches, and humpback whales in Samaná Bay.",
+    hero: "wiki:Ciudad Colonial (Santo Domingo)",
+    places: [
+      { name: "Santo Domingo", pics: ["1dnlfr", "1dnlfq", "6vkgp"], add: ["1khlu5d", "15pdrek"], skip: ["1w20xqp"], lat: 18.4730, lng: -69.8830, category: "Historical", sound: "city",
+        tagline: "The first city of the Americas",
+        description: "Santo Domingo's Ciudad Colonial is the oldest continuously inhabited European-founded settlement in the Americas, and a UNESCO World Heritage Site. Its cobbled streets hold the first cathedral in the Americas, begun in 1512, and the Alcázar de Colón, the palace built for Columbus's son Diego.",
+        bestTime: "Dec–Apr", image: "wiki:Ciudad Colonial (Santo Domingo)", more: ["Cathedral of Santo Domingo", "Alcázar de Colón"] },
+      { name: "Punta Cana", pics: ["1ptjcw", "ms1ag", "j8o2m", "2y2ech", "2nva1v"], add: ["1b9eqo", "1k1kyox", "11p7nhy"], skip: ["180vzpq"], lat: 18.5586, lng: -68.3694, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Palms, reefs and white sand",
+        description: "The easternmost tip of the island is lined with long, palm-fringed white beaches such as Bávaro, on water kept calm by offshore reefs. It is the country's biggest resort area. Boats run day trips to Saona Island, a protected island of empty beaches and shallow natural pools.",
+        bestTime: "Dec–Apr", image: "wiki:Punta Cana", more: ["Bávaro", "Saona Island"] },
+      { name: "Samaná", pics: ["1q03h3", "1jc0pt", "yaldy"], add: ["14yaqyc", "zr49do", "1go8ng2", "3626h3"], lat: 19.2502, lng: -69.4212, category: "Nature", sound: "ocean", zoom: 10,
+        tagline: "Whales, wild beaches and karst islets",
+        description: "Every winter, roughly from January to March, thousands of humpback whales gather in Samaná Bay to mate and give birth. The peninsula has wild beaches such as Playa Rincón, and across the bay, Los Haitises National Park is a maze of karst islets, mangroves and caves.",
+        bestTime: "Jan–Mar", image: "wiki:Samaná Peninsula", more: ["Los Haitises National Park"] }
+    ]
+  },
+  {
+    id: "332", name: "Haiti", region: "Caribbean", soundProfile: "mountains",
+    summary: "A mountaintop fortress built by a free nation, and an old coffee port of iron balconies and carnival masks.",
+    hero: "wiki:Citadelle Laferrière",
+    places: [
+      { name: "Citadelle Laferrière", pics: ["xrks", "xrm0", "xrl5"], add: ["1yzd9zp", "1etku00"], lat: 19.5736, lng: -72.2439, category: "Historical", sound: "mountains", zoom: 12,
+        tagline: "The fortress of independence",
+        description: "Built in the early 1800s by tens of thousands of formerly enslaved people after Haiti won its independence, the Citadelle is often called the largest fortress in the Americas, set on a mountaintop at about 900 metres. Below it lie the ruins of Sans-Souci Palace, built for King Henri Christophe. Together they are a UNESCO World Heritage Site.",
+        bestTime: "Nov–Mar", image: "wiki:Citadelle Laferrière", more: ["Sans-Souci Palace"] },
+      { name: "Jacmel", pics: ["19v6j7", "2xq7gl", "j24ox", "19v6j5"], add: ["12np8od"], skip: ["1xs4dj8"], lat: 18.2342, lng: -72.5347, category: "Culture", sound: "ocean", zoom: 12,
+        tagline: "Iron balconies and papier-mâché masks",
+        description: "Jacmel, on the south coast, grew rich exporting coffee in the 19th century, and its old merchant houses have cast-iron balconies and columns. The town is known for its artists and its carnival, with huge papier-mâché masks. In the hills above, Bassin Bleu is a chain of blue pools linked by waterfalls.",
+        bestTime: "Nov–Mar", image: "wiki:Jacmel" }
+    ]
+  },
+  {
+    id: "044", name: "Bahamas", region: "Caribbean", soundProfile: "ocean", aka: ["The Bahamas"],
+    summary: "Water in every shade of blue, swimming pigs and pink-sand beaches across about 700 islands.",
+    hero: "wiki:Pig Beach",
+    places: [
+      { name: "Exuma Cays", pics: ["1i9fc4", "1g76nx", "1g76ma", "1g76n0", "1g76o3", "1g76mr"], add: ["1sljkpj", "y9vf7c"], skip: ["1g0i22v", "1jqht76"], lat: 24.1836, lng: -76.4564, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "Turquoise shallows and swimming pigs",
+        description: "The Exuma chain is a string of hundreds of small cays over startlingly clear turquoise shallows. On Big Major Cay, a colony of feral pigs swims out to meet the boats, and the Exuma Cays Land and Sea Park protects reefs, iguanas and empty white beaches.",
+        bestTime: "Dec–May", image: "wiki:Pig Beach", wiki: "Exuma" },
+      { name: "Nassau", pics: ["187386", "2jgopz", "5a4eo"], add: ["wkiob5", "bb84b", "10sx8q"], skip: ["bmjqbx", "yw4y23", "11i48p4", "o2fs0", "z6jaee", "1eb9ma6", "illztx", "p85peh"], lat: 25.0781, lng: -77.3386, category: "City", sound: "ocean",
+        tagline: "Pastel colonial capital",
+        description: "The capital mixes pastel colonial buildings, old forts and the Queen's Staircase, 66 steps cut into the limestone by enslaved people in the 1790s. Cruise ships dock beside the old town, and Paradise Island across the harbour is lined with beaches.",
+        bestTime: "Dec–May", image: "wiki:Nassau, Bahamas", more: ["Paradise Island", "Queen's Staircase"] },
+      { name: "Harbour Island", pics: ["1cjo39", "1ci8a5"], add: ["15sg853", "lx1e5r"], lat: 25.5000, lng: -76.6333, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Three miles of pink sand",
+        description: "Off Eleuthera, Harbour Island has a beach of pale pink sand about three miles long, coloured by the red shells of tiny sea creatures called foraminifera. Its little town, Dunmore Town, is a grid of clapboard cottages with picket fences, and people get around by golf cart.",
+        bestTime: "Dec–May", image: "wiki:Harbour Island, Bahamas" }
+    ]
+  },
+  {
+    id: "052", name: "Barbados", region: "Caribbean", soundProfile: "ocean",
+    summary: "A coral island of calm west-coast beaches, wild Atlantic surf, and a UNESCO-listed capital.",
+    hero: "wiki:Bathsheba, Barbados",
+    places: [
+      { name: "Bridgetown", pics: ["189kg", "1w8sh2", "vjpwy", "1jds6z", "wh76q", "wh5k7", "3suzc"], lat: 13.0975, lng: -59.6167, category: "Historical", sound: "city",
+        tagline: "A colonial port and its garrison",
+        description: "Historic Bridgetown and its Garrison is a UNESCO World Heritage Site, with a 17th-century street plan, the Parliament buildings and the Garrison Savannah, where horse races have been held since the 1840s. Carlisle Bay, right beside town, has calm water and shipwrecks to snorkel over.",
+        bestTime: "Dec–Apr", image: "wiki:Carlisle Bay, Barbados" },
+      { name: "Bathsheba", pics: ["3st43", "iaftc", "iafv5", "3st66", "3st2o", "2ec59k", "5o4u9"], add: ["1pq2g80", "nsq9s5", "fyktwd"], lat: 13.2142, lng: -59.5236, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Giant boulders on the Atlantic coast",
+        description: "On the wild Atlantic coast, Bathsheba's beach is scattered with huge mushroom-shaped boulders, undercut by the waves. Its surf break, the Soup Bowl, draws surfers from around the world, and rock pools form at low tide.",
+        bestTime: "Dec–Apr", image: "wiki:Bathsheba, Barbados" }
+    ]
+  },
+  {
+    id: "780", name: "Trinidad and Tobago", region: "Caribbean", soundProfile: "ocean",
+    summary: "The home of Carnival and the steelpan, and Tobago's palm-fringed reefs and old rainforest.",
+    hero: "wiki:Pigeon Point, Tobago",
+    places: [
+      { name: "Tobago", pics: ["8x6dj", "4jr2s", "5too2", "2iewe", "viqf2"], add: ["13bdg7m"], skip: ["lwo84k", "tp92ak", "10qy3bv"], lat: 11.1729, lng: -60.8385, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "Reefs, rainforest and a thatched jetty",
+        description: "Tobago is the quieter of the two islands, with rainforest hills and small fishing bays. Pigeon Point, with its thatch-roofed jetty, is its best-known beach, and glass-bottomed boats head out to the coral of Buccoo Reef. The Main Ridge Forest Reserve has been protected since 1776.",
+        bestTime: "Jan–May", image: "wiki:Pigeon Point, Tobago", wiki: "Tobago", more: ["Buccoo Reef"] },
+      { name: "Port of Spain", pics: ["395kez", "rz2b8", "395keo", "twiga", "14l7qe", "rz251"], add: ["1kfz2x1", "1y10m7i"], lat: 10.6667, lng: -61.5167, category: "City", sound: "city",
+        tagline: "Carnival city",
+        description: "Trinidad's capital erupts each year before Lent with Carnival, one of the biggest in the world, when costumed bands parade through the streets. The steelpan, made from oil drums, was invented in Trinidad in the 20th century. North of the city, a road over the mountains leads to Maracas Bay, the island's favourite beach.",
+        bestTime: "Jan–May", image: "wiki:Port of Spain", more: ["Queen's Park Savannah"] }
+    ]
+  },
+  {
+    id: "662", name: "Saint Lucia", region: "Caribbean", soundProfile: "ocean", aka: ["St Lucia"],
+    summary: "Two volcanic spires rising from the sea, rainforest, and a drive-in volcano.",
+    hero: "wiki:Pitons (Saint Lucia)",
+    places: [
+      { name: "The Pitons", pics: ["1359sr", "1mejj", "2ua4bz", "3ag8zy", "32xgq5", "1lyz9o"], add: ["lm37r0", "16j4jpe"], lat: 13.8071, lng: -61.0704, category: "Mountain", sound: "ocean", zoom: 12,
+        tagline: "Twin peaks from the sea",
+        description: "Gros Piton and Petit Piton, two forested volcanic spires about 750 to 800 metres high, rise straight out of the sea near the town of Soufrière, and Gros Piton can be climbed with a guide. Nearby, the Sulphur Springs bubble with hot mud pools. The area is a UNESCO World Heritage Site.",
+        bestTime: "Dec–Apr", image: "wiki:Pitons (Saint Lucia)", more: ["Soufrière, Saint Lucia"] },
+      { name: "Marigot Bay", pics: ["28svcv", "28v8m0", "28v8pv", "28suid"], lat: 13.9662, lng: -61.0240, category: "Beach", sound: "ocean", zoom: 14,
+        tagline: "A hidden green inlet",
+        description: "A deep, narrow inlet surrounded on three sides by steep green hills, with a strip of palm-fringed sand at its mouth. Yachts shelter here, and it is often called one of the most beautiful bays in the Caribbean.",
+        bestTime: "Dec–Apr", image: "wiki:Marigot Bay" }
+    ]
+  },
+  {
+    id: "308", name: "Grenada", region: "Caribbean", soundProfile: "ocean",
+    summary: "The Spice Island: nutmeg-scented hills, a horseshoe harbour and a long white beach.",
+    hero: "wiki:St. George's, Grenada",
+    places: [
+      { name: "St. George's", pics: ["1g208o", "i4fsy", "23m2pd", "sauyy", "sauz6", "1k8iz8", "10c2ab"], add: ["mciurl", "hg80s6", "1jqn813", "14efptc"], lat: 12.0525, lng: -61.7531, category: "City", sound: "ocean",
+        tagline: "A harbour town in an old crater",
+        description: "Grenada's capital curls around a horseshoe-shaped harbour inside an old volcanic crater, with red-roofed houses climbing the hills to Fort George. A few minutes away, Grand Anse is a two-mile curve of white sand. Grenada is called the Spice Island and is a major producer of nutmeg, which even appears on its flag.",
+        bestTime: "Jan–May", image: "wiki:St. George's, Grenada" }
+    ]
+  },
+  {
+    id: "028", name: "Antigua and Barbuda", region: "Caribbean", soundProfile: "ocean",
+    summary: "Countless beaches, a Georgian naval dockyard, and pink sand on Barbuda.",
+    hero: "wiki:Nelson's Dockyard",
+    places: [
+      { name: "English Harbour", pics: ["2qwghy", "r7cto", "r7ctn"], add: ["xcljvm", "1kycgn3", "erhlyd", "damsqc", "1hjg8n8"], skip: ["1sf2lqq", "1yrj970"], lat: 17.0083, lng: -61.7644, category: "Historical", sound: "ocean", zoom: 13,
+        tagline: "Nelson's Dockyard",
+        description: "In English Harbour, Nelson's Dockyard is the only Georgian-era naval dockyard in the world still working, its stone and timber buildings restored as a marina, inns and shops. It is a UNESCO World Heritage Site. Shirley Heights, above it, has the classic view over the harbour and a Sunday evening party with steel bands.",
+        bestTime: "Dec–Apr", image: "wiki:Nelson's Dockyard", more: ["Shirley Heights"] },
+      { name: "Barbuda", pics: ["2k5s0p", "3aeozk"], skip: ["ondw35", "3aat48", "1m4vxj0"], lat: 17.6400, lng: -61.8100, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Pink sand and frigatebirds",
+        description: "Antigua's flat, quiet sister island has beaches of pink-tinged sand running for miles, and a lagoon with one of the largest frigatebird colonies in the world. Its only village is Codrington.",
+        bestTime: "Dec–Apr", image: "wiki:Codrington Lagoon", wiki: "Barbuda" }
+    ]
+  },
+  {
+    id: "212", name: "Dominica", region: "Caribbean", soundProfile: "rainforest",
+    summary: "The Nature Island: volcanic rainforest, waterfalls and a boiling lake.",
+    hero: "wiki:Morne Trois Pitons National Park",
+    places: [
+      { name: "Morne Trois Pitons National Park", pics: ["1zb6j2", "jkw7l", "36leg6", "1qjirv", "12xa7v"], add: ["zug51v"], lat: 15.3167, lng: -61.3200, category: "Nature", sound: "rainforest", zoom: 11,
+        tagline: "Waterfalls and a boiling lake",
+        description: "Dominica's mountainous interior is volcanic rainforest, and this national park, a UNESCO World Heritage Site, holds the twin Trafalgar Falls and the Boiling Lake, a flooded fumarole whose grey water bubbles close to boiling point. The hike there takes most of a day, through the steaming Valley of Desolation.",
+        bestTime: "Jan–May", image: "wiki:Morne Trois Pitons National Park", more: ["Boiling Lake", "Trafalgar, Dominica"] }
+    ]
+  },
+  {
+    id: "659", name: "Saint Kitts and Nevis", region: "Caribbean", soundProfile: "ocean", aka: ["St Kitts", "Nevis"],
+    summary: "A volcanic island pair with a great British fortress and a cloud-capped peak.",
+    hero: "wiki:Brimstone Hill Fortress National Park",
+    places: [
+      { name: "Brimstone Hill Fortress", pics: ["siilq", "slc0b", "wilsb", "396fvt"], add: ["br3tkn", "15de0y9", "9cugna"], lat: 17.3470, lng: -62.8360, category: "Historical", sound: "ocean", zoom: 13,
+        tagline: "A fortress on a volcanic hill",
+        description: "Built by the British over about a century from the 1690s, with the labour of enslaved Africans, this fortress sits on a steep volcanic hill above the sea. It is a UNESCO World Heritage Site, and from its walls you can see neighbouring islands such as St Eustatius. Across a narrow channel, Nevis rises to a peak usually wrapped in cloud.",
+        bestTime: "Dec–Apr", image: "wiki:Brimstone Hill Fortress National Park", more: ["Nevis Peak"] }
+    ]
+  },
+  {
+    id: "670", name: "Saint Vincent and the Grenadines", region: "Caribbean", soundProfile: "ocean", aka: ["St Vincent", "Grenadines"],
+    summary: "A chain of small islands with sea turtles, sailing boats and coral reefs.",
+    hero: "wiki:Tobago Cays",
+    places: [
+      { name: "Tobago Cays", pics: ["vel79", "3tx8i", "xs1wo"], add: ["bermnt"], lat: 12.6333, lng: -61.3500, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Turtles in a reef lagoon",
+        description: "Five small uninhabited islands ringed by a horseshoe reef, the Tobago Cays are a marine park where green turtles graze on seagrass in clear shallow water and yachts anchor in the lagoon. Scenes from Pirates of the Caribbean were filmed on Petit Tabac.",
+        bestTime: "Dec–May", image: "wiki:Tobago Cays" },
+      { name: "Bequia", pics: ["vqs17"], skip: ["1b462eg"], lat: 13.0150, lng: -61.2300, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "A sailors' island",
+        description: "The second-largest of the Grenadines is a short ferry ride from St Vincent, with a sheltered harbour, Admiralty Bay, full of sailing boats. Quiet beaches and a long tradition of boatbuilding make it a favourite stop for sailors.",
+        bestTime: "Dec–May", image: "wiki:Bequia" }
+    ]
+  },
+  {
+    id: "084", name: "Belize", region: "Central America", soundProfile: "jungle",
+    summary: "The world's second-largest barrier reef, the Great Blue Hole, and Maya temples in the rainforest.",
+    hero: "wiki:Great Blue Hole",
+    places: [
+      { name: "Great Blue Hole", pics: ["2i7p9f", "186qhp", "tl15h", "1ogl0h", "2af7ks"], lat: 17.3156, lng: -87.5344, category: "Nature", sound: "ocean", zoom: 11,
+        tagline: "A round blue hole in the reef",
+        description: "In the middle of Lighthouse Reef, 70 kilometres off the coast, a perfectly round, deep-blue sinkhole about 300 metres across drops 124 metres into the reef. From the air it is one of the most striking sights in the Caribbean, and divers go down to see stalactites formed when it was a dry cave.",
+        bestTime: "Dec–May", image: "wiki:Great Blue Hole" },
+      { name: "Ambergris Caye", pics: ["10u24j", "4f8x9", "3cwq17"], add: ["uabbtn", "1297pu6", "116lf2u"], lat: 18.0139, lng: -87.9310, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Golf carts and nurse sharks",
+        description: "Belize's largest island is 40 kilometres of white coral sand and mangroves, with the little town of San Pedro, where most people get around by golf cart. The barrier reef runs just offshore, and at Hol Chan Marine Reserve you can snorkel with nurse sharks and rays.",
+        bestTime: "Dec–May", image: "wiki:Ambergris Caye", more: ["Hol Chan Marine Reserve", "Belize Barrier Reef"] },
+      { name: "Xunantunich & Caracol", pics: ["1cg86i", "pc4h4"], add: ["13af7fi", "eepcur", "7qltvu"], skip: ["o45ai9"], lat: 17.0902, lng: -89.1422, category: "Historical", sound: "temple", zoom: 12,
+        tagline: "Maya temples above the jungle",
+        description: "In western Belize, the Maya city of Xunantunich sits on a ridge above the Mopan River, reached by a hand-cranked ferry, and its main temple, El Castillo, looks out over the forest into Guatemala. Deeper in the jungle, Caracol was one of the largest Maya cities, and its great Caana pyramid is still the tallest building in Belize.",
+        bestTime: "Dec–May", image: "wiki:Xunantunich", more: ["Caracol"] }
+    ]
+  },
+  {
+    id: "340", name: "Honduras", region: "Central America", soundProfile: "jungle",
+    summary: "Maya carvings at Copán, and the Bay Islands on the edge of the great Caribbean reef.",
+    hero: "wiki:Copán",
+    places: [
+      { name: "Roatán", pics: ["ufo0j", "ugi6t", "dudl9", "4a6z9"], add: ["hdxub8", "2e6sxz"], skip: ["llbxvt", "1uy3qw5"], lat: 16.3834, lng: -86.4178, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Coral right off the beach",
+        description: "The largest of the Bay Islands, about 65 kilometres off the north coast, sits on the Mesoamerican Reef, the largest reef system in the Western Hemisphere. West Bay has a long white beach with coral just off the sand. Nearby Utila is a famous place to learn to dive and to swim with whale sharks.",
+        bestTime: "Mar–Aug", image: "wiki:Roatán", more: ["Utila"] },
+      { name: "Copán", pics: ["259wr9", "t8c1b", "aifcq", "179jmw"], add: ["et8dj4", "18vu0b4", "2xvd17"], skip: ["o45ai9", "1cz1i8f", "1wzxt2t"], lat: 14.8380, lng: -89.1424, category: "Historical", sound: "temple", zoom: 13,
+        tagline: "The finest carving in the Maya world",
+        description: "Near the Guatemalan border, Copán was one of the great Maya cities, famous for the finest stone carving in the Maya world. Its Hieroglyphic Stairway holds the longest known Maya inscription, and the plazas are filled with carved stelae of its kings. Scarlet macaws, the national bird, fly over the ruins.",
+        bestTime: "Nov–Apr", image: "wiki:Copán" }
+    ]
+  },
+  {
+    id: "222", name: "El Salvador", region: "Central America", soundProfile: "mountains",
+    summary: "Volcanoes and crater lakes, Pacific surf beaches, and cobbled colonial towns.",
+    hero: "wiki:Santa Ana Volcano",
+    places: [
+      { name: "Santa Ana Volcano", pics: ["1gti0p", "xq0x1", "2ohpyr", "2ohpyo"], add: ["voexha"], lat: 13.8528, lng: -89.6300, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "A crater lake beside a caldera",
+        description: "At 2,381 metres, Santa Ana is El Salvador's highest volcano, and the hike to its rim looks down into a crater holding a steaming green lake. Right beside it, Lake Coatepeque fills a huge caldera formed by eruptions tens of thousands of years ago.",
+        bestTime: "Nov–Apr", image: "wiki:Santa Ana Volcano", more: ["Coatepeque Caldera", "Izalco (volcano)"] },
+      { name: "La Libertad Coast", pics: ["2nsit8", "xz9jt", "2r0n3u"], add: ["ne4wbp", "4bl9hn", "6n9oz0"], skip: ["1mcurns", "n4ryju"], lat: 13.4888, lng: -89.3191, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Point breaks and black sand",
+        description: "The coast west of the port of La Libertad has some of the best right-hand point breaks in Central America, at beaches such as El Tunco and El Zonte, with dark volcanic sand and rocky points. The fishing pier at La Libertad sells the morning catch.",
+        bestTime: "Mar–Oct", image: "wiki:La Libertad, El Salvador" },
+      { name: "Suchitoto", pics: ["e2v1b", "2xip10", "hdnug", "172azt"], add: ["4lttqe", "pzt2va"], skip: ["1d3alvw"], lat: 13.9367, lng: -89.0259, category: "Historical", sound: "temple", zoom: 13,
+        tagline: "Cobblestones and indigo",
+        description: "A colonial town of cobbled streets and whitewashed houses with red-tiled roofs, Suchitoto looks out over a large lake. Its white church of Santa Lucía faces the main square, and the town is known for its art festivals and indigo dyeing.",
+        bestTime: "Nov–Apr", image: "wiki:Suchitoto" }
+    ]
+  },
+  {
+    id: "558", name: "Nicaragua", region: "Central America", soundProfile: "mountains",
+    summary: "Colonial cities in bright colours, an island of twin volcanoes in a great lake, and a cathedral you can walk on.",
+    hero: "wiki:Granada, Nicaragua",
+    places: [
+      { name: "Granada", pics: ["2diuhs", "9609e", "16oyrb", "xqvjn", "eskpc"], add: ["1ceb0u4", "1stci5e", "beurtv"], lat: 11.9304, lng: -85.9536, category: "Historical", sound: "city",
+        tagline: "A colonial city on a great lake",
+        description: "Founded in 1524 on the shore of Lake Nicaragua, Granada is one of the oldest cities founded by Europeans on the American mainland. Its streets are lined with colonial houses in bright colours around a yellow cathedral. Boats tour the Isletas, hundreds of small islands in the lake formed by an ancient eruption of the Mombacho volcano.",
+        bestTime: "Nov–Apr", image: "wiki:Granada, Nicaragua", more: ["Mombacho"] },
+      { name: "Ometepe", pics: ["2gn5q4", "hg5tg", "126l5i", "126ler", "1f5g22"], add: ["icfy86", "5z967y", "1f6n8ms"], skip: ["5ela5d", "12d3mlu", "n717tl"], lat: 11.4984, lng: -85.6255, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "Two volcanoes in a lake",
+        description: "Two volcanoes rise out of Lake Nicaragua to form this island, joined by a narrow neck of land: the near-perfect cone of Concepción, still active, and the forested Maderas, with a lake in its crater. Ojo de Agua is a spring-fed swimming hole among the trees.",
+        bestTime: "Nov–Apr", image: "wiki:Concepción (volcano)", wiki: "Ometepe" },
+      { name: "León", pics: ["9r2ky", "962ts", "962p2", "v6wys", "126kwz"], add: ["inonct", "19nk2k0", "1xiut7y"], skip: ["qmrb3y"], lat: 12.4348, lng: -86.8788, category: "Historical", sound: "city",
+        tagline: "A white cathedral and a volcano to slide down",
+        description: "León's huge white cathedral, the largest in Central America, is a UNESCO World Heritage Site, and you can walk on its gleaming roof among the domes. The city is a lively university town, and nearby you can climb the young Cerro Negro volcano and slide down its black gravel slopes on a board.",
+        bestTime: "Nov–Apr", image: "wiki:León Cathedral, Nicaragua", wiki: "León, Nicaragua", more: ["Cerro Negro"] }
+    ]
+  },
+  {
+    id: "630", name: "Puerto Rico", region: "Caribbean", soundProfile: "ocean",
+    summary: "Spanish forts and pastel streets in Old San Juan, a rainforest of singing frogs, and turquoise island beaches.",
+    hero: "wiki:Old San Juan",
+    places: [
+      { name: "Old San Juan", pics: ["1dc0nc", "ut5rk", "2159ga", "2d9wi7"], add: ["1de06or", "myhh4n", "10icdiw", "1cw9pan"], skip: ["l94a6t", "nmetnr"], lat: 18.4661, lng: -66.1191, category: "Historical", sound: "city",
+        tagline: "Blue cobblestones and Spanish forts",
+        description: "Founded by the Spanish in 1521, Old San Juan is a grid of blue cobblestone streets and pastel colonial houses on a small island. The massive forts of El Morro and San Cristóbal guard its walls, and together they form a UNESCO World Heritage Site.",
+        bestTime: "Dec–Apr", image: "wiki:Old San Juan", more: ["Castillo San Felipe del Morro"] },
+      { name: "El Yunque", pics: ["1ifhid", "296cql", "296db4", "1bqkon", "h66op"], add: ["xslgzc", "1clb71c"], skip: ["102c0zz", "1evh9v0", "1xos899"], lat: 18.3167, lng: -65.7833, category: "Nature", sound: "rainforest", zoom: 11,
+        tagline: "A rainforest of singing frogs",
+        description: "The only tropical rainforest in the US National Forest system, El Yunque covers the Luquillo Mountains less than an hour from San Juan. Trails lead to waterfalls, and in the evening the forest fills with the call of the tiny coquí frog, the island's symbol.",
+        bestTime: "Dec–Apr", image: "wiki:El Yunque National Forest" },
+      { name: "Culebra", pics: ["1hs1j4", "1pscsx", "1pscka", "2wtl5l", "2wtl5m"], add: ["i2jo8z", "1ltxfek", "n7qjcs", "1ypo6jp"], lat: 18.3280, lng: -65.3163, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "Flamenco Beach",
+        description: "On the small island of Culebra, east of the main island, Flamenco Beach curves for about a mile around a calm, reef-sheltered bay of turquoise water and white sand. Old tanks left from when the US Navy used the area for training still rust on the sand.",
+        bestTime: "Dec–Apr", image: "wiki:Flamenco Beach", more: ["Culebra, Puerto Rico"] }
+    ]
+  },
+  {
+    id: "533", name: "Aruba", region: "Caribbean", soundProfile: "ocean",
+    summary: "A dry, sunny island of white beaches, wind-bent trees and desert cactus.",
+    hero: "wiki:Eagle Beach",
+    places: [
+      { name: "Eagle Beach", pics: ["1bw78y", "2bll65", "2bllhp", "55o6r"], add: ["96x1g1", "tbzn8s", "1dyo4n"], skip: ["srn0q5"], lat: 12.5492, lng: -70.0579, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Wind-bent trees on white sand",
+        description: "Aruba's widest beach is a long stretch of soft white sand with calm water, and its windswept fofoti trees, bent sideways by the trade winds, are among the most photographed trees in the Caribbean. Inland, Arikok National Park covers almost a fifth of the island with cactus, caves and a wild north coast.",
+        bestTime: "Year-round", image: "wiki:Eagle Beach", more: ["Arikok National Park"] }
+    ]
+  },
+  {
+    id: "531", name: "Curaçao", region: "Caribbean", soundProfile: "ocean",
+    summary: "A Dutch-Caribbean capital in bright colours, and small beaches in rocky coves.",
+    hero: "wiki:Willemstad",
+    places: [
+      { name: "Willemstad", pics: ["1g1hs3", "2ad8p7", "353hmc", "2ycvgg", "2tmrsi"], add: ["xrgivl", "sjkg2m", "hd3qnj", "1rjedh7", "10hbtxn"], skip: ["1e0vqnc", "1qh9fdz", "9takfv"], lat: 12.1080, lng: -68.9350, category: "City", sound: "ocean",
+        tagline: "A rainbow waterfront",
+        description: "Willemstad's waterfront, the Handelskade, is a row of Dutch-style merchant houses painted in bright colours, and the historic centre is a UNESCO World Heritage Site. The Queen Emma Bridge, a floating pontoon bridge, swings open to let ships into the harbour. Along the west coast, small beaches in rocky coves have very clear water.",
+        bestTime: "Year-round", image: "wiki:Willemstad", more: ["Queen Emma Bridge"] }
+    ]
+  },
+  {
+    id: "060", name: "Bermuda", region: "North America", soundProfile: "ocean",
+    summary: "Pink-sand coves, pastel cottages with white roofs, and an old colonial town.",
+    hero: "wiki:Horseshoe Bay, Bermuda",
+    places: [
+      { name: "Horseshoe Bay", pics: ["vvumw", "vvums", "27c2xj"], add: ["zq3bcq", "o4yb8v"], lat: 32.2522, lng: -64.8217, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Pink sand on the south shore",
+        description: "On Bermuda's south shore, Horseshoe Bay is a curve of pink-tinted sand between rocky headlands, and trails lead along the coast to smaller coves. Bermuda's houses are painted in pastel colours with stepped white limestone roofs, built to catch rainwater, since the island has no rivers.",
+        bestTime: "May–Oct", image: "wiki:Horseshoe Bay, Bermuda" },
+      { name: "St. George's", pics: ["eo4ws", "25lseo", "vbc5m", "vbbzr"], add: ["1wwq6ye", "c9b5ci"], skip: ["m7oid5"], lat: 32.3794, lng: -64.6778, category: "Historical", sound: "ocean", zoom: 14,
+        tagline: "The oldest English town in the New World",
+        description: "Founded in 1612, St. George's is the oldest continuously inhabited English town in the New World, and with its forts it is a UNESCO World Heritage Site. Its narrow lanes hold St. Peter's Church, the oldest Anglican church in continuous use outside the British Isles.",
+        bestTime: "May–Oct", image: "wiki:St. George's, Bermuda" }
+    ]
+  },
+  {
+    id: "136", name: "Cayman Islands", region: "Caribbean", soundProfile: "ocean",
+    summary: "Calm turquoise water, a long coral-sand beach, and stingrays on a sandbar.",
+    hero: "wiki:Seven Mile Beach, Grand Cayman",
+    places: [
+      { name: "Grand Cayman", pics: ["5wtjy", "36ytdn", "fn53k", "36ytdm", "x0w24", "2r8g08"], add: ["1h7lv5i", "ozhthm", "1t965g8", "1yghs2n"], lat: 19.3500, lng: -81.3833, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Seven Mile Beach and Stingray City",
+        description: "Seven Mile Beach is a long crescent of coral sand on the west coast of Grand Cayman, public along its whole length. Out in the North Sound, at Stingray City, southern stingrays gather over shallow sandbars, and you can stand in the water among them. The islands are among the Caribbean's top dive destinations.",
+        bestTime: "Dec–Apr", image: "wiki:Seven Mile Beach, Grand Cayman", more: ["Stingray City, Grand Cayman"] }
+    ]
+  },
+  {
+    id: "796", name: "Turks and Caicos Islands", region: "Caribbean", soundProfile: "ocean", aka: ["Turks and Caicos"],
+    summary: "Glowing turquoise shallows and some of the finest beaches in the Caribbean.",
+    hero: "wiki:Providenciales",
+    places: [
+      { name: "Grace Bay", pics: ["38moj1", "38moj0", "4zp8b", "witsv", "38moj4"], add: ["1i8896g", "1b70b23", "bzdtrg"], skip: ["342ad1", "hi9f2l", "18sr02f", "1bpy9el"], lat: 21.8000, lng: -72.1700, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "Powder sand and a barrier reef",
+        description: "Grace Bay on Providenciales is a long, powder-white beach on water so clear and shallow it glows turquoise, protected by a barrier reef offshore. Princess Alexandra National Park protects the reef and the small cays nearby.",
+        bestTime: "Dec–Apr", image: "wiki:Providenciales" }
+    ]
+  },
+  {
+    id: "092", name: "British Virgin Islands", region: "Caribbean", soundProfile: "ocean", aka: ["BVI"],
+    summary: "A sailors' archipelago of calm channels, and giant granite boulders on the beach.",
+    hero: "wiki:The Baths",
+    places: [
+      { name: "The Baths", pics: ["244ay0", "244ay2", "r8obg", "16am58"], add: ["1a453ua"], lat: 18.4294, lng: -64.4454, category: "Beach", sound: "ocean", zoom: 14,
+        tagline: "Grottoes among giant boulders",
+        description: "On Virgin Gorda, enormous granite boulders lie piled along the beach, forming grottoes, tunnels and sheltered pools that you wade and squeeze through on the way to Devil's Bay. The calm channels between the islands make the BVI one of the world's favourite places to sail.",
+        bestTime: "Dec–Apr", image: "wiki:The Baths" }
+    ]
+  },
+  {
+    id: "850", name: "U.S. Virgin Islands", region: "Caribbean", soundProfile: "ocean", aka: ["US Virgin Islands", "USVI"],
+    summary: "Coral reefs and national park beaches on three small islands.",
+    hero: "wiki:Trunk Bay",
+    places: [
+      { name: "Trunk Bay", pics: ["23jyla", "m80gv", "fnrjt", "1351h2"], add: ["l3xk7p", "1lert7s", "a3yag8"], lat: 18.3525, lng: -64.7697, category: "Beach", sound: "ocean", zoom: 14,
+        tagline: "An underwater trail",
+        description: "Trunk Bay on St. John is a curve of white sand inside Virgin Islands National Park, which covers about 60 percent of the island. An underwater snorkel trail, with signs on the seabed, leads around Trunk Cay just offshore.",
+        bestTime: "Dec–Apr", image: "wiki:Trunk Bay" }
+    ]
+  },
+  {
+    id: "534", name: "Sint Maarten", region: "Caribbean", soundProfile: "ocean", aka: ["Saint Martin", "St Maarten"],
+    summary: "Half of a two-nation island, famous for planes landing just over the beach.",
+    hero: "wiki:Maho Beach",
+    places: [
+      { name: "Maho Beach", pics: ["54suo", "18ls8", "1k8w55", "13v9kz", "2xq94o"], lat: 18.0392, lng: -63.1203, category: "Beach", sound: "ocean", zoom: 14,
+        tagline: "Jets just over your head",
+        description: "At Maho Beach, planes landing at Princess Juliana International Airport pass only a few dozen metres above the sand, and crowds gather to watch the big jets come in. The island is shared by the Netherlands and France, and the capital, Philipsburg, sits on a wide bay with a busy beachfront boardwalk.",
+        bestTime: "Dec–Apr", image: "wiki:Maho Beach", more: ["Philipsburg, Sint Maarten"] }
+    ]
   }
 ] };
