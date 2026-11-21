@@ -176,7 +176,7 @@
     for (let i = 0; i < d.length; i += 4) {
       if (!mask[i + 3]) continue;
       const l = (d[i] + d[i + 1] + d[i + 2]) / 3;
-      if (l > land + 14) { d[i] = lr; d[i + 1] = lg; d[i + 2] = lb; }
+      if (l > land + 26) { d[i] = lr; d[i + 1] = lg; d[i + 2] = lb; }
     }
     g.putImageData(im, 0, 0);
     if (RELABEL.size[fix.z]) {
