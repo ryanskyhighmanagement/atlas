@@ -2760,5 +2760,375 @@ window.ATLAS_DATA = { countries: [
         description: "Built around 2500 BC, Mohenjo-daro was one of the largest cities of the Indus Valley Civilisation, with a grid of streets, brick houses, covered drains and a great public bath. It was abandoned around 1700 BC and rediscovered in the 1920s. It is a UNESCO World Heritage Site.",
         bestTime: "Nov–Feb", image: "wiki:Mohenjo-daro" }
     ]
+  },
+  /* ---------- Asia & Pacific: the rest ---------- */
+  {
+    id: "158", name: "Taiwan", region: "Asia", soundProfile: "city",
+    summary: "A capital of night markets and a supertall tower, a marble gorge, and old gold-mining towns in the hills.",
+    hero: "wiki:Taroko National Park",
+    places: [
+      { name: "Taipei", pics: ["rltm5", "bgr6", "2qu6i0", "8w28u", "1bvjxg", "16xsxp", "1bbkd2", "1b0pwr"], add: ["1yvh9u6", "cjv8rl", "vw104i", "uhbvwi", "1p6yo04", "il2bk0", "dxqruk"], skip: ["zj1y3n", "1xitp1e", "1drx1a5", "wiksze", "10nst65"], lat: 25.0375, lng: 121.5625, category: "City", sound: "city",
+        tagline: "Night markets under Taipei 101",
+        description: "Taipei's skyline is dominated by Taipei 101, at 508 metres the world's tallest building from 2004 to 2010, and hikers climb nearby Elephant Mountain to watch it at sunset. The city is famous for its night markets, such as Shilin and Raohe, packed with food stalls, and for the hot springs of the Beitou district.",
+        bestTime: "Oct–Apr", image: "wiki:Taipei 101", wiki: "Taipei", more: ["Shilin Night Market"] },
+      { name: "Taroko Gorge", pics: ["5ndmd", "whndi", "yhvib", "1z0e7x", "1z0e73", "1z0e89"], add: ["4lnrea", "1ldu58o", "1fcfuaq", "blwamk", "1nbrcbd", "tp575d"], skip: ["zmqspy", "1i474td"], lat: 24.1720, lng: 121.5640, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "Marble cliffs and a turquoise river",
+        description: "On Taiwan's east coast, the Liwu River has carved Taroko Gorge through marble cliffs hundreds of metres high, with trails, tunnels and suspension bridges along its walls. A strong earthquake in 2024 damaged parts of the gorge, so check which trails are open before you go.",
+        bestTime: "Oct–Apr", image: "wiki:Taroko National Park" },
+      { name: "Jiufen", pics: ["2haiov", "2haiow", "1uspyd", "1e5afd"], add: ["f9z2ry", "1pxo0do", "dx17k8", "1ohlxoa", "125xydj", "1llx8sg", "1diopp2"], skip: ["3h2ytn"], lat: 25.1070, lng: 121.8430, category: "Historical", sound: "city", zoom: 14,
+        tagline: "Lanterns on a hillside above the sea",
+        description: "A former gold-mining town on a steep hillside above the sea, Jiufen is a maze of narrow stairways and old streets lined with teahouses and red lanterns, which glow at dusk. Nearby, at Shifen, people release sky lanterns along an old railway line.",
+        bestTime: "Oct–Apr", image: "wiki:Jiufen" },
+      { name: "Sun Moon Lake", pics: ["wz6l9", "90zu3", "1wvu78", "1grfwj", "1ipfxu", "2lh1gt"], add: ["14et2bv", "prqnnf", "1qhqrky", "1fm2m6q", "1rmvk1n", "rvc8ya", "1t4f7z"], skip: ["ngyvto", "1mzj6g5", "1e46x1h", "1swsk29", "1bz7hbf", "bunzpj"], lat: 23.8667, lng: 120.9167, category: "Nature", sound: "mountains", zoom: 12,
+        tagline: "Taiwan's mountain lake",
+        description: "Taiwan's largest body of water lies among forested mountains in the centre of the island, named for its shape, one part round like the sun and one curved like a crescent moon. A cycling path follows the shore, and a cable car rises to the hills above.",
+        bestTime: "Oct–Apr", image: "wiki:Sun Moon Lake" }
+    ]
+  },
+  {
+    id: "496", name: "Mongolia", region: "Asia", soundProfile: "mountains",
+    summary: "Singing dunes in the Gobi, a deep blue lake near Siberia, and nomad camps on endless steppe.",
+    hero: "wiki:Khongoryn Els",
+    places: [
+      { name: "Gobi Desert", pics: ["2f2t4d", "2f2tv8", "2f46cr", "2f46ck", "1kms5z", "1z7wyp"], add: ["d79uox", "i5vqij", "swlx0m", "ucwfzl", "19sjvsr"], skip: ["9u97hn", "5sdjyw"], lat: 43.7700, lng: 102.3000, category: "Nature", sound: "desert", zoom: 8,
+        tagline: "Singing dunes and dinosaur cliffs",
+        description: "In Gobi Gurvansaikhan National Park, the dunes of Khongoryn Els run for about 100 kilometres and rise up to 300 metres, and the sand hums as it slides, giving them the name Singing Sands. To the northeast, the red Flaming Cliffs are famous for the dinosaur eggs found there in the 1920s.",
+        bestTime: "Jun–Sep", image: "wiki:Khongoryn Els", more: ["Flaming Cliffs", "Gobi Desert"] },
+      { name: "Lake Khövsgöl", pics: ["3c5vh8", "3c5vh2", "2qrym", "3c5vgo", "3c5vgq", "79bca"], add: ["sb0aq6", "1i2y1nf", "gq2wzs", "3hqh9g", "1wbzu", "dqbdll", "1kbu8ix"], skip: ["547qcm", "jzjkqj", "2y8x5m", "v9ocg0", "fvn6hu", "19kyslg", "1n3mnyl"], lat: 51.1000, lng: 100.5000, category: "Nature", sound: "mountains", zoom: 9,
+        tagline: "A clear lake in the taiga",
+        description: "Near the Russian border, Khövsgöl is a deep, clear mountain lake ringed by larch forest, holding most of Mongolia's fresh water. Reindeer-herding Tsaatan families live in the taiga nearby, and in winter the ice grows thick enough for an ice festival on the lake.",
+        bestTime: "Jun–Sep", image: "wiki:Lake Khövsgöl" },
+      { name: "Gorkhi-Terelj", pics: ["1wlxzs", "k1qgu", "2hodpo", "1wlxz4"], add: ["1sy73cr", "opnrue", "1xmzg36", "cs69jm", "ww208v", "oh25te", "txc9dv"], skip: ["16vmjqy"], lat: 47.9500, lng: 107.4500, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "Granite rocks and ger camps",
+        description: "Little more than an hour from Ulaanbaatar, Terelj is a valley of granite rock formations, such as Turtle Rock, and grassy meadows with ger camps where you can stay in a felt tent and ride horses along the river.",
+        bestTime: "Jun–Sep", image: "wiki:Gorkhi-Terelj National Park" }
+    ]
+  },
+  {
+    id: "408", name: "North Korea", region: "Asia", soundProfile: "city",
+    summary: "A tightly controlled capital of monumental architecture, rarely visited by outsiders.",
+    hero: "wiki:Pyongyang",
+    places: [
+      { name: "Pyongyang", pics: ["evn28", "2bytf6", "2byuq4", "2bz2mt", "1wnqsh", "cipj6", "noy70", "2bytfn"], add: ["fshe09", "1qd8ioy", "1j8p1ys", "fgctmo", "1vcy9f9", "zuvzfz", "146axa2"], skip: ["1r9944z", "1si99lx", "1sqmp3s", "1qxxcpd", "1lagdi"], lat: 39.0167, lng: 125.7475, category: "City", sound: "city",
+        tagline: "Monumental and closed",
+        description: "North Korea's capital is a city of wide boulevards, monumental buildings and the 105-storey Ryugyong Hotel, a pyramid-shaped tower that stood unfinished for decades. Foreign visits are only possible on tightly controlled guided tours, and tourism has been largely shut since 2020.",
+        bestTime: "Apr–Oct", image: "wiki:Pyongyang", more: ["Ryugyong Hotel"] }
+    ]
+  },
+  {
+    id: "418", name: "Laos", region: "Asia", soundProfile: "temple",
+    summary: "A temple town on the Mekong, turquoise waterfalls, and karst peaks above a river.",
+    hero: "wiki:Luang Prabang",
+    places: [
+      { name: "Luang Prabang", pics: ["19eb97", "1gzyzk", "2atoer", "12s2ks", "2amx2p", "1njqvf", "1h0je6"], add: ["6iwmg5", "1vmuqzx", "8aggnk", "1ser0l6", "93si42", "1m9fooo", "5h1q7e", "11a2ekw", "q39wbb", "1mh4kx9"], skip: ["1efviob"], lat: 19.8900, lng: 102.1347, category: "Historical", sound: "temple",
+        tagline: "Monks at dawn on the Mekong",
+        description: "Where the Nam Khan meets the Mekong, Luang Prabang is a UNESCO-listed town of gilded temples and French colonial houses. Every dawn, saffron-robed monks walk the streets to collect alms of sticky rice, and from Mount Phousi the town glows at sunset.",
+        bestTime: "Nov–Mar", image: "wiki:Luang Prabang" },
+      { name: "Kuang Si Falls", pics: ["18gqx9", "2j8fmk", "2j8fmn"], add: ["mj2twq", "5ea3ig", "1ed7lt9", "1g5ju1o", "16o24it", "1oijpy7", "1qm0e1u"], lat: 19.7492, lng: 101.9917, category: "Nature", sound: "jungle", zoom: 14,
+        tagline: "Turquoise pools in the forest",
+        description: "About 30 kilometres from Luang Prabang, the Kuang Si Falls tumble over limestone terraces into a chain of milky turquoise pools where you can swim. A rescue centre near the entrance cares for Asiatic black bears saved from poachers.",
+        bestTime: "Nov–Mar", image: "wiki:Kuang Si Falls" },
+      { name: "Vang Vieng", pics: ["1ivtte", "1jqdi9", "xvz5n", "1h2faw", "26gu4v", "1njqvq", "1jd2gx"], add: ["1id5blr", "nrist7", "ng1gdg", "1f1fz32", "16k77oa", "n43q84", "a8lnbo", "ma6yb2", "hihzkb"], skip: ["1uhsqdu", "1c4aepg"], lat: 18.9267, lng: 102.4494, category: "Nature", sound: "mountains", zoom: 12,
+        tagline: "Balloons over karst peaks",
+        description: "On the Nam Song river, Vang Vieng is surrounded by jagged limestone peaks with caves, blue lagoons and rice fields. Hot-air balloons drift over the karst at sunrise, and kayaks and tubes float down the river.",
+        bestTime: "Nov–Mar", image: "wiki:Vang Vieng" }
+    ]
+  },
+  {
+    id: "104", name: "Myanmar", region: "Asia", soundProfile: "temple",
+    summary: "Thousands of temples on the plain of Bagan, a golden pagoda, and floating gardens on a highland lake.",
+    hero: "wiki:Bagan",
+    places: [
+      { name: "Bagan", pics: ["1mmqns", "281nh8", "1fmjzt", "1mmqo1", "1c52s4", "17e3do", "16j9b4", "z1k9h", "ibgx3"], add: ["47xpt1", "56m0wi", "1gk6fqx", "2v4xsi", "v55gq6", "jwq7kr", "1pb6w0k", "5xmsn1", "1e6sn7z", "1l2l0bi"], skip: ["1tsimvj", "14715x9", "4wpyep"], lat: 21.1725, lng: 94.8600, category: "Historical", sound: "temple", zoom: 12,
+        tagline: "A plain of 2,000 temples",
+        description: "Capital of the Pagan Kingdom from the 9th to the 13th centuries, Bagan has more than 2,000 surviving temples and pagodas scattered across a plain beside the Irrawaddy. At dawn, hot-air balloons have traditionally drifted over the spires. It is a UNESCO World Heritage Site.",
+        bestTime: "Nov–Feb", image: "wiki:Bagan" },
+      { name: "Shwedagon Pagoda", pics: ["2fpc7s", "2fpc80", "2fpc7w", "2tgwv", "28jgwt"], add: ["1ul5db9", "1grs71f", "eqja63", "1qk5u2y", "1rqt5js"], skip: ["11rac9e", "6b0nu3", "1eithgj", "1av0vgn"], lat: 16.7983, lng: 96.1494, category: "Historical", sound: "temple", zoom: 15,
+        tagline: "A golden spire over Yangon",
+        description: "Rising about 100 metres above Yangon, the gilded Shwedagon Pagoda is the most sacred Buddhist site in Myanmar, covered in gold and crowned with thousands of diamonds. It glows at sunset, when pilgrims walk clockwise around its base.",
+        bestTime: "Nov–Feb", image: "wiki:Shwedagon Pagoda" },
+      { name: "Inle Lake", pics: ["1d74k2", "1hnsl7", "bspwu", "13jf9k", "22v91m", "1qpwfn"], add: ["efch20", "1tejuky", "1q1nmzw", "14ap9k4", "ir8c13", "1yvvizy", "131fk39", "b8xs3f"], skip: ["6o9eot", "zw2e1m", "in07jt", "1yvvizy", "131fk39", "b8xs3f"], lat: 20.5500, lng: 96.9167, category: "Nature", sound: "temple", zoom: 11,
+        tagline: "Leg-rowing fishermen and floating gardens",
+        description: "High in the Shan Hills, Inle Lake is known for its Intha fishermen, who row standing on one leg with the other wrapped around the oar, and for its floating gardens and villages on stilts. Myanmar has been in civil conflict since 2021, which has affected travel.",
+        bestTime: "Nov–Feb", image: "wiki:Inle Lake" }
+    ]
+  },
+  {
+    id: "050", name: "Bangladesh", region: "Asia", soundProfile: "jungle",
+    summary: "The world's largest mangrove forest, home of the Bengal tiger, and one of the longest beaches on Earth.",
+    hero: "wiki:Sundarbans",
+    places: [
+      { name: "Sundarbans", pics: ["2yfgpl", "2yfgb9", "2yfgax", "1bkg6e"], add: ["1hv09sr", "1xfx9eb", "fkxxg5", "vvhgbr", "19k70nj", "1ij9j8h", "10dz3qq", "vxkv78", "b19n9s"], skip: ["1mucxn8", "y899p2", "156n6cm", "i7z8yd", "1b51c78", "35ovxw", "16t4p13", "rgwval"], lat: 21.9500, lng: 89.4000, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "Tigers in the mangroves",
+        description: "Shared with India, the Sundarbans is the largest mangrove forest in the world, a maze of tidal rivers and islands in the Ganges delta. It is home to the Bengal tiger, which swims between islands, as well as crocodiles and spotted deer, and visits are by boat. The Bangladeshi part is a UNESCO World Heritage Site.",
+        bestTime: "Nov–Feb", image: "wiki:Sundarbans" },
+      { name: "Cox's Bazar", pics: ["1520l8", "2aeora", "279naj", "jf3ab", "m3c7q", "mz5rt", "26zggq", "1fkz6a"], add: ["1jdxc6a", "1wrnrgw", "1cpt1z8", "1igso91", "177pfrq", "2sl7kl", "llxy17", "m0ux60"], skip: ["pwenpl", "9ktd90", "1f6rs7p", "107m3u7"], lat: 21.5833, lng: 92.0167, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "A beach 120 kilometres long",
+        description: "Cox's Bazar has one of the longest natural beaches in the world, a stretch of sand running for about 120 kilometres along the Bay of Bengal. South of town, the Marine Drive follows the coast between the hills and the sea, past fishing villages toward Teknaf.",
+        bestTime: "Nov–Feb", image: "wiki:Cox's Bazar" }
+    ]
+  },
+  {
+    id: "064", name: "Bhutan", region: "Asia", soundProfile: "temple",
+    summary: "A monastery clinging to a cliff, fortress-monasteries in green valleys, and the high Himalaya.",
+    hero: "wiki:Paro Taktsang",
+    places: [
+      { name: "Tiger's Nest", pics: ["13m8xw", "1dv7cd"], add: ["3pv6vt", "133byff", "1cj9eb8", "11e8elh", "dgja2i", "1y9xj7y", "1s509ac", "1gkhs18"], skip: ["19hqeqj"], lat: 27.4917, lng: 89.3633, category: "Historical", sound: "temple", zoom: 14,
+        tagline: "A monastery on a cliff face",
+        description: "Paro Taktsang, the Tiger's Nest, clings to a cliff about 900 metres above the Paro valley, at a cave where, legend says, Guru Rinpoche arrived on the back of a tigress in the 8th century. The hike up through pine forest takes two to three hours.",
+        bestTime: "Mar–May", image: "wiki:Paro Taktsang" },
+      { name: "Punakha Dzong", pics: ["e19t1", "16y8kl", "e1z57", "dli3d", "dli3e"], add: ["11ajz85", "1xhmpdm", "10n8bhu", "1q856de", "1u4mheg", "1pjp71p", "z6ub3k"], skip: ["176c8so", "1560f9i"], lat: 27.5819, lng: 89.8631, category: "Historical", sound: "temple", zoom: 14,
+        tagline: "A fortress where two rivers meet",
+        description: "Built in 1637–38 where two rivers meet, Punakha Dzong is a whitewashed fortress-monastery with carved wooden balconies, the second-oldest and second-largest dzong in Bhutan. In spring the jacaranda trees around it bloom purple.",
+        bestTime: "Mar–May", image: "wiki:Punakha Dzong" },
+      { name: "Thimphu", pics: ["2w8au", "1bzisy", "1qy7pq", "1bzog7", "1e0a4s"], add: ["plakt8", "mkiodh", "cadcmq", "q9p69j", "1x0py77", "w9o6ai"], skip: ["z8puvb", "oav7tt", "73gsgl", "mkiodh", "q9p69j"], lat: 27.4714, lng: 89.6337, category: "City", sound: "temple",
+        tagline: "A capital without traffic lights",
+        description: "Bhutan's capital is a small city in a forested valley, famous for having no traffic lights; a police officer directs cars at the main junction. Tashichho Dzong, a great fortress by the river, houses the government and the country's main monastic body.",
+        bestTime: "Mar–May", image: "wiki:Thimphu", more: ["Tashichho Dzong"] }
+    ]
+  },
+  {
+    id: "462", name: "Maldives", region: "Asia", soundProfile: "ocean",
+    summary: "Coral atolls of white sand and turquoise lagoons scattered across the Indian Ocean.",
+    hero: "wiki:Baa Atoll",
+    places: [
+      { name: "Baa Atoll", pics: ["l3kye", "e8mrt", "wi7mf", "3d4rxi", "11dwno", "kmysr", "lwmxd", "ybkp5", "ybkrw"], add: ["1c3ewkh", "10tswwf", "zkzmc2", "1oo0fwv", "9m7cb5", "1tvmzwo"], lat: 5.1333, lng: 72.9500, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "Atolls, lagoons and manta rays",
+        description: "The Maldives are about 1,200 coral islands grouped in 26 atolls, most only a metre or two above the sea. Baa Atoll is a UNESCO Biosphere Reserve, and at Hanifaru Bay manta rays gather in large numbers to feed in the wet season. Many resorts take up an island each.",
+        bestTime: "Nov–Apr", image: "wiki:Baa Atoll" },
+      { name: "Malé", pics: ["b8acy", "127vzn", "127vzi", "ya8xe"], add: ["1dfjobf"], skip: ["2vxix1"], lat: 4.1750, lng: 73.5083, category: "City", sound: "ocean", zoom: 14,
+        tagline: "A capital that fills its island",
+        description: "The capital packs more than 200,000 people onto about two square kilometres, one of the most densely populated cities in the world, with colourful buildings right up to the water's edge. The fish market is busy every afternoon as the tuna boats come in, and the Old Friday Mosque is built of carved coral stone.",
+        bestTime: "Nov–Apr", image: "wiki:Malé" }
+    ]
+  },
+  {
+    id: "096", name: "Brunei", region: "Asia", soundProfile: "city",
+    summary: "A golden-domed mosque and a great village built on stilts over the river.",
+    hero: "wiki:Omar Ali Saifuddien Mosque",
+    places: [
+      { name: "Bandar Seri Begawan", pics: ["30ghlh", "33ye15", "2cr0pe", "33ye13", "1fzlg3", "2h7yca", "33ws09"], add: ["1r38nsi", "yipv1", "15mawsy", "13cvv67", "184f1v8", "rpxsel", "15h2yzf"], skip: ["1r87t6c", "uamyzo", "gsenrk", "1oi87e1", "u1w4p", "1iofon4", "rpxsel"], lat: 4.9167, lng: 114.9167, category: "City", sound: "city",
+        tagline: "A golden dome and a water village",
+        description: "Brunei's capital is dominated by the Omar Ali Saifuddien Mosque, its golden dome rising above a lagoon. Across the river, Kampong Ayer is a village of houses, schools and mosques built on stilts over the water, linked by wooden walkways and water taxis, often called the largest water village in the world.",
+        bestTime: "Feb–Apr", image: "wiki:Omar Ali Saifuddien Mosque", wiki: "Bandar Seri Begawan", more: ["Kampong Ayer"] }
+    ]
+  },
+  {
+    id: "626", name: "Timor-Leste", region: "Asia", soundProfile: "ocean", aka: ["East Timor"],
+    summary: "A young mountainous nation with some of the richest coral reefs on Earth.",
+    hero: "wiki:Atauro",
+    places: [
+      { name: "Atauro Island", pics: ["1ti2rf", "2acswj", "37vr00", "200t2", "i7sjc", "2f1xhc", "37vrc6", "i7s97", "b1i76", "b1ily", "b1ils", "b1ild"], add: ["p63xd5"], skip: ["6j2caa", "6ndu64"], lat: -8.2400, lng: 125.5800, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Reefs teeming with fish",
+        description: "A boat ride north of the capital, Dili, Atauro is a quiet, mountainous island whose reefs were found by scientists to hold some of the highest numbers of reef fish species recorded anywhere. Villages offer simple homestays, and the snorkelling starts right off the beach.",
+        bestTime: "May–Nov", image: "wiki:Atauro" }
+    ]
+  },
+  {
+    id: "598", name: "Papua New Guinea", region: "Oceania", soundProfile: "rainforest",
+    summary: "Rainforest mountains, a wartime jungle trail, and a great river of carved spirit houses.",
+    hero: "wiki:Kokoda Track",
+    places: [
+      { name: "Kokoda Track", pics: ["1bknct", "8zzpg", "58a5t"], lat: -9.3800, lng: 148.4000, category: "Nature", sound: "rainforest", zoom: 9,
+        tagline: "A week through the Owen Stanley Range",
+        description: "The Kokoda Track runs 96 kilometres over the Owen Stanley Range through steep rainforest, following the route of a 1942 battle between Japanese and mainly Australian forces. Trekkers take about a week to ten days, staying in mountain villages along the way.",
+        bestTime: "Apr–Oct", image: "wiki:Kokoda Track" },
+      { name: "Sepik River", pics: ["2dirld", "2diqjl", "ukmb8", "ukmb9"], add: ["17x6kh4", "jgryyr"], skip: ["d1x66p"], lat: -3.8423, lng: 144.5389, category: "Culture", sound: "rainforest", zoom: 8,
+        tagline: "Spirit houses and carvers",
+        description: "The Sepik, the longest river on New Guinea, winds through swamp and rainforest past villages known for their towering spirit houses, haus tambaran, and their intricate woodcarving. Travel is by motorised canoe, and the region is known for its crocodile-skin scarification traditions.",
+        bestTime: "Apr–Oct", image: "wiki:Sepik" }
+    ]
+  },
+  {
+    id: "242", name: "Fiji", region: "Oceania", soundProfile: "ocean",
+    summary: "Coral islands with white beaches, a rainforest Garden Island, and famous soft-coral reefs.",
+    hero: "wiki:Mamanuca Islands",
+    places: [
+      { name: "Mamanuca & Yasawa Islands", pics: ["30jnvk", "yawui", "womxg", "ydnjf", "womxv", "fy4aw", "30jo4d", "afze1"], skip: ["1ywf2q6"], lat: -17.6667, lng: 177.0833, category: "Beach", sound: "ocean", zoom: 9,
+        tagline: "Small coral islands west of Nadi",
+        description: "West of Nadi, the Mamanuca Islands are a chain of small coral islands with white beaches and clear lagoons, a short boat ride from the main island. Further north, the Yasawa Islands are more remote volcanic islands with village homestays and quiet bays.",
+        bestTime: "May–Oct", image: "wiki:Mamanuca Islands", more: ["Yasawa Islands"] },
+      { name: "Taveuni", pics: ["2k9llf", "1ci6i6", "2l1wkz"], add: ["1uhfwdv"], skip: ["15akcz2"], lat: -16.8167, lng: 179.9667, category: "Nature", sound: "rainforest", zoom: 10,
+        tagline: "The Garden Island",
+        description: "Known as the Garden Island, Taveuni is covered in rainforest with waterfalls, such as the Tavoro Falls in Bouma National Heritage Park. The nearby Rainbow Reef in the Somosomo Strait is famous for its soft corals, and the 180th meridian runs across the island.",
+        bestTime: "May–Oct", image: "wiki:Taveuni" }
+    ]
+  },
+  {
+    id: "882", name: "Samoa", region: "Oceania", soundProfile: "ocean",
+    summary: "A swimming hole in an ocean trench, white beaches and open-sided beach fales.",
+    hero: "wiki:Upolu",
+    places: [
+      { name: "Upolu", pics: ["xiayj", "1gfpvu", "1sea5m", "2osuwz", "5llw4", "5lm4z", "xhi76", "xhjwb", "569re"], add: ["ez392g", "p55bvv", "1ix6wgn", "3icrm8", "v32wyu", "1864jgg"], skip: ["1vrgt1l", "1gxemqh", "11qajic", "6se6mg", "1xso7c4"], lat: -14.0453, lng: -171.4408, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "To Sua and Lalomanu",
+        description: "On Samoa's main island, the To Sua Ocean Trench is a deep, sheer-sided swimming hole connected to the sea, reached by a long wooden ladder. Lalomanu beach on the southeast coast has white sand and simple open-sided fales to sleep in by the water.",
+        bestTime: "May–Oct", image: "wiki:Upolu", more: ["Lalomanu"] }
+    ]
+  },
+  {
+    id: "776", name: "Tonga", region: "Oceania", soundProfile: "ocean",
+    summary: "Humpback whales in sheltered island channels.",
+    hero: "wiki:Vavaʻu",
+    places: [
+      { name: "Vava'u", pics: ["rvoi4", "jz034", "rvoik", "pcni", "uykus"], add: ["1xy2rrt", "6i6717"], lat: -18.6514, lng: -173.9836, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "Swimming with humpback whales",
+        description: "Vava'u is a group of one large island and about 40 smaller ones around a maze of sheltered channels. From July to October, humpback whales arrive from Antarctica to breed, and it is one of the few places in the world where you can swim with them.",
+        bestTime: "Jul–Oct", image: "wiki:Vavaʻu" }
+    ]
+  },
+  {
+    id: "548", name: "Vanuatu", region: "Oceania", soundProfile: "ocean",
+    summary: "An active volcano you can stand on the rim of, and islands of custom villages.",
+    hero: "wiki:Mount Yasur",
+    places: [
+      { name: "Mount Yasur", pics: ["1qpkmp", "vfnlv", "vfnlo", "dpotr", "11e48w", "afzf1", "blvne", "5xvqr"], skip: ["x2j5yo", "174b3od", "1gccs0i"], lat: -19.5333, lng: 169.4417, category: "Mountain", sound: "mountains", zoom: 12,
+        tagline: "A volcano at your feet",
+        description: "On Tanna Island, Mount Yasur is one of the most accessible active volcanoes in the world: visitors walk up to the crater rim at dusk to watch it throw glowing lava bombs into the air. It has been erupting almost continuously for centuries.",
+        bestTime: "May–Oct", image: "wiki:Mount Yasur" }
+    ]
+  },
+  {
+    id: "090", name: "Solomon Islands", region: "Oceania", soundProfile: "ocean",
+    summary: "The world's largest double-barrier lagoon, carvers' villages and coral reefs.",
+    hero: "wiki:Marovo Lagoon",
+    places: [
+      { name: "Marovo Lagoon", pics: ["1186og", "1186ps", "1186qu"], skip: ["161o5iz"], lat: -8.4800, lng: 158.0700, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "Hundreds of forested islands in a lagoon",
+        description: "In the Western Province, Marovo is the largest double-barrier enclosed lagoon in the world, dotted with hundreds of forested islands. Its villages are known for woodcarving, and the reefs are excellent for snorkelling and diving.",
+        bestTime: "May–Oct", image: "wiki:Marovo Lagoon" }
+    ]
+  },
+  {
+    id: "585", name: "Palau", region: "Oceania", soundProfile: "ocean",
+    summary: "Mushroom-shaped limestone islands and a lake of harmless jellyfish.",
+    hero: "wiki:Rock Islands",
+    places: [
+      { name: "Rock Islands", pics: ["ej790", "1ozun4", "1ozune", "1ifxko", "5ngyp", "1ozus1"], add: ["1altsah", "1d29fak", "nz9kcm"], skip: ["9s6uxr"], lat: 7.2500, lng: 134.3500, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Mushroom islands and golden jellyfish",
+        description: "Between 250 and 300 small limestone islands, undercut at the waterline into mushroom shapes and covered in forest, rise from Palau's Southern Lagoon. On one of them, Jellyfish Lake holds millions of golden jellyfish whose sting is too weak to feel, and you can snorkel among them. The Rock Islands are a UNESCO World Heritage Site.",
+        bestTime: "Nov–Apr", image: "wiki:Rock Islands", more: ["Jellyfish Lake"] }
+    ]
+  },
+  {
+    id: "583", name: "Micronesia", region: "Oceania", soundProfile: "ocean", aka: ["Federated States of Micronesia"],
+    summary: "A ruined city of basalt islets built in a lagoon.",
+    hero: "wiki:Nan Madol",
+    places: [
+      { name: "Nan Madol", pics: ["279ify", "279idi", "1hcnji", "1hcnjl"], add: ["4xcos4"], lat: 6.8419, lng: 158.3322, category: "Historical", sound: "ocean", zoom: 14,
+        tagline: "A city of stone islets",
+        description: "Off the coast of Pohnpei, Nan Madol is a ruined city of nearly 100 artificial islets built of stacked basalt columns and linked by channels. It was the seat of the Saudeleur dynasty until about 1628. It is a UNESCO World Heritage Site.",
+        bestTime: "Jan–Apr", image: "wiki:Nan Madol" }
+    ]
+  },
+  {
+    id: "584", name: "Marshall Islands", region: "Oceania", soundProfile: "ocean",
+    summary: "Low coral atolls ringing vast lagoons in the central Pacific.",
+    hero: "wiki:Majuro",
+    places: [
+      { name: "Majuro", pics: ["1v35al", "j5ec1", "j5ebu"], add: ["bttloe"], skip: ["1ws2363", "18zi0gu", "2wpdcs", "5w1wha", "1hl3dkr", "1c0r462", "lst7ro", "u8f7il", "npbbso", "jtvqg2", "tyhtr", "xjvjsu", "qge3t7", "1c4q8nm"], lat: 7.0918, lng: 171.3802, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "A capital on a ring of coral",
+        description: "The capital is itself a coral atoll of 64 islands around a lagoon, most of them only a few metres above the sea. The Marshall Islands are among the countries most threatened by rising seas.",
+        bestTime: "Dec–Apr", image: "wiki:Majuro" }
+    ]
+  },
+  {
+    id: "296", name: "Kiribati", region: "Oceania", soundProfile: "ocean",
+    summary: "Coral atolls spread across the equator, among the first places to greet each new year.",
+    hero: "wiki:Kiritimati",
+    places: [
+      { name: "Kiritimati", pics: ["vfnss", "vfnsp", "vfnt9", "vfntg", "vfntc", "vfnti"], skip: ["1dszla4", "11z7nxp", "1rg83w2", "v2f5f0", "museeo"], lat: 1.8500, lng: -157.4000, category: "Nature", sound: "ocean", zoom: 10,
+        tagline: "Christmas Island",
+        description: "Kiritimati, or Christmas Island, is one of the largest coral atolls in the world by land area, home to vast seabird colonies and famous for fly-fishing for bonefish on its flats. Kiribati straddles the equator, and its Line Islands are among the first places on Earth to see each new year.",
+        bestTime: "Year-round", image: "wiki:Kiritimati" }
+    ]
+  },
+  {
+    id: "520", name: "Nauru", region: "Oceania", soundProfile: "ocean",
+    summary: "One of the world's smallest countries, a raised coral island ringed by reef.",
+    hero: "wiki:Anibare Bay",
+    places: [
+      { name: "Nauru", pics: ["1zsuim", "xqix0", "ith3a"], add: ["38hskb", "16psiid", "1h62ng8", "14xonci", "1meptej", "1hg3xkx", "11qa6im"], skip: ["18llms", "16gl6g5", "tv6xcb", "1bfvtob", "1yiyi82"], lat: -0.5336, lng: 166.9556, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "A single raised coral island",
+        description: "Nauru is the third-smallest country in the world, a single raised coral island of about 21 square kilometres. Its coast is ringed by a reef with coral pinnacles exposed at low tide, such as at Anibare Bay, while much of the interior plateau was stripped by phosphate mining.",
+        bestTime: "Year-round", image: "wiki:Anibare Bay", wiki: "Nauru" }
+    ]
+  },
+  {
+    id: "344", name: "Hong Kong", region: "Asia", soundProfile: "metropolis",
+    summary: "A wall of towers on a harbour, mountain trails, and island fishing villages.",
+    hero: "wiki:Victoria Harbour",
+    places: [
+      { name: "Victoria Harbour", pics: ["1czmwk", "2cxyt", "2ah928", "2lpp7x", "f8crx", "23smdt", "1qkn5l"], add: ["1gr4fb4", "rwnqd5", "m6g3ll", "1c9crcm", "ppj37o", "saqmqm", "1w5066v", "i28r45", "23ckqh"], skip: ["40hset", "8dyw9g", "jwmiyz"], lat: 22.2900, lng: 114.1700, category: "City", sound: "metropolis",
+        tagline: "Skyscrapers between mountains and sea",
+        description: "Victoria Harbour separates Hong Kong Island from Kowloon, and the Star Ferry has crossed it since the 19th century. From Victoria Peak, reached by a historic tram, the view takes in a dense wall of skyscrapers against green mountains, and at night the skyline lights up along both shores.",
+        bestTime: "Oct–Dec", image: "wiki:Victoria Harbour", more: ["Victoria Peak"] },
+      { name: "Lantau Island", pics: ["288cfa", "33u23h", "1mo308", "2wth94", "2p13k9", "j73kz", "eztji", "6jpg5"], add: ["sbwm0b", "1yzvydl", "16b31og", "1lwjs6", "5bfl4q", "1cqj693", "6jodhd", "c5cwvd"], skip: ["8dyw9g", "1cb5hmj", "9b0ivw", "15uva35"], lat: 22.2706, lng: 113.9528, category: "Nature", sound: "mountains", zoom: 11,
+        tagline: "Mountains, monastery and a stilt village",
+        description: "Hong Kong's largest island is mostly country park, with mountain trails and beaches. A cable car crosses the hills to Po Lin Monastery, and the stilt-house fishing village of Tai O sits on the west coast.",
+        bestTime: "Oct–Dec", image: "wiki:Lantau Island", more: ["Tai O"] }
+    ]
+  },
+  {
+    id: "446", name: "Macao", region: "Asia", soundProfile: "city", aka: ["Macau"],
+    summary: "Portuguese squares and Chinese temples side by side, beside glittering casino towers.",
+    hero: "wiki:Ruins of Saint Paul's",
+    places: [
+      { name: "Historic Macao", pics: ["1dug7t", "1686w", "al7e2", "1b2crs", "18giha"], add: ["1uxu9qx", "1s69bq4", "8ovu4l", "1pxavos", "uhugz3"], lat: 22.1910, lng: 113.5360, category: "Historical", sound: "city", zoom: 14,
+        tagline: "Where Portugal met China",
+        description: "Macao's historic centre, a UNESCO World Heritage Site, mixes Portuguese and Chinese heritage: the wave-patterned paving of Senado Square, the A-Ma Temple, and the stone facade of St Paul's, all that remains of a 17th-century church. Across the water, Cotai is lined with huge casino resorts.",
+        bestTime: "Oct–Dec", image: "wiki:Ruins of Saint Paul's", wiki: "Historic Centre of Macau", more: ["Senado Square"] }
+    ]
+  },
+  {
+    id: "258", name: "French Polynesia", region: "Oceania", soundProfile: "ocean", aka: ["Tahiti"],
+    summary: "Turquoise lagoons around volcanic peaks, and overwater bungalows.",
+    hero: "wiki:Bora Bora",
+    places: [
+      { name: "Bora Bora", pics: ["46anx", "2vkyc", "45pec", "2pd98", "qzmgp", "25y3h", "4561f"], add: ["3m86nv", "t1b0b5", "1gu2ok4", "1cjvapa", "14ot5jx", "1omhs0z", "1qzsx6e"], skip: ["1w9h027", "1f1qj2", "kgrjdp"], lat: -16.4980, lng: -151.7360, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "A lagoon around a volcanic peak",
+        description: "Bora Bora's lagoon, in every shade of turquoise, surrounds the jagged peak of Mount Otemanu, the remains of an extinct volcano. Overwater bungalows line the small islands of the reef, and in the lagoon you can snorkel with rays and blacktip reef sharks.",
+        bestTime: "May–Oct", image: "wiki:Bora Bora", more: ["Mount Otemanu"] },
+      { name: "Moorea", pics: ["27cf3d", "2it37l", "13ya20", "v1c8t", "2krrgq", "16f2z4", "16tpc7", "byt5d", "16xrnj"], add: ["w2jtvl", "w9g8xi", "83hmup", "1uuohks"], lat: -17.5350, lng: -149.8350, category: "Nature", sound: "ocean", zoom: 11,
+        tagline: "Green peaks above two bays",
+        description: "Just 17 kilometres from Tahiti, Moorea has dramatic green peaks above two deep bays, Cook's Bay and Opunohu Bay, and the Belvedere lookout looks down on both. Humpback whales pass offshore from July to November.",
+        bestTime: "May–Oct", image: "wiki:Moʼorea" }
+    ]
+  },
+  {
+    id: "540", name: "New Caledonia", region: "Oceania", soundProfile: "ocean",
+    summary: "One of the largest lagoons on Earth and an island of tall pines.",
+    hero: "wiki:Isle of Pines (island)",
+    places: [
+      { name: "Isle of Pines", pics: ["2wavz7", "fst9q", "39diio", "fst9s", "fsu3h"], add: ["107ahow", "lm1v77", "10kh4x0"], skip: ["5jmdsk", "h8kd2k"], lat: -22.6167, lng: 167.4833, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Columnar pines and a natural pool",
+        description: "South of the main island, the Isle of Pines is ringed by white beaches and tall columnar pines. At Oro Bay, a natural pool sheltered from the sea by rocks fills with clear water and tropical fish. New Caledonia's lagoons, enclosed by one of the longest barrier reefs in the world, are a UNESCO World Heritage Site.",
+        bestTime: "Sep–Dec", image: "wiki:Isle of Pines (island)", more: ["New Caledonian barrier reef"] }
+    ]
+  },
+  {
+    id: "184", name: "Cook Islands", region: "Oceania", soundProfile: "ocean",
+    summary: "A turquoise lagoon of tiny islets and a mountainous island ringed by reef.",
+    hero: "wiki:Aitutaki",
+    places: [
+      { name: "Aitutaki", pics: ["1hcndq", "1fv9qp", "p1hf7", "v5epm", "wexbk"], add: ["17x81de", "1e7lwg2", "v99dg0", "1t36vpx", "tv20ly"], skip: ["1p82wgg", "1pdeex6", "jdo44e"], lat: -18.8500, lng: -159.7900, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "A lagoon of fifteen islets",
+        description: "Aitutaki's lagoon, scattered with fifteen small islets, is often called one of the most beautiful in the world. Boat trips cruise the shallow turquoise water to One Foot Island, where a sandbar appears at low tide.",
+        bestTime: "May–Oct", image: "wiki:Aitutaki", more: ["Tapuaetai"] },
+      { name: "Rarotonga", pics: ["5xw09", "1hnfnl", "1vi0h0", "2k4cld", "p1h9n"], add: ["1sarjiq"], skip: ["1hpuwb6", "1hm23cj", "jjhp3u", "nt40w9", "1hi4c9f", "cqo4wb", "qdyl06"], lat: -21.2333, lng: -159.7833, category: "Nature", sound: "ocean", zoom: 11,
+        tagline: "Jungle peaks inside a reef",
+        description: "The main island is a ring of reef and lagoon around steep, jungle-covered volcanic peaks, with a coast road that goes all the way round in about 32 kilometres. The Cross-Island Track climbs through the interior past the Needle, a spire of rock.",
+        bestTime: "May–Oct", image: "wiki:Rarotonga" }
+    ]
+  },
+  {
+    id: "316", name: "Guam", region: "Oceania", soundProfile: "ocean",
+    summary: "A US island territory of warm reefs, Chamorro heritage and a resort bay.",
+    hero: "wiki:Tumon Bay",
+    places: [
+      { name: "Tumon Bay", pics: ["6kw0s", "1ot5qq", "1ofue2", "1p7kzd", "1pbcdi", "1ofue4", "k32su", "2z6tu0"], add: ["inv3s7"], skip: ["xyjqqp", "1bvq0vw"], lat: 13.5139, lng: 144.7964, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "A reef-sheltered bay",
+        description: "On Guam's northwest coast, Tumon Bay is a white beach on a shallow reef flat, protected as a marine preserve. At its north end, Two Lovers Point is a high cliff with sweeping views of the coast. Chamorro culture, with its stone latte pillars, can be seen across the island.",
+        bestTime: "Dec–Jun", image: "wiki:Tumon Bay", more: ["Two Lovers Point"] }
+    ]
   }
 ] };
