@@ -80,7 +80,7 @@ body.is-ready #map { opacity: 1; }
 /* Deepen the dark basemap: near-black sea, charcoal land with a faint cool cast.
    The filter sits on each tile image, not on the whole layer: a tile is filtered once when it loads,
    so moving and zooming the map costs nothing extra. */
-body[data-basemap="esri-dark"] .leaflet-base-pane img.leaflet-tile { filter: contrast(1.2) brightness(.85) sepia(.3) hue-rotate(178deg) saturate(1.4); }
+body[data-basemap="esri-dark"] .leaflet-base-pane .leaflet-tile { filter: contrast(1.2) brightness(.85) sepia(.3) hue-rotate(178deg) saturate(1.4); }
 body[data-basemap="carto-voyager"] .leaflet-base-pane img.leaflet-tile { filter: sepia(.2) saturate(.82) brightness(.93) contrast(1.03); }
 /* With a country selected, the rest of the map falls back a little */
 .leaflet-pane.leaflet-base-pane, .leaflet-pane.leaflet-labels-pane { transition: opacity .9s var(--ease); }
@@ -92,7 +92,7 @@ body.has-country .leaflet-pane.leaflet-labels-pane { opacity: .6; }
    Leaflet's own fix (additive blending) leaves bright hairlines on a dark map, so it is switched off. */
 .leaflet-container img.leaflet-tile { mix-blend-mode: normal; }
 .leaflet-labels-pane img.leaflet-tile { width: 256.7px !important; height: 256.7px !important; }
-.leaflet-base-pane img.leaflet-tile { width: var(--tile-base, 256.7px) !important; height: var(--tile-base, 256.7px) !important; }
+.leaflet-base-pane .leaflet-tile { width: var(--tile-base, 256.7px) !important; height: var(--tile-base, 256.7px) !important; }
 
 /* Tile layers are scaled as ready-made bitmaps while the map zooms, instead of being redrawn every frame */
 .leaflet-tile-container { will-change: transform; }

@@ -130,6 +130,90 @@
     return cv;
   }
 
+  /* ---------- Map name fix ----------
+     The dark basemap's tiles have country names painted in. Israel's area is shown as part of Palestine,
+     so on the tiles that carry the "ISRAEL" name, the light lettering is painted over with the land colour
+     (dark border lines are left alone) and "PALESTINE" is written in the same style. */
+  const RELABEL = {
+    text: 'PALESTINE', at: [30.945, 34.96], colour: 'rgb(141,141,143)', size: { 5: 10, 6: 11, 7: 10 },
+    // the painted name's box at each zoom (north-west and south-east corners)
+    boxes: { 5: [[31.13, 33.97], [30.68, 35.95]], 6: [[31.07, 34.43], [30.82, 35.49]], 7: [[31.0, 34.68], [30.88, 35.23]] },
+    // from zoom 7 on, every painted name inside the former Israel outline goes (district and border names)
+    area: [[35.869,33.433],[35.851,33.37],[35.837,33.33],[35.837,33.278],[35.858,33.25],[35.887,33.193],[35.905,33.136],[35.869,33.089],[35.873,33.039],[35.883,32.999],[35.912,32.95],[35.858,32.863],[35.801,32.782],[35.786,32.735],[35.736,32.73],[35.61,32.683],[35.595,32.669],[35.574,32.641],[35.57,32.62],[35.552,32.396],[35.484,32.401],[35.401,32.45],[35.387,32.493],[35.361,32.507],[35.304,32.512],[35.192,32.535],[35.066,32.46],[35.012,32.339],[34.998,32.282],[34.955,32.16],[34.973,32.087],[34.98,31.992],[34.991,31.914],[34.98,31.867],[34.955,31.841],[34.962,31.823],[34.983,31.816],[35.052,31.837],[35.127,31.816],[35.199,31.776],[35.203,31.75],[35.153,31.735],[35.034,31.674],[34.951,31.603],[34.929,31.537],[34.872,31.396],[34.879,31.368],[34.908,31.351],[35.102,31.367],[35.275,31.422],[35.408,31.483],[35.451,31.48],[35.423,31.325],[35.401,31.231],[35.408,31.214],[35.441,31.132],[35.383,30.983],[35.322,30.86],[35.297,30.803],[35.235,30.674],[35.174,30.525],[35.142,30.421],[35.149,30.384],[35.131,30.195],[35.142,30.141],[35.07,29.978],[35.052,29.896],[35.023,29.787],[34.973,29.554],[34.904,29.478],[34.868,29.565],[34.793,29.811],[34.735,29.981],[34.659,30.191],[34.53,30.447],[34.519,30.507],[34.49,30.596],[34.4,30.829],[34.328,30.995],[34.245,31.209],[34.35,31.292],[34.35,31.363],[34.526,31.526],[34.523,31.542],[34.476,31.585],[34.483,31.592],[34.677,31.896],[34.803,32.197],[34.922,32.615],[35.005,32.827],[35.077,32.967],[35.109,33.084],[35.225,33.092],[35.307,33.08],[35.412,33.075],[35.495,33.12],[35.534,33.25],[35.581,33.271],[35.603,33.24],[35.628,33.275],[35.736,33.332],[35.786,33.37],[35.84,33.415],[35.869,33.433]],
+  };
+  const worldPx = (lat, lng, z) => {
+    const n = 256 * Math.pow(2, z), s = Math.sin(Math.max(-85.05, Math.min(85.05, lat)) * Math.PI / 180);
+    return [(lng + 180) / 360 * n, (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * n];
+  };
+  function relabelTile(coords) {
+    const z = coords.z, ox = coords.x * 256, oy = coords.y * 256, hit = (a, b) => !(b[0] < ox || a[0] > ox + 256 || b[1] < oy || a[1] > oy + 256);
+    const box = RELABEL.boxes[z] && [worldPx(RELABEL.boxes[z][0][0], RELABEL.boxes[z][0][1], z), worldPx(RELABEL.boxes[z][1][0], RELABEL.boxes[z][1][1], z)];
+    let area = null;
+    if (z >= 7 && z <= 16) {
+      const pts = RELABEL.area.map((p) => worldPx(p[1], p[0], z));
+      const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+      if (hit([Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)])) area = pts;
+    }
+    const inBox = box && hit(box[0], box[1]);
+    return inBox || area ? { z, ox, oy, box: inBox ? box : null, area } : null;
+  }
+  function paintRelabel(canvas, img, fix) {
+    const g = canvas.getContext('2d');
+    g.drawImage(img, 0, 0, 256, 256);
+    const m = document.createElement('canvas'); m.width = m.height = 256;
+    const mg = m.getContext('2d');
+    mg.fillStyle = '#fff';
+    if (fix.box) mg.fillRect(fix.box[0][0] - fix.ox, fix.box[0][1] - fix.oy, fix.box[1][0] - fix.box[0][0], fix.box[1][1] - fix.box[0][1]);
+    if (fix.area) { mg.beginPath(); fix.area.forEach((p, i) => (i ? mg.lineTo(p[0] - fix.ox, p[1] - fix.oy) : mg.moveTo(p[0] - fix.ox, p[1] - fix.oy))); mg.closePath(); mg.fill(); }
+    const mask = mg.getImageData(0, 0, 256, 256).data, im = g.getImageData(0, 0, 256, 256), d = im.data;
+    const hist = new Uint32Array(64);   // the land colour: the commonest mid-grey on the tile
+    for (let i = 0; i < d.length; i += 4) { const l = (d[i] + d[i + 1] + d[i + 2]) / 3; if (l > 50 && l < 100) hist[l >> 2]++; }
+    let best = 0; for (let k = 1; k < 64; k++) if (hist[k] > hist[best]) best = k;
+    const land = best * 4 + 2;
+    let lr = 0, lg = 0, lb = 0, n = 0;
+    for (let i = 0; i < d.length; i += 4) { const l = (d[i] + d[i + 1] + d[i + 2]) / 3; if (Math.abs(l - land) < 2) { lr += d[i]; lg += d[i + 1]; lb += d[i + 2]; n++; } }
+    if (n) { lr /= n; lg /= n; lb /= n; } else { lr = lg = lb = land; }
+    for (let i = 0; i < d.length; i += 4) {
+      if (!mask[i + 3]) continue;
+      const l = (d[i] + d[i + 1] + d[i + 2]) / 3;
+      if (l > land + 14) { d[i] = lr; d[i + 1] = lg; d[i + 2] = lb; }
+    }
+    g.putImageData(im, 0, 0);
+    if (RELABEL.size[fix.z]) {
+      const [cx, cy] = worldPx(RELABEL.at[0], RELABEL.at[1], fix.z);
+      const px = RELABEL.size[fix.z], gap = px * 0.16;
+      g.font = `500 ${px}px Inter, "Helvetica Neue", Arial, sans-serif`;
+      g.fillStyle = RELABEL.colour; g.textBaseline = 'middle';
+      const widths = RELABEL.text.split('').map((ch) => g.measureText(ch).width);
+      let x = cx - fix.ox - (widths.reduce((a, b) => a + b, 0) + gap * (widths.length - 1)) / 2;
+      RELABEL.text.split('').forEach((ch, i) => { g.fillText(ch, x, cy - fix.oy); x += widths[i] + gap; });
+    }
+  }
+  const Relabelled = L.TileLayer.extend({
+    createTile(coords, done) {
+      const fix = relabelTile(coords);
+      if (!fix) return L.TileLayer.prototype.createTile.call(this, coords, done);
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 256;
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        try { paintRelabel(canvas, img, fix); } catch (e) { canvas.getContext('2d').drawImage(img, 0, 0, 256, 256); }
+        done(null, canvas);
+      };
+      const url = this.getTileUrl(coords);
+      img.onerror = () => {   // tile server refused a shared read: show the plain tile instead
+        const plain = new Image();
+        plain.onload = () => { canvas.getContext('2d').drawImage(plain, 0, 0, 256, 256); done(null, canvas); };
+        plain.onerror = (e) => done(e, canvas);
+        plain.src = url;
+      };
+      img.src = url;
+      return canvas;
+    },
+  });
+  const relabelled = (url, opts) => new Relabelled(url, opts);
+
   function worldPicture(template) {
     const g = worldCanvas('atlas-under', 'base').getContext('2d');
     for (let x = 0; x < 8; x++) for (let y = 0; y < 8; y++) {
@@ -249,6 +333,10 @@
       if (!ref) return null;
       const t = titleOf(ref);
       if (t) return cache[t] || null;
+      if (ref.indexOf('file:') === 0) {   // a chosen Wikimedia Commons photo, by file name
+        const f = ref.slice(5).trim(), at = (w) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=${w}`;
+        return { l: at(960), s: at(330), f };
+      }
       if (/^https?:\/\//.test(ref)) return { l: ref, s: ref, f: '' };
       return null;
     }
@@ -277,7 +365,7 @@
       const host = box.parentNode;
       if (!host || host.querySelector('.credit')) return;
       let href = '', label = '';
-      if (titleOf(ref) && info.f) { href = 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(info.f); label = 'Photo: Wikimedia Commons'; }
+      if ((titleOf(ref) || ref.indexOf('file:') === 0) && info.f) { href = 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(info.f); label = 'Photo: Wikimedia Commons'; }
       else if (/unsplash\.com/.test(ref)) { href = 'https://unsplash.com'; label = 'Photo: Unsplash'; }
       if (!href) return;
       const a = document.createElement('a');
@@ -661,7 +749,7 @@
     document.documentElement.style.setProperty('--tile-base', (sharp ? 128.7 : 256.7) + 'px');
     // Tiles are only fetched once the map comes to rest. Fetching them mid-flight (hundreds per second
     // on a desktop screen) was the main cause of stutter.
-    const tile = (url, pane, opts) => L.tileLayer(url, Object.assign({
+    const tile = (url, pane, opts) => (pane === 'base' && BASE === BASEMAPS['esri-dark'] ? relabelled : L.tileLayer)(url, Object.assign({
       pane, subdomains: 'abcd', maxZoom: 20, maxNativeZoom: BASE.native, noWrap: true, bounds: [[-85.06, -180], [85.06, 180]],
       keepBuffer: 2, updateWhenIdle: true, updateWhenZooming: false,
     }, opts)).addTo(map);

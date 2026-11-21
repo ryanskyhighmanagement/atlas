@@ -1486,7 +1486,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Danube Delta", pics: ["2wpssr", "1k8obx"], add: ["pmsopj", "1floddv", "hhp5th", "fb5sha"], skip: ["hgukhr"], lat: 45.0833, lng: 29.5000, category: "Nature", sound: "jungle", zoom: 9,
         tagline: "Europe's great wetland",
         description: "After 2,850 kilometres the Danube breaks up into a maze of channels, lakes and reed beds before it reaches the Black Sea. It is the best-preserved river delta in Europe, with more than 300 species of birds, including huge colonies of pelicans. There are few roads, so you travel by small boat between fishing villages.",
-        bestTime: "Apr–Jun, Sep", image: "wiki:Danube Delta" },
+        bestTime: "Apr–Jun, Sep", image: "file:Delta del Danubio, Rumanía, 2016-05-28, DD 12.jpg", wiki: "Danube Delta" },
       { name: "Bucharest", add: ["cvjjkj", "18w05s7", "1jatdjt", "1hkxhlw", "j5sj72"], lat: 44.4268, lng: 26.1025, category: "City", sound: "city",
         tagline: "Belle Époque streets and a giant palace",
         description: "Bucharest mixes Paris-style boulevards, Orthodox churches hidden between apartment blocks, and the Palace of the Parliament, one of the largest and heaviest buildings in the world, built in the 1980s for Nicolae Ceaușescu. The old town of Lipscani is packed with bars and terraces, and the Village Museum gathers old wooden houses from every region.",
@@ -2144,7 +2144,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Harbour Island", pics: ["1cjo39", "1ci8a5"], add: ["15sg853", "lx1e5r"], lat: 25.5000, lng: -76.6333, category: "Beach", sound: "ocean", zoom: 13,
         tagline: "Three miles of pink sand",
         description: "Off Eleuthera, Harbour Island has a beach of pale pink sand about three miles long, coloured by the red shells of tiny sea creatures called foraminifera. Its little town, Dunmore Town, is a grid of clapboard cottages with picket fences, and people get around by golf cart.",
-        bestTime: "Dec–May", image: "wiki:Harbour Island, Bahamas" }
+        bestTime: "Dec–May", image: "file:Secluded bay Bahamas - panoramio.jpg", wiki: "Harbour Island, Bahamas" }
     ]
   },
   {
@@ -2215,7 +2215,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Barbuda", pics: ["2k5s0p", "3aeozk"], skip: ["ondw35", "3aat48", "1m4vxj0"], lat: 17.6400, lng: -61.8100, category: "Beach", sound: "ocean", zoom: 11,
         tagline: "Pink sand and frigatebirds",
         description: "Antigua's flat, quiet sister island has beaches of pink-tinged sand running for miles, and a lagoon with one of the largest frigatebird colonies in the world. Its only village is Codrington.",
-        bestTime: "Dec–Apr", image: "wiki:Codrington Lagoon", wiki: "Barbuda" }
+        bestTime: "Dec–Apr", image: "file:Barbudan landscape A 04.jpg", more: ["Codrington Lagoon"], wiki: "Barbuda" }
     ]
   },
   {
@@ -2252,7 +2252,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Bequia", pics: ["vqs17"], skip: ["1b462eg"], lat: 13.0150, lng: -61.2300, category: "Beach", sound: "ocean", zoom: 13,
         tagline: "A sailors' island",
         description: "The second-largest of the Grenadines is a short ferry ride from St Vincent, with a sheltered harbour, Admiralty Bay, full of sailing boats. Quiet beaches and a long tradition of boatbuilding make it a favourite stop for sailors.",
-        bestTime: "Dec–May", image: "wiki:Bequia" }
+        bestTime: "Dec–May", image: "file:Bequia Beach Hotel, Friendship Beach - panoramio.jpg", wiki: "Bequia" }
     ]
   },
   {
@@ -2747,7 +2747,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Taipei", pics: ["rltm5", "bgr6", "2qu6i0", "8w28u", "1bvjxg", "16xsxp", "1bbkd2", "1b0pwr"], add: ["1yvh9u6", "cjv8rl", "vw104i", "uhbvwi", "1p6yo04", "il2bk0", "dxqruk"], skip: ["zj1y3n", "1xitp1e", "1drx1a5", "wiksze", "10nst65"], lat: 25.0375, lng: 121.5625, category: "City", sound: "city",
         tagline: "Night markets under Taipei 101",
         description: "Taipei's skyline is dominated by Taipei 101, at 508 metres the world's tallest building from 2004 to 2010, and hikers climb nearby Elephant Mountain to watch it at sunset. The city is famous for its night markets, such as Shilin and Raohe, packed with food stalls, and for the hot springs of the Beitou district.",
-        bestTime: "Oct–Apr", image: "wiki:Taipei 101", wiki: "Taipei", more: ["Shilin Night Market"] },
+        bestTime: "Oct–Apr", image: "file:Taipei night 2015.jpg", wiki: "Taipei", more: ["Taipei 101", "Shilin Night Market"] },
       { name: "Taroko Gorge", pics: ["5ndmd", "whndi", "yhvib", "1z0e7x", "1z0e73", "1z0e89"], add: ["4lnrea", "1ldu58o", "1fcfuaq", "blwamk", "1nbrcbd", "tp575d"], skip: ["zmqspy", "1i474td"], lat: 24.1720, lng: 121.5640, category: "Nature", sound: "mountains", zoom: 11,
         tagline: "Marble cliffs and a turquoise river",
         description: "On Taiwan's east coast, the Liwu River has carved Taroko Gorge through marble cliffs hundreds of metres high, with trails, tunnels and suspension bridges along its walls. A strong earthquake in 2024 damaged parts of the gorge, so check which trails are open before you go.",
@@ -2759,7 +2759,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Sun Moon Lake", pics: ["wz6l9", "90zu3", "1wvu78", "1grfwj", "1ipfxu", "2lh1gt"], add: ["14et2bv", "prqnnf", "1qhqrky", "1fm2m6q", "1rmvk1n", "rvc8ya", "1t4f7z"], skip: ["ngyvto", "1mzj6g5", "1e46x1h", "1swsk29", "1bz7hbf", "bunzpj"], lat: 23.8667, lng: 120.9167, category: "Nature", sound: "mountains", zoom: 12,
         tagline: "Taiwan's mountain lake",
         description: "Taiwan's largest body of water lies among forested mountains in the centre of the island, named for its shape, one part round like the sun and one curved like a crescent moon. A cycling path follows the shore, and a cable car rises to the hills above.",
-        bestTime: "Oct–Apr", image: "wiki:Sun Moon Lake" }
+        bestTime: "Oct–Apr", image: "file:Sonne-Mond-See Blick von der Ci En Pagoda auf den Sonne-Mond-See 02.jpg", wiki: "Sun Moon Lake" }
     ]
   },
   {
@@ -2774,7 +2774,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Lake Khövsgöl", pics: ["3c5vh8", "3c5vh2", "2qrym", "3c5vgo", "3c5vgq", "79bca"], add: ["sb0aq6", "1i2y1nf", "gq2wzs", "3hqh9g", "1wbzu", "dqbdll", "1kbu8ix"], skip: ["547qcm", "jzjkqj", "2y8x5m", "v9ocg0", "fvn6hu", "19kyslg", "1n3mnyl"], lat: 51.1000, lng: 100.5000, category: "Nature", sound: "mountains", zoom: 9,
         tagline: "A clear lake in the taiga",
         description: "Near the Russian border, Khövsgöl is a deep, clear mountain lake ringed by larch forest, holding most of Mongolia's fresh water. Reindeer-herding Tsaatan families live in the taiga nearby, and in winter the ice grows thick enough for an ice festival on the lake.",
-        bestTime: "Jun–Sep", image: "wiki:Lake Khövsgöl" },
+        bestTime: "Jun–Sep", image: "file:Khuvsgul Lake.jpg", wiki: "Lake Khövsgöl" },
       { name: "Gorkhi-Terelj", pics: ["1wlxzs", "k1qgu", "2hodpo", "1wlxz4"], add: ["1sy73cr", "opnrue", "1xmzg36", "cs69jm", "ww208v", "oh25te", "txc9dv"], skip: ["16vmjqy"], lat: 47.9500, lng: 107.4500, category: "Nature", sound: "mountains", zoom: 11,
         tagline: "Granite rocks and ger camps",
         description: "Little more than an hour from Ulaanbaatar, Terelj is a valley of granite rock formations, such as Turtle Rock, and grassy meadows with ger camps where you can stay in a felt tent and ride horses along the river.",
@@ -2867,12 +2867,12 @@ window.ATLAS_DATA = { countries: [
   {
     id: "462", name: "Maldives", region: "Asia", soundProfile: "ocean",
     summary: "Coral atolls of white sand and turquoise lagoons scattered across the Indian Ocean.",
-    hero: "wiki:Baa Atoll",
+    hero: "file:Reethi Beach Maldives.jpg",
     places: [
       { name: "Baa Atoll", pics: ["l3kye", "e8mrt", "wi7mf", "3d4rxi", "11dwno", "kmysr", "lwmxd", "ybkp5", "ybkrw"], add: ["1c3ewkh", "10tswwf", "zkzmc2", "1oo0fwv", "9m7cb5", "1tvmzwo"], lat: 5.1333, lng: 72.9500, category: "Beach", sound: "ocean", zoom: 10,
         tagline: "Atolls, lagoons and manta rays",
         description: "The Maldives are about 1,200 coral islands grouped in 26 atolls, most only a metre or two above the sea. Baa Atoll is a UNESCO Biosphere Reserve, and at Hanifaru Bay manta rays gather in large numbers to feed in the wet season. Many resorts take up an island each.",
-        bestTime: "Nov–Apr", image: "wiki:Baa Atoll" },
+        bestTime: "Nov–Apr", image: "file:Reethi Beach Maldives.jpg", wiki: "Baa Atoll" },
       { name: "Malé", pics: ["b8acy", "127vzn", "127vzi", "ya8xe"], add: ["1dfjobf"], skip: ["2vxix1"], lat: 4.1750, lng: 73.5083, category: "City", sound: "ocean", zoom: 14,
         tagline: "A capital that fills its island",
         description: "The capital packs more than 200,000 people onto about two square kilometres, one of the most densely populated cities in the world, with colourful buildings right up to the water's edge. The fish market is busy every afternoon as the tuna boats come in, and the Old Friday Mosque is built of carved coral stone.",
@@ -2904,16 +2904,16 @@ window.ATLAS_DATA = { countries: [
   {
     id: "598", name: "Papua New Guinea", region: "Oceania", soundProfile: "rainforest",
     summary: "Rainforest mountains, a wartime jungle trail, and a great river of carved spirit houses.",
-    hero: "wiki:Kokoda Track",
+    hero: "file:Flight over Owen Stanley Range.jpg",
     places: [
       { name: "Kokoda Track", pics: ["1bknct", "8zzpg", "58a5t"], lat: -9.3800, lng: 148.4000, category: "Nature", sound: "rainforest", zoom: 9,
         tagline: "A week through the Owen Stanley Range",
         description: "The Kokoda Track runs 96 kilometres over the Owen Stanley Range through steep rainforest, following the route of a 1942 battle between Japanese and mainly Australian forces. Trekkers take about a week to ten days, staying in mountain villages along the way.",
-        bestTime: "Apr–Oct", image: "wiki:Kokoda Track" },
+        bestTime: "Apr–Oct", image: "file:Flight over Owen Stanley Range.jpg", wiki: "Kokoda Track" },
       { name: "Sepik River", pics: ["2dirld", "2diqjl", "ukmb8", "ukmb9"], add: ["17x6kh4", "jgryyr"], skip: ["d1x66p"], lat: -3.8423, lng: 144.5389, category: "Culture", sound: "rainforest", zoom: 8,
         tagline: "Spirit houses and carvers",
         description: "The Sepik, the longest river on New Guinea, winds through swamp and rainforest past villages known for their towering spirit houses, haus tambaran, and their intricate woodcarving. Travel is by motorised canoe, and the region is known for its crocodile-skin scarification traditions.",
-        bestTime: "Apr–Oct", image: "wiki:Sepik" }
+        bestTime: "Apr–Oct", image: "file:Sepik River IMG 2225.jpg", wiki: "Sepik" }
     ]
   },
   {
@@ -2928,18 +2928,18 @@ window.ATLAS_DATA = { countries: [
       { name: "Taveuni", pics: ["2k9llf", "1ci6i6", "2l1wkz"], add: ["1uhfwdv"], skip: ["15akcz2"], lat: -16.8167, lng: 179.9667, category: "Nature", sound: "rainforest", zoom: 10,
         tagline: "The Garden Island",
         description: "Known as the Garden Island, Taveuni is covered in rainforest with waterfalls, such as the Tavoro Falls in Bouma National Heritage Park. The nearby Rainbow Reef in the Somosomo Strait is famous for its soft corals, and the 180th meridian runs across the island.",
-        bestTime: "May–Oct", image: "wiki:Taveuni" }
+        bestTime: "May–Oct", image: "file:Taveuni, Fiji looking toward Matagi.jpg", wiki: "Taveuni" }
     ]
   },
   {
     id: "882", name: "Samoa", region: "Oceania", soundProfile: "ocean",
     summary: "A swimming hole in an ocean trench, white beaches and open-sided beach fales.",
-    hero: "wiki:Upolu",
+    hero: "file:Lalomanu Beach - Samoa.jpg",
     places: [
       { name: "Upolu", pics: ["xiayj", "1gfpvu", "1sea5m", "2osuwz", "5llw4", "5lm4z", "xhi76", "xhjwb", "569re"], add: ["ez392g", "p55bvv", "1ix6wgn", "3icrm8", "v32wyu", "1864jgg"], skip: ["1vrgt1l", "1gxemqh", "11qajic", "6se6mg", "1xso7c4"], lat: -14.0453, lng: -171.4408, category: "Beach", sound: "ocean", zoom: 10,
         tagline: "To Sua and Lalomanu",
         description: "On Samoa's main island, the To Sua Ocean Trench is a deep, sheer-sided swimming hole connected to the sea, reached by a long wooden ladder. Lalomanu beach on the southeast coast has white sand and simple open-sided fales to sleep in by the water.",
-        bestTime: "May–Oct", image: "wiki:Upolu", more: ["Lalomanu"] }
+        bestTime: "May–Oct", image: "file:Lalomanu Beach - Samoa.jpg", wiki: "Upolu", more: ["Lalomanu"] }
     ]
   },
   {
@@ -2967,12 +2967,12 @@ window.ATLAS_DATA = { countries: [
   {
     id: "090", name: "Solomon Islands", region: "Oceania", soundProfile: "ocean",
     summary: "The world's largest double-barrier lagoon, carvers' villages and coral reefs.",
-    hero: "wiki:Marovo Lagoon",
+    hero: "file:Marovo Lagoon (16 August 2008).jpg",
     places: [
       { name: "Marovo Lagoon", pics: ["1186og", "1186ps", "1186qu"], skip: ["161o5iz"], lat: -8.4800, lng: 158.0700, category: "Beach", sound: "ocean", zoom: 10,
         tagline: "Hundreds of forested islands in a lagoon",
         description: "In the Western Province, Marovo is the largest double-barrier enclosed lagoon in the world, dotted with hundreds of forested islands. Its villages are known for woodcarving, and the reefs are excellent for snorkelling and diving.",
-        bestTime: "May–Oct", image: "wiki:Marovo Lagoon" }
+        bestTime: "May–Oct", image: "file:Marovo Lagoon (16 August 2008).jpg", wiki: "Marovo Lagoon" }
     ]
   },
   {
@@ -3033,16 +3033,16 @@ window.ATLAS_DATA = { countries: [
   {
     id: "344", name: "Hong Kong", region: "Asia", soundProfile: "metropolis",
     summary: "A wall of towers on a harbour, mountain trails, and island fishing villages.",
-    hero: "wiki:Victoria Harbour",
+    hero: "file:Hong Kong Night Skyline non-HDR.jpg",
     places: [
       { name: "Victoria Harbour", pics: ["1czmwk", "2cxyt", "2ah928", "2lpp7x", "f8crx", "23smdt", "1qkn5l"], add: ["1gr4fb4", "rwnqd5", "m6g3ll", "1c9crcm", "ppj37o", "saqmqm", "1w5066v", "i28r45", "23ckqh"], skip: ["40hset", "8dyw9g", "jwmiyz"], lat: 22.2900, lng: 114.1700, category: "City", sound: "metropolis",
         tagline: "Skyscrapers between mountains and sea",
         description: "Victoria Harbour separates Hong Kong Island from Kowloon, and the Star Ferry has crossed it since the 19th century. From Victoria Peak, reached by a historic tram, the view takes in a dense wall of skyscrapers against green mountains, and at night the skyline lights up along both shores.",
-        bestTime: "Oct–Dec", image: "wiki:Victoria Harbour", more: ["Victoria Peak"] },
+        bestTime: "Oct–Dec", image: "file:Hong Kong Night Skyline non-HDR.jpg", wiki: "Victoria Harbour", more: ["Victoria Peak"] },
       { name: "Lantau Island", pics: ["288cfa", "33u23h", "1mo308", "2wth94", "2p13k9", "j73kz", "eztji", "6jpg5"], add: ["sbwm0b", "1yzvydl", "16b31og", "1lwjs6", "5bfl4q", "1cqj693", "6jodhd", "c5cwvd"], skip: ["8dyw9g", "1cb5hmj", "9b0ivw", "15uva35"], lat: 22.2706, lng: 113.9528, category: "Nature", sound: "mountains", zoom: 11,
         tagline: "Mountains, monastery and a stilt village",
         description: "Hong Kong's largest island is mostly country park, with mountain trails and beaches. A cable car crosses the hills to Po Lin Monastery, and the stilt-house fishing village of Tai O sits on the west coast.",
-        bestTime: "Oct–Dec", image: "wiki:Lantau Island", more: ["Tai O"] }
+        bestTime: "Oct–Dec", image: "file:Costa de la Isla Lantau, Hong Kong, 2013-08-13, DD 01.jpg", wiki: "Lantau Island", more: ["Tai O"] }
     ]
   },
   {
@@ -3059,12 +3059,12 @@ window.ATLAS_DATA = { countries: [
   {
     id: "258", name: "French Polynesia", region: "Oceania", soundProfile: "ocean", aka: ["Tahiti"],
     summary: "Turquoise lagoons around volcanic peaks, and overwater bungalows.",
-    hero: "wiki:Bora Bora",
+    hero: "file:BoraBora SEtienne.jpg",
     places: [
       { name: "Bora Bora", pics: ["46anx", "2vkyc", "45pec", "2pd98", "qzmgp", "25y3h", "4561f"], add: ["3m86nv", "t1b0b5", "1gu2ok4", "1cjvapa", "14ot5jx", "1omhs0z", "1qzsx6e"], skip: ["1w9h027", "1f1qj2", "kgrjdp"], lat: -16.4980, lng: -151.7360, category: "Beach", sound: "ocean", zoom: 12,
         tagline: "A lagoon around a volcanic peak",
         description: "Bora Bora's lagoon, in every shade of turquoise, surrounds the jagged peak of Mount Otemanu, the remains of an extinct volcano. Overwater bungalows line the small islands of the reef, and in the lagoon you can snorkel with rays and blacktip reef sharks.",
-        bestTime: "May–Oct", image: "wiki:Bora Bora", more: ["Mount Otemanu"] },
+        bestTime: "May–Oct", image: "file:BoraBora SEtienne.jpg", wiki: "Bora Bora", more: ["Mount Otemanu"] },
       { name: "Moorea", pics: ["27cf3d", "2it37l", "13ya20", "v1c8t", "2krrgq", "16f2z4", "16tpc7", "byt5d", "16xrnj"], add: ["w2jtvl", "w9g8xi", "83hmup", "1uuohks"], lat: -17.5350, lng: -149.8350, category: "Nature", sound: "ocean", zoom: 11,
         tagline: "Green peaks above two bays",
         description: "Just 17 kilometres from Tahiti, Moorea has dramatic green peaks above two deep bays, Cook's Bay and Opunohu Bay, and the Belvedere lookout looks down on both. Humpback whales pass offshore from July to November.",
@@ -3100,19 +3100,19 @@ window.ATLAS_DATA = { countries: [
   {
     id: "316", name: "Guam", region: "Oceania", soundProfile: "ocean",
     summary: "A US island territory of warm reefs, Chamorro heritage and a resort bay.",
-    hero: "wiki:Tumon Bay",
+    hero: "file:Two Lovers Point from Tumon Bay.JPG",
     places: [
       { name: "Tumon Bay", pics: ["6kw0s", "1ot5qq", "1ofue2", "1p7kzd", "1pbcdi", "1ofue4", "k32su", "2z6tu0"], add: ["inv3s7"], skip: ["xyjqqp", "1bvq0vw"], lat: 13.5139, lng: 144.7964, category: "Beach", sound: "ocean", zoom: 12,
         tagline: "A reef-sheltered bay",
         description: "On Guam's northwest coast, Tumon Bay is a white beach on a shallow reef flat, protected as a marine preserve. At its north end, Two Lovers Point is a high cliff with sweeping views of the coast. Chamorro culture, with its stone latte pillars, can be seen across the island.",
-        bestTime: "Dec–Jun", image: "wiki:Tumon Bay", more: ["Two Lovers Point"] }
+        bestTime: "Dec–Jun", image: "file:Two Lovers Point from Tumon Bay.JPG", wiki: "Tumon Bay", more: ["Two Lovers Point"] }
     ]
   },
   /* ---------- Africa: the rest, plus Antarctica ---------- */
   {
     id: "012", name: "Algeria", region: "Africa", soundProfile: "desert",
     summary: "A white hillside medina above the Mediterranean, Roman cities in the hills, and Saharan rock art among stone forests.",
-    hero: "wiki:Tassili n'Ajjer",
+    hero: "file:DJANET 8.jpg",
     places: [
       { name: "Casbah of Algiers", pics: ["1ky5kp", "2qzok2"], add: ["59a9ho", "1xbf52h", "1t36zvy", "1p8lqdu", "1ai9gwh", "p3tqse"], skip: ["1t99h3n", "1y8nz46", "10sh1r8", "rpcrni", "mcjpqy", "1wc69yw", "hp5xim", "1ai9gwh", "l9x1y8", "p3tqse"], lat: 36.7850, lng: 3.0600, category: "Historical", sound: "city", zoom: 15,
         tagline: "A white medina tumbling to the sea",
@@ -3121,7 +3121,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Tassili n'Ajjer", pics: ["1ekmd", "2jkmum", "17tvuc", "2jmwif", "2jmwjj", "2jmwje", "aadzf"], add: ["1ug2e5e", "1s8f465", "177rbb", "55wlev", "44atyy", "o6q1j3", "13a3iwh", "geamba"], skip: ["1s8f465"], lat: 25.5000, lng: 9.0000, category: "Nature", sound: "desert", zoom: 8,
         tagline: "Stone forests and rock art in the Sahara",
         description: "A vast sandstone plateau in the Algerian Sahara, eroded into arches, pillars and canyons that look like a forest of stone. Its rock shelters hold more than 15,000 paintings and engravings, some thousands of years old, showing cattle, hunters and wildlife from when the Sahara was green.",
-        bestTime: "Oct–Mar", image: "wiki:Tassili n'Ajjer" },
+        bestTime: "Oct–Mar", image: "file:DJANET 8.jpg", wiki: "Tassili n'Ajjer" },
       { name: "Djémila", pics: ["wi8x8", "t45vq", "1d60xl", "1w5aek", "1w5aem", "1w5aed", "1b2axs"], add: ["e3sd7s", "dwa0o4", "16jfw18", "6x3gkt", "o8fsay", "10639at"], skip: ["1yc1v09"], lat: 36.3206, lng: 5.7364, category: "Historical", sound: "desert", zoom: 15,
         tagline: "A Roman town in the mountains",
         description: "Djémila, the Roman Cuicul, sits on a ridge in the mountains of northeast Algeria, with its forum, temples, basilicas and triumphal arch still standing. It is one of the best preserved Roman ruins in North Africa and a UNESCO World Heritage Site.",
@@ -3152,7 +3152,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Carthage", pics: ["2e7gj3", "2e6x4l", "t3m4l", "8027f", "9931i"], add: ["nsa09x", "g9celm", "iudtpk", "neqho3", "1edgqre", "12kvnap", "1yqfbm5", "qt1wpo", "ryun1g", "1fjaw5", "13xyhps"], skip: ["129181t", "b3hm0n", "b5umvt", "1d12e4p", "i079e5", "1tx4hqo", "1tvuc9e"], lat: 36.8528, lng: 10.3233, category: "Historical", sound: "ocean", zoom: 14,
         tagline: "Rome's great rival, by the sea",
         description: "The ruins of the Phoenician city that fought Rome in the Punic Wars, rebuilt by the Romans after they destroyed it in 146 BC. The Antonine Baths stand by the sea in what is now a leafy suburb of Tunis.",
-        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Carthage" }
+        bestTime: "Apr–Jun, Sep–Oct", image: "file:Tunisie Carthage Ruines 08.JPG", wiki: "Carthage" }
     ]
   },
   {
@@ -3173,7 +3173,7 @@ window.ATLAS_DATA = { countries: [
   {
     id: "478", name: "Mauritania", region: "Africa", soundProfile: "desert",
     summary: "An old caravan town of desert libraries, and a giant stone eye in the Sahara.",
-    hero: "wiki:Richat Structure",
+    hero: "file:مسجد شنقيط التاريخي.jpg",
     places: [
       { name: "Chinguetti", pics: ["1vou5w", "73u6l", "2jsry", "1uy0su", "1uy0sz", "1vou60", "232ev8", "232ev6"], skip: ["b54fvo"], lat: 20.4633, lng: -12.3628, category: "Historical", sound: "desert", zoom: 15,
         tagline: "Libraries in the dunes",
@@ -3251,27 +3251,27 @@ window.ATLAS_DATA = { countries: [
   {
     id: "232", name: "Eritrea", region: "Africa", soundProfile: "city",
     summary: "An Italian modernist capital frozen in time in the highlands.",
-    hero: "wiki:Asmara",
+    hero: "file:Fiat Tagliero petrol station in Asmara.jpg",
     places: [
       { name: "Asmara", pics: ["1gvai1", "36i5mv", "151mgv", "rq7sg", "2q7tjx", "rqlnv"], add: ["19xdkmu", "yye2u7", "1nybmou", "7qezs3", "1cjagwt", "1oix9hp", "1lziu2v", "hxkgx0", "196bpqk", "1r11evm"], skip: ["1e4yhik", "1acoymo", "1cif6au", "1l9lhsk"], lat: 15.3333, lng: 38.9333, category: "City", sound: "city", zoom: 14,
         tagline: "Africa's modernist city",
         description: "Built up by Italy in the 1930s, Asmara is filled with Art Deco and futurist buildings, such as the Fiat Tagliero service station shaped like an aeroplane. The city, at about 2,300 metres in the highlands, became a UNESCO World Heritage Site in 2017.",
-        bestTime: "Oct–Apr", image: "wiki:Asmara" }
+        bestTime: "Oct–Apr", image: "file:Fiat Tagliero petrol station in Asmara.jpg", wiki: "Asmara" }
     ]
   },
   {
     id: "262", name: "Djibouti", region: "Africa", soundProfile: "desert",
     summary: "A salt lake below sea level, and a field of smoking limestone chimneys.",
-    hero: "wiki:Lake Assal (Djibouti)",
+    hero: "file:Lake Assal 2-Djibouti.jpg",
     places: [
       { name: "Lake Assal", pics: ["1eka8", "1s7579", "qx9kb", "11m4s", "u10c1"], skip: ["18q8hg3", "14qanc7", "kdrsdy", "9shf8f", "1aaneor"], lat: 11.6500, lng: 42.4167, category: "Nature", sound: "desert", zoom: 11,
         tagline: "Africa's lowest point",
         description: "At about 155 metres below sea level, Lake Assal is the lowest point in Africa, a turquoise crater lake ringed by a shore of white salt. Its water is roughly ten times saltier than the sea.",
-        bestTime: "Nov–Feb", image: "wiki:Lake Assal (Djibouti)", wiki: "Lake Assal (Djibouti)" },
+        bestTime: "Nov–Feb", image: "file:Lake Assal 2-Djibouti.jpg", wiki: "Lake Assal (Djibouti)" },
       { name: "Lake Abbe", pics: ["2b71n"], skip: ["1xmqu7o", "1hwd0yq", "a67les", "1npqf6y"], lat: 11.1500, lng: 41.7800, category: "Nature", sound: "desert", zoom: 11,
         tagline: "Chimneys of steam",
         description: "On the border with Ethiopia, the shores of Lake Abbe are covered in limestone chimneys up to 50 metres tall, some still venting steam, with flamingos feeding in the shallows. It feels like another planet at sunrise.",
-        bestTime: "Nov–Feb", image: "wiki:Lake Abbe" }
+        bestTime: "Nov–Feb", image: "file:Lac Abbe-02.JPG", wiki: "Lake Abbe" }
     ]
   },
   {
@@ -3290,7 +3290,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Danakil Depression", pics: ["il6ji", "xi4h5", "yrhw", "ijcs9", "14ijny", "il6jc"], add: ["ya7rag", "u214gs", "1ufrab3", "zhcrb5", "1ub976g", "166418g", "p2j0p3", "tybc4c", "1vft5q1", "ta7pgs"], lat: 14.2417, lng: 40.3000, category: "Nature", sound: "desert", zoom: 9,
         tagline: "Acid pools and a lava lake",
         description: "One of the hottest and lowest places on Earth, the Danakil holds the yellow and green acid springs of Dallol, salt flats where caravans still cut salt by hand, and the Erta Ale volcano, often topped by a lava lake.",
-        bestTime: "Nov–Feb", image: "wiki:Danakil Depression" },
+        bestTime: "Nov–Feb", image: "file:Dallol-Ethiopie (15).jpg", wiki: "Danakil Depression" },
       { name: "Gondar", pics: ["hcxpu", "1hi1kj", "d1tfr", "r9pjt", "r9pkc"], add: ["8hn956", "r98fiv", "iargv9", "dvtie0", "lbjdb0", "14cl7zs"], skip: ["du1psw"], lat: 12.6075, lng: 37.4700, category: "Historical", sound: "city", zoom: 15,
         tagline: "Ethiopia's Camelot",
         description: "Gondar was the royal capital in the 17th and 18th centuries, and its Fasil Ghebbi compound holds castles built by the emperors, with towers and battlements. Nearby, the ceiling of Debre Berhan Selassie church is painted with rows of winged angels.",
@@ -3339,7 +3339,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Lake Kivu", pics: ["19ha4q", "64kik", "rk8i4", "2r18ec", "1gn57e", "2h8cev", "2h6tyc", "1fwzo2"], add: ["1hrfie4", "dio285", "193ucjm", "vdatja"], skip: ["byj48r"], lat: -2.0000, lng: 29.2000, category: "Nature", sound: "ocean", zoom: 9,
         tagline: "A deep lake between the mountains",
         description: "One of Africa's Great Lakes, Lake Kivu fills a deep rift on the border with the DR Congo, its shores lined with green hills, islands and quiet towns like Gisenyi and Kibuye. Fishermen go out at night singing in long wooden boats.",
-        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Lake Kivu" },
+        bestTime: "Jun–Sep, Dec–Feb", image: "file:Lake Kivu 2021.jpg", wiki: "Lake Kivu" },
       { name: "Kigali", pics: ["1npfvm", "1366xd", "2xj6kq", "2xj6kl", "r1083", "2xj6kh", "19jxwh"], add: ["92fl93", "77p74e", "83pz2g", "rusxka", "uipwwg", "jyqbya"], skip: ["mx8ckj", "155b7ug", "lyqmkp", "9djynt", "1kf361o"], lat: -1.9500, lng: 30.0600, category: "City", sound: "city", zoom: 13,
         tagline: "A city of a thousand hills",
         description: "Rwanda's capital spreads across green hills and valleys and is known as one of the cleanest cities in Africa. The Kigali Genocide Memorial tells the story of the 1994 genocide against the Tutsi.",
@@ -3371,23 +3371,23 @@ window.ATLAS_DATA = { countries: [
   {
     id: "178", name: "Congo", region: "Africa", soundProfile: "rainforest",
     summary: "Rainforest clearings where gorillas and forest elephants come to feed.",
-    hero: "wiki:Odzala-Kokoua National Park",
+    hero: "file:Loxodonta cyclotis 3970045.jpg",
     places: [
       { name: "Odzala-Kokoua", pics: ["2ab3tt", "2ab423", "2ab1l0", "2ab415", "2aazd0", "2ab3zo"], skip: ["1e1uy38"], lat: 0.7500, lng: 14.9000, category: "Nature", sound: "rainforest", zoom: 9,
         tagline: "Gorillas in the Congo Basin",
         description: "One of the oldest national parks in Africa, Odzala-Kokoua protects rainforest and savanna in the Congo Basin, with western lowland gorillas, forest elephants and forest buffalo gathering in open clearings called bais.",
-        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Odzala-Kokoua National Park", wiki: "Odzala-Kokoua National Park" }
+        bestTime: "Jun–Sep, Dec–Feb", image: "file:Loxodonta cyclotis 3970045.jpg", wiki: "Odzala-Kokoua National Park" }
     ]
   },
   {
     id: "266", name: "Gabon", region: "Africa", soundProfile: "rainforest",
     summary: "Where rainforest meets the Atlantic, and elephants and hippos walk the beaches.",
-    hero: "wiki:Loango National Park",
+    hero: "file:Gabon Loango National Park Elephant with GPS tracker fitted.jpeg",
     places: [
       { name: "Loango National Park", pics: ["mheeu", "2qzcfp", "2ny6e8", "2ny6dw"], add: ["stfrhr"], lat: -2.2500, lng: 9.6000, category: "Nature", sound: "ocean", zoom: 9,
         tagline: "Surfing hippos",
         description: "On Gabon's coast, Loango is a mix of beaches, lagoons, savanna and forest where forest elephants, buffalo and hippos come out onto the sand. Humpback whales pass offshore in the dry season.",
-        bestTime: "Jun–Sep", image: "wiki:Loango National Park" },
+        bestTime: "Jun–Sep", image: "file:Gabon Loango National Park Elephant with GPS tracker fitted.jpeg", wiki: "Loango National Park" },
       { name: "Lopé National Park", pics: ["683iq", "683jw", "m2bq2", "20e0xy"], skip: ["1qvb2d", "usy8jc", "slun5r"], lat: -0.5000, lng: 11.5000, category: "Nature", sound: "rainforest", zoom: 9,
         tagline: "Savanna inside the rainforest",
         description: "Lopé's patchwork of rainforest and grassy savanna is famous for mandrills, which gather in troops of hundreds, among the largest groups of primates on Earth. It also holds ancient rock engravings and is a UNESCO World Heritage Site.",
@@ -3397,12 +3397,12 @@ window.ATLAS_DATA = { countries: [
   {
     id: "226", name: "Equatorial Guinea", region: "Africa", soundProfile: "rainforest",
     summary: "A volcanic island capital on the Gulf of Guinea.",
-    hero: "wiki:Bioko",
+    hero: "file:Kind Of Divine - panoramio.jpg",
     places: [
       { name: "Bioko", pics: ["1gxflv"], add: ["1n0v3vv"], skip: ["1emr8f0", "1n6i9c8", "kixasl", "fgjirz", "1mv75bh", "gm7x50", "q2nbnv"], lat: 3.5000, lng: 8.7000, category: "Nature", sound: "rainforest", zoom: 10,
         tagline: "A volcanic island of rainforest",
         description: "Bioko, home to the capital Malabo, is a volcanic island rising to over 3,000 metres at Pico Basilé, covered in rainforest with several species of rare monkeys. On its southern beaches, sea turtles nest between November and February.",
-        bestTime: "Dec–Feb", image: "wiki:Bioko" }
+        bestTime: "Dec–Feb", image: "file:Kind Of Divine - panoramio.jpg", wiki: "Bioko" }
     ]
   },
   {
@@ -3561,23 +3561,23 @@ window.ATLAS_DATA = { countries: [
   {
     id: "324", name: "Guinea", region: "Africa", soundProfile: "mountains",
     summary: "A green highland of waterfalls where West Africa's great rivers begin.",
-    hero: "wiki:Fouta Djallon",
+    hero: "file:Paysage du foutah.jpg",
     places: [
       { name: "Fouta Djallon", pics: ["zwm7q", "zwm7v", "zwm7m", "zwm72", "3acqna", "3acqno", "3acqo5", "1zbb6q", "1zbb75"], add: ["2lwt9b", "8kmuxm"], skip: ["9vigko", "1fjmupp", "11kpgg5"], lat: 11.3167, lng: -12.3000, category: "Nature", sound: "mountains", zoom: 9,
         tagline: "The water tower of West Africa",
         description: "A highland of grassy plateaus, cliffs and waterfalls in central Guinea, where the Gambia and Senegal rivers rise. Hikes lead between villages to waterfalls like the Voile de la Mariée and natural rock bridges.",
-        bestTime: "Nov–Apr", image: "wiki:Fouta Djallon" }
+        bestTime: "Nov–Apr", image: "file:Paysage du foutah.jpg", wiki: "Fouta Djallon" }
     ]
   },
   {
     id: "624", name: "Guinea-Bissau", region: "Africa", soundProfile: "ocean",
     summary: "An archipelago of mangroves, empty beaches and saltwater hippos.",
-    hero: "wiki:Bijagós Islands",
+    hero: "file:Bubaque Bruce Beach.jpg",
     places: [
       { name: "Bijagós Islands", pics: ["6ufy1", "2uvt9m", "2uv5o2", "2uv2jt", "qake1", "2v1p7p"], skip: ["1h8eewn", "b57t3e", "wllakv", "1yf4wdb", "18n3dg7", "aeclzj", "1evgmxz", "1a1y40x", "ld0qdg"], lat: 11.2500, lng: -16.0000, category: "Beach", sound: "ocean", zoom: 9,
         tagline: "An archipelago of mangroves and hippos",
         description: "A group of about 88 islands off the coast, many uninhabited, with mangroves, white beaches and palm forests. It is a UNESCO biosphere reserve where sea turtles nest and hippos swim in salt water.",
-        bestTime: "Nov–May", image: "wiki:Bijagós Islands" }
+        bestTime: "Nov–May", image: "file:Bubaque Bruce Beach.jpg", wiki: "Bijagós Islands" }
     ]
   },
   {
@@ -3626,11 +3626,11 @@ window.ATLAS_DATA = { countries: [
       { name: "Santo Antão", pics: ["1xnuth", "ynq94", "1jfx0g", "20giac", "ynqq4", "ynqq5", "22grpp", "ynqk6", "22grpo", "1zuq2s", "ynqk8"], add: ["1q67f7o", "hdgff7", "5oh42x"], skip: ["b64x68"], lat: 17.0667, lng: -25.1667, category: "Nature", sound: "mountains", zoom: 10,
         tagline: "Green ridges above the Atlantic",
         description: "The most mountainous of the islands, Santo Antão has deep green valleys, terraced farms and cobbled paths that drop down knife-edge ridges to the ocean, making it the best hiking in the archipelago.",
-        bestTime: "Nov–Jun", image: "wiki:Santo Antão, Cape Verde", wiki: "Santo Antão, Cape Verde" },
+        bestTime: "Nov–Jun", image: "file:Coastline Santo Antao.JPG", wiki: "Santo Antão, Cape Verde" },
       { name: "Sal", pics: ["1tjw2", "l098z", "1jler", "1r90t", "5mlta"], add: ["170s3q", "eoqbhf", "1mlg62o", "ie31h4", "20jcbq", "4yotr4", "1e9ojsv", "qhymiv", "1hxzuqa", "qx8zn2"], skip: ["a4t1lk", "1g0qyn1", "1p439rk", "3burew", "1co2ac4"], lat: 16.7500, lng: -22.9333, category: "Beach", sound: "ocean", zoom: 11,
         tagline: "Sun, salt and kitesurfing",
         description: "A flat, dry island with long white beaches at Santa Maria, constant trade winds that make it a kitesurfing spot, and an old volcanic crater filled with salt pans where you can float in the brine.",
-        bestTime: "Nov–Jun", image: "wiki:Sal, Cape Verde", wiki: "Sal, Cape Verde" }
+        bestTime: "Nov–Jun", image: "file:Pedra Lume CV.jpg", wiki: "Sal, Cape Verde" }
     ]
   },
   {
@@ -3704,12 +3704,12 @@ window.ATLAS_DATA = { countries: [
   {
     id: "508", name: "Mozambique", region: "Africa", soundProfile: "ocean",
     summary: "Turquoise islands and sandbanks in the Indian Ocean, and a historic island town.",
-    hero: "wiki:Bazaruto Archipelago",
+    hero: "file:Bazaruto Island Mozambique from air.jpg",
     places: [
       { name: "Bazaruto Archipelago", pics: ["2ibn55", "299eia", "2wm1z1", "1qz0my", "1qz0ng"], add: ["1slo5i8", "11ndrn", "g1ae42"], skip: ["1rmv2bs"], lat: -21.6667, lng: 35.4500, category: "Beach", sound: "ocean", zoom: 11,
         tagline: "Dunes in a turquoise sea",
         description: "Off Mozambique's coast, Bazaruto's islands have giant sand dunes rolling into clear turquoise water, coral reefs and sandbanks. It is one of the last places in the western Indian Ocean where dugongs still live.",
-        bestTime: "May–Nov", image: "wiki:Bazaruto Archipelago" },
+        bestTime: "May–Nov", image: "file:Bazaruto Island Mozambique from air.jpg", wiki: "Bazaruto Archipelago" },
       { name: "Island of Mozambique", pics: ["1qz0gw", "kz42u", "4zgra", "11p1n2"], add: ["vgxemd", "1w4gb42"], skip: ["1cn06no", "153z376"], lat: -15.0367, lng: 40.7328, category: "Historical", sound: "ocean", zoom: 15,
         tagline: "The old capital on a coral island",
         description: "A small coral island that was the capital of Portuguese East Africa for nearly four centuries, with a stone town of churches, palaces and the 16th-century Fort of São Sebastião, and a reed town where most people live. It gave the country its name.",
@@ -3777,7 +3777,7 @@ window.ATLAS_DATA = { countries: [
       { name: "Nosy Be", pics: ["18v2u7", "374vwp", "374j5x", "374vx4", "374j60"], add: ["ly1jmc", "4qqp74", "6umngo", "o6p8w8", "3khobh", "1hsnn3x"], skip: ["92gts1", "16i1q4", "93j6fg", "100bmow", "1330eh"], lat: -13.3333, lng: 48.2667, category: "Beach", sound: "ocean", zoom: 11,
         tagline: "The perfume island",
         description: "A volcanic island off the northwest coast, scented by ylang-ylang plantations, with beaches, coral reefs and nearby islets. Whale sharks and humpback whales pass through its waters.",
-        bestTime: "Apr–Dec", image: "wiki:Nosy Be" },
+        bestTime: "Apr–Dec", image: "file:Couché de soleil sur la plage de Nosy Be Hell ville.jpg", wiki: "Nosy Be" },
       { name: "Andasibe-Mantadia", pics: ["1ag1mn", "qvcuo", "15rlmh", "2n07nr", "1961bs", "1kdp7o", "2ho49e", "2hnl6x"], add: ["125etlt", "19nlvyd"], skip: ["134zoqk"], lat: -18.9333, lng: 48.4167, category: "Nature", sound: "rainforest", zoom: 11,
         tagline: "The call of the indri",
         description: "A misty rainforest east of the capital, home to the indri, the largest living lemur, whose eerie song carries through the forest every morning, along with chameleons and many other lemurs.",
@@ -3828,12 +3828,12 @@ window.ATLAS_DATA = { countries: [
   {
     id: "010", name: "Antarctica", region: "Antarctica", soundProfile: "ocean",
     summary: "The white continent: icebergs, glaciers and penguins at the bottom of the world.",
-    hero: "wiki:Lemaire Channel",
+    hero: "file:Cruise ship Le Lyrial off Anvers Island, Antarctica V-P.jpg",
     places: [
       { name: "Antarctic Peninsula", pics: ["18smcp", "ejwqf", "18sl7h", "y77fy", "ejwrj", "1y7jvy", "1laegc", "9n59u", "1gzx27", "18sjgv", "y6sjx", "ejws9", "ejwqk", "ejxhw"], add: ["1k9dif2", "1v211qi", "jmc2v6", "1n5e06r", "12438zm", "zfys5p", "1leagh2", "1rpi5k4", "16lxd8h"], skip: ["cem1pc", "15ba4zh", "3rsm8e", "36i8dm", "1eq8vsp"], lat: -64.8000, lng: -62.9000, category: "Nature", sound: "ocean", zoom: 6,
         tagline: "Icebergs and penguins",
         description: "The most visited part of Antarctica reaches north toward South America, a land of glaciers, icebergs and mountains rising from the sea. Expedition ships sail narrow passages like the Lemaire Channel and land among colonies of gentoo and Adélie penguins.",
-        bestTime: "Nov–Mar", image: "wiki:Lemaire Channel", wiki: "Antarctic Peninsula" }
+        bestTime: "Nov–Mar", image: "file:Cruise ship Le Lyrial off Anvers Island, Antarctica V-P.jpg", more: ["Lemaire Channel"], wiki: "Antarctic Peninsula" }
     ]
   }
 ] };
