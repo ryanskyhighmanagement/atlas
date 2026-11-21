@@ -3130,5 +3130,733 @@ window.ATLAS_DATA = { countries: [
         description: "On Guam's northwest coast, Tumon Bay is a white beach on a shallow reef flat, protected as a marine preserve. At its north end, Two Lovers Point is a high cliff with sweeping views of the coast. Chamorro culture, with its stone latte pillars, can be seen across the island.",
         bestTime: "Dec–Jun", image: "wiki:Tumon Bay", more: ["Two Lovers Point"] }
     ]
+  },
+  /* ---------- Africa: the rest, plus Antarctica ---------- */
+  {
+    id: "012", name: "Algeria", region: "Africa", soundProfile: "desert",
+    summary: "A white hillside medina above the Mediterranean, Roman cities in the hills, and Saharan rock art among stone forests.",
+    hero: "wiki:Tassili n'Ajjer",
+    places: [
+      { name: "Casbah of Algiers", pics: ["1ky5kp", "2qzok2"], add: ["59a9ho", "1xbf52h", "1t36zvy", "1p8lqdu", "1ai9gwh", "p3tqse"], skip: ["1t99h3n", "1y8nz46", "10sh1r8", "rpcrni", "mcjpqy", "1wc69yw", "hp5xim", "1ai9gwh", "l9x1y8", "p3tqse"], lat: 36.7850, lng: 3.0600, category: "Historical", sound: "city", zoom: 15,
+        tagline: "A white medina tumbling to the sea",
+        description: "The Casbah is the old walled city of Algiers, a steep maze of whitewashed houses, stairways and Ottoman-era palaces and mosques rising from the harbour. It is a UNESCO World Heritage Site and was a stronghold of the independence war.",
+        bestTime: "Apr–Jun, Sep–Nov", image: "wiki:Casbah of Algiers" },
+      { name: "Tassili n'Ajjer", pics: ["1ekmd", "2jkmum", "17tvuc", "2jmwif", "2jmwjj", "2jmwje", "aadzf"], add: ["1ug2e5e", "1s8f465", "177rbb", "55wlev", "44atyy", "o6q1j3", "13a3iwh", "geamba"], skip: ["1s8f465"], lat: 25.5000, lng: 9.0000, category: "Nature", sound: "desert", zoom: 8,
+        tagline: "Stone forests and rock art in the Sahara",
+        description: "A vast sandstone plateau in the Algerian Sahara, eroded into arches, pillars and canyons that look like a forest of stone. Its rock shelters hold more than 15,000 paintings and engravings, some thousands of years old, showing cattle, hunters and wildlife from when the Sahara was green.",
+        bestTime: "Oct–Mar", image: "wiki:Tassili n'Ajjer" },
+      { name: "Djémila", pics: ["wi8x8", "t45vq", "1d60xl", "1w5aek", "1w5aem", "1w5aed", "1b2axs"], add: ["e3sd7s", "dwa0o4", "16jfw18", "6x3gkt", "o8fsay", "10639at"], skip: ["1yc1v09"], lat: 36.3206, lng: 5.7364, category: "Historical", sound: "desert", zoom: 15,
+        tagline: "A Roman town in the mountains",
+        description: "Djémila, the Roman Cuicul, sits on a ridge in the mountains of northeast Algeria, with its forum, temples, basilicas and triumphal arch still standing. It is one of the best preserved Roman ruins in North Africa and a UNESCO World Heritage Site.",
+        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Djémila" },
+      { name: "Timgad", pics: ["306sym", "13tok5", "uxc7a", "1d9dnv", "q2mpr", "13tokb"], add: ["12timnp", "176f07t", "72s5b0", "1i45ve3", "d501hh", "1veevoi", "1y26f9e", "1n9x7jw"], skip: ["weon2n", "13u49vf", "11kx8k", "150hr1d", "lxc5t7", "kbmq2p", "1peq7hg", "1qowen2", "1wc1vys"], lat: 35.4842, lng: 6.4686, category: "Historical", sound: "desert", zoom: 15,
+        tagline: "A Roman grid city on the high plains",
+        description: "Founded by the emperor Trajan around 100 AD as a colony for veterans, Timgad was laid out on a perfect grid of streets that can still be walked today, ending at the Arch of Trajan. Sand buried it for centuries, which helped preserve it.",
+        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Timgad" }
+    ]
+  },
+  {
+    id: "788", name: "Tunisia", region: "Africa", soundProfile: "desert",
+    summary: "Blue and white cliff villages, a Roman colosseum in an olive town, and salt flats at the edge of the Sahara.",
+    hero: "wiki:Sidi Bou Said",
+    places: [
+      { name: "Sidi Bou Said", pics: ["2dp1a5", "t3m4g", "2gmbul", "2dlwil", "2dlwim", "2dlwjk", "nb1ax"], add: ["my0zcl", "1bud4ef", "akznmz", "9bm6yc", "rfyief", "1oeqwk1", "ow133g", "awxcdq", "e098m3", "1wd77qu", "sbk94f", "2b69ko", "g1hjtg", "136778"], skip: ["1psjez2", "5ennds", "k7pnv5", "7bnugg"], lat: 36.8708, lng: 10.3417, category: "Culture", sound: "ocean", zoom: 15,
+        tagline: "Blue doors above the Gulf of Tunis",
+        description: "A clifftop village above the Gulf of Tunis where nearly every house is painted white with bright blue doors and shutters, a rule kept since the 1910s. Its cafés look out over the sea toward Carthage.",
+        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Sidi Bou Said" },
+      { name: "El Jem", pics: ["lbrka"], add: ["3ipfnb", "1qudgsd", "jda76z", "jlpycu", "3wh0s3", "juuhnj", "8lr968", "1xsigjv", "1bru87k"], skip: ["1najz8b"], lat: 35.2964, lng: 10.7069, category: "Historical", sound: "desert", zoom: 16,
+        tagline: "Africa's colosseum",
+        description: "The amphitheatre of El Jem, built around 238 AD, could seat about 35,000 spectators and is one of the largest Roman amphitheatres ever built. It rises over a small market town in the olive country of eastern Tunisia.",
+        bestTime: "Mar–May, Oct–Nov", image: "wiki:Amphitheatre of El Jem", wiki: "Amphitheatre of El Jem" },
+      { name: "Chott el Djerid", pics: ["2g9g7g", "2tlojo", "2ggywi", "2tloji", "2tlojl", "13vxdi", "z3l14", "z3l12", "6bqgi"], add: ["t015x1", "m38n8b"], skip: ["1376vav", "1hlfw4s"], lat: 33.7000, lng: 8.4000, category: "Nature", sound: "desert", zoom: 9,
+        tagline: "A salt lake at the Sahara's edge",
+        description: "The largest salt pan in the Sahara, a flat white crust stretching to the horizon, crossed by a straight causeway where mirages are common. It lies between the oasis towns of Tozeur and Kebili.",
+        bestTime: "Nov–Mar", image: "wiki:Chott el Djerid" },
+      { name: "Carthage", pics: ["2e7gj3", "2e6x4l", "t3m4l", "8027f", "9931i"], add: ["nsa09x", "g9celm", "iudtpk", "neqho3", "1edgqre", "12kvnap", "1yqfbm5", "qt1wpo", "ryun1g", "1fjaw5", "13xyhps"], skip: ["129181t", "b3hm0n", "b5umvt", "1d12e4p", "i079e5", "1tx4hqo", "1tvuc9e"], lat: 36.8528, lng: 10.3233, category: "Historical", sound: "ocean", zoom: 14,
+        tagline: "Rome's great rival, by the sea",
+        description: "The ruins of the Phoenician city that fought Rome in the Punic Wars, rebuilt by the Romans after they destroyed it in 146 BC. The Antonine Baths stand by the sea in what is now a leafy suburb of Tunis.",
+        bestTime: "Apr–Jun, Sep–Oct", image: "wiki:Carthage" }
+    ]
+  },
+  {
+    id: "434", name: "Libya", region: "Africa", soundProfile: "desert",
+    summary: "One of the finest Roman cities anywhere, and a desert oasis town built as one shaded labyrinth.",
+    hero: "wiki:Leptis Magna",
+    places: [
+      { name: "Leptis Magna", pics: ["1bj80", "8pqop", "1tvnb4", "1aqn14"], add: ["kq6e7g", "a2ox65", "1bzzv3t", "f3j5mi", "15jhb5p", "1xs3j88", "ywprg6"], lat: 32.6383, lng: 14.2906, category: "Historical", sound: "ocean", zoom: 15,
+        tagline: "A Roman city by the sea",
+        description: "Leptis Magna was enlarged into one of the grandest cities of the Roman Empire by the emperor Septimius Severus, who was born there. Its arch, basilica, market and theatre overlooking the Mediterranean are among the best preserved Roman ruins in the world.",
+        bestTime: "Mar–May, Oct–Nov", image: "wiki:Leptis Magna" },
+      { name: "Ghadames", pics: ["1a0lf", "ft8l", "1tzqas", "78n5v", "78n7d", "gfp6", "78n7n"], add: ["1j7ie2h", "b72gwv", "e7b59", "g7nii5"], skip: ["tfysia"], lat: 30.1333, lng: 9.5000, category: "Historical", sound: "desert", zoom: 15,
+        tagline: "The pearl of the desert",
+        description: "An oasis town near the borders of Algeria and Tunisia whose old city is built as one connected structure, with covered alleys below and rooftop walkways once used by women. Its whitewashed mud-brick houses are a UNESCO World Heritage Site.",
+        bestTime: "Oct–Mar", image: "wiki:Ghadames" }
+    ]
+  },
+  {
+    id: "478", name: "Mauritania", region: "Africa", soundProfile: "desert",
+    summary: "An old caravan town of desert libraries, and a giant stone eye in the Sahara.",
+    hero: "wiki:Richat Structure",
+    places: [
+      { name: "Chinguetti", pics: ["1vou5w", "73u6l", "2jsry", "1uy0su", "1uy0sz", "1vou60", "232ev8", "232ev6"], skip: ["b54fvo"], lat: 20.4633, lng: -12.3628, category: "Historical", sound: "desert", zoom: 15,
+        tagline: "Libraries in the dunes",
+        description: "Founded as a stop on the trans-Saharan caravan routes, Chinguetti's stone houses and square minaret are slowly being swallowed by dunes. Family libraries in the old town still keep manuscripts that are centuries old.",
+        bestTime: "Nov–Feb", image: "wiki:Chinguetti" },
+      { name: "Richat Structure", pics: ["2yo3s8"], add: ["1aa3h88", "e5hewk"], lat: 21.1240, lng: -11.4020, category: "Nature", sound: "desert", zoom: 10,
+        tagline: "The Eye of the Sahara",
+        description: "A set of concentric rings about 40 kilometres across in the Sahara, clearly visible from space. Geologists think it is an eroded dome of uplifted rock rather than an impact crater.",
+        bestTime: "Nov–Feb", image: "wiki:Richat Structure" }
+    ]
+  },
+  {
+    id: "466", name: "Mali", region: "Africa", soundProfile: "desert",
+    summary: "The largest mud-brick building on Earth, and cliff villages of the Dogon.",
+    hero: "wiki:Great Mosque of Djenné",
+    places: [
+      { name: "Djenné", pics: ["21hqso", "1vm0b3", "147jkr"], add: ["jyjhj4", "1fdpqg4", "684ejm"], skip: ["1oco7ch"], lat: 13.9061, lng: -4.5533, category: "Historical", sound: "temple", zoom: 15,
+        tagline: "The great mosque of mud",
+        description: "Djenné's Great Mosque, rebuilt in 1907, is the largest mud-brick building in the world, and every year the town gathers to replaster it in a festival called the Crépissage. The old town around it is a UNESCO World Heritage Site.",
+        bestTime: "Nov–Feb", image: "wiki:Great Mosque of Djenné", wiki: "Djenné" },
+      { name: "Bandiagara Escarpment", pics: ["25j8km", "2u1e6", "heprq", "eskl1", "1m79x", "eskmb", "hepru"], add: ["1nhs50a", "kvm7z0", "1u08nu1", "q54h1d", "c9rbl8"], skip: ["u0fmin", "1xwxirl"], lat: 14.3500, lng: -3.6000, category: "Culture", sound: "desert", zoom: 10,
+        tagline: "Dogon villages on a cliff",
+        description: "A sandstone cliff about 150 kilometres long where the Dogon people built villages of granaries and houses at the foot and on the ledges of the rock. Older dwellings left by the Tellem people are tucked into the cliff face above.",
+        bestTime: "Nov–Feb", image: "wiki:Bandiagara Escarpment" }
+    ]
+  },
+  {
+    id: "562", name: "Niger", region: "Africa", soundProfile: "desert",
+    summary: "A Saharan caravan city with a mud-brick minaret, gateway to the Aïr Mountains.",
+    hero: "wiki:Agadez",
+    places: [
+      { name: "Agadez", pics: ["1v7ovc", "1xl44v"], add: ["dgnt34", "e842yb", "14yyhb2", "8tsm96", "zt85rr", "1caec0z"], skip: ["t9qkhl", "62bd1d", "jhlrxn"], lat: 16.9733, lng: 7.9911, category: "Historical", sound: "desert", zoom: 14,
+        tagline: "The Tuareg city of the Sahara",
+        description: "A historic crossroads of Saharan trade, Agadez is known for the 27-metre mud-brick minaret of its Grand Mosque, bristling with wooden beams, and the earthen houses of its old centre, a UNESCO World Heritage Site.",
+        bestTime: "Nov–Feb", image: "wiki:Agadez" }
+    ]
+  },
+  {
+    id: "148", name: "Chad", region: "Africa", soundProfile: "desert",
+    summary: "Sandstone arches and a crocodile pool in the Sahara, and an elephant park in the south.",
+    hero: "wiki:Ennedi Plateau",
+    places: [
+      { name: "Ennedi Plateau", pics: ["2ihbrh", "2ihbrg", "1qqasb", "1nie65", "28rj77", "2zvrr7"], skip: ["wvf5o0", "z8takz", "mhrf0", "1nw95iv"], lat: 17.0000, lng: 22.0000, category: "Nature", sound: "desert", zoom: 8,
+        tagline: "Arches and canyons in the Sahara",
+        description: "A sandstone massif in the Sahara carved by wind and water into natural arches, pillars and canyons, with rock art in its shelters. In the Guelta d'Archei, a pool in a deep canyon, a few desert crocodiles still survive and camels come to drink.",
+        bestTime: "Nov–Feb", image: "wiki:Ennedi Plateau" },
+      { name: "Zakouma National Park", pics: ["1fh4n1", "1fh3vx"], skip: ["1km3qkk", "108gh91", "pxtl0i", "1nwdkvw", "1r4nfuu", "1dnd7gd", "o39i02", "vszefa", "1ndjcqx"], lat: 10.8500, lng: 19.6500, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "Elephants coming back",
+        description: "Once ravaged by poaching, Zakouma in southern Chad has become one of Central Africa's conservation successes, with its elephant herd growing again and large numbers of buffalo, giraffe and birds gathering at its waterholes in the dry season.",
+        bestTime: "Dec–May", image: "wiki:Zakouma National Park" }
+    ]
+  },
+  {
+    id: "729", name: "Sudan", region: "Africa", soundProfile: "desert",
+    summary: "Fields of steep Nubian pyramids in the desert, more than in all of Egypt.",
+    hero: "wiki:Meroë",
+    places: [
+      { name: "Meroë", pics: ["3tmzq", "1jt1hg", "1jt1hc", "zx03m", "5p9et", "17pjxx"], add: ["58ngu2", "18lmtwb", "qbxhm4"], skip: ["6gwoat", "12sv2af"], lat: 16.9383, lng: 33.7489, category: "Historical", sound: "desert", zoom: 14,
+        tagline: "The pyramids of the Kushite kings",
+        description: "Meroë was the capital of the Kingdom of Kush, and its royal cemeteries hold around 200 small, steep-sided pyramids rising from the dunes. Sudan has been at war since 2023, which has made travel unsafe.",
+        bestTime: "Nov–Feb", image: "wiki:Meroë" }
+    ]
+  },
+  {
+    id: "728", name: "South Sudan", region: "Africa", soundProfile: "jungle",
+    summary: "One of the largest wetlands in the world, along the White Nile.",
+    hero: "wiki:Sudd",
+    places: [
+      { name: "Sudd", pics: ["4gloz", "2ewi2k", "1mk2x5", "129yw8", "129yt3"], lat: 7.5000, lng: 30.5000, category: "Nature", sound: "jungle", zoom: 7,
+        tagline: "A sea of papyrus on the Nile",
+        description: "Where the White Nile spreads out across the plains of South Sudan, it forms the Sudd, a maze of papyrus swamps and floodplains that can grow larger than many countries in the rainy season. It is home to huge flocks of birds, including the shoebill.",
+        bestTime: "Dec–Mar", image: "wiki:Sudd" }
+    ]
+  },
+  {
+    id: "232", name: "Eritrea", region: "Africa", soundProfile: "city",
+    summary: "An Italian modernist capital frozen in time in the highlands.",
+    hero: "wiki:Asmara",
+    places: [
+      { name: "Asmara", pics: ["1gvai1", "36i5mv", "151mgv", "rq7sg", "2q7tjx", "rqlnv"], add: ["19xdkmu", "yye2u7", "1nybmou", "7qezs3", "1cjagwt", "1oix9hp", "1lziu2v", "hxkgx0", "196bpqk", "1r11evm"], skip: ["1e4yhik", "1acoymo", "1cif6au", "1l9lhsk"], lat: 15.3333, lng: 38.9333, category: "City", sound: "city", zoom: 14,
+        tagline: "Africa's modernist city",
+        description: "Built up by Italy in the 1930s, Asmara is filled with Art Deco and futurist buildings, such as the Fiat Tagliero service station shaped like an aeroplane. The city, at about 2,300 metres in the highlands, became a UNESCO World Heritage Site in 2017.",
+        bestTime: "Oct–Apr", image: "wiki:Asmara" }
+    ]
+  },
+  {
+    id: "262", name: "Djibouti", region: "Africa", soundProfile: "desert",
+    summary: "A salt lake below sea level, and a field of smoking limestone chimneys.",
+    hero: "wiki:Lake Assal (Djibouti)",
+    places: [
+      { name: "Lake Assal", pics: ["1eka8", "1s7579", "qx9kb", "11m4s", "u10c1"], skip: ["18q8hg3", "14qanc7", "kdrsdy", "9shf8f", "1aaneor"], lat: 11.6500, lng: 42.4167, category: "Nature", sound: "desert", zoom: 11,
+        tagline: "Africa's lowest point",
+        description: "At about 155 metres below sea level, Lake Assal is the lowest point in Africa, a turquoise crater lake ringed by a shore of white salt. Its water is roughly ten times saltier than the sea.",
+        bestTime: "Nov–Feb", image: "wiki:Lake Assal (Djibouti)", wiki: "Lake Assal (Djibouti)" },
+      { name: "Lake Abbe", pics: ["2b71n"], skip: ["1xmqu7o", "1hwd0yq", "a67les", "1npqf6y"], lat: 11.1500, lng: 41.7800, category: "Nature", sound: "desert", zoom: 11,
+        tagline: "Chimneys of steam",
+        description: "On the border with Ethiopia, the shores of Lake Abbe are covered in limestone chimneys up to 50 metres tall, some still venting steam, with flamingos feeding in the shallows. It feels like another planet at sunrise.",
+        bestTime: "Nov–Feb", image: "wiki:Lake Abbe" }
+    ]
+  },
+  {
+    id: "231", name: "Ethiopia", region: "Africa", soundProfile: "mountains",
+    summary: "Churches carved from solid rock, a dramatic mountain range, and the hottest, most colourful place on Earth.",
+    hero: "wiki:Simien Mountains",
+    places: [
+      { name: "Lalibela", pics: ["25vwko", "gshp0", "gshqd", "gshnz", "gshlk"], add: ["xzkfrw", "uzqb6i", "tm974d", "eyhk9d", "1w2peti", "1l6jaty", "9ero0a", "1ugbo1k"], lat: 12.0317, lng: 39.0411, category: "Historical", sound: "temple", zoom: 15,
+        tagline: "Churches carved into the earth",
+        description: "In the 12th and 13th centuries, eleven churches were carved down into the volcanic rock of Lalibela, the most famous being the cross-shaped Church of Saint George. They are still in use, and pilgrims dressed in white fill them at Ethiopian Christmas.",
+        bestTime: "Oct–Mar", image: "wiki:Church of Saint George, Lalibela", wiki: "Lalibela" },
+      { name: "Simien Mountains", pics: ["3xdps", "auml", "ymimj", "d1tka", "ymima", "ymimf", "ymin8", "ymiml"], add: ["1fm3bd8", "1k32ell", "laq83u", "9mi5u5", "23cf75", "1afhilm", "k6cvho", "1ns0ir3", "1r7kzwr", "1m9ncrp"], lat: 13.2667, lng: 38.0833, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "Cliffs, gelada monkeys and the roof of Ethiopia",
+        description: "Sheer escarpments drop more than a kilometre in the Simien Mountains National Park, where troops of gelada monkeys graze on the grassy edges and Walia ibex cling to the cliffs. Ras Dashen, at 4,550 metres, is Ethiopia's highest peak.",
+        bestTime: "Oct–Mar", image: "wiki:Simien Mountains" },
+      { name: "Danakil Depression", pics: ["il6ji", "xi4h5", "yrhw", "ijcs9", "14ijny", "il6jc"], add: ["ya7rag", "u214gs", "1ufrab3", "zhcrb5", "1ub976g", "166418g", "p2j0p3", "tybc4c", "1vft5q1", "ta7pgs"], lat: 14.2417, lng: 40.3000, category: "Nature", sound: "desert", zoom: 9,
+        tagline: "Acid pools and a lava lake",
+        description: "One of the hottest and lowest places on Earth, the Danakil holds the yellow and green acid springs of Dallol, salt flats where caravans still cut salt by hand, and the Erta Ale volcano, often topped by a lava lake.",
+        bestTime: "Nov–Feb", image: "wiki:Danakil Depression" },
+      { name: "Gondar", pics: ["hcxpu", "1hi1kj", "d1tfr", "r9pjt", "r9pkc"], add: ["8hn956", "r98fiv", "iargv9", "dvtie0", "lbjdb0", "14cl7zs"], skip: ["du1psw"], lat: 12.6075, lng: 37.4700, category: "Historical", sound: "city", zoom: 15,
+        tagline: "Ethiopia's Camelot",
+        description: "Gondar was the royal capital in the 17th and 18th centuries, and its Fasil Ghebbi compound holds castles built by the emperors, with towers and battlements. Nearby, the ceiling of Debre Berhan Selassie church is painted with rows of winged angels.",
+        bestTime: "Oct–Mar", image: "wiki:Fasil Ghebbi", wiki: "Gondar" }
+    ]
+  },
+  {
+    id: "706", name: "Somalia", region: "Africa", soundProfile: "ocean",
+    summary: "A white-sand Indian Ocean capital with a long history as a trading port.",
+    hero: "wiki:Mogadishu",
+    places: [
+      { name: "Mogadishu", pics: ["m40tj", "xwtuv", "392p30", "392op6", "392pbo"], add: ["11jxwyg", "19954rc"], skip: ["1y5fdkv", "128godo", "1tlvc7q", "zbufqp"], lat: 2.0469, lng: 45.3182, category: "City", sound: "ocean", zoom: 13,
+        tagline: "The white pearl of the Indian Ocean",
+        description: "A trading port for more than a thousand years, Mogadishu is rebuilding after decades of war, and Lido Beach fills with families on Fridays. Security remains a serious problem, and most governments advise against travel.",
+        bestTime: "Dec–Mar", image: "wiki:Mogadishu" }
+    ]
+  },
+  {
+    id: "800", name: "Uganda", region: "Africa", soundProfile: "rainforest",
+    summary: "Mountain gorillas in an ancient forest, the Nile forced through a gorge, and snow on the Mountains of the Moon.",
+    hero: "wiki:Bwindi Impenetrable National Park",
+    places: [
+      { name: "Bwindi Impenetrable Forest", pics: ["1gbn7e"], add: ["1i8xag0", "zfoaf3", "3w3nfg", "1vh329i", "159e191", "85h8q8", "yelvu6", "iptcf3", "n5rvkm"], skip: ["egf6o", "1ixkg44", "lao4zh"], lat: -1.0500, lng: 29.7000, category: "Nature", sound: "rainforest", zoom: 10,
+        tagline: "Home of half the world's mountain gorillas",
+        description: "A steep, misty rainforest on the edge of the Albertine Rift, Bwindi is home to roughly half of the world's mountain gorillas. Trekkers hike for hours through dense forest for one hour with a habituated gorilla family.",
+        bestTime: "Jun–Aug, Dec–Feb", image: "wiki:Bwindi Impenetrable National Park", wiki: "Bwindi Impenetrable National Park" },
+      { name: "Murchison Falls", pics: ["1hoibk", "1hpe46", "2soge2", "2sogeb", "2t70dr", "1e6art", "2soge7"], add: ["1bvkrpf", "1c0gcg1", "b4izsq", "h0uadj", "1a7941g", "1kr22g1", "1r64sjo", "bfzzvg", "1rb8oay"], skip: ["hor8qu"], lat: 2.2783, lng: 31.6856, category: "Nature", sound: "jungle", zoom: 12,
+        tagline: "The Nile through a seven-metre gap",
+        description: "Here the Victoria Nile squeezes through a gorge only about seven metres wide and plunges 43 metres in a thundering burst of spray. Boat trips from below pass hippos, crocodiles and elephants on the way to the base of the falls.",
+        bestTime: "Dec–Feb, Jun–Sep", image: "wiki:Murchison Falls" },
+      { name: "Rwenzori Mountains", pics: ["266s93", "lm29x", "2h3w42", "266smb", "lm2a2", "sucz", "lm2a1", "1wnv20"], add: ["199kv2b", "1tswqoi", "cvfc3y", "suy284", "tmdodr", "es644i", "18colur"], skip: ["1hivthm", "1y68upd", "18putgn", "1a8gzca", "19i0max", "1m1ej3g", "1src71a", "d64f1x", "199kv2b"], lat: 0.3864, lng: 29.8722, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "The Mountains of the Moon",
+        description: "On the border with the DR Congo, the Rwenzori rise to 5,109 metres at Margherita Peak, with glaciers on the equator. On the way up, trails pass through bogs and forests of giant lobelias and groundsels that look prehistoric.",
+        bestTime: "Jun–Aug, Dec–Feb", image: "wiki:Rwenzori Mountains" }
+    ]
+  },
+  {
+    id: "646", name: "Rwanda", region: "Africa", soundProfile: "rainforest",
+    summary: "Gorillas on the slopes of the Virunga volcanoes, a long blue lake, and a clean, green capital of hills.",
+    hero: "wiki:Volcanoes National Park",
+    places: [
+      { name: "Volcanoes National Park", pics: ["rk8nk", "1ak9rz", "2a3q1y", "2a3pxe", "2he87x", "2a3pxh", "xmtfl", "2a3q22"], add: ["dym48z", "7detqo", "u0i2ml", "cx7zt6"], skip: ["1pb8e73", "rt5g4z", "4uuu0o"], lat: -1.4833, lng: 29.5333, category: "Nature", sound: "rainforest", zoom: 11,
+        tagline: "Gorillas in the mist",
+        description: "On the bamboo-covered slopes of the Virunga volcanoes, this is where Dian Fossey studied mountain gorillas. Visitors trek to spend an hour with a gorilla family, and can also see rare golden monkeys.",
+        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Volcanoes National Park" },
+      { name: "Lake Kivu", pics: ["19ha4q", "64kik", "rk8i4", "2r18ec", "1gn57e", "2h8cev", "2h6tyc", "1fwzo2"], add: ["1hrfie4", "dio285", "193ucjm", "vdatja"], skip: ["byj48r"], lat: -2.0000, lng: 29.2000, category: "Nature", sound: "ocean", zoom: 9,
+        tagline: "A deep lake between the mountains",
+        description: "One of Africa's Great Lakes, Lake Kivu fills a deep rift on the border with the DR Congo, its shores lined with green hills, islands and quiet towns like Gisenyi and Kibuye. Fishermen go out at night singing in long wooden boats.",
+        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Lake Kivu" },
+      { name: "Kigali", pics: ["1npfvm", "1366xd", "2xj6kq", "2xj6kl", "r1083", "2xj6kh", "19jxwh"], add: ["92fl93", "77p74e", "83pz2g", "rusxka", "uipwwg", "jyqbya"], skip: ["mx8ckj", "155b7ug", "lyqmkp", "9djynt", "1kf361o"], lat: -1.9500, lng: 30.0600, category: "City", sound: "city", zoom: 13,
+        tagline: "A city of a thousand hills",
+        description: "Rwanda's capital spreads across green hills and valleys and is known as one of the cleanest cities in Africa. The Kigali Genocide Memorial tells the story of the 1994 genocide against the Tutsi.",
+        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Kigali" }
+    ]
+  },
+  {
+    id: "108", name: "Burundi", region: "Africa", soundProfile: "ocean",
+    summary: "Beaches on Lake Tanganyika, one of the longest and deepest lakes in the world.",
+    hero: "wiki:Lake Tanganyika",
+    places: [
+      { name: "Lake Tanganyika", pics: ["19fsne", "z0vk", "i10rb", "2pblir", "2pbli9", "z1rn", "2pblis"], add: ["3tqllb", "1m51gi0", "6pca3z", "msv6vj", "sfmdgj", "7owj67", "1l6u4on", "1i7l4ov"], skip: ["15mfpax", "ot5os0", "1yhrd1o", "1ygjvg1", "8iizv6", "1c9717m", "1vihqv"], lat: -3.6000, lng: 29.3000, category: "Beach", sound: "ocean", zoom: 10, wiki: "Lake Tanganyika",
+        tagline: "Beaches on an inland sea",
+        description: "Burundi's capital Bujumbura sits on the northern tip of Lake Tanganyika, the second deepest lake in the world, with sandy beaches and mountains rising behind. The lake is home to hundreds of species of colourful cichlid fish found nowhere else.",
+        bestTime: "Jun–Aug", image: "wiki:Lake Tanganyika" }
+    ]
+  },
+  {
+    id: "180", name: "DR Congo", region: "Africa", soundProfile: "rainforest",
+    summary: "Africa's oldest national park, with a volcano holding the world's largest lava lake.",
+    hero: "wiki:Mount Nyiragongo",
+    places: [
+      { name: "Virunga National Park", pics: ["17xemc", "45411", "1qplgq", "1qplj8", "1qplh7", "25j16i", "1qpli2", "1qpncc"], add: ["1x2fjni", "spdr8n", "nrqs1c", "1l92xb7", "1vq45f4"], skip: ["1hivthm", "1fr4phw"], lat: -1.0000, lng: 29.4000, category: "Nature", sound: "rainforest", zoom: 9,
+        tagline: "Gorillas and a lava lake",
+        description: "Founded in 1925, Virunga is Africa's oldest national park, with mountain gorillas, savanna and glaciers in the Rwenzori. Its Mount Nyiragongo volcano has held one of the largest lava lakes in the world. Armed conflict in the region has repeatedly closed the park.",
+        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Mount Nyiragongo", wiki: "Virunga National Park" }
+    ]
+  },
+  {
+    id: "178", name: "Congo", region: "Africa", soundProfile: "rainforest",
+    summary: "Rainforest clearings where gorillas and forest elephants come to feed.",
+    hero: "wiki:Odzala-Kokoua National Park",
+    places: [
+      { name: "Odzala-Kokoua", pics: ["2ab3tt", "2ab423", "2ab1l0", "2ab415", "2aazd0", "2ab3zo"], skip: ["1e1uy38"], lat: 0.7500, lng: 14.9000, category: "Nature", sound: "rainforest", zoom: 9,
+        tagline: "Gorillas in the Congo Basin",
+        description: "One of the oldest national parks in Africa, Odzala-Kokoua protects rainforest and savanna in the Congo Basin, with western lowland gorillas, forest elephants and forest buffalo gathering in open clearings called bais.",
+        bestTime: "Jun–Sep, Dec–Feb", image: "wiki:Odzala-Kokoua National Park", wiki: "Odzala-Kokoua National Park" }
+    ]
+  },
+  {
+    id: "266", name: "Gabon", region: "Africa", soundProfile: "rainforest",
+    summary: "Where rainforest meets the Atlantic, and elephants and hippos walk the beaches.",
+    hero: "wiki:Loango National Park",
+    places: [
+      { name: "Loango National Park", pics: ["mheeu", "2qzcfp", "2ny6e8", "2ny6dw"], add: ["stfrhr"], lat: -2.2500, lng: 9.6000, category: "Nature", sound: "ocean", zoom: 9,
+        tagline: "Surfing hippos",
+        description: "On Gabon's coast, Loango is a mix of beaches, lagoons, savanna and forest where forest elephants, buffalo and hippos come out onto the sand. Humpback whales pass offshore in the dry season.",
+        bestTime: "Jun–Sep", image: "wiki:Loango National Park" },
+      { name: "Lopé National Park", pics: ["683iq", "683jw", "m2bq2", "20e0xy"], skip: ["1qvb2d", "usy8jc", "slun5r"], lat: -0.5000, lng: 11.5000, category: "Nature", sound: "rainforest", zoom: 9,
+        tagline: "Savanna inside the rainforest",
+        description: "Lopé's patchwork of rainforest and grassy savanna is famous for mandrills, which gather in troops of hundreds, among the largest groups of primates on Earth. It also holds ancient rock engravings and is a UNESCO World Heritage Site.",
+        bestTime: "Jun–Sep", image: "wiki:Lopé National Park" }
+    ]
+  },
+  {
+    id: "226", name: "Equatorial Guinea", region: "Africa", soundProfile: "rainforest",
+    summary: "A volcanic island capital on the Gulf of Guinea.",
+    hero: "wiki:Bioko",
+    places: [
+      { name: "Bioko", pics: ["1gxflv"], add: ["1n0v3vv"], skip: ["1emr8f0", "1n6i9c8", "kixasl", "fgjirz", "1mv75bh", "gm7x50", "q2nbnv"], lat: 3.5000, lng: 8.7000, category: "Nature", sound: "rainforest", zoom: 10,
+        tagline: "A volcanic island of rainforest",
+        description: "Bioko, home to the capital Malabo, is a volcanic island rising to over 3,000 metres at Pico Basilé, covered in rainforest with several species of rare monkeys. On its southern beaches, sea turtles nest between November and February.",
+        bestTime: "Dec–Feb", image: "wiki:Bioko" }
+    ]
+  },
+  {
+    id: "120", name: "Cameroon", region: "Africa", soundProfile: "rainforest",
+    summary: "An active volcano above the sea, beaches with a waterfall into the ocean, and forests and savanna.",
+    hero: "wiki:Mount Cameroon",
+    places: [
+      { name: "Mount Cameroon", pics: ["35ovg0", "1ryzjh"], add: ["fqbtiq", "12shol5", "ttfr1t", "coud4i", "135cwf9", "1gzry"], skip: ["1l85d5c", "jaysyt", "9wolhw", "1w712w0"], lat: 4.2167, lng: 9.1700, category: "Mountain", sound: "mountains", zoom: 10,
+        tagline: "A volcano by the sea",
+        description: "At 4,040 metres, Mount Cameroon is one of Africa's most active volcanoes and rises almost straight from the Atlantic, with rainforest on its lower slopes. Its foot is one of the wettest places on Earth.",
+        bestTime: "Nov–Apr", image: "wiki:Mount Cameroon" },
+      { name: "Kribi", pics: ["1ryzj4", "59pad", "kwjts", "2z7nhy", "1s1kjb", "37ip55", "18ghm7"], add: ["1bydya", "1a95y4h", "7gp0yl", "zaez2u", "2ku1h4", "xutgx1", "1qu457v", "1cho8sj", "1acii6g"], lat: 2.9500, lng: 9.9100, category: "Beach", sound: "ocean", zoom: 12,
+        tagline: "A waterfall that falls into the sea",
+        description: "A beach town on Cameroon's coast with long sandy shores backed by palms. Just south of town, the Lobé Falls are one of the few waterfalls in the world that drop straight into the ocean.",
+        bestTime: "Nov–Apr", image: "wiki:Kribi" }
+    ]
+  },
+  {
+    id: "140", name: "Central African Republic", region: "Africa", soundProfile: "rainforest",
+    summary: "A rainforest clearing where hundreds of forest elephants gather.",
+    hero: "wiki:Dzanga-Sangha Special Reserve",
+    places: [
+      { name: "Dzanga-Sangha", pics: ["38133o", "382jst", "38278k", "382js2", "382js3", "38atww", "382js8", "382jsn", "382jrw", "38atwp"], add: ["w7f113", "33kb7u", "1q87gex"], skip: ["14pgn3r"], lat: 2.9000, lng: 16.2500, category: "Nature", sound: "rainforest", zoom: 9,
+        tagline: "Elephants in the Dzanga Bai",
+        description: "In the far southwest, the Dzanga-Sangha reserve protects rainforest where often more than a hundred forest elephants gather in the Dzanga Bai clearing to dig for minerals, along with habituated western lowland gorillas.",
+        bestTime: "Dec–Mar", image: "wiki:Dzanga-Sangha Special Reserve", wiki: "Dzanga-Sangha Special Reserve" }
+    ]
+  },
+  {
+    id: "678", name: "São Tomé and Príncipe", region: "Africa", soundProfile: "rainforest",
+    summary: "Two volcanic islands of rainforest, cocoa plantations and empty beaches, with a needle of rock in the jungle.",
+    hero: "wiki:Pico Cão Grande",
+    places: [
+      { name: "Pico Cão Grande", pics: ["9ywps", "viei3", "viehr", "vienf"], lat: 0.1167, lng: 6.5667, category: "Nature", sound: "rainforest", zoom: 13,
+        tagline: "A needle of rock in the rainforest",
+        description: "A volcanic plug that rises about 300 metres above the surrounding rainforest of southern São Tomé, its sheer grey walls standing out like a needle. Old cocoa plantations and black and gold sand beaches lie along the coast nearby.",
+        bestTime: "Jun–Sep", image: "wiki:Pico Cão Grande" }
+    ]
+  },
+  {
+    id: "566", name: "Nigeria", region: "Africa", soundProfile: "metropolis",
+    summary: "Africa's biggest city, a sacred forest of shrines, and a giant dome of rock.",
+    hero: "wiki:Lagos",
+    places: [
+      { name: "Lagos", pics: ["of1gn", "19lqv2", "2hb33s"], add: ["1ggtvi6", "q96cf2", "1591mwz", "bvaf16", "1segux4", "1v7hkn7", "1j3fiqc", "a13w96", "1ij2cqe"], skip: ["oagq89", "vibb9x", "efchlh", "e3c8fg", "fwsbzq", "q96cf2", "1591mwz"], lat: 6.4550, lng: 3.3941, category: "City", sound: "metropolis", zoom: 12,
+        tagline: "Africa's megacity",
+        description: "One of the largest cities in Africa, Lagos spreads across lagoons and islands, from the towers of Victoria Island to markets, beaches and a nightlife that runs on Afrobeats. The Lekki Conservation Centre has one of the longest canopy walkways in Africa.",
+        bestTime: "Nov–Feb", image: "wiki:Lagos" },
+      { name: "Osun-Osogbo Sacred Grove", pics: ["29s1j8", "39d7ph", "101a71", "2jakiw", "2jakix", "2jakiv"], add: ["gi9icg", "6owyos", "1v7ru0e", "8c6hy9", "14v6a4y", "1x6guck", "1axx3t2", "c531fh"], skip: ["qz72i5", "1x6guck", "c531fh"], lat: 7.7553, lng: 4.5522, category: "Culture", sound: "jungle", zoom: 15,
+        tagline: "A forest of the river goddess",
+        description: "One of the last stretches of primary forest in southern Nigeria, this grove along the Osun River is dedicated to the Yoruba goddess Osun, with shrines and sculptures throughout. Each August it hosts a festival attended by thousands.",
+        bestTime: "Aug (festival), Nov–Feb", image: "wiki:Osun-Osogbo" },
+      { name: "Zuma Rock", pics: ["1dy4ck"], lat: 9.1250, lng: 7.2333, category: "Nature", sound: "desert", zoom: 13,
+        tagline: "The gateway to Abuja",
+        description: "A huge monolith of granite rising about 300 metres above the plains near Abuja, with markings on one side that look like a face. It appears on Nigeria's 100 naira note.",
+        bestTime: "Nov–Feb", image: "wiki:Zuma Rock" }
+    ]
+  },
+  {
+    id: "204", name: "Benin", region: "Africa", soundProfile: "ocean",
+    summary: "A village on stilts in a lagoon, and the coast where the history of Vodun and the slave trade meet.",
+    hero: "wiki:Ganvie",
+    places: [
+      { name: "Ganvié", pics: ["21hquy", "21hr09", "37aw2", "2qquln", "2lmve3", "2qquli", "1fufl3"], add: ["1w88sv9", "1x18so0", "1ubhu0b", "1yxpmve", "rt77qe"], skip: ["1032ybp"], lat: 6.4667, lng: 2.4167, category: "Culture", sound: "ocean", zoom: 14,
+        tagline: "A town on stilts",
+        description: "Built on stilts in Lake Nokoué, Ganvié is home to about 20,000 people who travel everywhere by pirogue, even to the floating market. It was founded centuries ago by people escaping slave raiders.",
+        bestTime: "Nov–Mar", image: "wiki:Ganvie", wiki: "Ganvie" },
+      { name: "Ouidah", pics: ["1g1r16", "1xryj4", "2njwzk", "2elgps", "y5dp5"], add: ["10xmt8u", "1rp4xt4", "hq30us", "tdt8gb", "t3rpvi"], skip: ["j9hr3d", "ffeqg3", "1wb60pn", "1y9xkd5", "8943zr", "tdt8gb"], lat: 6.3667, lng: 2.0833, category: "Historical", sound: "ocean", zoom: 13,
+        tagline: "The Door of No Return",
+        description: "A former slave port and the spiritual home of Vodun, Ouidah has a temple of sacred pythons, and a road that leads to the beach and the Door of No Return memorial. Every January 10 it hosts the national Vodun festival.",
+        bestTime: "Nov–Mar, Jan 10 (festival)", image: "wiki:Ouidah" }
+    ]
+  },
+  {
+    id: "768", name: "Togo", region: "Africa", soundProfile: "jungle",
+    summary: "Fortress-like mud tower houses of the Batammariba people.",
+    hero: "wiki:Koutammakou",
+    places: [
+      { name: "Koutammakou", pics: ["1x4fhe", "2dyby2"], add: ["1ugrjhg", "1yw288g", "1kl9cmd", "fyrf0m", "1koqkjh", "yxbowz", "ofvijy", "f0m6eg", "9cug4u", "u3n8tk"], skip: ["10ga1a9"], lat: 10.1500, lng: 1.1500, category: "Culture", sound: "jungle", zoom: 11,
+        tagline: "Castles of mud",
+        description: "In the north of Togo, the Batammariba people build two-storey tower houses of mud called takienta, with granaries and turrets, which inspired the name 'land of the castles'. The landscape is a UNESCO World Heritage Site.",
+        bestTime: "Nov–Feb", image: "wiki:Koutammakou" }
+    ]
+  },
+  {
+    id: "288", name: "Ghana", region: "Africa", soundProfile: "ocean",
+    summary: "Whitewashed slave castles on palm-lined beaches, a walkway above the rainforest, and a lively capital.",
+    hero: "wiki:Cape Coast Castle",
+    places: [
+      { name: "Cape Coast Castle", pics: ["bkvp7", "29r8sk", "29r9sl", "2whsj5"], add: ["1r15d95", "1c2zmv7", "upuww9", "1nc88y1", "1gsegt5", "1crge4w", "1q8tv9r", "kbhqi8", "10ponku"], skip: ["1x09k6f", "almagk"], lat: 5.1036, lng: -1.2414, category: "Historical", sound: "ocean", zoom: 16,
+        tagline: "A fortress of the slave trade",
+        description: "A white fortress on the shore, Cape Coast Castle was one of the main centres of the Atlantic slave trade, holding captives in dungeons before shipping them across the ocean. Nearby Elmina Castle, built by the Portuguese in 1482, is the oldest European building south of the Sahara.",
+        bestTime: "Nov–Mar", image: "wiki:Cape Coast Castle" },
+      { name: "Kakum National Park", pics: ["26ux4i", "237ze7", "23lc1w", "23lc25", "237ze9", "23lc20"], add: ["1bm2rx8", "5lgmxq", "1owzrgu", "cwgyny", "bmz50u", "7cq65z", "gelwa"], skip: ["y2c4p4", "v6ob4a", "wmx76w", "18e4bp7", "1fbf1mb", "mthox1"], lat: 5.3500, lng: -1.3833, category: "Nature", sound: "rainforest", zoom: 11,
+        tagline: "A walk above the rainforest",
+        description: "A rainforest reserve inland from Cape Coast, famous for a canopy walkway of rope bridges hung about 40 metres above the forest floor between giant trees.",
+        bestTime: "Nov–Mar", image: "wiki:Kakum National Park" },
+      { name: "Accra", pics: ["1a7f85", "24ytiq", "1a7fct", "24ytj8", "j5sue", "2ftf45", "36mtqk"], add: ["181h4p2", "1yqyubt", "1fow2g4", "17oljn5", "1g286wh", "1xq8w5u", "1do2mjr", "16248gl", "19caq66"], skip: ["qgu64v", "1ys3dob", "do59hw"], lat: 5.5600, lng: -0.2050, category: "City", sound: "city", zoom: 13,
+        tagline: "Ghana's buzzing capital",
+        description: "Ghana's capital mixes busy markets like Makola, the fishing harbour of Jamestown with its lighthouse, and beaches like Labadi. Independence Square and its Black Star Gate mark Ghana's independence in 1957, one of the first in sub-Saharan Africa.",
+        bestTime: "Nov–Mar", image: "wiki:Accra" }
+    ]
+  },
+  {
+    id: "384", name: "Côte d'Ivoire", region: "Africa", soundProfile: "city",
+    summary: "One of the largest churches in the world, and a lagoon city of skyscrapers.",
+    hero: "wiki:Basilica of Our Lady of Peace",
+    places: [
+      { name: "Basilica of Our Lady of Peace", pics: ["2glw7z", "1wayur", "2glw8o", "2glw7f", "2glw7u"], lat: 6.8122, lng: -5.2969, category: "Culture", sound: "temple", zoom: 16,
+        tagline: "A St Peter's in the savanna",
+        description: "Completed in 1989 in Yamoussoukro, the basilica was modelled on St Peter's in Rome and is one of the largest churches in the world, its dome rising about 158 metres over a quiet town.",
+        bestTime: "Nov–Feb", image: "wiki:Basilica of Our Lady of Peace" },
+      { name: "Abidjan", pics: ["1ncd2z", "j5kdm", "j5kes", "sqd40", "33zadd", "11r5d1", "2adnmq", "t1j7w"], add: ["itq1dx", "cyvlhf", "u386lr", "18o97jq", "108rltr", "1wp92sp", "1v1bnsd", "a7jjay", "15247d1", "1xfmnlu"], skip: ["ts6m31"], lat: 5.3200, lng: -4.0300, category: "City", sound: "metropolis", zoom: 12,
+        tagline: "The Manhattan of West Africa",
+        description: "Built around the Ébrié Lagoon, Abidjan's Plateau business district is a cluster of towers, including the striking St. Paul's Cathedral. Down the coast, the old colonial capital of Grand-Bassam has faded French buildings and beaches.",
+        bestTime: "Nov–Feb", image: "wiki:Abidjan" }
+    ]
+  },
+  {
+    id: "854", name: "Burkina Faso", region: "Africa", soundProfile: "desert",
+    summary: "Painted houses of the Kassena people.",
+    hero: "wiki:Royal Court of Tiébélé",
+    places: [
+      { name: "Tiébélé", pics: ["axm46", "sm6wa", "sm69m", "sm6w4", "1xkllf", "2iyc0h"], skip: ["svnwhr"], lat: 11.0953, lng: -0.9636, category: "Culture", sound: "desert", zoom: 14,
+        tagline: "Houses painted by hand",
+        description: "In the royal court of Tiébélé, near the border with Ghana, the Kassena people paint the walls of their round and square mud houses with geometric patterns in red, black and white, applied by the women of the village.",
+        bestTime: "Nov–Feb", image: "wiki:Royal Court of Tiébélé" }
+    ]
+  },
+  {
+    id: "430", name: "Liberia", region: "Africa", soundProfile: "ocean",
+    summary: "Surf breaks on an empty coast backed by rainforest.",
+    hero: "wiki:Robertsport",
+    places: [
+      { name: "Robertsport", pics: ["4x9p5"], add: ["7j6gz8"], skip: ["12mua89", "1xe8ca", "10ku086"], lat: 6.7533, lng: -11.3686, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "West Africa's surf town",
+        description: "A small town on a peninsula near the border with Sierra Leone, Robertsport has long left-hand point breaks that have made it a destination for surfers, and quiet beaches backed by forest and a lake.",
+        bestTime: "Nov–Apr", image: "wiki:Robertsport" }
+    ]
+  },
+  {
+    id: "694", name: "Sierra Leone", region: "Africa", soundProfile: "ocean",
+    summary: "A capital between green hills and the sea, and quiet islands off the Freetown Peninsula.",
+    hero: "wiki:Banana Islands",
+    places: [
+      { name: "Banana Islands", pics: ["iau76", "1qedb0"], lat: 8.1167, lng: -13.2167, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Islands off the Freetown Peninsula",
+        description: "A small group of islands off the tip of the Freetown Peninsula, with palm-shaded coves, coral reefs and fishing villages. On the mainland nearby are long white beaches such as River Number Two.",
+        bestTime: "Nov–Apr", image: "wiki:Banana Islands" },
+      { name: "Freetown", pics: ["v5s5a", "ne6yb", "lum98", "v5sef"], add: ["sd0ulh", "jcdyen", "33a8zm"], skip: ["14wgd7y", "w87k1t", "1gekdk9", "a9b8gd"], lat: 8.4844, lng: -13.2344, category: "City", sound: "city", zoom: 12,
+        tagline: "A capital between hills and beaches",
+        description: "Sierra Leone's capital spreads between forested hills and the Atlantic on the Freetown Peninsula. It was founded in 1792 as a settlement for freed slaves, and long sandy beaches such as Lumley Beach line its western edge.",
+        bestTime: "Nov–Apr", image: "wiki:Freetown" }
+    ]
+  },
+  {
+    id: "324", name: "Guinea", region: "Africa", soundProfile: "mountains",
+    summary: "A green highland of waterfalls where West Africa's great rivers begin.",
+    hero: "wiki:Fouta Djallon",
+    places: [
+      { name: "Fouta Djallon", pics: ["zwm7q", "zwm7v", "zwm7m", "zwm72", "3acqna", "3acqno", "3acqo5", "1zbb6q", "1zbb75"], add: ["2lwt9b", "8kmuxm"], skip: ["9vigko", "1fjmupp", "11kpgg5"], lat: 11.3167, lng: -12.3000, category: "Nature", sound: "mountains", zoom: 9,
+        tagline: "The water tower of West Africa",
+        description: "A highland of grassy plateaus, cliffs and waterfalls in central Guinea, where the Gambia and Senegal rivers rise. Hikes lead between villages to waterfalls like the Voile de la Mariée and natural rock bridges.",
+        bestTime: "Nov–Apr", image: "wiki:Fouta Djallon" }
+    ]
+  },
+  {
+    id: "624", name: "Guinea-Bissau", region: "Africa", soundProfile: "ocean",
+    summary: "An archipelago of mangroves, empty beaches and saltwater hippos.",
+    hero: "wiki:Bijagós Islands",
+    places: [
+      { name: "Bijagós Islands", pics: ["6ufy1", "2uvt9m", "2uv5o2", "2uv2jt", "qake1", "2v1p7p"], skip: ["1h8eewn", "b57t3e", "wllakv", "1yf4wdb", "18n3dg7", "aeclzj", "1evgmxz", "1a1y40x", "ld0qdg"], lat: 11.2500, lng: -16.0000, category: "Beach", sound: "ocean", zoom: 9,
+        tagline: "An archipelago of mangroves and hippos",
+        description: "A group of about 88 islands off the coast, many uninhabited, with mangroves, white beaches and palm forests. It is a UNESCO biosphere reserve where sea turtles nest and hippos swim in salt water.",
+        bestTime: "Nov–May", image: "wiki:Bijagós Islands" }
+    ]
+  },
+  {
+    id: "686", name: "Senegal", region: "Africa", soundProfile: "ocean",
+    summary: "A pastel island with a dark history, a pink lake, a colonial river town, and a capital of music.",
+    hero: "wiki:Gorée",
+    places: [
+      { name: "Gorée", pics: ["25l1h2", "25l1h4"], add: ["1hj9e7j", "1yf2i8b", "18m42m5", "1juq6o6", "1sul7ol", "1of8gza", "u04zj5", "rs2dvb", "mb89nt"], skip: ["1rw0yg1", "188be4k", "oziaoj", "rx2upw", "uo7xyn", "6w741e"], lat: 14.6672, lng: -17.3983, category: "Historical", sound: "ocean", zoom: 16,
+        tagline: "An island of memory",
+        description: "A small car-free island off Dakar with pastel colonial houses and bougainvillea, Gorée was a centre of the Atlantic slave trade, and its House of Slaves is a memorial to the people taken from Africa.",
+        bestTime: "Nov–May", image: "wiki:Gorée" },
+      { name: "Lake Retba", pics: ["18ij42", "26vqd1", "35zaid", "35zahp"], add: ["5pobwt"], lat: 14.8383, lng: -17.2448, category: "Nature", sound: "ocean", zoom: 13,
+        tagline: "The pink lake",
+        description: "Separated from the Atlantic by narrow dunes, Lake Retba turns pink thanks to algae that thrive in its salty water, most strongly in the dry season. Salt collectors wade in up to their shoulders to harvest salt from its bed.",
+        bestTime: "Nov–Jun", image: "wiki:Lake Retba" },
+      { name: "Saint-Louis", pics: ["vmv7p", "3avsvh", "3avsvg", "2rkdlp", "379y5e", "1dturp"], add: ["py9jhb", "abnhbp", "1apguua", "1jlazic", "1qmxe4t"], skip: ["1r6o2y8", "2rkcv6", "kg9t3v"], lat: 16.0300, lng: -16.5000, category: "Historical", sound: "city", zoom: 14,
+        tagline: "A colonial island town",
+        description: "The former capital of French West Africa, Saint-Louis is built on an island in the Senegal River, reached by the iron Faidherbe Bridge. Its colonial houses with balconies are a UNESCO World Heritage Site, and colourful fishing pirogues line the shore.",
+        bestTime: "Nov–May", image: "wiki:Saint-Louis, Senegal", wiki: "Saint-Louis, Senegal" },
+      { name: "Dakar", pics: ["bkvoo", "1qq8zq", "b4aed", "1grmro", "6qj4g", "b4088", "ymgc9", "1xh3h4"], add: ["gxfazl", "6auh5f", "4ug9qh", "jo7zl6", "12qyq9", "1x0rm4f", "v1tc4g", "uthwmb", "1jych8q", "1jba0vi"], skip: ["3oq406", "y7o1y3", "e741oe"], lat: 14.6928, lng: -17.4467, category: "City", sound: "city", zoom: 12,
+        tagline: "At the westernmost tip of Africa",
+        description: "Senegal's capital sits on the Cap-Vert peninsula, the westernmost point of mainland Africa, with ocean views, surf spots and a famous music scene. On a hill above the city, the African Renaissance Monument is a 49-metre bronze statue, one of the tallest in Africa.",
+        bestTime: "Nov–May", image: "wiki:Dakar" }
+    ]
+  },
+  {
+    id: "270", name: "Gambia", region: "Africa", soundProfile: "jungle",
+    summary: "A narrow country along a great river, with an island that holds a story of the slave trade.",
+    hero: "wiki:Kunta Kinteh Island",
+    places: [
+      { name: "Kunta Kinteh Island", pics: ["6906m", "y6zcl", "6904v", "ydmd0", "y6p1l"], lat: 13.3167, lng: -16.3667, category: "Historical", sound: "jungle", zoom: 15,
+        tagline: "Ruins in the Gambia River",
+        description: "A small island in the Gambia River with the ruins of a fort used in the slave trade, renamed after Kunta Kinte, the ancestor described in Alex Haley's book Roots. The river around it is lined with mangroves and birdlife.",
+        bestTime: "Nov–May", image: "wiki:Kunta Kinteh Island" }
+    ]
+  },
+  {
+    id: "132", name: "Cabo Verde", region: "Africa", soundProfile: "ocean",
+    summary: "Volcanic Atlantic islands, from a cone with a village in its crater to green ridges and white beaches.",
+    hero: "wiki:Fogo, Cape Verde",
+    places: [
+      { name: "Fogo", pics: ["b5rx4", "b5z6b", "b5z5z"], add: ["1cily7w", "qmz0vi", "8jo4bj", "bcqwtz", "mcq20n", "12jpgi1", "zdu8ou", "18j6lrz", "15daf34", "p2qe80"], skip: ["iiln28", "jl97q8"], lat: 14.9500, lng: -24.3500, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "A village inside a volcano",
+        description: "The island of Fogo is one huge volcano rising to 2,829 metres at Pico do Fogo, with a village and vineyards inside its giant crater. Its last eruption, in 2014 and 2015, buried part of the village under lava.",
+        bestTime: "Nov–Jun", image: "wiki:Fogo, Cape Verde", wiki: "Fogo, Cape Verde" },
+      { name: "Santo Antão", pics: ["1xnuth", "ynq94", "1jfx0g", "20giac", "ynqq4", "ynqq5", "22grpp", "ynqk6", "22grpo", "1zuq2s", "ynqk8"], add: ["1q67f7o", "hdgff7", "5oh42x"], skip: ["b64x68"], lat: 17.0667, lng: -25.1667, category: "Nature", sound: "mountains", zoom: 10,
+        tagline: "Green ridges above the Atlantic",
+        description: "The most mountainous of the islands, Santo Antão has deep green valleys, terraced farms and cobbled paths that drop down knife-edge ridges to the ocean, making it the best hiking in the archipelago.",
+        bestTime: "Nov–Jun", image: "wiki:Santo Antão, Cape Verde", wiki: "Santo Antão, Cape Verde" },
+      { name: "Sal", pics: ["1tjw2", "l098z", "1jler", "1r90t", "5mlta"], add: ["170s3q", "eoqbhf", "1mlg62o", "ie31h4", "20jcbq", "4yotr4", "1e9ojsv", "qhymiv", "1hxzuqa", "qx8zn2"], skip: ["a4t1lk", "1g0qyn1", "1p439rk", "3burew", "1co2ac4"], lat: 16.7500, lng: -22.9333, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Sun, salt and kitesurfing",
+        description: "A flat, dry island with long white beaches at Santa Maria, constant trade winds that make it a kitesurfing spot, and an old volcanic crater filled with salt pans where you can float in the brine.",
+        bestTime: "Nov–Jun", image: "wiki:Sal, Cape Verde", wiki: "Sal, Cape Verde" }
+    ]
+  },
+  {
+    id: "024", name: "Angola", region: "Africa", soundProfile: "jungle",
+    summary: "One of Africa's largest waterfalls, and a capital on a long bay.",
+    hero: "wiki:Kalandula Falls",
+    places: [
+      { name: "Kalandula Falls", pics: ["25f9s5", "c0fsz", "c0g5e"], add: ["1ex8xu4"], skip: ["1pamgx1"], lat: -9.0744, lng: 16.0000, category: "Nature", sound: "jungle", zoom: 13,
+        tagline: "A horseshoe of water",
+        description: "On the Lucala River, the Kalandula Falls drop about 105 metres over a wide horseshoe of rock, one of the largest waterfalls in Africa by volume, especially at the end of the rainy season.",
+        bestTime: "Apr–May", image: "wiki:Kalandula Falls" },
+      { name: "Luanda", pics: ["1guehs", "8uc6l", "f6bz0", "f6bz6", "ztc8v", "ztc7y", "ztc78", "ztc7o", "ztc8e"], add: ["1tu89hf", "4i51n", "1y1tz5k", "y1s3jj", "3b8kjq", "1flw6av", "10lnl1v", "onbnkv"], skip: ["1gjcp59", "l63g5n", "1tu89hf"], lat: -8.8383, lng: 13.2344, category: "City", sound: "city", zoom: 12,
+        tagline: "A capital on a long bay",
+        description: "Angola's capital curves around a bay lined by a palm-shaded seafront promenade, with the old Portuguese Fortress of São Miguel on the hill. The Ilha, a long sandbar, is lined with beach bars and restaurants.",
+        bestTime: "Jun–Sep", image: "wiki:Luanda" }
+    ]
+  },
+  {
+    id: "894", name: "Zambia", region: "Africa", soundProfile: "jungle",
+    summary: "The smoke that thunders, and the walking safari's birthplace.",
+    hero: "wiki:Victoria Falls",
+    places: [
+      { name: "Victoria Falls", pics: ["36u6a5", "36qnb2", "1fwke1", "9ck49"], add: ["c9dpkh", "avpl3y", "dy9ck1", "frbluh", "z6ug0o", "pqu9b7", "n5whxc", "co33l8"], skip: ["1poyp5h", "13lru3q", "wrr2sv", "4ytxtn"], lat: -17.9243, lng: 25.8572, category: "Nature", sound: "jungle", zoom: 13,
+        tagline: "The smoke that thunders",
+        description: "On the border with Zimbabwe, the Zambezi River drops 108 metres over a basalt cliff about 1.7 kilometres wide, the largest curtain of falling water in the world. In the dry season, people swim in the Devil's Pool right at the edge.",
+        bestTime: "Feb–May (peak flow), Aug–Dec (Devil's Pool)", image: "wiki:Victoria Falls" },
+      { name: "South Luangwa", pics: ["as2jg"], add: ["1xlvfjn", "evgojk", "1eciwto", "a4hmls", "1ja9i", "1uruz15", "cgk46q", "1a3mwq2"], skip: ["6adqf4"], lat: -13.0833, lng: 31.5500, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "Leopards and walking safaris",
+        description: "Along the Luangwa River, South Luangwa National Park is known for leopards, big herds of elephant and buffalo, and hippos crowded in the river. It is where walking safaris began.",
+        bestTime: "Jun–Oct", image: "wiki:South Luangwa National Park", wiki: "South Luangwa National Park" }
+    ]
+  },
+  {
+    id: "716", name: "Zimbabwe", region: "Africa", soundProfile: "jungle",
+    summary: "The Zimbabwe side of Victoria Falls, the stone ruins that gave the country its name, and wild Zambezi floodplains.",
+    hero: "wiki:Great Zimbabwe",
+    places: [
+      { name: "Victoria Falls", pics: ["spsxr", "ahqwl", "nwxl", "1ydgv0", "kgooj", "spsjl", "181ubq", "181udj", "1xooj8"], add: ["691zo5", "186994g", "1483pj", "vlev0a", "1tmxawi", "1pbr1fn", "3ndwdc", "4ytxtn", "1h3y16q", "kk1abf"], skip: ["v0nfxh"], lat: -17.9300, lng: 25.8400, category: "Nature", sound: "jungle", zoom: 13, wiki: "Victoria Falls",
+        tagline: "The falls from the rainforest side",
+        description: "Most of the width of Victoria Falls faces the Zimbabwe side, where a path through the spray-fed rainforest opposite the falls leads to viewpoints like Danger Point. The Victoria Falls Bridge, opened in 1905, spans the gorge to Zambia.",
+        bestTime: "Feb–Jul", image: "wiki:Victoria Falls Bridge" },
+      { name: "Great Zimbabwe", pics: ["1d9krr", "1d9ks0", "239fgp", "1d9ks2"], add: ["zyt5eg", "y18epd", "v9xnn7", "d1xhin", "1tzi507", "14mg9ru", "1q6paut", "1skr3q1"], lat: -20.2675, lng: 30.9339, category: "Historical", sound: "temple", zoom: 15,
+        tagline: "A city of stone",
+        description: "The capital of a trading kingdom between the 11th and 15th centuries, Great Zimbabwe's Great Enclosure has curved granite walls up to 11 metres high, built without mortar. It is the largest ancient structure south of the Sahara.",
+        bestTime: "Apr–Oct", image: "wiki:Great Zimbabwe" },
+      { name: "Mana Pools", add: ["mbhjr4", "j2tqdn"], lat: -15.7500, lng: 29.3333, category: "Nature", sound: "jungle", zoom: 10,
+        tagline: "Elephants on the Zambezi",
+        description: "On the floodplain of the Zambezi, Mana Pools is famous for elephants reaching up on their hind legs to feed in the trees, and for allowing visitors to walk among wildlife without a vehicle.",
+        bestTime: "Jun–Oct", image: "wiki:Mana Pools National Park" },
+      { name: "Hwange National Park", pics: ["1dmi1l", "1dmi15", "1dmi0q", "1dmi0e", "2yllv2", "1dmi10", "1dmi0c", "19hjyc"], skip: ["1cbqma8", "oob83u", "1e1fjra", "kk69s7"], lat: -18.7350, lng: 26.9550, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "Elephant country",
+        description: "Zimbabwe's largest park has one of the biggest elephant populations in Africa, with tens of thousands gathering at its waterholes in the dry season, along with lions, wild dogs and huge herds of buffalo.",
+        bestTime: "Jul–Oct", image: "wiki:Hwange National Park" }
+    ]
+  },
+  {
+    id: "454", name: "Malawi", region: "Africa", soundProfile: "ocean",
+    summary: "A clear freshwater lake with beaches and colourful fish, and a granite massif above tea estates.",
+    hero: "wiki:Lake Malawi",
+    places: [
+      { name: "Lake Malawi", pics: ["de07q", "de07n", "de08u", "de08j", "de07u", "1tsry", "ymhuy", "ymhuz", "de08f"], add: ["139a7cy", "hrzy3z"], skip: ["1a28l75", "19r8nu8", "1sns1i2", "1l8z99b", "m7jg17"], lat: -14.0333, lng: 34.8833, category: "Beach", sound: "ocean", zoom: 10,
+        tagline: "The lake of stars",
+        description: "Lake Malawi stretches over 500 kilometres along the Rift Valley, its clear water home to hundreds of species of brightly coloured cichlid fish. At Cape Maclear, part of the Lake Malawi National Park, you can snorkel among them from the beach.",
+        bestTime: "May–Oct", image: "wiki:Lake Malawi" },
+      { name: "Mount Mulanje", pics: ["dcizl", "yinkp", "yinkt", "yink2", "yinkg", "yinkr", "yinji", "yinjt", "xd60f"], skip: ["5o2an1", "mxt7dg", "nkmlgx", "18shfxy", "1hh1yb3"], lat: -15.9500, lng: 35.6000, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "An island in the sky",
+        description: "A granite massif rising abruptly from tea plantations to 3,002 metres at Sapitwa Peak, Malawi's highest peak. Trails lead to mountain huts, waterfalls and forests of Mulanje cedar.",
+        bestTime: "May–Oct", image: "wiki:Mulanje Massif" }
+    ]
+  },
+  {
+    id: "508", name: "Mozambique", region: "Africa", soundProfile: "ocean",
+    summary: "Turquoise islands and sandbanks in the Indian Ocean, and a historic island town.",
+    hero: "wiki:Bazaruto Archipelago",
+    places: [
+      { name: "Bazaruto Archipelago", pics: ["2ibn55", "299eia", "2wm1z1", "1qz0my", "1qz0ng"], add: ["1slo5i8", "11ndrn", "g1ae42"], skip: ["1rmv2bs"], lat: -21.6667, lng: 35.4500, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "Dunes in a turquoise sea",
+        description: "Off Mozambique's coast, Bazaruto's islands have giant sand dunes rolling into clear turquoise water, coral reefs and sandbanks. It is one of the last places in the western Indian Ocean where dugongs still live.",
+        bestTime: "May–Nov", image: "wiki:Bazaruto Archipelago" },
+      { name: "Island of Mozambique", pics: ["1qz0gw", "kz42u", "4zgra", "11p1n2"], add: ["vgxemd", "1w4gb42"], skip: ["1cn06no", "153z376"], lat: -15.0367, lng: 40.7328, category: "Historical", sound: "ocean", zoom: 15,
+        tagline: "The old capital on a coral island",
+        description: "A small coral island that was the capital of Portuguese East Africa for nearly four centuries, with a stone town of churches, palaces and the 16th-century Fort of São Sebastião, and a reed town where most people live. It gave the country its name.",
+        bestTime: "May–Nov", image: "wiki:Island of Mozambique" }
+    ]
+  },
+  {
+    id: "072", name: "Botswana", region: "Africa", soundProfile: "jungle",
+    summary: "A delta in the desert, elephant herds on the Chobe River, and salt pans that stretch to the horizon.",
+    hero: "wiki:Okavango Delta",
+    places: [
+      { name: "Okavango Delta", pics: ["19403r", "194047", "2tceb", "g2t3", "2tcdf", "194063", "2tcee", "194060"], add: ["1ae742t", "1n96gt7", "1yrw9iv", "1hrniy2", "z6lx3s", "1w8kdlc", "1j30gvt", "12vewkw", "go1zgf", "5dhqm7", "1cq2khw"], skip: ["1qrz3dm"], lat: -19.3000, lng: 22.9000, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "A river that never reaches the sea",
+        description: "The Okavango River spreads out into the Kalahari and disappears, creating a huge maze of channels, lagoons and islands that floods each winter. Guides pole visitors through the reeds in dugout canoes called mokoros past elephants, hippos and lions.",
+        bestTime: "Jun–Oct", image: "wiki:Okavango Delta" },
+      { name: "Chobe National Park", pics: ["epd5g", "1x4p9h", "198f6v", "198f6w", "198f6y"], add: ["nfg7d3", "ivenr4", "a44k1z", "4tdeyz", "18dfemn", "14vri9n", "x64r80", "1r86jhr", "1lhjd5b", "10yzz59"], skip: ["hft9e0", "mqo1bs", "11looe0"], lat: -18.6667, lng: 24.5000, category: "Nature", sound: "jungle", zoom: 9,
+        tagline: "The elephant river",
+        description: "Chobe has one of the largest concentrations of elephants in Africa, and in the dry season herds come down to the Chobe River to drink and swim, best seen from a boat at sunset.",
+        bestTime: "May–Oct", image: "wiki:Chobe National Park" },
+      { name: "Makgadikgadi Pans", pics: ["2w9qed", "299sdf", "1th9n9", "1th9ny", "1th9no", "1th9ns"], add: ["1nagg7f", "1nfqdn1"], skip: ["1aerlth", "r9jy76"], lat: -20.7500, lng: 25.5000, category: "Nature", sound: "desert", zoom: 9,
+        tagline: "A sea of salt",
+        description: "The remains of an ancient lake, the Makgadikgadi are among the largest salt flats in the world, white and empty in the dry season. After the rains they fill with water, drawing flamingos and zebra migrations.",
+        bestTime: "May–Oct (dry), Dec–Mar (flamingos)", image: "wiki:Makgadikgadi Pan", wiki: "Makgadikgadi Pan" }
+    ]
+  },
+  {
+    id: "426", name: "Lesotho", region: "Africa", soundProfile: "mountains",
+    summary: "A kingdom in the sky, with one of the highest waterfalls in southern Africa.",
+    hero: "wiki:Maletsunyane Falls",
+    places: [
+      { name: "Maletsunyane Falls", pics: ["3bz8tt", "3by2z6", "3byr97", "3byr2y", "3bz7k6", "3bzbd8", "3bzgqd", "ayk8q", "3c0x6l", "3c0x6k"], lat: -29.8667, lng: 28.0500, category: "Nature", sound: "mountains", zoom: 13,
+        tagline: "A waterfall in the highlands",
+        description: "Near the town of Semonkong, the Maletsunyane River drops about 192 metres into a deep gorge in a single fall. All of Lesotho lies above 1,400 metres, the highest low point of any country in the world.",
+        bestTime: "Dec–Apr (flow), Jun–Aug (frozen)", image: "wiki:Maletsunyane Falls" },
+      { name: "Sani Pass", pics: ["24ak0p", "10u302", "1wdnu", "398y9h"], add: ["zdj5cq", "133mh9u", "iuzyjc"], skip: ["1iz8lxs", "hx7eaj", "1wzyb8o", "6werb1", "1fpj6z6", "19fx81e", "1m13gnz", "1dh2vfn", "o1udab", "zogixx"], lat: -29.5867, lng: 29.2900, category: "Mountain", sound: "mountains", zoom: 12,
+        tagline: "The road to the roof of Africa",
+        description: "A steep, winding road that climbs from South Africa up the Drakensberg escarpment into Lesotho, reaching 2,876 metres. A four-wheel drive is required to cross it.",
+        bestTime: "Mar–May, Sep–Nov", image: "wiki:Sani Pass" }
+    ]
+  },
+  {
+    id: "748", name: "Eswatini", region: "Africa", soundProfile: "jungle",
+    summary: "A small mountain kingdom with wildlife sanctuaries and royal festivals.",
+    hero: "wiki:Mlilwane Wildlife Sanctuary",
+    places: [
+      { name: "Mlilwane Wildlife Sanctuary", pics: ["lr6v9", "13crtx"], add: ["15m646x", "1eovoz1", "1el5ie4", "fqwhkh", "ubvblo", "frkfhs"], skip: ["w24xrf"], lat: -26.4833, lng: 31.2000, category: "Nature", sound: "jungle", zoom: 12,
+        tagline: "Walking among zebra",
+        description: "In the Ezulwini Valley, Mlilwane was Eswatini's first protected area, where you can walk, cycle or ride horses among zebra, antelope and warthogs, below the granite cliffs of Execution Rock.",
+        bestTime: "May–Sep", image: "wiki:Mlilwane Wildlife Sanctuary" }
+    ]
+  },
+  {
+    id: "450", name: "Madagascar", region: "Africa", soundProfile: "rainforest",
+    summary: "An island of baobabs, lemurs and limestone needles, found nowhere else on Earth.",
+    hero: "wiki:Avenue of the Baobabs",
+    places: [
+      { name: "Avenue of the Baobabs", pics: ["26bo3k", "yb84v", "q1byc", "180j91", "8lz62", "o8wyu"], add: ["fssm8t", "fk0zaq", "1avw012", "145wbow", "vlmrsx", "1ckbnpw"], lat: -20.2508, lng: 44.4183, category: "Nature", sound: "desert", zoom: 15,
+        tagline: "Giants at sunset",
+        description: "A dirt road near Morondava lined with Grandidier's baobabs up to 30 metres tall and hundreds of years old, the last of a forest that once covered the area. At sunrise and sunset their silhouettes glow red.",
+        bestTime: "Apr–Nov", image: "wiki:Avenue of the Baobabs" },
+      { name: "Tsingy de Bemaraha", pics: ["27qqf", "26bq5k", "26bqej", "2mkt3", "26bqb7", "26bqhj", "2mish", "qj2oq"], add: ["1jy0vmc"], lat: -18.6667, lng: 44.7500, category: "Nature", sound: "rainforest", zoom: 10,
+        tagline: "A forest of limestone needles",
+        description: "A UNESCO World Heritage Site where rainwater has carved limestone into razor-sharp pinnacles, crossed by rope bridges and ladders. Lemurs live in the forest in the gorges below.",
+        bestTime: "May–Nov", image: "wiki:Tsingy de Bemaraha National Park", wiki: "Tsingy de Bemaraha National Park" },
+      { name: "Nosy Be", pics: ["18v2u7", "374vwp", "374j5x", "374vx4", "374j60"], add: ["ly1jmc", "4qqp74", "6umngo", "o6p8w8", "3khobh", "1hsnn3x"], skip: ["92gts1", "16i1q4", "93j6fg", "100bmow", "1330eh"], lat: -13.3333, lng: 48.2667, category: "Beach", sound: "ocean", zoom: 11,
+        tagline: "The perfume island",
+        description: "A volcanic island off the northwest coast, scented by ylang-ylang plantations, with beaches, coral reefs and nearby islets. Whale sharks and humpback whales pass through its waters.",
+        bestTime: "Apr–Dec", image: "wiki:Nosy Be" },
+      { name: "Andasibe-Mantadia", pics: ["1ag1mn", "qvcuo", "15rlmh", "2n07nr", "1961bs", "1kdp7o", "2ho49e", "2hnl6x"], add: ["125etlt", "19nlvyd"], skip: ["134zoqk"], lat: -18.9333, lng: 48.4167, category: "Nature", sound: "rainforest", zoom: 11,
+        tagline: "The call of the indri",
+        description: "A misty rainforest east of the capital, home to the indri, the largest living lemur, whose eerie song carries through the forest every morning, along with chameleons and many other lemurs.",
+        bestTime: "Sep–Dec", image: "wiki:Andasibe-Mantadia National Park", wiki: "Andasibe-Mantadia National Park" }
+    ]
+  },
+  {
+    id: "480", name: "Mauritius", region: "Africa", soundProfile: "ocean",
+    summary: "Turquoise lagoons around a volcanic island, a mountain with a dark history, and sands of seven colours.",
+    hero: "wiki:Le Morne Brabant",
+    places: [
+      { name: "Le Morne Brabant", pics: ["2g52vf", "2g52vm", "zh9at", "1g6hfh", "xx8y6", "2ksgl5", "2g52vp"], add: ["8ns8vb", "xnhhol", "z109rr", "1dv5d8c", "a61zur", "1i9iu2r", "125n174", "j2k7p0"], skip: ["1wbijjq", "17mfcq7"], lat: -20.4500, lng: 57.3167, category: "Nature", sound: "ocean", zoom: 13,
+        tagline: "A mountain above the lagoon",
+        description: "A basalt mountain on the southwest tip of Mauritius, surrounded by a turquoise lagoon and some of the island's best beaches. Runaway slaves once hid on its summit, and it is now a UNESCO World Heritage Site.",
+        bestTime: "May–Dec", image: "wiki:Le Morne Brabant" },
+      { name: "Chamarel", pics: ["2g52wt"], add: ["34rt0s", "yzuntq", "1tqg2gn", "1nmhr8c", "k4qi1j"], lat: -20.4300, lng: 57.3800, category: "Nature", sound: "jungle", zoom: 14,
+        tagline: "Seven-coloured earth",
+        description: "In the hills of the southwest, the Seven Coloured Earths are rolling dunes of volcanic soil in shades of red, brown, violet and blue. Nearby, the Chamarel Waterfall drops about 100 metres into the forest.",
+        bestTime: "May–Dec", image: "wiki:Seven Coloured Earths", wiki: "Chamarel" }
+    ]
+  },
+  {
+    id: "690", name: "Seychelles", region: "Africa", soundProfile: "ocean",
+    summary: "Granite boulders on white beaches, and a valley of giant palms.",
+    hero: "wiki:Anse Source d'Argent",
+    places: [
+      { name: "La Digue", pics: ["2a1bj", "2a0yt", "2afca", "2a19o", "303u7x", "303u7d", "30lvse"], add: ["bxwuti", "19swzao", "1o3kxje", "8ossb7", "o7lbl3", "1pfvaq6", "h6ifwz", "f6j4is", "1v2zc7v"], skip: ["lliw45"], lat: -4.3500, lng: 55.8333, category: "Beach", sound: "ocean", zoom: 13,
+        tagline: "Pink granite and white sand",
+        description: "A small island where bicycles and ox carts outnumber cars, La Digue is home to Anse Source d'Argent, a beach of giant pink granite boulders and shallow turquoise water that is one of the most photographed in the world.",
+        bestTime: "Apr–May, Oct–Nov", image: "wiki:Anse Source d'Argent", wiki: "La Digue" },
+      { name: "Vallée de Mai", pics: ["2ztw9o", "2ztw9p", "2ztw9n", "2l69a1", "2zgtbz", "2zgtbx", "2zgtby", "2m112c"], add: ["3qvpru", "4an3br", "1fqj18l", "1yei815"], lat: -4.3333, lng: 55.7333, category: "Nature", sound: "rainforest", zoom: 14,
+        tagline: "The garden of Eden",
+        description: "A palm forest on Praslin, the Vallée de Mai is the only place where the coco de mer grows wild in large numbers, a palm with the heaviest seed in the plant kingdom. Rare black parrots live in the canopy.",
+        bestTime: "Apr–May, Oct–Nov", image: "wiki:Vallée de Mai" }
+    ]
+  },
+  {
+    id: "174", name: "Comoros", region: "Africa", soundProfile: "ocean",
+    summary: "Volcanic islands of vanilla and ylang-ylang, under one of the world's largest active craters.",
+    hero: "wiki:Mount Karthala",
+    places: [
+      { name: "Mount Karthala", pics: ["1dx53q", "1p456f", "1e9qef", "q3s8", "1p456n"], skip: ["1bj43s0"], lat: -11.7500, lng: 43.3500, category: "Mountain", sound: "mountains", zoom: 11,
+        tagline: "A giant crater above the sea",
+        description: "An active volcano rising 2,361 metres over Grande Comore, Karthala has one of the largest craters of any active volcano. Below it, the capital Moroni has an old Arab town and a white mosque on the harbour.",
+        bestTime: "May–Oct", image: "wiki:Mount Karthala" }
+    ]
+  },
+  {
+    id: "010", name: "Antarctica", region: "Antarctica", soundProfile: "ocean",
+    summary: "The white continent: icebergs, glaciers and penguins at the bottom of the world.",
+    hero: "wiki:Lemaire Channel",
+    places: [
+      { name: "Antarctic Peninsula", pics: ["18smcp", "ejwqf", "18sl7h", "y77fy", "ejwrj", "1y7jvy", "1laegc", "9n59u", "1gzx27", "18sjgv", "y6sjx", "ejws9", "ejwqk", "ejxhw"], add: ["1k9dif2", "1v211qi", "jmc2v6", "1n5e06r", "12438zm", "zfys5p", "1leagh2", "1rpi5k4", "16lxd8h"], skip: ["cem1pc", "15ba4zh", "3rsm8e", "36i8dm", "1eq8vsp"], lat: -64.8000, lng: -62.9000, category: "Nature", sound: "ocean", zoom: 6,
+        tagline: "Icebergs and penguins",
+        description: "The most visited part of Antarctica reaches north toward South America, a land of glaciers, icebergs and mountains rising from the sea. Expedition ships sail narrow passages like the Lemaire Channel and land among colonies of gentoo and Adélie penguins.",
+        bestTime: "Nov–Mar", image: "wiki:Lemaire Channel", wiki: "Antarctic Peninsula" }
+    ]
   }
 ] };
