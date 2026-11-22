@@ -1127,3 +1127,6 @@ body.is-live .sound { opacity: 1; pointer-events: auto; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .2s !important; }
 }
+
+/* Share sits beside Save on a place */
+.save + .save { margin-left: 10px; }

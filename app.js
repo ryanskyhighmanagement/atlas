@@ -52,6 +52,7 @@
     calendar: svg('<rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/>'),
     compass: svg('<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/>'),
     layers: svg('<path d="M12 4l8.5 4.5L12 13 3.5 8.5 12 4z"/><path d="M3.5 12.5L12 17l8.5-4.5"/>'),
+    share: svg('<path d="M12 14.5V4M8 7.8L12 4l4 3.8"/><path d="M8 11H6.8A1.8 1.8 0 0 0 5 12.8v5.4A1.8 1.8 0 0 0 6.8 20h10.4a1.8 1.8 0 0 0 1.8-1.8v-5.4a1.8 1.8 0 0 0-1.8-1.8H16"/>'),
     heart: svg('<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/>'),
     check: svg('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
     alert: svg('<path d="M12 4l9 16H3L12 4z"/><path d="M12 10v4.5M12 17.3v.2"/>'),
@@ -409,6 +410,7 @@
         <p class="summary rise" style="--i:1">${esc(c.summary)}</p>
         <div class="visit rise" style="--i:2">
           <button class="toggle${Store.isVisited(c.id) ? ' is-on' : ''}" type="button" data-act="visited" aria-pressed="${Store.isVisited(c.id)}">${ICON.check}<span>${Store.isVisited(c.id) ? 'Visited' : 'Mark as visited'}</span></button>
+          <button class="toggle" type="button" data-act="share-country">${ICON.share}<span>Share</span></button>
           <span class="visit__count" id="exploredLine">${exploredLine()}</span>
         </div>
         <div class="section rise" style="--i:2"><span>Places to see</span><span>${c.places.length}</span></div>
@@ -462,6 +464,7 @@
     if (card && state.country) return openPlace(state.country, +card.dataset.place);
     const fav = e.target.closest('[data-fav]');
     if (fav) { const parts = fav.dataset.fav.split(':'); const c = byId.get(parts[0]); if (c) openPlace(c, +parts[1]); return; }
+    if (e.target.closest('[data-act="share-country"]') && state.country) return share(state.country, -1);
     const vis = e.target.closest('[data-act="visited"]');
     if (vis && state.country) {
       const on = Store.toggleVisited(state.country.id);
@@ -1493,7 +1496,7 @@
           <span class="kicker reveal" style="--i:0">${esc(c.name)}  ·  ${esc(p.category)}</span>
           <h1 class="shero__title reveal" style="--i:1">${esc(p.name)}</h1>
           <p class="shero__tag reveal" style="--i:2">${esc(p.tagline)}</p>
-          <button class="save reveal${Store.isFav(c, p) ? ' is-on' : ''}" style="--i:3" type="button" data-act="save" aria-pressed="${Store.isFav(c, p)}">${ICON.heart}<span>${Store.isFav(c, p) ? 'Saved' : 'Save'}</span></button>
+          <button class="save reveal${Store.isFav(c, p) ? ' is-on' : ''}" style="--i:3" type="button" data-act="save" aria-pressed="${Store.isFav(c, p)}">${ICON.heart}<span>${Store.isFav(c, p) ? 'Saved' : 'Save'}</span></button><button class="save reveal" style="--i:3" type="button" data-act="share">${ICON.share}<span>Share</span></button>
         </div>
         <div class="shero__cue reveal" style="--i:4" aria-hidden="true"><span>Scroll</span><i></i></div>
       </header>
@@ -1697,6 +1700,7 @@
       act.querySelector('span').textContent = on ? 'Saved' : 'Save';
       stage.dirty = true; haptic();
     }
+    else if (act.dataset.act === 'share' && p && stage.country) share(stage.country, stage.country.places.indexOf(p));
     else if (act.dataset.act === 'map' && p) { stage.after = () => showOnMap(p); closeTop(); }
     else if (act.dataset.act === 'close') closeTop();
     else if (act.dataset.act === 'retry' && p) { Gallery.forget(p); $('galCount').textContent = 'Gathering'; loadGallery(p, stage.token); }
@@ -1898,6 +1902,58 @@
     document.addEventListener('atlas:begin', () => setTimeout(() => { cancelAnimationFrame(raf); window.removeEventListener('resize', size); }, 1500));
   })();
 
+  /* ---------- Share links ----------
+     Every country and place has a page of its own at atlas/<slug>/ (atlas/maldives/, atlas/machu-picchu/), with a
+     preview card for Messages, WhatsApp and the like. tools/share.js builds those pages by running this same
+     function, so the app and the pages always agree on the names. A page sends its visitor here with ?to=<slug>:
+     the welcome screen names the destination, and the Begin tap flies straight there. */
+  // slugs:begin
+  function shareSlugs(countries, fold) {
+    const slug = (s) => fold(s).replace(/&/g, ' and ').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const taken = new Set(['icons', 'sounds', 'cards', 'index', 'atlas']);
+    const bySlug = new Map(), of = new Map();
+    const add = (s, v, k) => { taken.add(s); bySlug.set(s, v); of.set(k, s); };
+    countries.forEach((c) => { let s = slug(c.name) || 'country-' + c.id; if (taken.has(s)) s += '-' + c.id; add(s, { c, i: -1 }, c.id); });
+    const count = {};
+    countries.forEach((c) => (c.places || []).forEach((p) => { const s = slug(p.name); count[s] = (count[s] || 0) + 1; }));
+    countries.forEach((c) => (c.places || []).forEach((p, i) => {
+      let s = slug(p.name) || 'place';
+      if (taken.has(s) || count[s] > 1) s += '-' + of.get(c.id);
+      if (taken.has(s)) s += '-' + (i + 1);
+      add(s, { c, i }, c.id + '.' + i);
+    }));
+    return { bySlug, of };
+  }
+  // slugs:end
+  const SHARE = shareSlugs(DATA, norm);
+  const shareUrl = (c, i) => new URL('./', location.href).href + SHARE.of.get(i >= 0 ? c.id + '.' + i : c.id) + '/';
+  const dest = (function () { const m = location.search.match(/[?&]to=([a-z0-9-]+)/); return (m && SHARE.bySlug.get(m[1])) || null; })();
+
+  function share(c, i) {
+    const url = shareUrl(c, i), title = (i >= 0 ? c.places[i].name + ', ' + c.name : c.name) + ' · Atlas';
+    haptic();
+    if (navigator.share) { navigator.share({ title, url }).catch(() => null); return; }
+    const shown = () => toast(`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a>`, 5000);
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(() => toast('Link copied', 2000), shown);
+    else shown();
+  }
+
+  // Arriving from a shared link: fly to the country, then open the place once the map has landed.
+  let destT;
+  function goTo(d) {
+    if (!state.mapReady) { document.addEventListener('atlas:ready', () => goTo(d), { once: true }); return; }
+    selectCountry(d.c);
+    if (d.i < 0) return;
+    clearTimeout(destT);
+    destT = setTimeout(() => { if (state.country === d.c && !state.place && !state.yours) openPlace(d.c, d.i); }, 2100);
+  }
+  if (dest) {
+    const where = dest.i >= 0 ? `${dest.c.places[dest.i].name}, ${dest.c.name}` : dest.c.name;
+    el.welcome.querySelector('.welcome__tag').textContent = 'Next stop: ' + where;
+    $('btnBegin').querySelector('span').textContent = 'Fly there';
+    try { history.replaceState(null, '', location.pathname); } catch (e) { /* the address keeps its ?to= */ }
+  }
+
   $('btnBegin').addEventListener('click', () => {
     if (state.begun) return;
     state.begun = true;
@@ -1905,7 +1961,7 @@
     emit('atlas:begin');                      // the sound engine starts here, inside the tap (Phase 2)
     el.welcome.classList.add('is-leaving');
     el.body.classList.add('is-live');
-    if (map) { map.invalidateSize(); flyToWorld(2.6); }
+    if (map) { map.invalidateSize(); if (dest) goTo(dest); else flyToWorld(2.6); }
     setTimeout(() => { el.welcome.hidden = true; }, 1500);
     announce();
   });
@@ -1937,6 +1993,7 @@
     closePlace: () => closeTop(),
     world: closeCountry,
     surprise,
+    shareUrl: (id, i) => { const c = byId.get(String(id)); return c ? shareUrl(c, i == null ? -1 : i) : null; },
     gallery: Gallery,
     get map() { return map; },
   };
