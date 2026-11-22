@@ -1733,7 +1733,7 @@ window.ATLAS_DATA = { countries: [
     summary: "Roman temples, one of the oldest ports in the world, cedar forests, and a capital that never stops eating.",
     hero: "wiki:Raouché",
     places: [
-      { name: "Beirut", add: ["1hggrnh", "13zqycg"], lead: ["Al Raouche Rocks.jpg", "Beirut skyline, Beirut, Lebanon.jpg", "Pigeon Rocks of Beirut, Rock of Raouche, Beirut, Lebanon.jpg", "Beirut skyline from O Monot hotel.jpg"], skip: ["1ontkdq", "6rgxrv"], lat: 33.8938, lng: 35.5018, category: "City", sound: "city",
+      { name: "Beirut", pics: ["1ja0k6", "1jkl2w", "idjb5", "idjau", "burc8", "25v6la", "hycwh", "1v4c3h", "1v4ch4", "zx9ok", "chusr"], add: ["1hggrnh", "13zqycg"], lead: ["Al Raouche Rocks.jpg", "Beirut skyline, Beirut, Lebanon.jpg", "Pigeon Rocks of Beirut, Rock of Raouche, Beirut, Lebanon.jpg", "Beirut skyline from O Monot hotel.jpg"], skip: ["1ontkdq", "6rgxrv"], lat: 33.8938, lng: 35.5018, category: "City", sound: "city",
         tagline: "A Mediterranean capital of many lives",
         description: "Beirut sits on a headland with the sea on three sides and snow-capped mountains behind. Walk the Corniche at sunset to the Pigeon Rocks, two stone arches standing in the water, then eat your way through a table of mezze. Roman baths, Ottoman houses, French-era buildings and new towers stand within a few streets of each other.",
         bestTime: "Apr–Jun, Sep–Nov", image: "wiki:Beirut" },
