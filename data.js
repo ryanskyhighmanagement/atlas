@@ -53,11 +53,11 @@ window.ATLAS_DATA = { countries: [
     summary: "Canyon country, volcanic islands and the most restless city on the planet.",
     hero: "wiki:Monument Valley",
     places: [
-      { name: "New York City", add: ["ww4ekk", "1vy8cvh", "rpm1n"], skip: ["1qj8axp"], lat: 40.7128, lng: -74.0060, category: "City", sound: "metropolis",
+      { name: "New York City", pics: ["nyfaa", "m1vph", "uke98", "3rb9", "i4qh4", "i4qjd", "2ndtk", "cuuh3", "9tz4x", "1o2cw", "2hhs8"], add: ["ww4ekk", "1vy8cvh", "rpm1n"], skip: ["1qj8axp"], lat: 40.7128, lng: -74.0060, category: "City", sound: "metropolis",
         tagline: "The city that walks fast and never switches off",
         description: "Steam rises from the street grates, taxis lean on their horns, and eight million people move at a pace that pulls you along with it. Walk the Brooklyn Bridge at sunset for the skyline, lose an afternoon in the Metropolitan Museum, then find the quiet in the 341 hectares of Central Park. The subway runs all night, and so does the city.",
         bestTime: "Apr–Jun, Sep–Nov", image: "wiki:Brooklyn Bridge", wiki: "New York City" },
-      { name: "Miami", add: ["a6n10n", "1jv56w9", "1whzx84"], lat: 25.7617, lng: -80.1918, category: "City", sound: "ocean",
+      { name: "Miami", pics: ["69607", "7iqep", "1a2b2f", "2psgvj", "1oppzm", "z5rtz", "2jkgss", "9gcwy", "21pfyc"], add: ["a6n10n", "1jv56w9", "1whzx84"], lat: 25.7617, lng: -80.1918, category: "City", sound: "ocean",
         tagline: "Art Deco, Latin rhythm and warm Atlantic water",
         description: "Miami faces the Atlantic across Biscayne Bay, and Miami Beach sits on a barrier island just offshore. Along Ocean Drive, hundreds of pastel Art Deco hotels from the 1930s glow in neon after dark. In Little Havana, old men play dominoes in the park and the coffee comes short, sweet and strong, while the Wynwood district has turned its warehouse walls into one of the largest outdoor galleries of street art anywhere.",
         bestTime: "Dec–Apr (dry season)", image: "wiki:Miami", more: ["Miami Beach, Florida", "Miami Beach Architectural District"] },
